@@ -15,6 +15,8 @@
                             </div>
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
+                                    <div class="container">
+                                        <div class="row">
                                     <thead>
                                           	<th>Nombre</th>
                                         	<th>Estado</th>
@@ -80,9 +82,10 @@
                                         
                                     </tbody>
                                 </table>
-
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
 
