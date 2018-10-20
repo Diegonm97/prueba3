@@ -18,10 +18,12 @@
                                     <div class="container">
                                         <div class="row">
                                     <thead>
-                                          	<th>Nombre</th>
+                                          	<th>nuip</th>
+                                            <th>Nombre</th>
                                         	<th>Estado</th>
                                         	<th>Tipo Cliente</th>
                                         	<th>Direccion</th>
+                                            <th>Oficina</th>
                                         	<th>Ciudad</th>
                                         	<th>Telefono</th>
                                         	<th>Email</th>
@@ -30,54 +32,45 @@
                                         	<th>Rango</th>
                                         	<th>EPS</th>
                                         	<th>ARL</th>
+                                            <th>AFP</th>
                                         	<th>Caja Comp.</th>
                                         	<th>Beneficio</th>
                                         	<th>Fecha Ing.</th>
-                                        	<th>NIT emp.</th>
-                                        	<th>Nombre emp.</th>
+                                        	<th>ID emp.</th>
+                                            <th>ID NIT</th>
+                                            <th>Nombre Emp.</th>
                                         	<th>UPC adic.</th>
+                                            <th>Estado pago</th>
                                     </thead>
                                     <tbody>
+                                        @foreach ($clientes as $cliente)
                                         <tr>
-                                        	<td>Nombre</td>
-                                        	<td>Estado</td>
-                                        	<td>Tipo Cliente</td>
-                                        	<td>Direccion</td>
-                                        	<td>Ciudad</td>
-                                        	<td>Telefono</td>
-                                        	<td>Email</td>
-                                        	<td>Fecha Nac.</td>
-                                        	<td>Salario</td>
-                                        	<td>Rango</td>
-                                        	<td>EPS</td>
-                                        	<td>ARL</td>
-                                        	<td>Caja Comp.</td>
-                                        	<td>Beneficio</td>
-                                        	<td>Fecha Ing.</td>
-                                        	<td>NIT emp.</td>
-                                        	<td>Nombre emp.</td>
-                                        	<td>UPC adic.</td>
+                                        	<th>{{$cliente->nuip}}</th>
+                                            <th>{{$cliente->nombreCli}}</th>
+                                            <th>{{$cliente->estadoCli}}</th>
+                                            <th>{{$cliente->tipoIdCli}}</th>
+                                            <th>{{$cliente->direccionCli}}</th>
+                                            <th>{{$cliente->oficinaCli}}</th>
+                                            <th>{{$cliente->ciudadCli}}</th>
+                                            <th>{{$cliente->telefonoCli}}</th>
+                                            <th>{{$cliente->emailCli}}</th>
+                                            <th>{{$cliente->fechaNacCli}}</th>
+                                            <th>{{$cliente->salarioCli}}</th>
+                                            <th>{{$cliente->rangoCli}}</th>
+                                            <th>{{$cliente->EPScli}}</th>
+                                            <th>{{$cliente->ARLcli}}</th>
+                                            <th>{{$cliente->AFPcli}}</th>
+                                            <th>{{$cliente->cajaCompCli}}</th>
+                                            <th>{{$cliente->beneficioCli}}</th>
+                                            <th>{{$cliente->fechaIngCli}}</th>
+                                            <th>{{$cliente->idEmpresaContraCli}}</th>
+                                            <th>{{$cliente->idNIT}}</th>
+                                            <th>{{$cliente->nombreEmpCli}}</th>
+                                            <th>{{$cliente->UPCadicCli}}</th>
+                                            <th>{{$cliente->estadoPago}}</th>
+                                            
                                         </tr>
-                                        <tr>
-                                        	<td>Nombre</td>
-                                        	<td>Estado</td>
-                                        	<td>Tipo Cliente</td>
-                                        	<td>Direccion</td>
-                                        	<td>Ciudad</td>
-                                        	<td>Telefono</td>
-                                        	<td>Email</td>
-                                        	<td>Fecha Nac.</td>
-                                        	<td>Salario</td>
-                                        	<td>Rango</td>
-                                        	<td>EPS</td>
-                                        	<td>ARL</td>
-                                        	<td>Caja Comp.</td>
-                                        	<td>Beneficio</td>
-                                        	<td>Fecha Ing.</td>
-                                        	<td>NIT emp.</td>
-                                        	<td>Nombre emp.</td>
-                                        	<td>UPC adic.</td>
-                                        </tr>
+                                        @endforeach
                                         
                                         
                                     </tbody>

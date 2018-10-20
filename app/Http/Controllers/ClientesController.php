@@ -13,8 +13,11 @@ class ClientesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('clientes.index');
+    {   
+        
+        $clientes = Clientes::orderBy('id')->paginate('8');;
+
+        return view('clientes.index', compact('clientes'));
     }
 
     /**
