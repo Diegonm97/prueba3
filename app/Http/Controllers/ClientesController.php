@@ -47,9 +47,10 @@ class ClientesController extends Controller
      * @param  \App\Clientes  $clientes
      * @return \Illuminate\Http\Response
      */
-    public function show(Clientes $clientes)
+    public function show($id)
     {
-        //
+        $cliente =Clientes::find($id);
+        return view('clientes.show', compact('cliente'));
     }
 
     /**
