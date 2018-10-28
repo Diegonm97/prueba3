@@ -10,7 +10,10 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Clientes</h4>
+                                <h4 class="title">Clientes
+                                    <a href="{{route('clientes.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
+
+
                                 <p class="category">Aqui se muestran datos de los clientes registrados</p>
                             </div>
                             <div class="content table-responsive table-full-width">
@@ -35,7 +38,9 @@
                                             <th>{{$cliente->tipoIdCli}}</th>
                                             <th>{{$cliente->telefonoCli}}</th>
                                             <th>{{$cliente->rangoCli}}</th>
-                                            <th><a href="{{route('clientes.show', $cliente->id)}}"><i class="far fa-eye"></i></a></th>
+                                            <th><a href="{{route('clientes.show', $cliente->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                            
+                                            <a href="{{route('clientes.edit', $cliente->id)}}"><i class="fas fa-pen"></i></a>
+                                            </th>
                                             
                                         </tr>
                                         @endforeach

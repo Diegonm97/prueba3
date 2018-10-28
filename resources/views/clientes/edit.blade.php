@@ -4,11 +4,11 @@
 
 <p>
     
-    <h1 align="center">Crear Clientes</h1>
+    <h1 align="center">Editar Clientes</h1>
 </p>
 
-<p>				
- 	{!! Form::open(['route' => 'clientes.store']) !!}
+ <p>				
+ 	{!! Form::model($cliente, ['route' => ['clientes.update', $cliente->id], 'method' => 'PUT']) !!}
 
         @include('clientes.fragment.form')
 
@@ -16,7 +16,7 @@
 </p>
 
 
-                    
+
 
 
 

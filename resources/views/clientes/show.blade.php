@@ -8,6 +8,7 @@
 </p>
 
  <p>				
+ 	<strong>Nuip: </strong>{{$cliente->nuip}}<br/>
  	<strong>Nombre: </strong>{{$cliente->nombreCli}}<br/>
     <strong>Estado: </strong>{{$cliente->estadoCli}}<br/>
     <strong>Tipo: </strong>{{$cliente->tipoIdCli}}<br/> 
@@ -25,7 +26,7 @@
     <strong>Caja de Compensacion: </strong>{{$cliente->cajaCompCli}} <br/>
     <strong>Beneficio: </strong>{{$cliente->beneficioCli}} <br/>
     <strong>Fecha de Ingreso: </strong>{{$cliente->fechaIngCli}} <br/>
-    <strong>Empresa Contratante: </strong>{{$cliente->idEmpresaContraCli}}-{{$cliente->idNIT}}  <br/>
+    <strong>Nuip Empresa: </strong>{{$cliente->idEmpresaContraCli}}-{{$cliente->idNIT}}  <br/>
     <strong>Nombre Empresa: </strong>{{$cliente->nombreEmpCli}} <br/>
     <strong>UPC Adicional: </strong>{{$cliente->UPCadicCli}} <br/>
     <strong>Estado: </strong>{{$cliente->estadoPago}} <br/>
