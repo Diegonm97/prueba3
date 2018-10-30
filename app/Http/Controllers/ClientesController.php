@@ -13,10 +13,10 @@ class ClientesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {   
         
-        $clientes = Clientes::orderBy('id')->paginate('8');;
+        $clientes = Clientes::search1($request->nuip)->orderBy('id')->paginate('8');
 
         return view('clientes.index', compact('clientes'));
     }

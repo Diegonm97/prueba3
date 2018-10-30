@@ -1,4 +1,4 @@
-<div >
+<div class="col-sm-12">
 <div class="col-sm-3">
 <div class="form-group row has-success">
 {!! Form::label('nuip','Numero de cedula(*).')!!}
@@ -18,7 +18,7 @@
 </div>
 </div>
 </div>
-<div>
+<div class="col-sm-12">
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('estadoCli','Estado del cliente(*).')!!}
@@ -38,7 +38,7 @@
 </div>
 </div>
 </div>
-<div>
+<div class="col-sm-12">
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('ciudadCli','Ciudad(*).')!!}
@@ -58,7 +58,7 @@
 </div>
 </div>
 </div>
-<div>
+<div class="col-sm-12">
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('fechaNacCli','Fecha de nacimiento(*).')!!}
@@ -78,7 +78,7 @@
 </div>
 </div>
 </div>
-<div>
+<div class="col-sm-12">
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('EPScli','Eps cliente(*).')!!}
@@ -91,14 +91,16 @@
 {!!Form::number('ARLcli',null,['class'=>'form-control','title'=>'Ingresa el valor de la ARL del cliente.' , 'placeholder'=>'Ej: 15000','id'=>'ARLcli'])!!}
 </div>
 </div>
-</div>
-<div>
+
+
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('AFPcli','AFP del cliente(*).')!!}
 {!!Form::number('AFPcli',null,['class'=>'form-control','title'=>'Ingresa el valor de la AFP del cliente.' , 'placeholder'=>'Ej: 14000','id'=>'AFPcli'])!!}
 </div>
 </div>
+</div>
+<div class="col-sm-12">
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('cajaCompCli','Caja de Compensacion(*).')!!}
@@ -111,22 +113,24 @@
 {!!Form::text('beneficioCli',null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.' , 'placeholder'=>'Ej: 0','id'=>'beneficioCli'])!!}
 </div>
 </div>
-</div>
-<div>
+
+
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('fechaIngCli','Fecha de Ingreso(*).')!!}
 {!!Form::date('fechaIngCli',null,['class'=>'form-control', 'title'=>'Elige un fecha de nacimiento', 'placeholder'=>'Ej: 23/10/1997','required'=>'required'])!!}
 </div>
 </div>
+</div>
+<div class="col-sm-12">
 <div class="col-sm-5">
 <div class="form-group row has-success">
 {!! Form::label('idEmpresaContraCli','Id de la empresa(*).')!!}
 {!!Form::text('idEmpresaContraCli',null,['class'=>'form-control','title'=>'Ingresa el id de la empresa del cliente.' , 'placeholder'=>'Ej: 12345678','id'=>'idEmpresaContraCli','required'=>'required' ])!!}
 </div>
 </div>
-</div>
-<div>
+
+
 <div class="col-sm-1">
 <div class="form-group row has-success">
 {!! Form::label('idNIT','Id del Nit.')!!}
@@ -140,7 +144,7 @@
 </div>
 </div>
 </div>
-<div>
+<div class="col-sm-12">
 <div class="col-sm-6">
 <div class="form-group row has-success">
 {!! Form::label('UPCadicCli','UPC del cliente(*).')!!}

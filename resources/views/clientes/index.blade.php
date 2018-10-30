@@ -20,7 +20,16 @@
 
 
                                 <p class="category">Aqui se muestran datos de los clientes registrados</p>
+                            {!!Form::open(['route'=>'clientes.index', 'method'=>'GET','class'=>'navbar-form'])!!}
+                                <div class="col-sm-5 input-group">
+                                    {!!Form::number('nuip',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+                                    <span class="input-group-addon" id="search">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            {!!Form::close()!!}
                             </div>
+
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <div class="container">
