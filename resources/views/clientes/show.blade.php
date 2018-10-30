@@ -7,33 +7,140 @@
     <h1 align="center">Informacion Clientes</h1>
 </p>
 
- <p>				
- 	<strong>Nuip: </strong>{{$cliente->nuip}}<br/>
- 	<strong>Nombre: </strong>{{$cliente->nombreCli}}<br/>
-    <strong>Estado: </strong>{{$cliente->estadoCli}}<br/>
-    <strong>Tipo: </strong>{{$cliente->tipoIdCli}}<br/> 
-    <strong>Direccion: </strong>{{$cliente->direccionCli}} <br/>
-    <strong>Oficina: </strong>{{$cliente->oficinaCli}} <br/>
-    <strong>Ciudad: </strong>{{$cliente->ciudadCli}} <br/>
-    <strong>Telefono: </strong>{{$cliente->telefonoCli}} <br/>
-    <strong>Email: </strong>{{$cliente->emailCli}} <br/>
-    <strong>Fecha de Nacimiento: </strong>{{$cliente->fechaNacCli}} <br/>
-    <strong>Salario: </strong>{{$cliente->salarioCli}} <br/>
-    <strong>Rango: </strong>{{$cliente->rangoCli}} <br/>
-    <strong>EPS: </strong>{{$cliente->EPScli}} <br/>
-    <strong>ARL: </strong>{{$cliente->ARLcli}} <br/>
-    <strong>AFP: </strong>{{$cliente->AFPcli}} <br/>
-    <strong>Caja de Compensacion: </strong>{{$cliente->cajaCompCli}} <br/>
-    <strong>Beneficio: </strong>{{$cliente->beneficioCli}} <br/>
-    <strong>Fecha de Ingreso: </strong>{{$cliente->fechaIngCli}} <br/>
-    <strong>Nuip Empresa: </strong>{{$cliente->idEmpresaContraCli}}-{{$cliente->idNIT}}  <br/>
-    <strong>Nombre Empresa: </strong>{{$cliente->nombreEmpCli}} <br/>
-    <strong>UPC Adicional: </strong>{{$cliente->UPCadicCli}} <br/>
-    <strong>Estado: </strong>{{$cliente->estadoPago}} <br/>
-</p>
+
+<div class="col-md-12">
+                        
+    <div class="table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+        <div class="container">
+            <div class="row">
+        <tbody>
+            <tr>
+            <td><strong>Nuip: </strong></td>
+            <td>{{$cliente->nuip}}</td>
+            </tr>
+        
+            <tr>
+            <td><strong>Nombre: </strong></td>
+            <td>  {{$cliente->nombreCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Estado: </strong></td>
+            <td>  {{$cliente->estadoCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Tipo: </strong></td>
+            <td>  {{$cliente->tipoIdCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Direccion: </strong></td>
+            <td>  {{$cliente->direccionCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Oficina: </strong></td>
+            <td>  {{$cliente->oficinaCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Ciudad: </strong></td>
+            <td>  {{$cliente->ciudadCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Telefono: </strong></td>
+            <td>  {{$cliente->telefonoCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Email: </strong></td>
+            <td>  {{$cliente->emailCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Fecha de Nacimiento: </strong></td>
+            <td>  {{$cliente->fechaNacCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Salario: </strong></td>
+            <td>  {{$cliente->salarioCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Rango: </strong></td>
+            <td>  {{$cliente->rangoCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>EPS: </strong></td>
+            <td>  {{$cliente->EPScli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>ARL: </strong></td>
+            <td>  {{$cliente->ARLcli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>AFP: </strong></td>
+            <td>  {{$cliente->AFPcli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Caja de Compensacion: </strong></td>
+            <td>  {{$cliente->cajaCompCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Beneficio: </strong></td>
+            <td>  {{$cliente->beneficioCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Fecha de Ingreso: </strong></td>
+            <td>  {{$cliente->fechaIngCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Nuip Empresa: </strong></td>
+            <td>  {{$cliente->idEmpresaContraCli}}-{{$cliente->idNIT}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Nombre Empresa: </strong></td>
+            <td>  {{$cliente->nombreEmpCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>UPC Adicional: </strong></td>
+            <td>  {{$cliente->UPCadicCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Estado: </strong></td>
+            <td>  {{$cliente->estadoPago}}  </td>
+            </tr>
+
+            
+            
+
+            
+
+            
+        </tbody>
+        </div>
+    </div>
+</table>
+</div>
+</div>
 
 
-                    </div>
+
+
 
 
 

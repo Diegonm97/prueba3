@@ -38,7 +38,7 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
 
     /**
