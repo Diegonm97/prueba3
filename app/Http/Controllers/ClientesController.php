@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Clientes;
 use Illuminate\Http\Request;
+use App\Http\Requests\ClientesRequest;
 
 class ClientesController extends Controller
 {
@@ -36,9 +37,38 @@ class ClientesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClientesRequest $request)
     {
-        //
+        $clientes = new Clientes;
+
+            $clientes->nuip            = $request->nuip;
+            $clientes->nombreCli       = $request->nombreCli;
+            $clientes->estadoCli       = $request->estadoCli;
+            $clientes->tipoIdCli       = $request->tipoIdCli;
+            $clientes->direccionCli    = $request->direccionCli;
+            $clientes->oficinaCli      = $request->oficinaCli;
+            $clientes->ciudadCli       = $request->ciudadCli;
+            $clientes->telefonoCli     = $request->telefonoCli;
+            $clientes->emailCli        = $request->emailCli;
+            $clientes->fechaNacCli     = $request->fechaNacCli;
+            $clientes->salarioCli      = $request->salarioCli;
+            $clientes->rangoCli        = $request->rangoCli;
+            $clientes->EPScli          = $request->EPScli;
+            $clientes->ARLcli          = $request->ARLcli;
+            $clientes->AFPcli          = $request->AFPcli;
+            $clientes->cajaCompCli     = $request->cajaCompCli;
+            $clientes->beneficioCli    = $request->beneficioCli;
+            $clientes->fechaIngCli     = $request->fechaIngCli;
+            $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
+            $clientes->idNIT           = $request->idNIT;
+            $clientes->nombreEmpCli    = $request->nombreEmpCli;
+            $clientes->UPCadicCli    = $request->UPCadicCli;
+            $clientes->estadoPago      = $request->estadoPago;
+
+            $clientes->save();
+
+            return redirect()->route('clientes.index')
+            ->with('info','El cliente fue creado');
     }
 
     /**
@@ -72,9 +102,38 @@ class ClientesController extends Controller
      * @param  \App\Clientes  $clientes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Clientes $clientes)
+    public function update(ClientesRequest $request, $id)
     {
-        //
+            $clientes = Clientes::find($id);
+
+            $clientes->nuip            = $request->nuip;
+            $clientes->nombreCli       = $request->nombreCli;
+            $clientes->estadoCli       = $request->estadoCli;
+            $clientes->tipoIdCli       = $request->tipoIdCli;
+            $clientes->direccionCli    = $request->direccionCli;
+            $clientes->oficinaCli      = $request->oficinaCli;
+            $clientes->ciudadCli       = $request->ciudadCli;
+            $clientes->telefonoCli     = $request->telefonoCli;
+            $clientes->emailCli        = $request->emailCli;
+            $clientes->fechaNacCli     = $request->fechaNacCli;
+            $clientes->salarioCli      = $request->salarioCli;
+            $clientes->rangoCli        = $request->rangoCli;
+            $clientes->EPScli          = $request->EPScli;
+            $clientes->ARLcli          = $request->ARLcli;
+            $clientes->AFPcli          = $request->AFPcli;
+            $clientes->cajaCompCli     = $request->cajaCompCli;
+            $clientes->beneficioCli    = $request->beneficioCli;
+            $clientes->fechaIngCli     = $request->fechaIngCli;
+            $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
+            $clientes->idNIT           = $request->idNIT;
+            $clientes->nombreEmpCli    = $request->nombreEmpCli;
+            $clientes->UPCadicCli    = $request->UPCadicCli;
+            $clientes->estadoPago      = $request->estadoPago;
+
+            $clientes->save();
+
+            return redirect()->route('clientes.index')
+            ->with('info','El cliente fue actualizado');
     }
 
     /**

@@ -2,10 +2,15 @@
 @section('content')
 
 
-<p>
+<div class="col-sm-9" >
     
     <h1 align="center">Informacion Clientes</h1>
-</p>
+</div>
+<div class="col-sm-3">
+    
+    @include('clientes.fragment.info')
+
+</div>
 
                     <div class="col-md-12">
                         <div class="card">

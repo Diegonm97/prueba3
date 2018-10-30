@@ -8,7 +8,7 @@
 <div class="col-sm-3">
 <div class="form-group row has-success">
 {!! Form::label('tipoIdCli','Tipo ID(*).')!!}
-{!!Form::text('tipoIdCli',null,['class'=>'form-control','title'=>'Ingresa el tipo de id del cliente.' , 'placeholder'=>'Ej: Juan Perez','id'=>'tipoIdCli','required'=>'required' ])!!}
+{!!Form::text('tipoIdCli',null,['class'=>'form-control','title'=>'Ingresa el tipo de id del cliente.' , 'placeholder'=>'Ej: Cc, Pasaporte, Permiso de trabajo, etc.','id'=>'tipoIdCli','required'=>'required' ])!!}
 </div>
 </div>
 <div class="col-sm-6">
@@ -74,7 +74,7 @@
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('rangoCli','Rango(*).')!!}
-{!!Form::number('rangoCli',null,['class'=>'form-control','title'=>'Ingresa el rango del cliente.' , 'placeholder'=>'Ej: 1','id'=>'srangoCli','required'=>'required' ])!!}
+{!!Form::number('rangoCli',null,['class'=>'form-control','title'=>'Ingresa el rango del cliente.' , 'placeholder'=>'Ej: 1-5','id'=>'srangoCli','required'=>'required' ])!!}
 </div>
 </div>
 </div>
@@ -136,7 +136,7 @@
 <div class="col-sm-6">
 <div class="form-group row has-success">
 {!! Form::label('nombreEmpCli','Nombre de la Empresa(*).')!!}
-{!!Form::text('nombreEmpCli',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: pantera roja','id'=>'nombreEmpCli','required'=>'required' ])!!}
+{!!Form::text('nombreEmpCli',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'nombreEmpCli','required'=>'required' ])!!}
 </div>
 </div>
 </div>
