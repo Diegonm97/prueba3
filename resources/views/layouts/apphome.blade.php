@@ -45,7 +45,7 @@
 
       <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="home" class="simple-text">
+                <a href="{{route('home')}}" class="simple-text">
                     Intersalud del Valle
                 </a>
             </div>
@@ -57,12 +57,14 @@
                         <p>Clientes</p>
                     </a>
                 </li>
+                @role('admin')
                 <li>
                     <a href="">
                         <i class="pe-7s-note2"></i>
                         <p>Configuracion</p>
                     </a>
                 </li>
+                @endrole
                 <li>
                     <a href="">
                         <i class="pe-7s-news-paper"></i>
@@ -98,17 +100,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Menu</a>
+                    
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-dashboard"></i>
-                            </a>
-                        </li>
-                    </ul>
-
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                            <a href="">
