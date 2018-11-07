@@ -57,14 +57,14 @@
                         <p>Clientes</p>
                     </a>
                 </li>
-                @role('admin')
+                
                 <li>
                     <a href="">
                         <i class="pe-7s-note2"></i>
                         <p>Configuracion</p>
                     </a>
                 </li>
-                @endrole
+                
                 <li>
                     <a href="">
                         <i class="pe-7s-news-paper"></i>

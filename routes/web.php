@@ -25,3 +25,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Routes
+
+Route::middleware(['auth'])->group(function() {
+	//Roles
+	
+
+
+});
