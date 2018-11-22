@@ -51,12 +51,14 @@
             </div>
 
             <ul class="nav">
+                @can('Clientes.index')
                 <li>
                     <a href="{{route('clientes.index')}}">
                         <i class="pe-7s-user"></i>
                         <p>Clientes</p>
                     </a>
                 </li>
+                @endcan
                 
                 <li>
                     <a href="">

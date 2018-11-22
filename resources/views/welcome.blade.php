@@ -84,10 +84,7 @@
                     Intersalud del valle
                 </div>
 
-                <div class="links">
-                    <a href="clientes">Clientes</a>
-                    
-                </div>
+                
             </div>
         </div>
     </body>

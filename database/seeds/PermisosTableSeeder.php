@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Caffeinated\Shinobi\Models\Permission;
 
 class PermisosTableSeeder extends Seeder
 {
