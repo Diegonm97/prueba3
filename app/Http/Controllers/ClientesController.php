@@ -16,7 +16,7 @@ class ClientesController extends Controller
     public function index(Request $request)
     {   
         
-        $clientes = Clientes::search1($request->nuip)->orderBy('nuip')->paginate('20');
+        $clientes = Clientes::search1($request->nuip)->orderBy('nuip')->paginate('8');
 
         return view('clientes.index', compact('clientes'));
     }

@@ -2,11 +2,11 @@
 @section('content')
 
 
-<div class="col-sm-9" >
+<div class="col-m-9" >
     
     <h1 align="center">Informacion Clientes</h1>
 </div>
-<div class="col-sm-3">
+<div class="col-m-3">
     
     @include('clientes.fragment.info')
 
@@ -21,11 +21,10 @@
 
                                 <p class="category">Aqui se muestran datos de los clientes registrados</p>
                             {!!Form::open(['route'=>'clientes.index', 'method'=>'GET','class'=>'navbar-form'])!!}
-                                <div class="col-sm-5 input-group">
+                                <div class="form group">
                                     {!!Form::number('nuip',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
-                                    <span class="input-group-addon" id="search">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                    </span>
+                                    
+                                    
                                 </div>
                             {!!Form::close()!!}
                             </div>
@@ -64,12 +63,14 @@
                                     </div>
                                 </div>
                                 </table>
-                                
+                                <div align="center">
+                                        {!!$clientes->render() !!}
+                                </div>
                                 </div>
                             </div>
                         </div>
 
-                    </div>
+                    
 
 
 

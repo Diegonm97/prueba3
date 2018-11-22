@@ -12,7 +12,6 @@ class Clientes extends Model
 
 
 	public function scopeSearch1($query, $nuip) // Realiza la busqueda en base de datos de acuerdo al nuip
-
 	{
 
    	return $query->where('nuip','LIKE',"%$nuip%");
