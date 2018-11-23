@@ -107,10 +107,11 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                           <a href="">
-                               Cuenta
+                            @can('Users.index')
+                           <a href="{{ route('users.index') }}">
+                               Cuentas
                             </a>
-
+                            @endcan
                             @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

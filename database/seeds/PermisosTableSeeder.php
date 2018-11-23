@@ -19,6 +19,11 @@ class PermisosTableSeeder extends Seeder
             'description'   => 'Lista y navega todos los usuarios del sistema',
         ]);
         Permission::create([
+            'name'          => 'Crear usuarios',
+            'slug'          => 'Clientes.create',
+            'description'   => 'Permite crear clientes en el sistema',
+        ]);
+        Permission::create([
             'name'          => 'Ver detalle de usuario',
             'slug'          => 'Clientes.show',
             'description'   => 'Ve en detalle cada usuario del sistema',            
@@ -58,6 +63,28 @@ class PermisosTableSeeder extends Seeder
             'name'          => 'Eliminar roles',
             'slug'          => 'roles.destroy',
             'description'   => 'Podría eliminar cualquier rol del sistema',      
+        ]);
+
+        Permission::create([
+            'name'          => 'Navegar cuenta',
+            'slug'          => 'Users.index',
+            'description'   => 'Lista y navega todos los cuenta del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Crear cuenta',
+            'slug'          => 'Users.create',
+            'description'   => 'Permite crear Users en el sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Ver detalle de usuario',
+            'slug'          => 'Users.show',
+            'description'   => 'Ve en detalle cada usuario del sistema',            
+        ]);
+        
+        Permission::create([
+            'name'          => 'Edición de usuarios',
+            'slug'          => 'Users.edit',
+            'description'   => 'Podría editar cualquier dato de un usuario del sistema',
         ]);
         
     }

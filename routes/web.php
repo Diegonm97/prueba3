@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 
 Route::resource('clientes','clientesController');
+Route::resource('users','userController');
 
 Auth::routes();
 

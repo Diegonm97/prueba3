@@ -16,8 +16,9 @@
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Clientes
+                                    @can('clientes.create')
                                     <a href="{{route('clientes.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
-
+                                    @endcan
 
                                 <p class="category">Aqui se muestran datos de los clientes registrados</p>
                             {!!Form::open(['route'=>'clientes.index', 'method'=>'GET','class'=>'navbar-form'])!!}
@@ -51,8 +52,13 @@
                                             <th>{{$cliente->tipoIdCli}}</th>
                                             <th>{{$cliente->telefonoCli}}</th>
                                             <th>{{$cliente->rangoCli}}</th>
-                                            <th><a href="{{route('clientes.show', $cliente->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                            
+                                            <th>
+                                                @can('clientes.show')
+                                                <a href="{{route('clientes.show', $cliente->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                @endcan
+                                                @can('clientes.edit')                                 
                                             <a href="{{route('clientes.edit', $cliente->id)}}"><i class="fas fa-pen"></i></a>
+                                                @endcan
                                             </th>
                                             
                                         </tr>
