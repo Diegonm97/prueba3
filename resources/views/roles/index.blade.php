@@ -4,24 +4,24 @@
 
 <div class="col-m-9" >
     
-    <h1 align="center">Informacion Clientes</h1>
+    <h1 align="center">Roles</h1>
 </div>
 <div class="col-m-3">
     
-    @include('clientes.fragment.info')
+    @include('roles.fragment.info')
 
 </div>
 
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Clientes
-                                    @can('Clientes.create')
-                                    <a href="{{route('clientes.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
+                                <h4 class="title">roles
+                                    @can('roles.create')
+                                    <a href="{{route('roles.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
                                     @endcan
 
-                                <p class="category">Aqui se muestran datos de los clientes registrados</p>
-                            {!!Form::open(['route'=>'clientes.index', 'method'=>'GET','class'=>'navbar-form'])!!}
+                                <p class="category">Aqui se muestran datos de los roles registrados</p>
+                            {!!Form::open(['route'=>'roles.index', 'method'=>'GET','class'=>'navbar-form'])!!}
                                 <div class="form group">
                                     {!!Form::number('nuip',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
                                     
@@ -35,29 +35,26 @@
                                     <div class="container">
                                         <div class="row">
                                     <thead>
-                                          	<th>nuip</th>
+                                            <th>id</th>
                                             <th>Nombre</th>
-                                        	<th>Estado</th>
-                                        	<th>Tipo Cliente</th>
-                                            <th>Telefono</th>
-                                        	<th>Rango</th>
-                                        	<th>Acción</th>
+                                            <th>Slug</th>
+                                            <th>Descripcion</th>
+                                            
                                     </thead>
                                     <tbody>
-                                        @foreach ($clientes as $cliente)
+                                        @foreach ($roles as $role)
                                         <tr>
-                                        	<th>{{$cliente->nuip}}</th>
-                                            <th>{{$cliente->nombreCli}}</th>
-                                            <th>{{$cliente->estadoCli}}</th>
-                                            <th>{{$cliente->tipoIdCli}}</th>
-                                            <th>{{$cliente->telefonoCli}}</th>
-                                            <th>{{$cliente->rangoCli}}</th>
+                                            <th>{{$role->id}}</th>
+                                            <th>{{$role->name}}</th>
+                                            <th>{{$role->slug}}</th>
+                                            <th>{{$role->description}}</th>
+                                            
                                             <th>
-                                                @can('Clientes.show')
-                                                <a href="{{route('clientes.show', $cliente->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                @can('roles.show')
+                                                <a href="{{route('roles.show', $role->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 @endcan
-                                                @can('Clientes.edit')                                 
-                                            <a href="{{route('clientes.edit', $cliente->id)}}"><i class="fas fa-pen"></i></a>
+                                                @can('roles.edit')                                 
+                                            <a href="{{route('roles.edit', $role->id)}}"><i class="fas fa-pen"></i></a>
                                                 @endcan
                                             </th>
                                             
@@ -70,7 +67,7 @@
                                 </div>
                                 </table>
                                 <div align="center">
-                                        {!!$clientes->render() !!}
+                                        {!!$roles->render() !!}
                                 </div>
                                 </div>
                             </div>

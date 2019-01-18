@@ -45,21 +45,31 @@ Route::middleware(['auth'])->group(function() {
 
 	//clientes
 	Route::post('clientes/store', 'clientesController@store')->name('clientes.store')
-		->middleware('permission:clientes.create');
+		->middleware('permission:Clientes.create');
 	Route::get('clientes', 'clientesController@index')->name('clientes.index')
-		->middleware('permission:clientes.index');
+		->middleware('permission:Clientes.index');
 	Route::get('clientes/create', 'clientesController@create')->name('clientes.create')
-		->middleware('permission:clientes.create');
+		->middleware('permission:Clientes.create');
 	Route::put('clientes/{id}', 'clientesController@update')->name('clientes.update')
-		->middleware('permission:clientes.edit');
+		->middleware('permission:Clientes.edit');
 	Route::get('clientes/{id}', 'clientesController@show')->name('clientes.show')
-		->middleware('permission:clientes.show');
+		->middleware('permission:Clientes.show');
 	Route::get('clientes/{id}/edit', 'clientesController@edit')->name('clientes.edit')
-		->middleware('permission:clientes.edit');
+		->middleware('permission:Clientes.edit');
 	
 
+	//Users
+	Route::post('users/store', 'usersController@store')->name('users.store')
+		->middleware('permission:users.create');
 	Route::get('users', 'userController@index')->name('users.index')
 		->middleware('permission:users.index');
-
+	Route::get('users/create', 'usersController@create')->name('users.create')
+		->middleware('permission:users.create');
+	Route::put('users/{id}', 'usersController@update')->name('users.update')
+		->middleware('permission:users.edit');
+	Route::get('users/{id}', 'usersController@show')->name('users.show')
+		->middleware('permission:users.show');
+	Route::get('users/{id}/edit', 'usersController@edit')->name('users.edit')
+		->middleware('permission:users.edit');
 
 });

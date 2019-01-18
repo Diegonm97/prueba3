@@ -112,6 +112,15 @@
                                Cuentas
                             </a>
                             @endcan
+
+                        </li>
+                        <li>
+                            @can('roles.index')
+                           <a href="{{ route('roles.index') }}">
+                               Roles
+                            </a>
+                            @endcan
+                        </li>
                             @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -142,7 +151,7 @@
                                 </ul>
                             </li>
                         @endguest
-                        </li>
+                        
                     </ul>
 
 
