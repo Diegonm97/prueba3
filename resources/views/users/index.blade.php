@@ -19,7 +19,7 @@
                                     <p class="category">Aqui se muestran datos de los usuarios registrados</p>
                             {!!Form::open(['route'=>'users.index', 'method'=>'GET','class'=>'navbar-form'])!!}
                                 <div class="form group">
-                                    {!!Form::number('nuip',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+                                    {!!Form::text('name',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
                                     
                                     
                                 </div>

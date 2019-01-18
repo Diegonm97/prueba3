@@ -58,7 +58,8 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:clientes.edit');
 	
 
-	
+	Route::get('users', 'userController@index')->name('users.index')
+		->middleware('permission:users.index');
 
 
 });

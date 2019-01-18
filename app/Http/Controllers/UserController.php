@@ -16,8 +16,8 @@ class UserController extends Controller
      public function index(Request $request)
     {   
         
-        $users = User::paginate();
-
+        $users = User::Nombre($request->name)->orderBy('name')->paginate();
+        
         return view('users.index', compact('users'));
     }
 
@@ -56,8 +56,10 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        //Actualizar Usuario
             $user->update($request->all());
 
+        //Actualizar rol
             $user->roles()->sync($request->get('roles'));
 
             

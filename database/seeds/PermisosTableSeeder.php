@@ -65,6 +65,7 @@ class PermisosTableSeeder extends Seeder
             'description'   => 'Podría eliminar cualquier rol del sistema',      
         ]);
 
+//users
         Permission::create([
             'name'          => 'Navegar cuenta',
             'slug'          => 'Users.index',

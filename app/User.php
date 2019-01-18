@@ -30,7 +30,13 @@ class User extends Authenticatable
     ];
 
 
+    public function scopeNombre($query, $name) // Realiza la busqueda en base de datos de acuerdo al nombre
+    {
 
+    return $query->where('name','LIKE',"%$name%");
+
+
+    }
 
 
 
