@@ -113,6 +113,11 @@
             </tr>
 
             <tr>
+            <td><strong>Tipo Cliente: </strong></td>
+            <td>  {{$cliente->tipoCli}}  </td>
+            </tr>
+
+            <tr>
             <td><strong>Nuip Empresa: </strong></td>
             <td>  {{$cliente->idEmpresaContraCli}}-{{$cliente->idNIT}}  </td>
             </tr>

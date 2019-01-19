@@ -8,7 +8,7 @@
 <div class="col-sm-3">
 <div class="form-group row has-success">
 {!! Form::label('tipoIdCli','Tipo ID(*).')!!}
-{!!Form::text('tipoIdCli',null,['class'=>'form-control','title'=>'Ingresa el tipo de id del cliente.' , 'placeholder'=>'Ej: Cc, Pasaporte, Permiso de trabajo, etc.','id'=>'tipoIdCli','required'=>'required' ])!!}
+{!!Form::select('tipoIdCli', ['Cc'=>'Cc', 'Pasaporte'=>'Pasaporte', 'Permiso de Trabajo'=>'Permiso de Trabajo'],null,['class'=>'form-control','title'=>'Ingresa el tipo de id del cliente.','id'=>'tipoIdCli','required'=>'required' ])!!}
 </div>
 </div>
 <div class="col-sm-6">
@@ -22,7 +22,7 @@
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('estadoCli','Estado del cliente(*).')!!}
-{!!Form::text('estadoCli',null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.','title'=>'A,R' , 'placeholder'=>'Ej: A','id'=>'estadoCli','required'=>'required' ])!!}
+{!!Form::select('estadoCli', ['Activo'=>'Activo', 'Retirado'=>'Retirado'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.','title'=>'A,R','id'=>'estadoCli','required'=>'required' ])!!}
 </div>
 </div>
 <div class="col-sm-4">
@@ -34,7 +34,7 @@
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('oficinaCli','Oficina(*).')!!}
-{!!Form::text('oficinaCli',null,['class'=>'form-control','title'=>'Ingresa la oficina donde se afilio al cliente.' , 'placeholder'=>'Ej: Centro','id'=>'oficinaCli','required'=>'required' ])!!}
+{!!Form::select('oficinaCli', ['Sede Principal'=>'Sede Principal', 'Sede Llanogrande 1'=>'Sede Llanogrande 1', 'Sede Llanogrande 2'=>'Sede Llanogrande 2' , 'Sede Cali'=>'Sede Cali', 'Sede Buga'=>'Sede Buga', 'Sede Rozo'=>'Sede Rozo'],null,['class'=>'form-control','title'=>'Ingresa la oficina donde se afilio al cliente.' ,'id'=>'oficinaCli','required'=>'required' ])!!}
 </div>
 </div>
 </div>
@@ -74,7 +74,7 @@
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('rangoCli','Rango(*).')!!}
-{!!Form::number('rangoCli',null,['class'=>'form-control','title'=>'Ingresa el rango del cliente.' , 'placeholder'=>'Ej: 1-5','id'=>'srangoCli','required'=>'required' ])!!}
+{!!Form::select('rangoCli', ['1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5'] ,null,['class'=>'form-control','title'=>'Ingresa el rango del cliente.', 'id'=>'srangoCli','required'=>'required' ])!!}
 </div>
 </div>
 </div>
@@ -123,20 +123,25 @@
 </div>
 </div>
 <div class="col-sm-12">
-<div class="col-sm-5">
+<div class="col-sm-2">
+<div class="form-group row has-success">
+{!! Form::label('tipoCli','Tipo de cliente(*).')!!}
+{!!Form::select('tipoCli', ['Independiente' => 'Independiente', 'Asociado'=>'Asociado', 'Empresa'=>'Empresa'], null,['class'=>'form-control','title'=>'Elige tu tipoCli.', 'required'=>'required','name'=>'tipoCli'])!!}
+</div>
+</div>
+<div class="col-sm-3">
 <div class="form-group row has-success">
 {!! Form::label('idEmpresaContraCli','Id de la empresa(*).')!!}
 {!!Form::text('idEmpresaContraCli',null,['class'=>'form-control','title'=>'Ingresa el id de la empresa del cliente.' , 'placeholder'=>'Ej: 12345678','id'=>'idEmpresaContraCli','required'=>'required' ])!!}
 </div>
 </div>
-
-
 <div class="col-sm-1">
 <div class="form-group row has-success">
 {!! Form::label('idNIT','Id del Nit.')!!}
 {!!Form::text('idNIT',null,['class'=>'form-control','title'=>'Ingresa el id del Nit.' , 'placeholder'=>'Ej: 1','id'=>'idNIT'])!!}
 </div>
 </div>
+
 <div class="col-sm-6">
 <div class="form-group row has-success">
 {!! Form::label('nombreEmpCli','Nombre de la Empresa(*).')!!}
@@ -154,7 +159,7 @@
 <div class="col-sm-6">
 <div class="form-group row has-success">
 {!! Form::label('estadoPago','Estado de pago(*).')!!}
-{!!Form::text('estadoPago',null,['class'=>'form-control','title'=>'Ingresa un estado de pago del cliente.' , 'placeholder'=>'Ej:no pago, pago','id'=>'estadoPago','required'=>'required' ])!!}
+{!!Form::select('estadoPago', ['Pago'=>'Pago', 'No Pago'=>'No Pago'],null,['class'=>'form-control','title'=>'Ingresa un estado de pago del cliente.', 'id'=>'estadoPago','required'=>'required' ])!!}
 </div>
 </div>
 </div>

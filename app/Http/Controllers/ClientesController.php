@@ -59,6 +59,7 @@ class ClientesController extends Controller
             $clientes->cajaCompCli     = $request->cajaCompCli;
             $clientes->beneficioCli    = $request->beneficioCli;
             $clientes->fechaIngCli     = $request->fechaIngCli;
+            $clientes->tipoCli     = $request->tipoCli;
             $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
             $clientes->idNIT           = $request->idNIT;
             $clientes->nombreEmpCli    = $request->nombreEmpCli;
@@ -124,6 +125,7 @@ class ClientesController extends Controller
             $clientes->cajaCompCli     = $request->cajaCompCli;
             $clientes->beneficioCli    = $request->beneficioCli;
             $clientes->fechaIngCli     = $request->fechaIngCli;
+            $clientes->tipoCli     = $request->tipoCli;
             $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
             $clientes->idNIT           = $request->idNIT;
             $clientes->nombreEmpCli    = $request->nombreEmpCli;

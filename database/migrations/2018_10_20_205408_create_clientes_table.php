@@ -33,6 +33,7 @@ class CreateClientesTable extends Migration
             $table->double('cajaCompCli')->nullable();
             $table->double('beneficioCli')->nullable();
             $table->date('fechaIngCli');
+            $table->string('tipoCli');
             $table->string('idEmpresaContraCli');
             $table->string('idNIT');
             $table->string('nombreEmpCli');

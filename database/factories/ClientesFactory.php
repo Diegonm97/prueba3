@@ -22,6 +22,7 @@ $factory->define(App\Clientes::class, function (Faker $faker) {
 			'cajaCompCli'=> rand(100000,150000),
 			'beneficioCli'=> rand(100000,150000),
 			'fechaIngCli'=> $faker->date($format = 'Y-m-d', $max = 'now'),
+			'tipoCli'=> $faker->randomElement(['Independiente', 'Asociado', 'Empresa']),
 			'idEmpresaContraCli'=> $faker->text(20),
 			'idNIT'=> $faker->text(20),
 			'nombreEmpcli'=> $faker->text(20),
