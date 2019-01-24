@@ -17,7 +17,7 @@
 </div>
 
  <p>				
- 	{!! Form::model($empresa, ['route' => ['empresas.update', $empresa->id], 'method' => 'PUT']) !!}
+ 	{!! Form::model($empresa, ['route' => ['empresa.update', $empresa->id], 'method' => 'PUT']) !!}
 
         @include('empresas.fragment.form')
 

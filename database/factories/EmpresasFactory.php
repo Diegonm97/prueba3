@@ -2,9 +2,9 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(App\Empresa::class, function (Faker $faker) {
     return [
-    	'nuip'=> rand(1,10000),	
+    	    'nuip'=> rand(1,10000),	
 			'nombreEmp'=> $faker->text(20),
 			'estadoEmp'=> $faker->randomElement(['Activo', 'Retirado']),
 			'tipoIdEmp'=> $faker->text(20),
@@ -28,6 +28,7 @@ $factory->define(Model::class, function (Faker $faker) {
 			'nombreEmpEmp'=> $faker->text(20),
 			'UPCadicEmp'=> rand(100000,150000),
 			'estadoPago'=> $faker->text(20),
-        //
-    ];
+
+			];
 });
+    

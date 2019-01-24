@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Empresa;
 
 class EmpresasTableSeeder extends Seeder
+
 {
     /**
      * Run the database seeds.
@@ -11,6 +13,6 @@ class EmpresasTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Empresas::class,20)->create();
+        factory(Empresa::class,20)->create();
     }
 }

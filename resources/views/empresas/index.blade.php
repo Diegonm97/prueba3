@@ -17,13 +17,13 @@
                             <div class="header">
                                 <h4 class="title">Empresas
                                     @can('Empresas.create')
-                                    <a href="{{route('empresas.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
+                                    <a href="{{route('empresa.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
                                     @endcan
 
                                 <p class="category">Aqui se muestran datos de los empresas registradas</p>
-                            {!!Form::open(['route'=>'empresas.index', 'method'=>'GET','class'=>'navbar-form'])!!}
+                            {!!Form::open(['route'=>'empresa.index', 'method'=>'GET','class'=>'navbar-form'])!!}
                                 <div class="form group">
-                                    {!!Form::number('nuip',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+                                    {!!Form::number('idNIT',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
                                     
                                     
                                 </div>
@@ -54,10 +54,10 @@
                                             <th>{{$empresa->rangoEmp}}</th>
                                             <th>
                                                 @can('Empresas.show')
-                                                <a href="{{route('empresas.show', $empresa->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <a href="{{route('empresa.show', $empresa->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 @endcan
                                                 @can('Empresas.edit')                                 
-                                            <a href="{{route('empresas.edit', $empresa->id)}}"><i class="fas fa-pen"></i></a>
+                                            <a href="{{route('empresa.edit', $empresa->id)}}"><i class="fas fa-pen"></i></a>
                                                 @endcan
                                             </th>
                                             
