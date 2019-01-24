@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-
+Route::resource('empresa','empresaController');
 Route::resource('clientes','clientesController');
 Route::resource('users','userController');
 
@@ -43,7 +43,21 @@ Route::middleware(['auth'])->group(function() {
 	Route::get('roles/{role}/edit', 'RoleController@edit')->name('roles.edit')
 		->middleware('permission:roles.edit');
 
-	//clientes
+	//Users
+	Route::post('users/store', 'userController@store')->name('users.store')
+		->middleware('permission:users.create');
+	Route::get('users', 'userController@index')->name('users.index')
+		->middleware('permission:users.index');
+	Route::get('users/create', 'userController@create')->name('users.create')
+		->middleware('permission:users.create');
+	Route::put('users/{id}', 'userController@update')->name('users.update')
+		->middleware('permission:users.edit');
+	Route::get('users/{id}', 'userController@show')->name('users.show')
+		->middleware('permission:users.show');
+	Route::get('users/{id}/edit', 'userController@edit')->name('users.edit')
+		->middleware('permission:users.edit');
+
+//clientes
 	Route::post('clientes/store', 'clientesController@store')->name('clientes.store')
 		->middleware('permission:Clientes.create');
 	Route::get('clientes', 'clientesController@index')->name('clientes.index')
@@ -57,19 +71,18 @@ Route::middleware(['auth'])->group(function() {
 	Route::get('clientes/{id}/edit', 'clientesController@edit')->name('clientes.edit')
 		->middleware('permission:Clientes.edit');
 	
-
-	//Users
-	Route::post('users/store', 'usersController@store')->name('users.store')
-		->middleware('permission:users.create');
-	Route::get('users', 'userController@index')->name('users.index')
-		->middleware('permission:users.index');
-	Route::get('users/create', 'usersController@create')->name('users.create')
-		->middleware('permission:users.create');
-	Route::put('users/{id}', 'usersController@update')->name('users.update')
-		->middleware('permission:users.edit');
-	Route::get('users/{id}', 'usersController@show')->name('users.show')
-		->middleware('permission:users.show');
-	Route::get('users/{id}/edit', 'usersController@edit')->name('users.edit')
-		->middleware('permission:users.edit');
-
+	//empresas
+	Route::post('empresa/store', 'empresaController@store')->name('empresa.store')
+		->middleware('permission:Empresas.create');
+	Route::get('empresa', 'empresaController@index')->name('empresa.index')
+		->middleware('permission:Empresas.index');
+	Route::get('empresa/create', 'empresaController@create')->name('empresa.create')
+		->middleware('permission:Empresas.create');
+	Route::put('empresa/{id}', 'empresaController@update')->name('empresa.update')
+		->middleware('permission:Empresas.edit');
+	Route::get('empresa/{id}', 'empresaController@show')->name('empresa.show')
+		->middleware('permission:Empresas.show');
+	Route::get('empresa/{id}/edit', 'empresaController@edit')->name('empresa.edit')
+		->middleware('permission:Empresas.edit');
+	
 });

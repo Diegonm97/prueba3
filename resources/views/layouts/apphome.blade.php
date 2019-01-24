@@ -74,11 +74,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    @can('Empresas.index')
+                    <a href="{{route('empresa.index')}}">
                         <i class="pe-7s-portfolio"></i>
                         <p>Empresas</p>
                     </a>
                 </li>
+                    @endcan
                 <li>
                     <a href="">
                         <i class="pe-7s-map-marker"></i>
