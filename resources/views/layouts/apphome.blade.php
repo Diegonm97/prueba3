@@ -51,6 +51,14 @@
             </div>
 
             <ul class="nav">
+                
+                <li>
+                    <a href="">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Pagos</p>
+                    </a>
+                </li>
+
                 @can('Clientes.index')
                 <li>
                     <a href="{{route('clientes.index')}}">
@@ -60,6 +68,22 @@
                 </li>
                 @endcan
                 
+                @can('Empresas.index')
+                <li>
+                    <a href="{{route('empresa.index')}}">
+                        <i class="pe-7s-portfolio"></i>
+                        <p>Empresas</p>
+                    </a>
+                </li>
+                    @endcan
+
+                <li>
+                    <a href="">
+                        <i class="pe-7s-map-marker"></i>
+                        <p>Sedes</p>
+                    </a>
+                </li>
+                
                 <li>
                     <a href="">
                         <i class="pe-7s-note2"></i>
@@ -67,26 +91,8 @@
                     </a>
                 </li>
                 
-                <li>
-                    <a href="">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Pagos</p>
-                    </a>
-                </li>
-                <li>
-                    @can('Empresas.index')
-                    <a href="{{route('empresa.index')}}">
-                        <i class="pe-7s-portfolio"></i>
-                        <p>Empresas</p>
-                    </a>
-                </li>
-                    @endcan
-                <li>
-                    <a href="">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Sedes</p>
-                    </a>
-                </li>
+                               
+                
                 
         
 

@@ -23,7 +23,7 @@
                                 <p class="category">Aqui se muestran datos de los empresas registradas</p>
                             {!!Form::open(['route'=>'empresa.index', 'method'=>'GET','class'=>'navbar-form'])!!}
                                 <div class="form group">
-                                    {!!Form::number('idNIT',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+                                    {!!Form::text('idEmpresaContraEmp',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
                                     
                                     
                                 </div>

@@ -20,6 +20,8 @@ Route::resource('empresa','empresaController');
 Route::resource('clientes','clientesController');
 Route::resource('users','userController');
 
+Route::get("/createEmp/{id}","clientesController@createEmp");
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

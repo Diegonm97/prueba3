@@ -3,7 +3,7 @@
 
 
 <div class="col-sm-9" >
-	<h1 align="center">Crear Clientes</h1>
+	<h1 align="center">Crear Clientes de una Empresa</h1>
 </div>
 <div class="col-sm-3">
 	
@@ -16,7 +16,7 @@
 
  	{!! Form::open(['route' => 'clientes.store']) !!}
 
-        @include('clientes.fragment.form')
+        @include('clientes.fragment.formEmp')
 
     {!! Form::close() !!}
 

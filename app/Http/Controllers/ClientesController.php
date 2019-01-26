@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Clientes;
+use App\Empresa;
 use Illuminate\Http\Request;
 use App\Http\Requests\ClientesRequest;
 
@@ -29,6 +30,13 @@ class ClientesController extends Controller
     public function create()
     {
         return view('clientes.create');   
+    }
+
+    public function createEmp($id)
+    {
+        
+        $empresa = Empresa::findOrFail($id);
+        return view('clientes.createEmp', compact('empresa'));
     }
 
     /**
@@ -80,7 +88,7 @@ class ClientesController extends Controller
      */
     public function show($id)
     {
-        $cliente =Clientes::find($id);
+        $cliente = Clientes::find($id);
         return view('clientes.show', compact('cliente'));
     }
 

@@ -8,6 +8,7 @@
 <div class="col-sm-3">
 	
 	@include('empresas.fragment.error')
+	<h4><strong>(*) : Campo obligatorio</strong></h4>
 
 </div>
 

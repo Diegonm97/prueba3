@@ -16,7 +16,7 @@ class EmpresaController extends Controller
    public function index(Request $request)
     {   
         
-        $empresas = Empresa::search1($request->idNIT)->orderBy('idNIT')->paginate('8');
+        $empresas = Empresa::search1($request->idEmpresaContraEmp)->orderBy('idEmpresaContraEmp')->paginate('8');
 
         return view('empresas.index', compact('empresas'));
     }
@@ -30,7 +30,7 @@ class EmpresaController extends Controller
     {
         return view('empresas.create');   
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -39,7 +39,7 @@ class EmpresaController extends Controller
      */
     public function store(empresasRequest $request)
     {
-        $empresas = new empresas;
+        $empresas = new Empresa;
 
             $empresas->nuip            = $request->nuip;
             $empresas->nombreEmp       = $request->nombreEmp;
@@ -68,8 +68,9 @@ class EmpresaController extends Controller
 
             $empresas->save();
 
-            return redirect()->route('empresas.index')
-            ->with('info','El empresa fue creado');
+
+            
+            return redirect("/createEmp/$empresas->id");
     }
 
     /**
@@ -105,7 +106,7 @@ class EmpresaController extends Controller
      */
     public function update(empresasRequest $request, $id)
     {
-            $empresas = empresas::find($id);
+            $empresas = Empresa::find($id);
 
             $empresas->nuip            = $request->nuip;
             $empresas->nombreEmp       = $request->nombreEmp;
@@ -134,7 +135,7 @@ class EmpresaController extends Controller
 
             $empresas->save();
 
-            return redirect()->route('empresas.index')
+            return redirect()->route('empresa.index')
             ->with('info','El empresa fue actualizado');
     }
     public function destroy(Empresa $empresa)

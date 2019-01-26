@@ -125,27 +125,28 @@
 <div class="col-sm-12">
 <div class="col-sm-2">
 <div class="form-group row has-success">
-{!! Form::label('tipoCli','Tipo de cliente(*).')!!}
-{!!Form::select('tipoCli', ['Independiente' => 'Independiente', 'Asociado'=>'Asociado', 'Empresa'=>'Empresa'], null,['class'=>'form-control','title'=>'Elige tu tipoCli.', 'required'=>'required','name'=>'tipoCli'])!!}
+<label for="tipoCli">Tipo de cliente(*).</label>
+<select class="form-control" disabled="true" title="Elige tu tipoCli." required="required" name="tipoCli" id="tipoCli"><option value="Empresa">Empresa</option></select>
 </div>
 </div>
 <div class="col-sm-3">
 <div class="form-group row has-success">
-{!! Form::label('idEmpresaContraCli','Id de la empresa(*).')!!}
-{!!Form::text('idEmpresaContraCli',null,['class'=>'form-control','title'=>'Ingresa el id de la empresa del cliente.' , 'placeholder'=>'Ej: 12345678','id'=>'idEmpresaContraCli','required'=>'required' ])!!}
+<label for="idEmpresaContraCli">Id de la empresa(*).</label>
+<input class="form-control" title="Ingresa el id de la empresa del cliente." value="{{$empresa->idEmpresaContraEmp}}" id="idEmpresaContraCli" required="required" name="idEmpresaContraCli" type="text" disabled="true">
 </div>
 </div>
+
 <div class="col-sm-1">
 <div class="form-group row has-success">
-{!! Form::label('idNIT','Id del Nit(*).')!!}
-{!!Form::text('idNIT',null,['class'=>'form-control','title'=>'Ingresa el id del Nit.' , 'placeholder'=>'Ej: 1','id'=>'idNIT'])!!}
+<label for="idNIT">Id del Nit(*).</label>
+<input class="form-control" title="Ingresa el id del Nit." value="{{$empresa->idNIT}}" id="idNIT" name="idNIT" type="text" disabled="true">
 </div>
 </div>
 
 <div class="col-sm-6">
 <div class="form-group row has-success">
-{!! Form::label('nombreEmpCli','Nombre de la Empresa(*).')!!}
-{!!Form::text('nombreEmpCli',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'nombreEmpCli','required'=>'required' ])!!}
+<label for="nombreEmpCli">Nombre de la Empresa(*).</label>
+<input class="form-control" title="Ingresa el nombre de la empresa." value="{{$empresa->nombreEmpEmp}}"  id="nombreEmpCli" required="required" name="nombreEmpCli" type="text" disabled="true">
 </div>
 </div>
 </div>

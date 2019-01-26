@@ -1,16 +1,17 @@
 <div class="col-sm-12">
 <div class="col-sm-3">
 <div class="form-group row has-success">
-{!! Form::label('nuip','Numero de cedula(*).')!!}
-{!!Form::number('nuip',null,['class'=>'form-control','title'=>'Ingresa un numero de identificacion, no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'nuip','required'=>'required'])!!}
-</div>
-</div>
-<div class="col-sm-3">
-<div class="form-group row has-success">
 {!! Form::label('tipoIdEmp','Tipo ID(*).')!!}
 {!!Form::select('tipoIdEmp', ['Cc'=>'Cc', 'Pasaporte'=>'Pasaporte', 'Permiso de Trabajo'=>'Permiso de Trabajo'],null,['class'=>'form-control','title'=>'Ingresa el tipo de id del Empente.','id'=>'tipoIdEmp','required'=>'required' ])!!}
 </div>
 </div>
+<div class="col-sm-3">
+<div class="form-group row has-success">
+{!! Form::label('nuip','Numero de cedula(*).')!!}
+{!!Form::number('nuip',null,['class'=>'form-control','title'=>'Ingresa un numero de identificacion, no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'nuip','required'=>'required'])!!}
+</div>
+</div>
+
 <div class="col-sm-6">
 <div class="form-group row has-success">
 {!! Form::label('nombreEmp','Nombre del Empente(*).')!!}
