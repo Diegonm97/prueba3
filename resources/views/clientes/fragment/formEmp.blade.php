@@ -126,27 +126,27 @@
 <div class="col-sm-2">
 <div class="form-group row has-success">
 <label for="tipoCli">Tipo de cliente(*).</label>
-<select class="form-control" disabled="true" title="Elige tu tipoCli." required="required" name="tipoCli" id="tipoCli"><option value="Empresa">Empresa</option></select>
+<select class="form-control" title="Elige tu tipoCli." required="required" name="tipoCli" id="tipoCli" readonly="true"><option value="Empresa">Empresa</option></select>
 </div>
 </div>
 <div class="col-sm-3">
 <div class="form-group row has-success">
 <label for="idEmpresaContraCli">Id de la empresa(*).</label>
-<input class="form-control" title="Ingresa el id de la empresa del cliente." value="{{$empresa->idEmpresaContraEmp}}" id="idEmpresaContraCli" required="required" name="idEmpresaContraCli" type="text" disabled="true">
+<input class="form-control" title="Ingresa el id de la empresa del cliente." value="{{$empresa->idEmpresaContraEmp}}" id="idEmpresaContraCli" required="required" name="idEmpresaContraCli" type="text" readonly="true">
 </div>
 </div>
 
 <div class="col-sm-1">
 <div class="form-group row has-success">
 <label for="idNIT">Id del Nit(*).</label>
-<input class="form-control" title="Ingresa el id del Nit." value="{{$empresa->idNIT}}" id="idNIT" name="idNIT" type="text" disabled="true">
+<input class="form-control" title="Ingresa el id del Nit." value="{{$empresa->idNIT}}" id="idNIT" name="idNIT" type="text" readonly="true">
 </div>
 </div>
 
 <div class="col-sm-6">
 <div class="form-group row has-success">
 <label for="nombreEmpCli">Nombre de la Empresa(*).</label>
-<input class="form-control" title="Ingresa el nombre de la empresa." value="{{$empresa->nombreEmpEmp}}"  id="nombreEmpCli" required="required" name="nombreEmpCli" type="text" disabled="true">
+<input class="form-control" title="Ingresa el nombre de la empresa." value="{{$empresa->nombreEmpEmp}}"  id="nombreEmpCli" required="required" name="nombreEmpCli" type="text" readonly="true">
 </div>
 </div>
 </div>

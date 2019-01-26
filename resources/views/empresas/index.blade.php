@@ -57,8 +57,9 @@
                                                 <a href="{{route('empresa.show', $empresa->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 @endcan
                                                 @can('Empresas.edit')                                 
-                                            <a href="{{route('empresa.edit', $empresa->id)}}"><i class="fas fa-pen"></i></a>
+                                            <a href="{{route('empresa.edit', $empresa->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 @endcan
+                                                <a href="{{route('createEmp',$empresa->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             </th>
                                             
                                         </tr>

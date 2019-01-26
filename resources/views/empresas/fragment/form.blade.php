@@ -14,7 +14,7 @@
 
 <div class="col-sm-6">
 <div class="form-group row has-success">
-{!! Form::label('nombreEmp','Nombre del Empente(*).')!!}
+{!! Form::label('nombreEmp','Nombre del Cliente(*).')!!}
 {!!Form::text('nombreEmp',null,['class'=>'form-control','title'=>'Ingresa el nombre del Empente.' , 'placeholder'=>'Ej: Juan Perez','id'=>'nombreEmp','required'=>'required' ])!!}
 </div>
 </div>
@@ -60,60 +60,13 @@
 </div>
 </div>
 <div class="col-sm-12">
-<div class="col-sm-4">
-<div class="form-group row has-success">
-{!! Form::label('fechaNacEmp','Fecha de nacimiento(*).')!!}
-{!!Form::date('fechaNacEmp',null,['class'=>'form-control', 'title'=>'Elige un fecha de nacimiento', 'placeholder'=>'Ej: 23/10/1997','required'=>'required'])!!}
-</div>
-</div>
-<div class="col-sm-4">
-<div class="form-group row has-success">
-{!! Form::label('salarioEmp','Salario(*).')!!}
-{!!Form::number('salarioEmp',null,['class'=>'form-control','title'=>'Ingresa el salario de la Empresa.' , 'placeholder'=>'Ej: 680000','id'=>'salarioEmp','required'=>'required' ])!!}
-</div>
-</div>
-<div class="col-sm-4">
-<div class="form-group row has-success">
-{!! Form::label('rangoEmp','Rango(*).')!!}
-{!!Form::select('rangoEmp', ['1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5'] ,null,['class'=>'form-control','title'=>'Ingresa el rango del Empente.', 'id'=>'srangoEmp','required'=>'required' ])!!}
-</div>
-</div>
-</div>
-<div class="col-sm-12">
-<div class="col-sm-4">
-<div class="form-group row has-success">
-{!! Form::label('EPSEmp','Eps Empresa(*).')!!}
-{!!Form::number('EPSEmp',null,['class'=>'form-control','title'=>'Ingresa el valor de la EPS  de la Empresa.' , 'placeholder'=>'Ej: 13000','id'=>'EPSEmp','required'=>'required' ])!!}
-</div>
-</div>
-<div class="col-sm-4">
-<div class="form-group row has-success">
-{!! Form::label('ARLEmp','ARL del Empresa(*).')!!}
-{!!Form::number('ARLEmp',null,['class'=>'form-control','title'=>'Ingresa el valor de la ARL del Empresa.' , 'placeholder'=>'Ej: 15000','id'=>'ARLEmp'])!!}
-</div>
-</div>
 
 
-<div class="col-sm-4">
-<div class="form-group row has-success">
-{!! Form::label('AFPEmp','AFP del Empresa(*).')!!}
-{!!Form::number('AFPEmp',null,['class'=>'form-control','title'=>'Ingresa el valor de la AFP del Empresa.' , 'placeholder'=>'Ej: 14000','id'=>'AFPEmp'])!!}
+
 </div>
-</div>
-</div>
+
 <div class="col-sm-12">
-<div class="col-sm-4">
-<div class="form-group row has-success">
-{!! Form::label('cajaCompEmp','Caja de Compensacion(*).')!!}
-{!!Form::text('cajaCompEmp',null,['class'=>'form-control','title'=>'Ingresa el valor la caja de compensacion del Empresa.' , 'placeholder'=>'Ej: 12000','id'=>'cajaCompEmp'])!!}
-</div>
-</div>
-<div class="col-sm-4">
-<div class="form-group row has-success">
-{!! Form::label('beneficioEmp','Beneficio(*).')!!}
-{!!Form::text('beneficioEmp',null,['class'=>'form-control','title'=>'Ingresa un estado del Empresa.' , 'placeholder'=>'Ej: 0','id'=>'beneficioEmp'])!!}
-</div>
-</div>
+
 
 
 <div class="col-sm-4">
@@ -127,7 +80,7 @@
 <div class="col-sm-2">
 <div class="form-group row has-success">
 {!! Form::label('tipoEmp','Tipo de Empresa(*).')!!}
-{!!Form::select('tipoEmp', ['Independiente' => 'Independiente', 'Asociado'=>'Asociado', 'Empresa'=>'Empresa'], null,['class'=>'form-control','title'=>'Elige tu tipoEmp.', 'required'=>'required','name'=>'tipoEmp'])!!}
+{!!Form::select('tipoEmp', ['Empresa'=>'Empresa'], null,['class'=>'form-control','title'=>'Elige tu tipoEmp.', 'required'=>'required','name'=>'tipoEmp'])!!}
 </div>
 </div>
 <div class="col-sm-3">
@@ -151,12 +104,7 @@
 </div>
 </div>
 <div class="col-sm-12">
-<div class="col-sm-6">
-<div class="form-group row has-success">
-{!! Form::label('UPCadicEmp','UPC del Empresa(*).')!!}
-{!!Form::text('UPCadicEmp',null,['class'=>'form-control','title'=>'Ingresa el UPC de la Empresa.' , 'placeholder'=>'Ej: 1','id'=>'UPCadicEmp' ])!!}
-</div>
-</div>
+
 <div class="col-sm-6">
 <div class="form-group row has-success">
 {!! Form::label('estadoPago','Estado de pago(*).')!!}
