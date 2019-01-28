@@ -125,7 +125,7 @@
                                           
                                     </thead>
                                     <tbody>
-                                        @foreach ($clientes as $cliente)
+                                        @foreach ($detalles as $cliente)
                                         <tr>
                                             <th>{{$cliente->nuip}}</th>
                                             <th>{{$cliente->nombreCli}}</th>

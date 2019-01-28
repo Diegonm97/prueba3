@@ -74,9 +74,9 @@ class EmpresaController extends Controller
     public function show($id, Request $request)
     {
         $empresa = Empresa::find($id);
-        $clientes = Clientes::paginate('8');
+        $clientes = Clientes::all();
         
-        $detalles = Empresa::where($clientes->idEmpresaContraCli,'=',$empresa->idEmpresaContraEmp);
+        $detalles = Empresa::where($clientes->idEmpresaContraCli,'=',$empresa->idEmpresaContraEmp)->first();
         
         return view('empresas.show', compact('empresa', 'detalles'));
     }
