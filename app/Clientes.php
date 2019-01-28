@@ -10,13 +10,10 @@ class Clientes extends Model
 
      protected $fillable=['nuip','nombreCli','estadoCli','tipoIdCli','direccionCli','oficinaCli','ciudadCli','telefonoCli','emailCli','fechaNacCli','salarioCli','rangoCli','EPScli','ARLcli','AFPcli','cajaCompCli','beneficioCli','fechaIngCli','tipoCli','idEmpresaContraCli','idNIT','nombreEmpcli','UPCadicCli','estadoPago'];
 
-
-	public function scopeSearch1($query, $nuip) // Realiza la busqueda en base de datos de acuerdo al nuip
+// Realiza la busqueda en base de datos de acuerdo al nuip
+	public function scopeSearch1($query, $nuip) 
 	{
-
    	return $query->where('nuip','LIKE',"%$nuip%");
-
-
     }
 
 }

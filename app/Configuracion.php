@@ -8,5 +8,5 @@ class Configuracion extends Model
 {
     protected $table = 'configuracion';
 
-     protected $fillable=['infoEPS','infoARL','infoAFP','IVA','salarioMinimo'];
+     protected $fillable=['tarifaEPS','tarifaARLr1','tarifaARLr2','tarifaARLr3','tarifaARLr4','tarifaARLr5','tarifaAFP','cajaComp','CCFautoliquidacion','tarifaSena','tarifaICBF','tarifaEPS1607','tarifaCAJA1607','tarifaEPScolExterior','IVA','salarioMinimo','Administracion','DiasHabiles','IndepVencimiento'];
 }
