@@ -146,7 +146,7 @@
 <div class="col-sm-6">
 <div class="form-group row has-success">
 <label for="nombreEmpCli">Nombre de la Empresa(*).</label>
-<input class="form-control" title="Ingresa el nombre de la empresa." value="{{$empresa->nombreEmpEmp}}"  id="nombreEmpCli" required="required" name="nombreEmpCli" type="text" readonly="true">
+<input class="form-control" title="Ingresa el nombre de la empresa." value="{{$empresa->nombreEmp}}"  id="nombreEmpCli" required="required" name="nombreEmpCli" type="text" readonly="true">
 </div>
 </div>
 </div>

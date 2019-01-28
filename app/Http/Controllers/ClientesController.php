@@ -80,6 +80,44 @@ class ClientesController extends Controller
             ->with('info','El cliente fue creado');
     }
 
+
+
+    public function storeEmp(ClientesRequest $request, $id)
+    {
+        $clientes = new Clientes;
+
+            $clientes->nuip            = $request->nuip;    
+            $clientes->nombreCli       = $request->nombreCli;
+            $clientes->estadoCli       = $request->estadoCli;
+            $clientes->tipoIdCli       = $request->tipoIdCli;
+            $clientes->direccionCli    = $request->direccionCli;
+            $clientes->oficinaCli      = $request->oficinaCli;
+            $clientes->ciudadCli       = $request->ciudadCli;
+            $clientes->telefonoCli     = $request->telefonoCli;
+            $clientes->emailCli        = $request->emailCli;
+            $clientes->fechaNacCli     = $request->fechaNacCli;
+            $clientes->salarioCli      = $request->salarioCli;
+            $clientes->rangoCli        = $request->rangoCli;
+            $clientes->EPScli          = $request->EPScli;
+            $clientes->ARLcli          = $request->ARLcli;
+            $clientes->AFPcli          = $request->AFPcli;
+            $clientes->cajaCompCli     = $request->cajaCompCli;
+            $clientes->beneficioCli    = $request->beneficioCli;
+            $clientes->fechaIngCli     = $request->fechaIngCli;
+            $clientes->tipoCli         = $request->tipoCli;
+            $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
+            $clientes->idNIT           = $request->idNIT;
+            $clientes->nombreEmpCli    = $request->nombreEmpCli;
+            $clientes->UPCadicCli      = $request->UPCadicCli;
+            $clientes->estadoPago      = $request->estadoPago;
+
+            $clientes->save();
+
+            
+            return redirect()->route('createEmp', $id )
+            ->with('info','El cliente fue creado');
+    }
+
     /**
      * Display the specified resource.
      *

@@ -33,14 +33,10 @@ class EmpresasRequest extends FormRequest
             'ciudadEmp'  => 'required',
             'telefonoEmp'  => 'required',
             'emailEmp' => 'required',
-            'fechaNacEmp'  => 'required',
-            'salarioEmp'  => 'required',
-            'rangoEmp'  => 'required',
-            'EPSEmp'  => 'required',
             'fechaIngEmp'  => 'required',
             'idEmpresaContraEmp'  => 'required',
             'idNIT'  => 'required',
-            'nombreEmpEmp'  => 'required',
+            'nombreEmp'  => 'required',
             'estadoPago'  => 'required'
             //
         ];

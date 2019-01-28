@@ -16,7 +16,7 @@ class CreateEmpresasTable extends Migration
         Schema::create('empresas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nuip')->unique();
-            $table->string('nombreEmp');
+            $table->string('nombreCli');
             $table->string('estadoEmp');
             $table->string('tipoIdEmp');
             $table->string('direccionEmp');
@@ -24,20 +24,11 @@ class CreateEmpresasTable extends Migration
             $table->string('ciudadEmp');
             $table->string('telefonoEmp');
             $table->string('emailEmp');
-            $table->date('fechaNacEmp');
-            $table->double('salarioEmp');
-            $table->integer('rangoEmp');
-            $table->double('EPSEmp');
-            $table->double('ARLEmp')->nullable();
-            $table->double('AFPEmp')->nullable();
-            $table->double('cajaCompEmp')->nullable();
-            $table->double('beneficioEmp')->nullable();
             $table->date('fechaIngEmp');
             $table->string('tipoEmp');
-            $table->string('idEmpresaContraEmp');
+            $table->string('idEmpresaContraEmp')->unique();
             $table->string('idNIT');
-            $table->string('nombreEmpEmp');
-            $table->double('UPCadicEmp')->nullable();
+            $table->string('nombreEmp');
             $table->string('estadoPago');
             $table->timestamps();
         });

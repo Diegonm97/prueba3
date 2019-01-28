@@ -42,7 +42,7 @@ class EmpresaController extends Controller
         $empresas = new Empresa;
 
             $empresas->nuip            = $request->nuip;
-            $empresas->nombreEmp       = $request->nombreEmp;
+            $empresas->nombreCli       = $request->nombreCli;
             $empresas->estadoEmp       = $request->estadoEmp;
             $empresas->tipoIdEmp       = $request->tipoIdEmp;
             $empresas->direccionEmp    = $request->direccionEmp;
@@ -50,20 +50,11 @@ class EmpresaController extends Controller
             $empresas->ciudadEmp       = $request->ciudadEmp;
             $empresas->telefonoEmp     = $request->telefonoEmp;
             $empresas->emailEmp        = $request->emailEmp;
-            $empresas->fechaNacEmp     = $request->fechaNacEmp;
-            $empresas->salarioEmp      = $request->salarioEmp;
-            $empresas->rangoEmp        = $request->rangoEmp;
-            $empresas->EPSEmp          = $request->EPSEmp;
-            $empresas->ARLEmp          = $request->ARLEmp;
-            $empresas->AFPEmp          = $request->AFPEmp;
-            $empresas->cajaCompEmp     = $request->cajaCompEmp;
-            $empresas->beneficioEmp    = $request->beneficioEmp;
             $empresas->fechaIngEmp     = $request->fechaIngEmp;
-            $empresas->tipoEmp     = $request->tipoEmp;
+            $empresas->tipoEmp         = $request->tipoEmp;
             $empresas->idEmpresaContraEmp = $request->idEmpresaContraEmp;
             $empresas->idNIT           = $request->idNIT;
-            $empresas->nombreEmpEmp    = $request->nombreEmpEmp;
-            $empresas->UPCadicEmp    = $request->UPCadicEmp;
+            $empresas->nombreEmp       = $request->nombreEmp;
             $empresas->estadoPago      = $request->estadoPago;
 
             $empresas->save();
@@ -109,7 +100,7 @@ class EmpresaController extends Controller
             $empresas = Empresa::find($id);
 
             $empresas->nuip            = $request->nuip;
-            $empresas->nombreEmp       = $request->nombreEmp;
+            $empresas->nombreCli       = $request->nombreCli;
             $empresas->estadoEmp       = $request->estadoEmp;
             $empresas->tipoIdEmp       = $request->tipoIdEmp;
             $empresas->direccionEmp    = $request->direccionEmp;
@@ -117,20 +108,11 @@ class EmpresaController extends Controller
             $empresas->ciudadEmp       = $request->ciudadEmp;
             $empresas->telefonoEmp     = $request->telefonoEmp;
             $empresas->emailEmp        = $request->emailEmp;
-            $empresas->fechaNacEmp     = $request->fechaNacEmp;
-            $empresas->salarioEmp      = $request->salarioEmp;
-            $empresas->rangoEmp        = $request->rangoEmp;
-            $empresas->EPSEmp          = $request->EPSEmp;
-            $empresas->ARLEmp          = $request->ARLEmp;
-            $empresas->AFPEmp          = $request->AFPEmp;
-            $empresas->cajaCompEmp     = $request->cajaCompEmp;
-            $empresas->beneficioEmp    = $request->beneficioEmp;
             $empresas->fechaIngEmp     = $request->fechaIngEmp;
-            $empresas->tipoEmp     = $request->tipoEmp;
+            $empresas->tipoEmp         = $request->tipoEmp;
             $empresas->idEmpresaContraEmp = $request->idEmpresaContraEmp;
             $empresas->idNIT           = $request->idNIT;
-            $empresas->nombreEmpEmp    = $request->nombreEmpEmp;
-            $empresas->UPCadicEmp    = $request->UPCadicEmp;
+            $empresas->nombreEmp       = $request->nombreEmp;
             $empresas->estadoPago      = $request->estadoPago;
 
             $empresas->save();

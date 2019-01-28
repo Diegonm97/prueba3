@@ -22,6 +22,12 @@ Route::resource('users','userController');
 
 Route::get("/createEmp/{id}","clientesController@createEmp")->name('createEmp');
 
+Route::post("/clientes/storeEmp","clientesController@storeEmp")->name('storeEmp');
+
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -29,7 +29,7 @@
         
             <tr>
             <td><strong>Nombre: </strong></td>
-            <td>  {{$empresa->nombreEmp}}  </td>
+            <td>  {{$empresa->nombreCli}}  </td>
             </tr>
 
             <tr>
@@ -68,46 +68,6 @@
             </tr>
 
             <tr>
-            <td><strong>Fecha de Nacimiento: </strong></td>
-            <td>  {{$empresa->fechaNacEmp}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Salario: </strong></td>
-            <td>  {{$empresa->salarioEmp}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Rango: </strong></td>
-            <td>  {{$empresa->rangoEmp}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>EPS: </strong></td>
-            <td>  {{$empresa->EPSEmp}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>ARL: </strong></td>
-            <td>  {{$empresa->ARLEmp}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>AFP: </strong></td>
-            <td>  {{$empresa->AFPEmp}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Caja de Compensacion: </strong></td>
-            <td>  {{$empresa->cajaCompEmp}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Beneficio: </strong></td>
-            <td>  {{$empresa->beneficioEmp}}  </td>
-            </tr>
-
-            <tr>
             <td><strong>Fecha de Ingreso: </strong></td>
             <td>  {{$empresa->fechaIngEmp}}  </td>
             </tr>
@@ -124,12 +84,7 @@
 
             <tr>
             <td><strong>Nombre Empresa: </strong></td>
-            <td>  {{$empresa->nombreEmpEmp}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>UPC Adicional: </strong></td>
-            <td>  {{$empresa->UPCadicEmp}}  </td>
+            <td>  {{$empresa->nombreEmp}}  </td>
             </tr>
 
             <tr>

@@ -14,8 +14,8 @@
 
 <div class="col-sm-6">
 <div class="form-group row has-success">
-{!! Form::label('nombreEmp','Nombre del Cliente(*).')!!}
-{!!Form::text('nombreEmp',null,['class'=>'form-control','title'=>'Ingresa el nombre del Empente.' , 'placeholder'=>'Ej: Juan Perez','id'=>'nombreEmp','required'=>'required' ])!!}
+{!! Form::label('nombreCli','Nombre del Cliente(*).')!!}
+{!!Form::text('nombreCli',null,['class'=>'form-control','title'=>'Ingresa el nombre del Empente.' , 'placeholder'=>'Ej: Juan Perez','id'=>'nombreCli','required'=>'required' ])!!}
 </div>
 </div>
 </div>
@@ -98,8 +98,8 @@
 
 <div class="col-sm-6">
 <div class="form-group row has-success">
-{!! Form::label('nombreEmpEmp','Nombre de la Empresa(*).')!!}
-{!!Form::text('nombreEmpEmp',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'nombreEmpEmp','required'=>'required' ])!!}
+{!! Form::label('nombreEmp','Nombre de la Empresa(*).')!!}
+{!!Form::text('nombreEmp',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'nombreEmp','required'=>'required' ])!!}
 </div>
 </div>
 </div>
