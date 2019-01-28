@@ -24,7 +24,7 @@ class ConfiguracionController extends Controller
      */
     public function create()
     {
-        //
+        return view('configuracion.create');
     }
 
     /**
@@ -33,9 +33,11 @@ class ConfiguracionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(configuracionRequest $request)
     {
-        //
+        $configuracion = new configuracion
+
+            $configuracion->tarifa
     }
 
     /**
