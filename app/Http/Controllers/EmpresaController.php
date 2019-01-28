@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Clientes;
 use App\Empresa;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresasRequest;
@@ -16,7 +17,7 @@ class EmpresaController extends Controller
    public function index(Request $request)
     {   
         
-        $empresas = Empresa::search1($request->idEmpresaContraEmp)->orderBy('idEmpresaContraEmp')->paginate('8');
+        $empresas = Empresa::search1($request->idEmpresaContraEmp)->orderByDesc('id')->paginate('8');
 
         return view('empresas.index', compact('empresas'));
     }
@@ -70,10 +71,14 @@ class EmpresaController extends Controller
      * @param  \App\empresas  $empresas
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
         $empresa = Empresa::find($id);
-        return view('empresas.show', compact('empresa'));
+        $clientes = Clientes::paginate('8');
+        
+        $detalles = Empresa::where($clientes->idEmpresaContraCli,'=',$empresa->idEmpresaContraEmp);
+        
+        return view('empresas.show', compact('empresa', 'detalles'));
     }
 
     /**
