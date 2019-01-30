@@ -29,7 +29,8 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        return view('clientes.create');   
+        $porcentaje = 10;
+        return view('clientes.create',compact('porcentaje'));  
     }
 
     public function createEmp($id)

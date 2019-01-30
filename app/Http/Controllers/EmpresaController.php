@@ -76,7 +76,7 @@ class EmpresaController extends Controller
         $empresa = Empresa::find($id);
 
         
-        $clientes = Clientes::where('idEmpresaContraCli','=', $empresa->idEmpresaContraEmp)->get();
+        //$clientes = Clientes::where('idEmpresaContraCli','=', $empresa->idEmpresaContraEmp)->get();
         
         return view('empresas.show', compact('empresa', 'clientes'));
     }

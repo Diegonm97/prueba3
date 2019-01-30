@@ -18,4 +18,16 @@ class Empresa extends Model
 
 
     }
+
+     public function getClientes() // Realiza la busqueda en base de datos de acuerdo al idNIT
+	{
+
+
+   	return Clientes::where('idEmpresaContraCli','=', $this->idEmpresaContraEmp)->get();
+
+
+    }
+
+
+    
 }

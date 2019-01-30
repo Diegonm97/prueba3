@@ -35,9 +35,33 @@ class ConfiguracionController extends Controller
      */
     public function store(configuracionRequest $request)
     {
-        $configuracion = new configuracion
+        $configuracion = new configuracion;
 
-            $configuracion->tarifa
+            $configuracion->tarifaEPS  = $request->tarifaEPS;
+            $configuracion->tarifaARLr1  = $request->tarifaARLr1;
+            $configuracion->tarifaARLr2  = $request->tarifaARLr2;
+            $configuracion->tarifaARLr3  = $request->tarifaARLr3;
+            $configuracion->tarifaARLr4  = $request->tarifaARLr4;
+            $configuracion->tarifaARLr5  = $request->tarifaARLr5;
+            $configuracion->tarifaAFP    = $request->tarifaAFP;
+            $configuracion->cajaComp     = $request->cajaComp;
+            $configuracion->CCFautoliquidacion =$request->CCFautoliquidacion
+            $configuracion->tarifaSena  = $request->tarifaSena;
+            $configuracion->tarifaICBF  = $request->tarifaICBF;
+            $configuracion->tarifaEPS1607    = $request->tarifaEPS1607; 
+            $configuracion->tarifaCAJA1607   = $request->tarifaCAJA1607;
+            $configuracion->tarifaEPScolExt  = $request->tarifaEPScolExt;
+            $configuracion->IVA              =$request->IVA;
+            $configuracion->salarioMinimo    =$request->salarioMinimo;
+            $configuracion->Administracion   =$request->Administracion;
+            $configuracion->DiasHabiles      =$request->DiasHabiles;
+            $configuracion->IndepVencimiento =$request->IndepVencimiento;
+            
+            $configuracion->save();
+
+            return redirect()->route('configuracion.index');
+            
+            
     }
 
     /**
@@ -46,8 +70,10 @@ class ConfiguracionController extends Controller
      * @param  \App\Configuracion  $configuracion
      * @return \Illuminate\Http\Response
      */
-    public function show(Configuracion $configuracion)
+    public function show($id)
     {
+        $configuracion = Configuracion::find($id);
+        return view('configuracion.show', compact('configuracion'));
         //
     }
 
@@ -57,8 +83,10 @@ class ConfiguracionController extends Controller
      * @param  \App\Configuracion  $configuracion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Configuracion $configuracion)
+    public function edit($id)
     {
+        $configuracion =Configuracion::find($id);
+        return view('configuracion.edit', compact('configuracion'));
         //
     }
 
@@ -69,8 +97,33 @@ class ConfiguracionController extends Controller
      * @param  \App\Configuracion  $configuracion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Configuracion $configuracion)
+    public function update(ConfiguracionRequest $request, $id)
     {
+        $configuracion = new configuracion::find($id);
+
+            $configuracion->tarifaEPS  = $request->tarifaEPS;
+            $configuracion->tarifaARLr1  = $request->tarifaARLr1;
+            $configuracion->tarifaARLr2  = $request->tarifaARLr2;
+            $configuracion->tarifaARLr3  = $request->tarifaARLr3;
+            $configuracion->tarifaARLr4  = $request->tarifaARLr4;
+            $configuracion->tarifaARLr5  = $request->tarifaARLr5;
+            $configuracion->tarifaAFP    = $request->tarifaAFP;
+            $configuracion->cajaComp     = $request->cajaComp;
+            $configuracion->CCFautoliquidacion =$request->CCFautoliquidacion
+            $configuracion->tarifaSena  = $request->tarifaSena;
+            $configuracion->tarifaICBF  = $request->tarifaICBF;
+            $configuracion->tarifaEPS1607    = $request->tarifaEPS1607; 
+            $configuracion->tarifaCAJA1607   = $request->tarifaCAJA1607;
+            $configuracion->tarifaEPScolExt  = $request->tarifaEPScolExt;
+            $configuracion->IVA              =$request->IVA;
+            $configuracion->salarioMinimo    =$request->salarioMinimo;
+            $configuracion->Administracion   =$request->Administracion;
+            $configuracion->DiasHabiles      =$request->DiasHabiles;
+            $configuracion->IndepVencimiento =$request->IndepVencimiento;
+            
+            $configuracion->save();
+
+            return redirect()->route('configuracion.index');
         //
     }
 

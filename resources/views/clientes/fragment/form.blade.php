@@ -67,15 +67,20 @@
 </div>
 <div class="col-sm-4">
 <div class="form-group row has-success">
-{!! Form::label('salarioCli','Salario(*).')!!}
-{!!Form::number('salarioCli',null,['class'=>'form-control','title'=>'Ingresa el salario del cliente.' , 'placeholder'=>'Ej: 680000','id'=>'salarioCli','required'=>'required' ])!!}
+<label for="salarioCli">Salario(*).</label>
+<input class="form-control" title="Ingresa el salario del cliente." placeholder="Ej: 680000" id="salarioCli" required="required" name="salarioCli" type="number" onkeyup="calcular()">
+
 </div>
 </div>
 <div class="col-sm-4">
 <div class="form-group row has-success">
-{!! Form::label('rangoCli','Rango(*).')!!}
-{!!Form::select('rangoCli', ['1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5'] ,null,['class'=>'form-control','title'=>'Ingresa el rango del cliente.', 'id'=>'srangoCli','required'=>'required' ])!!}
-</div>
+<label for="rangoCli">Rango(*).</label>
+<select onchange="calcular()" class="form-control" title="Ingresa el rango del cliente." id="rangoCli" required="required" name="rangoCli">
+	@for ($i = 1; $i <= 5; $i++)
+	<option value="{{$i}}">{{$i}}</option>
+@endfor
+</select>
+
 </div>
 </div>
 <div class="col-sm-12">
@@ -170,5 +175,22 @@
 </div> 
 
 <script>
+function calcular(){
+	var porcentaje = "{{$porcentaje}}";
+	var array = [10, 20, 30, 40, 50];
+	var rango = $("#rangoCli").val();
+	var salario = $("#salarioCli").val();
+	salario = (salario == "") ? 0 : salario;
+	eps(salario,porcentaje);
+	arl(salario,array[rango-1]);
+	//console.log(salario);
+}
 
+
+function arl(salario,porcentaje){
+	$("#ARLcli").val(salario*(porcentaje/100));
+}
+function eps(salario,porcentaje){
+	$("#EPScli").val(salario*(porcentaje/100));
+}
 </script>
