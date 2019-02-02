@@ -53,7 +53,7 @@
             <ul class="nav">
                 
                 <li>
-                    <a href="">
+                    <a href="{{route('pago.index')}}">
                         <i class="pe-7s-news-paper"></i>
                         <p>Pagos</p>
                     </a>

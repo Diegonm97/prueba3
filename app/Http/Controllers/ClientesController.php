@@ -139,8 +139,9 @@ class ClientesController extends Controller
      */
     public function edit($id)
     {
+        $porcentaje = 10;
         $cliente =Clientes::find($id);
-        return view('clientes.edit', compact('cliente'));
+        return view('clientes.edit', compact('cliente','porcentaje'));
     }
 
     /**
