@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 
+Route::resource('configuracion','configuracionController');
 Route::resource('empresa','empresaController');
 Route::resource('clientes','clientesController');
 Route::resource('users','userController');
@@ -92,5 +93,14 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:Empresas.show');
 	Route::get('empresa/{id}/edit', 'empresaController@edit')->name('empresa.edit')
 		->middleware('permission:Empresas.edit');
+
+	//configuracion
+	
+	Route::get('configuracion', 'configuracionController@index')->name('configuracion.index')
+		->middleware('permission:Configuracion.index');
+	Route::put('configuracion/{id}', 'configuracionController@update')->name('configuracion.update')
+		->middleware('permission:Configuracion.edit');
+	Route::get('configuracion/{id}/edit', 'configuracionController@edit')->name('configuracion.edit')
+		->middleware('permission:Configuracion.edit');
 	
 });

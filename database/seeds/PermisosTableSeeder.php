@@ -87,6 +87,21 @@ class PermisosTableSeeder extends Seeder
             'slug'          => 'Users.edit',
             'description'   => 'Podría editar cualquier dato de un usuario del sistema',
         ]);
+
+//configuracion
+
+         Permission::create([
+            'name'          => 'Edición de configuracion',
+            'slug'          => 'Configuracion.edit',
+            'description'   => 'Podría editar cualquier dato que se encuentre en configuracion',
+        ]);
+
+          Permission::create([
+            'name'          => 'ver configuracion',
+            'slug'          => 'Configuracion.index',
+            'description'   => 'ver la lista de configuracion',
+        ]);
+
         
     }
 }

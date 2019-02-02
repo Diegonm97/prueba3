@@ -83,14 +83,14 @@
                         <p>Sedes</p>
                     </a>
                 </li>
-                
+                @can('Configuaracion.index')
                 <li>
-                    <a href="">
+                    <a href="{{route('configuracion.index')}}">
                         <i class="pe-7s-note2"></i>
                         <p>Configuracion</p>
                     </a>
                 </li>
-                
+                   @endcan
                                
                 
                 

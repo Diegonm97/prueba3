@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Configuracion;
 use Illuminate\Http\Request;
+use App\Http\Requests\ConfiguracionRequest;
 
 class ConfiguracionController extends Controller
 {
@@ -14,7 +15,12 @@ class ConfiguracionController extends Controller
      */
     public function index()
     {
-        //
+
+        $configuracion = Configuracion::find('1');
+        
+
+        return view('configuracion.index', compact('configuracion'));
+        
     }
 
     /**
@@ -45,7 +51,7 @@ class ConfiguracionController extends Controller
             $configuracion->tarifaARLr5  = $request->tarifaARLr5;
             $configuracion->tarifaAFP    = $request->tarifaAFP;
             $configuracion->cajaComp     = $request->cajaComp;
-            $configuracion->CCFautoliquidacion =$request->CCFautoliquidacion
+            $configuracion->CCFautoliquidacion =$request->CCFautoliquidacion;
             $configuracion->tarifaSena  = $request->tarifaSena;
             $configuracion->tarifaICBF  = $request->tarifaICBF;
             $configuracion->tarifaEPS1607    = $request->tarifaEPS1607; 
@@ -54,6 +60,9 @@ class ConfiguracionController extends Controller
             $configuracion->IVA              =$request->IVA;
             $configuracion->salarioMinimo    =$request->salarioMinimo;
             $configuracion->Administracion   =$request->Administracion;
+            $configuracion->AdminIndepen     =$request->AdminIndepen;
+            $configuracion->Inscripcion   =$request->Inscripcion;
+            $configuracion->Activacion   =$request->Activacion;
             $configuracion->DiasHabiles      =$request->DiasHabiles;
             $configuracion->IndepVencimiento =$request->IndepVencimiento;
             
@@ -99,7 +108,7 @@ class ConfiguracionController extends Controller
      */
     public function update(ConfiguracionRequest $request, $id)
     {
-        $configuracion = new configuracion::find($id);
+        $configuracion = Configuracion::find($id);
 
             $configuracion->tarifaEPS  = $request->tarifaEPS;
             $configuracion->tarifaARLr1  = $request->tarifaARLr1;
@@ -109,7 +118,7 @@ class ConfiguracionController extends Controller
             $configuracion->tarifaARLr5  = $request->tarifaARLr5;
             $configuracion->tarifaAFP    = $request->tarifaAFP;
             $configuracion->cajaComp     = $request->cajaComp;
-            $configuracion->CCFautoliquidacion =$request->CCFautoliquidacion
+            $configuracion->CCFautoliquidacion = $request->CCFautoliquidacion;
             $configuracion->tarifaSena  = $request->tarifaSena;
             $configuracion->tarifaICBF  = $request->tarifaICBF;
             $configuracion->tarifaEPS1607    = $request->tarifaEPS1607; 
@@ -118,8 +127,12 @@ class ConfiguracionController extends Controller
             $configuracion->IVA              =$request->IVA;
             $configuracion->salarioMinimo    =$request->salarioMinimo;
             $configuracion->Administracion   =$request->Administracion;
+            $configuracion->AdminIndepen     =$request->AdminIndepen;
+            $configuracion->Inscripcion      =$request->Inscripcion;
+            $configuracion->Activacion       =$request->Activacion;
             $configuracion->DiasHabiles      =$request->DiasHabiles;
             $configuracion->IndepVencimiento =$request->IndepVencimiento;
+            $configuracion->Intereses        =$request->Intereses;
             
             $configuracion->save();
 

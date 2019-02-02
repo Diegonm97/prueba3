@@ -42,8 +42,12 @@ class ConfiguracionRequest extends FormRequest
             'IVA'   => 'required',
             'salarioMinimo' => 'required',
             'Administracion'=> 'required',
+            'AdminIndepen'  => 'required',
+            'Inscripcion'   => 'required',
+            'Activacion'    => 'required',
             'DiasHabiles'   => 'required',
             'IndepVencimiento'=> 'required',
+            'Intereses'     => 'required',
 
 
 
