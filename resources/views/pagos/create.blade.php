@@ -9,16 +9,16 @@
 </div>
 <div class="col-sm-3">
 	
-	@include('empresas.fragment.error')
+	@include('pagos.fragment.error')
 	<h4><strong>(*) : Campo obligatorio</strong></h4>
 
 </div>
 
 <div class="col-sm-12">
 
- 	{!! Form::open(['route' => 'empresa.store']) !!}
+ 	{!! Form::open(['route' => 'pago.store']) !!}
 
-        @include('empresas.fragment.form')
+        @include('pagos.fragment.form')
 
     {!! Form::close() !!}
 

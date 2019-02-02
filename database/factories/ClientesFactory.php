@@ -11,7 +11,7 @@ $factory->define(App\Clientes::class, function (Faker $faker) {
 			'direccionCli'=> $faker->text(20),
 			'oficinaCli'=> $faker->text(20),
 			'ciudadCli'=> $faker->text(20),
-			'telefonoCli'=> $faker->text(20),
+			'telefonoCli'=> rand(100000,150000),
 			'emailCli'=> $faker->text(20),
 			'fechaNacCli'=> $faker->date($format = 'Y-m-d', $max = 'now'),
 			'salarioCli'=> rand(100000,2000000),

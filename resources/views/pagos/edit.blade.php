@@ -10,16 +10,16 @@
 </div>
 <div class="col-sm-3">
 	
-	@include('empresas.fragment.error')
+	@include('pagos.fragment.error')
 
 
 
 </div>
 
  <p>				
- 	{!! Form::model($empresa, ['route' => ['empresa.update', $empresa->id], 'method' => 'PUT']) !!}
+ 	{!! Form::model($pago, ['route' => ['pago.update', $pago->id], 'method' => 'PUT']) !!}
 
-        @include('empresas.fragment.form')
+        @include('pagos.fragment.form')
 
     {!! Form::close() !!}
 </p>
