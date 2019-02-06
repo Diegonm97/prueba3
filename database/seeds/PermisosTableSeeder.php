@@ -103,5 +103,7 @@ class PermisosTableSeeder extends Seeder
         ]);
 
         
+
+        
     }
 }

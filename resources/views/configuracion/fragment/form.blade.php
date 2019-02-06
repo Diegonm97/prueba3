@@ -52,6 +52,7 @@
 			{!!Form::text('cajaComp',null,['class'=>'form-control','title'=>'Tarfifa caja Compensacion' , 'placeholder'=>'Ej: 12.5%','id'=>'cajaComp','required'=>'required' ])!!}
 		</div>
 	</div>
+	
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('tarifaSena','Tarifa Sena(*).')!!}
@@ -119,6 +120,7 @@
 		</div>
 	</div>
 </div>
+
 <div class="form-group text-center">
 {!!Form::button('<i class="fa fa-floppy-o" aria-hidden="true"></i>', array('type' => 'submit', 'class'=>'btn btn-primary btn-lg btn-block'))!!}
 </div> 

@@ -114,8 +114,7 @@ class ClientesController extends Controller
             $clientes->save();
 
             
-            return redirect()->route('createEmp', $id )
-            ->with('info','El cliente fue creado, Puede seguir añadiendo');
+            return redirect()->route('createEmp', $id )->with('info','El cliente fue creado, Puede seguir añadiendo');
     }
 
     /**
@@ -173,17 +172,16 @@ class ClientesController extends Controller
             $clientes->cajaCompCli     = $request->cajaCompCli;
             $clientes->beneficioCli    = $request->beneficioCli;
             $clientes->fechaIngCli     = $request->fechaIngCli;
-            $clientes->tipoCli     = $request->tipoCli;
+            $clientes->tipoCli         = $request->tipoCli;
             $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
             $clientes->idNIT           = $request->idNIT;
             $clientes->nombreEmpCli    = $request->nombreEmpCli;
-            $clientes->UPCadicCli    = $request->UPCadicCli;
+            $clientes->UPCadicCli      = $request->UPCadicCli;
             $clientes->estadoPago      = $request->estadoPago;
 
             $clientes->save();
 
-            return redirect()->route('clientes.index')
-            ->with('info','El cliente fue actualizado');
+            return redirect()->route('clientes.index')->with('info','El cliente fue actualizado');
     }
 
     /**

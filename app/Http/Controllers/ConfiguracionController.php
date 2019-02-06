@@ -107,31 +107,31 @@ class ConfiguracionController extends Controller
      */
     public function update(ConfiguracionRequest $request, $id)
     {
-        $configuracion = Configuracion::find($id);
+            $configuracion = Configuracion::find($id);
 
-            $configuracion->tarifaEPS  = $request->tarifaEPS;
-            $configuracion->tarifaARLr1  = $request->tarifaARLr1;
-            $configuracion->tarifaARLr2  = $request->tarifaARLr2;
-            $configuracion->tarifaARLr3  = $request->tarifaARLr3;
-            $configuracion->tarifaARLr4  = $request->tarifaARLr4;
-            $configuracion->tarifaARLr5  = $request->tarifaARLr5;
-            $configuracion->tarifaAFP    = $request->tarifaAFP;
-            $configuracion->cajaComp     = $request->cajaComp;
-            $configuracion->CCFautoliquidacion = $request->CCFautoliquidacion;
-            $configuracion->tarifaSena  = $request->tarifaSena;
-            $configuracion->tarifaICBF  = $request->tarifaICBF;
-            $configuracion->tarifaEPS1607    = $request->tarifaEPS1607; 
-            $configuracion->tarifaCAJA1607   = $request->tarifaCAJA1607;
-            $configuracion->tarifaEPScolExt  = $request->tarifaEPScolExt;
-            $configuracion->IVA              =$request->IVA;
-            $configuracion->salarioMinimo    =$request->salarioMinimo;
-            $configuracion->Administracion   =$request->Administracion;
-            $configuracion->AdminIndepen     =$request->AdminIndepen;
-            $configuracion->Inscripcion      =$request->Inscripcion;
-            $configuracion->Activacion       =$request->Activacion;
-            $configuracion->DiasHabiles      =$request->DiasHabiles;
-            $configuracion->IndepVencimiento =$request->IndepVencimiento;
-            $configuracion->Intereses        =$request->Intereses;
+            $configuracion->tarifaEPS             = $request->tarifaEPS;
+            $configuracion->tarifaARLr1           = $request->tarifaARLr1;
+            $configuracion->tarifaARLr2           = $request->tarifaARLr2;
+            $configuracion->tarifaARLr3           = $request->tarifaARLr3;
+            $configuracion->tarifaARLr4           = $request->tarifaARLr4;
+            $configuracion->tarifaARLr5           = $request->tarifaARLr5;
+            $configuracion->tarifaAFP             = $request->tarifaAFP;
+            $configuracion->cajaComp              = $request->cajaComp;
+            $configuracion->CCFautoliquidacion    = $request->CCFautoliquidacion;
+            $configuracion->tarifaSena            = $request->tarifaSena;
+            $configuracion->tarifaICBF            = $request->tarifaICBF;
+            $configuracion->tarifaEPS1607         = $request->tarifaEPS1607; 
+            $configuracion->tarifaCAJA1607        = $request->tarifaCAJA1607;
+            $configuracion->tarifaEPScolExt       = $request->tarifaEPScolExt;
+            $configuracion->IVA                   = $request->IVA;
+            $configuracion->salarioMinimo         = $request->salarioMinimo;
+            $configuracion->Administracion        = $request->Administracion;
+            $configuracion->AdminIndepen          = $request->AdminIndepen;
+            $configuracion->Inscripcion           = $request->Inscripcion;
+            $configuracion->Activacion            = $request->Activacion;
+            $configuracion->DiasHabiles           = $request->DiasHabiles;
+            $configuracion->IndepVencimiento      = $request->IndepVencimiento;
+            $configuracion->Intereses             = $request->Intereses;
             
             $configuracion->save();
 

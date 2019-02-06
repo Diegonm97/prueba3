@@ -13,7 +13,7 @@ class ConfiguracionRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -33,25 +33,19 @@ class ConfiguracionRequest extends FormRequest
             'tarifaARLr5'  => 'required',
             'tarifaAFP'    => 'required',
             'cajaComp'     => 'required',
-            'CCFautoliquidacion'=> 'required',
             'tarifaSena'   => 'required',
             'tarifaICBF'   => 'required',
-            'tarifaEPS1607'=> 'required',
-            'tarifaCAJA1607'=> 'required',
-            'tarifaEPScolExt'=> 'required',
-            'IVA'   => 'required',
+            'tarifaEPS1607' => 'required',
+            'tarifaCAJA1607' => 'required',
+            'IVA'           => 'required',
             'salarioMinimo' => 'required',
-            'Administracion'=> 'required',
-            'AdminIndepen'  => 'required',
-            'Inscripcion'   => 'required',
-            'Activacion'    => 'required',
             'DiasHabiles'   => 'required',
-            'IndepVencimiento'=> 'required',
+            'IndepVencimiento' => 'required',
             'Intereses'     => 'required',
 
 
 
-            //
+            
         ];
     }
 }
