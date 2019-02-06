@@ -141,10 +141,7 @@ class ClientesController extends Controller
     {
         $porcentaje = 10;
         $cliente =Clientes::find($id);
-<<<<<<< HEAD
-        $porcentaje = 10;
-=======
->>>>>>> 386ab12dcc01ede218a7af9afa3a2841f19219a1
+
         return view('clientes.edit', compact('cliente','porcentaje'));
     }
 
