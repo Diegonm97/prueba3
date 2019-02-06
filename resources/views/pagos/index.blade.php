@@ -23,7 +23,7 @@
                                 <p class="category">Aqui se muestran datos de los pagos registradas</p>
                             {!!Form::open(['route'=>'pago.index', 'method'=>'GET','class'=>'navbar-form'])!!}
                                 <div class="form group">
-                                    {!!Form::text('idpagoContraEmp',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+                                    {!!Form::text('nuipPago',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
                                     
                                     
                                 </div>

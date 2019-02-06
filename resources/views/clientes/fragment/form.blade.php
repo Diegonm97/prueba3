@@ -53,8 +53,8 @@
 </div>
 <div class="col-sm-4">
 <div class="form-group row has-success">
-{!! Form::label('emailCli','Correo Electronico.')!!}
-{!!Form::text('emailCli',null,['class'=>'form-control','title'=>'Ingresa el correo electronico del cliente.' , 'placeholder'=>'Ej: ejemplo@ejemplo.com ','id'=>'emailCli','required'=>'required' ])!!}
+<label for="emailCli">Correo Electronico.</label>
+<input class="form-control" title="Ingresa el correo electronico del cliente." placeholder="Ej: ejemplo@ejemplo.com " id="emailCli" required="required" name="emailCli" type="text" value="{{$cliente->emailCli}}">
 </div>
 </div>
 </div>
@@ -67,17 +67,28 @@
 </div>
 <div class="col-sm-4">
 <div class="form-group row has-success">
-<label for="salarioCli">Salario(*).</label>
-<input class="form-control" title="Ingresa el salario del cliente." placeholder="Ej: 680000" id="salarioCli" required="required" name="salarioCli" type="number" onkeyup="calcular()">
+
+
+{!! Form::label('salarioCli','Salario(*).')!!}
+{!!Form::number('salarioCli',null,['class'=>'form-control','title'=>'Ingresa el salario del cliente.' , 'placeholder'=>'Ej: 680000','id'=>'salarioCli','required'=>'required', 'onkeyup'=>'calcular()' ])!!}
+
+
 
 </div>
 </div>
+
+
+
+
+
 <div class="col-sm-4">
 <div class="form-group row has-success">
 <label for="rangoCli">Rango(*).</label>
 <select onchange="calcular()" class="form-control" title="Ingresa el rango del cliente." id="rangoCli" required="required" name="rangoCli">
+	<option value="{{$cliente->rangoCli}}">{{$cliente->rangoCli}}</option>
 	@for ($i = 1; $i <= 5; $i++)
 	<option value="{{$i}}">{{$i}}</option>
+
 @endfor
 </select>
 

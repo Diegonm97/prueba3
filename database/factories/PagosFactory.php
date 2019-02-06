@@ -7,7 +7,7 @@ $factory->define(App\Pago::class, function (Faker $faker) {
             'nuipPago' => rand(1,10000),  
             'nombrePago' => $faker->text(20),
             'oficinaPago' => $faker->text(20),
-            'telefonoPago' => $faker->text(20),
+            'telefonoPago' => rand(100000,150000),
             'emailPago' => $faker->text(20),
             'salarioPago' => rand(100000,150000),
             'EPSpago' => rand(100000,150000),
