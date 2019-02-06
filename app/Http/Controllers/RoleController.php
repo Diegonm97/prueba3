@@ -32,22 +32,19 @@ class RoleController extends Controller
     public function create()
     {
         $permissions = Permission::get();
+        
         return view('roles.create', compact('permissions'));   
     }
 
     public function store(Request $request)
     {
-                $roles = new Role;
+            $role = Role::create($request->all());
            
-            $roles->name             = $request->name;
-            $roles->slug             = $request->slug;
-            $roles->description       = $request->description;
+            $role->permissions()->sync($request->get('permissions'));
             
 
-            $roles->save();
-
-            return redirect()->route('roles.index')
-            ->with('info','El role fue creado');
+            return redirect()->route('roles.edit', $role->id)
+            ->with('info','El rol fue actualizado');
     }
 
 
@@ -65,9 +62,9 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        $role =Role::find($id);
+        $role = Role::find($id);
         $permissions = Permission::get();
-        return view('roles.edit', compact('role','permissions'));
+        return view('roles.edit', compact('role', 'permissions'));
     }
 
     /**
@@ -77,19 +74,14 @@ class RoleController extends Controller
      * @param  \App\roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Role $role)
     {
-        $roles = Role::find($id);
-
+            $role->update($request->all());
            
-            $roles->name             = $request->name;
-            $roles->slug             = $request->slug;
-            $roles->description       = $request->description;
+            $role->permissions()->sync($request->get('permissions'));
             
 
-            $roles->save();
-
-            return redirect()->route('roles.index')
+            return redirect()->route('roles.edit', $role->id)
             ->with('info','El rol fue actualizado');
     }
 

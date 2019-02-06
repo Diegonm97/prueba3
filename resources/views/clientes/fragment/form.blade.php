@@ -53,8 +53,8 @@
 </div>
 <div class="col-sm-4">
 <div class="form-group row has-success">
-<label for="emailCli">Correo Electronico.</label>
-<input class="form-control" title="Ingresa el correo electronico del cliente." placeholder="Ej: ejemplo@ejemplo.com " id="emailCli" required="required" name="emailCli" type="text" value="{{$cliente->emailCli}}">
+{!! Form::label('emailCli','Correo Electronico.')!!}
+{!!Form::text('emailCli',null,['class'=>'form-control','title'=>'Ingresa el correo electronico del cliente.' , 'placeholder'=>'Ej: ejemplo@ejemplo.com ','id'=>'emailCli','required'=>'required' ])!!}
 </div>
 </div>
 </div>
@@ -85,7 +85,6 @@
 <div class="form-group row has-success">
 <label for="rangoCli">Rango(*).</label>
 <select onchange="calcular()" class="form-control" title="Ingresa el rango del cliente." id="rangoCli" required="required" name="rangoCli">
-	<option value="{{$cliente->rangoCli}}">{{$cliente->rangoCli}}</option>
 	@for ($i = 1; $i <= 5; $i++)
 	<option value="{{$i}}">{{$i}}</option>
 

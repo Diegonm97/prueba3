@@ -81,8 +81,7 @@ class ConfiguracionController extends Controller
      */
     public function show($id)
     {
-        $configuracion = Configuracion::find($id);
-        return view('configuracion.show', compact('configuracion'));
+        
         //
     }
 
@@ -96,7 +95,7 @@ class ConfiguracionController extends Controller
     {
         $configuracion =Configuracion::find($id);
         return view('configuracion.edit', compact('configuracion'));
-        //
+        
     }
 
     /**
@@ -136,8 +135,8 @@ class ConfiguracionController extends Controller
             
             $configuracion->save();
 
-            return redirect()->route('configuracion.index');
-        //
+            return redirect()->route('configuracion.index')->with('info','La configuracion fue actualizado');
+        
     }
 
     /**

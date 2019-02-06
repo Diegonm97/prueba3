@@ -74,8 +74,8 @@
 </div>
 <div class="col-sm-4">
 <div class="form-group row has-success">
-{!! Form::label('estadoClientePago','Estado Cliente.')!!}
-{!!Form::text('estadoClientePago',null,['class'=>'form-control','title'=>'Ingresa el valor del mes.' , 'placeholder'=>'Ej: Enero','id'=>'estadoClientePago'])!!}
+{!! Form::label('estadoClientePago','Estado Cliente(*).')!!}
+{!!Form::select('estadoClientePago', ['Activo'=>'Activo', 'Retirado'=>'Retirado'],null,['class'=>'form-control','title'=>'Estado del cliente.', 'id'=>'estadoClientePago','required'=>'required' ])!!}
 </div>
 </div>
 
@@ -148,6 +148,7 @@
 {!!Form::number('costoAdminPago',null,['class'=>'form-control','title'=>'Ingresa Costo de la administracion., no registrado.','placeholder'=>'Ej: 12345','id'=>'costoAdminPago','required'=>'required'])!!}
 </div>
 </div>
+</div>
 <div class="col-sm-12">
 <div class="col-sm-4">
 <div class="form-group row has-success">
@@ -201,7 +202,7 @@
 
 </div>
 
-</div>
+
 <br>
 <br>
 <div class="form-group text-center">

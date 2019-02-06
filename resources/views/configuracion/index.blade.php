@@ -1,22 +1,22 @@
 @extends('layouts.apphome')
 @section('content')
 
-<div class="col-sm-1">
+<div class="col-sm-3">
       <a href="javascript:history.back()"><i class="fas fa-arrow-alt-circle-left fa-3x" style="color: #2C7CE1"></i></a>
 </div>
-  @can('Configuracion.edit')                                 
-      <a href="{{route('configuracion.edit', $configuracion->id)}}">
-      <i class="fas fa-pen fa-3x" style="color: #2C7CE1"></i></a>
-       @endcan
-
-<div class="col-sm-8" >
+                                  
+<div class="col-sm-6" >
     
     <h1 align="center">Configuracion</h1>
 </div>
-<div class="col-sm-3">
+<div class="col-sm-2">
       
       @include('configuracion.fragment.error')
 
+</div>
+<div class="col-sm-1">
+      <a href="{{route('configuracion.edit', $configuracion->id)}}">
+      <i class="fas fa-pen fa-2x" style="color: #2C7CE1"></i></a>
 </div>
     
 

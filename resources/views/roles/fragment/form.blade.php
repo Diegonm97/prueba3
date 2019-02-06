@@ -37,7 +37,7 @@
 	        <label>
 	        {{ Form::checkbox('permissions[]', $permission->id, null) }}
 	        {{ $permission->name }}
-	        <em>({{ $permission->description }})</em>
+	        <em>({{ $permission->description ?: 'Sin Descripcion' }})</em>
 	        </label>
 	    </li>
 	    @endforeach
