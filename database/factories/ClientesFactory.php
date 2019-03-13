@@ -6,6 +6,7 @@ $factory->define(App\Clientes::class, function (Faker $faker) {
 	return [
 			'nuip'=> rand(1,10000),	
 			'nombreCli'=> $faker->text(20),
+			'apellidoCli'=> $faker->text(20),
 			'estadoCli'=> $faker->randomElement(['Activo', 'Retirado']),
 			'tipoIdCli'=> $faker->text(20),
 			'direccionCli'=> $faker->text(20),

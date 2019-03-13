@@ -11,10 +11,16 @@
 {!!Form::number('nuip',null,['class'=>'form-control','title'=>'Ingresa un numero de identificacion, no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'nuip','required'=>'required'])!!}
 </div>
 </div>
-<div class="col-sm-6">
+<div class="col-sm-3">
 <div class="form-group row has-success">
-{!! Form::label('nombreCli','Nombre del cliente(*).')!!}
-{!!Form::text('nombreCli',null,['class'=>'form-control','title'=>'Ingresa el nombre del cliente.' , 'placeholder'=>'Ej: Juan Perez','id'=>'nombreCli','required'=>'required' ])!!}
+{!! Form::label('nombreCli','Nombre(s) del cliente(*).')!!}
+{!!Form::text('nombreCli',null,['class'=>'form-control','title'=>'Ingresa el nombre del cliente.' , 'placeholder'=>'Ej: Juan Rodrigo','id'=>'nombreCli','required'=>'required' ])!!}
+</div>
+</div>
+<div class="col-sm-3">
+<div class="form-group row has-success">
+{!! Form::label('apellidoCli','Apellido(s) del cliente(*).')!!}
+{!!Form::text('apellidoCli',null,['class'=>'form-control','title'=>'Ingresa el apellido del cliente.' , 'placeholder'=>'Ej: Perez Lopez','id'=>'apellidoCli','required'=>'required' ])!!}
 </div>
 </div>
 </div>

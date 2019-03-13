@@ -17,6 +17,7 @@ class CreateClientesTable extends Migration
             $table->increments('id');
             $table->string('nuip')->unique();
             $table->string('nombreCli');
+            //$table->string('apellidoCli');
             $table->string('estadoCli');
             $table->string('tipoIdCli');
             $table->string('direccionCli');
@@ -28,9 +29,18 @@ class CreateClientesTable extends Migration
             $table->double('salarioCli');
             $table->integer('rangoCli');
             $table->double('EPScli');
+            //$table->string('nombreEPScli');
             $table->double('ARLcli')->nullable();
+            //$table->string('nombreARLcli')->nullable();
             $table->double('AFPcli')->nullable();
+            //$table->string('nombreAFPcli')->nullable();
             $table->double('cajaCompCli')->nullable();
+            //$table->string('nombreCajaCompCli')->nullable();
+            //$table->double('administracionCli')->nullable();
+            //$table->double('inscripcionCli')->nullable();
+            //$table->double('activacionCli');
+            //$table->double('EMICli')->nullable();
+            //$table->double('sevFuneCli')->nullable();
             $table->String('beneficioCli');
             $table->date('fechaIngCli');
             $table->string('tipoCli');

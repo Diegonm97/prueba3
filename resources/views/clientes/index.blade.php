@@ -37,6 +37,7 @@
                                     <thead>
                                           	<th>nuip</th>
                                             <th>Nombre</th>
+                                            <th>Apellido</th>
                                         	<th>Estado</th>
                                         	<th>Tipo Cliente</th>
                                             <th>Telefono</th>
@@ -48,6 +49,7 @@
                                         <tr>
                                         	<th>{{$cliente->nuip}}</th>
                                             <th>{{$cliente->nombreCli}}</th>
+                                            <th>{{$cliente->apellidoCli}}</th>
                                             <th>{{$cliente->estadoCli}}</th>
                                             <th>{{$cliente->tipoIdCli}}</th>
                                             <th>{{$cliente->telefonoCli}}</th>

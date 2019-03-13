@@ -49,8 +49,10 @@ class ClientesController extends Controller
     {
         $clientes = new Clientes;
 
+
             $clientes->nuip            = $request->nuip;
             $clientes->nombreCli       = $request->nombreCli;
+            $clientes->apellidoCli     = $request->apellidoCli;
             $clientes->estadoCli       = $request->estadoCli;
             $clientes->tipoIdCli       = $request->tipoIdCli;
             $clientes->direccionCli    = $request->direccionCli;
@@ -62,10 +64,19 @@ class ClientesController extends Controller
             $clientes->salarioCli      = $request->salarioCli;
             $clientes->rangoCli        = $request->rangoCli;
             $clientes->EPScli          = $request->EPScli;
+            $clientes->nombreEPScli    = $request->nombreEPScli;
             $clientes->ARLcli          = $request->ARLcli;
+            $clientes->nombreARLcli    = $request->nombreARLcli;
             $clientes->AFPcli          = $request->AFPcli;
+            $clientes->nombreAFPcli    = $request->nombreAFPcli;
             $clientes->cajaCompCli     = $request->cajaCompCli;
+            $clientes->nombreCajaCompCli     = $request->nombreCajaCompCli;
             $clientes->beneficioCli    = $request->beneficioCli;
+            $clientes->administracionCli    = $request->administracionCli;
+            $clientes->inscripcionCli    = $request->inscripcionCli;
+            $clientes->activacionCli    = $request->activacionCli;
+            $clientes->EMICli    = $request->EMICli;
+            $clientes->sevFuneCli    = $request->sevFuneCli;
             $clientes->fechaIngCli     = $request->fechaIngCli;
             $clientes->tipoCli     = $request->tipoCli;
             $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
@@ -88,6 +99,7 @@ class ClientesController extends Controller
 
             $clientes->nuip            = $request->nuip;    
             $clientes->nombreCli       = $request->nombreCli;
+            $clientes->apellidoCli     = $request->apellidoCli;
             $clientes->estadoCli       = $request->estadoCli;
             $clientes->tipoIdCli       = $request->tipoIdCli;
             $clientes->direccionCli    = $request->direccionCli;
@@ -156,6 +168,7 @@ class ClientesController extends Controller
 
             $clientes->nuip            = $request->nuip;
             $clientes->nombreCli       = $request->nombreCli;
+            $clientes->apellidoCli     = $request->apellidoCli;
             $clientes->estadoCli       = $request->estadoCli;
             $clientes->tipoIdCli       = $request->tipoIdCli;
             $clientes->direccionCli    = $request->direccionCli;

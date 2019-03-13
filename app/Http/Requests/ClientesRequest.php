@@ -26,6 +26,7 @@ class ClientesRequest extends FormRequest
         return [
             'nuip'  => 'required',
             'nombreCli'  => 'required',
+            //'apellidoCli'  => 'required',
             'estadoCli'  => 'required',
             'tipoIdCli'  => 'required',
             'direccionCli'  => 'required',

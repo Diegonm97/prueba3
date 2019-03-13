@@ -33,6 +33,11 @@
             </tr>
 
             <tr>
+            <td><strong>Apellido: </strong></td>
+            <td>  {{$cliente->nombreCli}}  </td>
+            </tr>
+
+            <tr>
             <td><strong>Estado: </strong></td>
             <td>  {{$cliente->estadoCli}}  </td>
             </tr>
