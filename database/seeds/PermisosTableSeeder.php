@@ -101,7 +101,29 @@ class PermisosTableSeeder extends Seeder
             'slug'          => 'Configuracion.index',
             'description'   => 'ver la lista de configuracion',
         ]);
-
+    
+//Clientes
+        Permission::create([
+            'name'          => 'Navegar entidades',
+            'slug'          => 'Entidades.index',
+            'description'   => 'Lista y navega todos las entidades del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Crear entidades',
+            'slug'          => 'Entidades.create',
+            'description'   => 'Permite crear entidades en el sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Ver detalle de la entidad',
+            'slug'          => 'Entidades.show',
+            'description'   => 'Ve en detalle cada entidad del sistema',            
+        ]);
+        
+        Permission::create([
+            'name'          => 'Edición de entidades',
+            'slug'          => 'Entidades.edit',
+            'description'   => 'Podría editar cualquier dato de una entidad del sistema',
+        ]);
         
 
         

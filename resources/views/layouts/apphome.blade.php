@@ -83,6 +83,14 @@
                         <p>Sedes</p>
                     </a>
                 </li>
+                @can('Entidades.index')
+                <li>
+                    <a href="{{route('entidad.index')}}">
+                        <i class="pe-7s-culture"></i>
+                        <p>Entidades</p>
+                    </a>
+                </li>
+                    @endcan
                 @can('Configuaracion.index')
                 <li>
                     <a href="{{route('configuracion.index')}}">

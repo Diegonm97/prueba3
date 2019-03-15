@@ -99,36 +99,102 @@
 
 </div>
 </div>
+</div>
 <div class="col-sm-12">
-<div class="col-sm-4">
+
+<div class="col-sm-3">
 <div class="form-group row has-success">
-{!! Form::label('EPScli','Eps cliente(*).')!!}
+{!! Form::label('nombreEPScli','Nombre EPS(*).')!!}
+<select class="form-control" id="nombreEPScli" required="required" name="nombreEPScli">
+<option value=""></option>
+	@foreach ($epss as $eps)
+
+	<option value="{{$eps->id}}">{{$eps->nombre}}</option>
+
+@endforeach
+</select>
+</div>
+</div>
+
+
+
+
+
+<div class="col-sm-3">
+<div class="form-group row has-success">
+{!! Form::label('EPScli','Valor por del Eps cliente(*).')!!}
 {!!Form::number('EPScli',null,['class'=>'form-control','title'=>'Ingresa el valor de la EPS  del cliente.' , 'placeholder'=>'Ej: 13000','id'=>'EPScli','required'=>'required' ])!!}
 </div>
 </div>
-<div class="col-sm-4">
+
+
+<div class="col-sm-3">
 <div class="form-group row has-success">
-{!! Form::label('ARLcli','ARL del cliente.')!!}
+{!! Form::label('nombreARLcli','Nombre ARL(*).')!!}
+<select class="form-control" id="nombreARLcli" name="nombreARLcli">
+<option value=""></option>
+	@foreach ($arls as $arl)
+
+	<option value="{{$arl->id}}">{{$arl->nombre}}</option>
+
+@endforeach
+</select>
+</div>
+</div>
+
+<div class="col-sm-3">
+<div class="form-group row has-success">
+{!! Form::label('ARLcli','Valor por del ARL del cliente.')!!}
 {!!Form::number('ARLcli',null,['class'=>'form-control','title'=>'Ingresa el valor de la ARL del cliente.' , 'placeholder'=>'Ej: 15000','id'=>'ARLcli'])!!}
 </div>
 </div>
+</div>
 
-
-<div class="col-sm-4">
+<div class="col-sm-12">
+<div class="col-sm-3">
 <div class="form-group row has-success">
-{!! Form::label('AFPcli','AFP del cliente.')!!}
+{!! Form::label('nombreAFPcli','Nombre AFP(*).')!!}
+<select class="form-control" id="nombreAFPcli"  name="nombreAFPcli">
+<option value=""></option>
+	@foreach ($afps as $afp)
+
+	<option value="{{$afp->id}}">{{$afp->nombre}}</option>
+
+@endforeach
+</select>
+</div>
+</div>
+<div class="col-sm-3">
+<div class="form-group row has-success">
+{!! Form::label('AFPcli','Valor por del AFP del cliente.')!!}
 {!!Form::number('AFPcli',null,['class'=>'form-control','title'=>'Ingresa el valor de la AFP del cliente.' , 'placeholder'=>'Ej: 14000','id'=>'AFPcli'])!!}
+</div>
+</div>
+
+
+<div class="col-sm-3">
+<div class="form-group row has-success">
+{!! Form::label('nombreCajaCompCli','Nombre Caja de Compensacion(*).')!!}
+<select class="form-control" id="nombreCajaCompCli"  name="nombreCajaCompCli">
+<option value=""></option>
+	@foreach ($cajacomps as $cajacomp)
+
+	<option value="{{$cajacomp->id}}">{{$cajacomp->nombre}}</option>
+
+@endforeach
+</select>
+</div>
+</div>
+
+<div class="col-sm-3">
+<div class="form-group row has-success">
+{!! Form::label('cajaCompCli','Valor por del Caja de Compensacion.')!!}
+{!!Form::text('cajaCompCli',null,['class'=>'form-control','title'=>'Ingresa el valor la caja de compensacion del cliente.' , 'placeholder'=>'Ej: 12000','id'=>'cajaCompCli'])!!}
 </div>
 </div>
 </div>
 <div class="col-sm-12">
-<div class="col-sm-4">
-<div class="form-group row has-success">
-{!! Form::label('cajaCompCli','Caja de Compensacion.')!!}
-{!!Form::text('cajaCompCli',null,['class'=>'form-control','title'=>'Ingresa el valor la caja de compensacion del cliente.' , 'placeholder'=>'Ej: 12000','id'=>'cajaCompCli'])!!}
-</div>
-</div>
-<div class="col-sm-4">
+<div class="col-sm-6">
 <div class="form-group row has-success">
 {!! Form::label('beneficioCli','Beneficio.')!!}
 {!!Form::select('beneficioCli', ['No'=>'No', 'Si' => 'Si'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.' ,'id'=>'beneficioCli'])!!}
@@ -136,7 +202,7 @@
 </div>
 
 
-<div class="col-sm-4">
+<div class="col-sm-6">
 <div class="form-group row has-success">
 {!! Form::label('fechaIngCli','Fecha de Ingreso(*).')!!}
 {!!Form::date('fechaIngCli',null,['class'=>'form-control', 'title'=>'Elige un fecha de nacimiento', 'placeholder'=>'Ej: 23/10/1997','required'=>'required'])!!}

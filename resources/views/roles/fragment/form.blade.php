@@ -26,7 +26,8 @@
 <h3>Permiso especial</h3>
 <div class="form-group">
  	<label>{{ Form::radio('special', 'all-access') }} Acceso total</label>
- 	<label>{{ Form::radio('special', 'no-access') }} Ningún acceso</label>
+ 	<label>{{ Form::radio('special', 'no-access') }} Ningún acceso (bloquear)</label>
+	 <label>{{ Form::radio('special', '') }} Ningun permiso especial</label>
 </div>
 <hr>
 <h3>Lista de permisos</h3>

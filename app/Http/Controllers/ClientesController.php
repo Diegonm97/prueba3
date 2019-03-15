@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Clientes;
+use App\Entidad;
 use App\Empresa;
 use Illuminate\Http\Request;
 use App\Http\Requests\ClientesRequest;
@@ -28,8 +29,12 @@ class ClientesController extends Controller
      */
     public function create()
     {
+        $epss = Entidad::Search()->where('tipo','=', "eps")->get();
+        $arls = Entidad::Search()->where('tipo','=', "arl")->get();
+        $afps = Entidad::Search()->where('tipo','=', "afp")->get();
+        $cajacomps = Entidad::Search()->where('tipo','=', "cajacomp")->get();
         $porcentaje = 10;
-        return view('clientes.create',compact('porcentaje'));  
+        return view('clientes.create',compact('porcentaje', 'epss','arls','afps','cajacomps'));  
     }
 
     public function createEmp($id)
@@ -72,11 +77,11 @@ class ClientesController extends Controller
             $clientes->cajaCompCli     = $request->cajaCompCli;
             $clientes->nombreCajaCompCli     = $request->nombreCajaCompCli;
             $clientes->beneficioCli    = $request->beneficioCli;
-            $clientes->administracionCli    = $request->administracionCli;
-            $clientes->inscripcionCli    = $request->inscripcionCli;
-            $clientes->activacionCli    = $request->activacionCli;
-            $clientes->EMICli    = $request->EMICli;
-            $clientes->sevFuneCli    = $request->sevFuneCli;
+//            $clientes->administracionCli    = $request->administracionCli;
+ //           $clientes->inscripcionCli    = $request->inscripcionCli;
+  //          $clientes->activacionCli    = $request->activacionCli;
+   //         $clientes->EMICli    = $request->EMICli;
+    //        $clientes->sevFuneCli    = $request->sevFuneCli;
             $clientes->fechaIngCli     = $request->fechaIngCli;
             $clientes->tipoCli     = $request->tipoCli;
             $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
@@ -97,7 +102,7 @@ class ClientesController extends Controller
     {
         $clientes = new Clientes;
 
-            $clientes->nuip            = $request->nuip;    
+            $clientes->nuip            = $request->nuip;
             $clientes->nombreCli       = $request->nombreCli;
             $clientes->apellidoCli     = $request->apellidoCli;
             $clientes->estadoCli       = $request->estadoCli;
@@ -111,16 +116,25 @@ class ClientesController extends Controller
             $clientes->salarioCli      = $request->salarioCli;
             $clientes->rangoCli        = $request->rangoCli;
             $clientes->EPScli          = $request->EPScli;
+            $clientes->nombreEPScli    = $request->nombreEPScli;
             $clientes->ARLcli          = $request->ARLcli;
+            $clientes->nombreARLcli    = $request->nombreARLcli;
             $clientes->AFPcli          = $request->AFPcli;
+            $clientes->nombreAFPcli    = $request->nombreAFPcli;
             $clientes->cajaCompCli     = $request->cajaCompCli;
+            $clientes->nombreCajaCompCli     = $request->nombreCajaCompCli;
             $clientes->beneficioCli    = $request->beneficioCli;
+//            $clientes->administracionCli    = $request->administracionCli;
+ //           $clientes->inscripcionCli    = $request->inscripcionCli;
+  //          $clientes->activacionCli    = $request->activacionCli;
+   //         $clientes->EMICli    = $request->EMICli;
+    //        $clientes->sevFuneCli    = $request->sevFuneCli;
             $clientes->fechaIngCli     = $request->fechaIngCli;
-            $clientes->tipoCli         = $request->tipoCli;
+            $clientes->tipoCli     = $request->tipoCli;
             $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
             $clientes->idNIT           = $request->idNIT;
             $clientes->nombreEmpCli    = $request->nombreEmpCli;
-            $clientes->UPCadicCli      = $request->UPCadicCli;
+            $clientes->UPCadicCli    = $request->UPCadicCli;
             $clientes->estadoPago      = $request->estadoPago;
 
             $clientes->save();
@@ -180,16 +194,25 @@ class ClientesController extends Controller
             $clientes->salarioCli      = $request->salarioCli;
             $clientes->rangoCli        = $request->rangoCli;
             $clientes->EPScli          = $request->EPScli;
+            $clientes->nombreEPScli    = $request->nombreEPScli;
             $clientes->ARLcli          = $request->ARLcli;
+            $clientes->nombreARLcli    = $request->nombreARLcli;
             $clientes->AFPcli          = $request->AFPcli;
+            $clientes->nombreAFPcli    = $request->nombreAFPcli;
             $clientes->cajaCompCli     = $request->cajaCompCli;
+            $clientes->nombreCajaCompCli     = $request->nombreCajaCompCli;
             $clientes->beneficioCli    = $request->beneficioCli;
+//            $clientes->administracionCli    = $request->administracionCli;
+ //           $clientes->inscripcionCli    = $request->inscripcionCli;
+  //          $clientes->activacionCli    = $request->activacionCli;
+   //         $clientes->EMICli    = $request->EMICli;
+    //        $clientes->sevFuneCli    = $request->sevFuneCli;
             $clientes->fechaIngCli     = $request->fechaIngCli;
-            $clientes->tipoCli         = $request->tipoCli;
+            $clientes->tipoCli     = $request->tipoCli;
             $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
             $clientes->idNIT           = $request->idNIT;
             $clientes->nombreEmpCli    = $request->nombreEmpCli;
-            $clientes->UPCadicCli      = $request->UPCadicCli;
+            $clientes->UPCadicCli    = $request->UPCadicCli;
             $clientes->estadoPago      = $request->estadoPago;
 
             $clientes->save();

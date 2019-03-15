@@ -21,6 +21,7 @@ Route::resource('empresa','empresaController');
 Route::resource('clientes','clientesController');
 Route::resource('users','userController');
 Route::resource('pago','PagoController');
+Route::resource('entidad','entidadController');
 
 Route::get("/createEmp/{id}","clientesController@createEmp")->name('createEmp');
 
@@ -94,6 +95,22 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:Empresas.show');
 	Route::get('empresa/{id}/edit', 'empresaController@edit')->name('empresa.edit')
 		->middleware('permission:Empresas.edit');
+
+
+
+	//Entidades
+	Route::post('entidad/store', 'entidadController@store')->name('entidad.store')
+		->middleware('permission:Entidades.create');
+	Route::get('entidad', 'entidadController@index')->name('entidad.index')
+		->middleware('permission:Entidades.index');
+	Route::get('entidad/create', 'entidadController@create')->name('entidad.create')
+		->middleware('permission:Entidades.create');
+	Route::put('entidad/{id}', 'entidadController@update')->name('entidad.update')
+		->middleware('permission:Entidades.edit');
+	Route::get('entidad/{id}', 'entidadController@show')->name('entidad.show')
+		->middleware('permission:Entidades.show');
+	Route::get('entidad/{id}/edit', 'entidadController@edit')->name('entidad.edit')
+		->middleware('permission:Entidades.edit');
 
 	//configuracion
 	
