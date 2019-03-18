@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Clientes::class, function (Faker $faker) {
 	return [
-			'nuip'=> rand(1,10000),	
+		'nuip'=> rand(1,10000),	
 			'nombreCli'=> $faker->text(20),
 			'apellidoCli'=> $faker->text(20),
 			'estadoCli'=> $faker->randomElement(['Activo', 'Retirado']),
@@ -18,13 +18,15 @@ $factory->define(App\Clientes::class, function (Faker $faker) {
 			'salarioCli'=> rand(100000,2000000),
 			'rangoCli'=>  rand(1,5),
 			'EPScli'=> rand(100000,150000),
-			'nombreEPScli'=> $faker->randomElement(['SOS', 'NuevaEPS']),
+			'nombreEPScli'=> $faker->text(20),
 			'ARLcli'=> rand(100000,150000),
-			'nombreARLcli'=> $faker->randomElement(['SURA', 'Colpatria']),
+			'nombreARLcli'=> $faker->text(20),
 			'AFPcli'=> rand(100000,150000),
-			'nombreAFPcli'=> $faker->randomElement(['Porvenir', 'CCOP']),
+			'nombreAFPcli'=> $faker->text(20),
 			'cajaCompCli'=> rand(100000,150000),
-			'nombreCajaCompCli'=> $faker->randomElement(['Confandi', 'Comfenalco']),
+			'nombreCajaCompCli'=> $faker->text(20),
+			'administracionCli'=> rand(10000,60000),
+			'inscripcionCli'=> rand(10000,60000),
 			'beneficioCli'=> rand(100000,150000),
 			'fechaIngCli'=> $faker->date($format = 'Y-m-d', $max = 'now'),
 			'tipoCli'=> $faker->randomElement(['Independiente', 'Asociado', 'Empresa']),
@@ -33,7 +35,7 @@ $factory->define(App\Clientes::class, function (Faker $faker) {
 			'nombreEmpcli'=> $faker->text(20),
 			'UPCadicCli'=> rand(100000,150000),
 			'estadoPago'=> $faker->text(20),
-
+			
 			];
 });
     

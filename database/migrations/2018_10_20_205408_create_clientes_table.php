@@ -36,9 +36,9 @@ class CreateClientesTable extends Migration
             $table->string('nombreAFPcli')->nullable();
             $table->double('cajaCompCli')->nullable();
             $table->string('nombreCajaCompCli')->nullable();
-            //$table->double('administracionCli')->nullable();
-            //$table->double('inscripcionCli')->nullable();
-            //$table->double('activacionCli');
+            $table->double('administracionCli')->nullable();
+            $table->double('inscripcionCli')->nullable();
+            //$table->double('activacionCli');->nullable();
             //$table->double('EMICli')->nullable();
             //$table->double('sevFuneCli')->nullable();
             $table->String('beneficioCli');

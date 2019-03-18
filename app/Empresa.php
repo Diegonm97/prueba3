@@ -8,7 +8,10 @@ class Empresa extends Model
 {
     protected $table = 'empresas';
 
-     protected $fillable=['nuip','nombreCli','estadoEmp','tipoIdEmp','direccionEmp','oficinaEmp','ciudadEmp','telefonoEmp','emailEmp','fechaIngEmp','tipoEmp','idEmpresaContraEmp','idNIT','nombreEmp','estadoPago'];
+     protected $fillable=['estadoEmp','tipoIdEmp','direccionEmp','oficinaEmp',
+     'ciudadEmp','nombreRep','telefonoEmp','emailEmp','EPSEmp','nombreEPSEmp','ARLEmp','nombreARLEmp',
+     'AFPEmp','nombreAFPEmp','cajaCompEmp','nombreCajaCompEmp','administracionEmp','inscripcionEmp',
+     'fechaIngEmp','tipoEmp','idEmpresaContraEmp','idNIT','nombreEmp','estadoPago'];
 
 
      public function scopeSearch1($query, $idEmpresaContraEmp) // Realiza la busqueda en base de datos de acuerdo al idNIT

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Clientes;
 use App\Empresa;
+use App\Entidad;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresasRequest;
 
@@ -18,8 +19,11 @@ class EmpresaController extends Controller
     {   
         
         $empresas = Empresa::search1($request->idEmpresaContraEmp)->orderByDesc('id')->paginate('8');
+        
+       
+        
 
-        return view('empresas.index', compact('empresas'));
+        return view('empresas.index',compact('empresas'));
     }
 
     /**
@@ -29,7 +33,11 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        return view('empresas.create');   
+        $epss = Entidad::Search()->where('tipo','=', "eps")->get();
+        $arls = Entidad::Search()->where('tipo','=', "arl")->get();
+        $afps = Entidad::Search()->where('tipo','=', "afp")->get();
+        $cajacomps = Entidad::Search()->where('tipo','=', "cajacomp")->get();
+        return view('empresas.create',compact('epss','arls','afps','cajacomps'));   
     }
     
     /**
@@ -42,21 +50,31 @@ class EmpresaController extends Controller
     {
         $empresas = new Empresa;
 
-            $empresas->nuip            = $request->nuip;
-            $empresas->nombreCli       = $request->nombreCli;
+          
             $empresas->estadoEmp       = $request->estadoEmp;
             $empresas->tipoIdEmp       = $request->tipoIdEmp;
             $empresas->direccionEmp    = $request->direccionEmp;
             $empresas->oficinaEmp      = $request->oficinaEmp;
             $empresas->ciudadEmp       = $request->ciudadEmp;
+            $empresas->nombreRep       = $request->nombreRep;
             $empresas->telefonoEmp     = $request->telefonoEmp;
             $empresas->emailEmp        = $request->emailEmp;
-            $empresas->fechaIngEmp     = $request->fechaIngEmp;
-            $empresas->tipoEmp         = $request->tipoEmp;
-            $empresas->idEmpresaContraEmp = $request->idEmpresaContraEmp;
-            $empresas->idNIT           = $request->idNIT;
-            $empresas->nombreEmp       = $request->nombreEmp;
-            $empresas->estadoPago      = $request->estadoPago;
+            $empresas->EPSEmp              = $request->EPSEmp;
+            $empresas->nombreEPSEmp        = $request->nombreEPSEmp;
+            $empresas->ARLEmp              = $request->ARLEmp;
+            $empresas->nombreARLEmp        = $request->nombreARLEmp;
+            $empresas->AFPEmp              = $request->AFPEmp;
+            $empresas->nombreAFPEmp        = $request->nombreAFPEmp;
+            $empresas->cajaCompEmp         = $request->cajaCompEmp;
+            $empresas->nombreCajaCompEmp   = $request->nombreCajaCompEmp;
+            $empresas->fechaIngEmp         = $request->fechaIngEmp;
+            $empresas->tipoEmp             = $request->tipoEmp;
+            $empresas->idEmpresaContraEmp  = $request->idEmpresaContraEmp;
+            $empresas->administracionEmp   = $request->administracionEmp;
+            $empresas->inscripcionEmp      = $request->inscripcionEmp;
+            $empresas->idNIT               = $request->idNIT;
+            $empresas->nombreEmp           = $request->nombreEmp;
+            $empresas->estadoPago          = $request->estadoPago;
 
             $empresas->save();
 
@@ -104,21 +122,30 @@ class EmpresaController extends Controller
     {
             $empresas = Empresa::find($id);
 
-            $empresas->nuip            = $request->nuip;
-            $empresas->nombreCli       = $request->nombreCli;
             $empresas->estadoEmp       = $request->estadoEmp;
             $empresas->tipoIdEmp       = $request->tipoIdEmp;
             $empresas->direccionEmp    = $request->direccionEmp;
             $empresas->oficinaEmp      = $request->oficinaEmp;
             $empresas->ciudadEmp       = $request->ciudadEmp;
+            $empresas->nombreRep       = $request->nombreRep;
             $empresas->telefonoEmp     = $request->telefonoEmp;
             $empresas->emailEmp        = $request->emailEmp;
-            $empresas->fechaIngEmp     = $request->fechaIngEmp;
-            $empresas->tipoEmp         = $request->tipoEmp;
-            $empresas->idEmpresaContraEmp = $request->idEmpresaContraEmp;
-            $empresas->idNIT           = $request->idNIT;
-            $empresas->nombreEmp       = $request->nombreEmp;
-            $empresas->estadoPago      = $request->estadoPago;
+            $empresas->EPSEmp              = $request->EPSEmp;
+            $empresas->nombreEPSEmp        = $request->nombreEPSEmp;
+            $empresas->ARLEmp              = $request->ARLEmp;
+            $empresas->nombreARLEmp        = $request->nombreARLEmp;
+            $empresas->AFPEmp              = $request->AFPEmp;
+            $empresas->nombreAFPEmp        = $request->nombreAFPEmp;
+            $empresas->cajaCompEmp         = $request->cajaCompEmp;
+            $empresas->nombreCajaCompEmp   = $request->nombreCajaCompEmp;
+            $empresas->fechaIngEmp         = $request->fechaIngEmp;
+            $empresas->tipoEmp             = $request->tipoEmp;
+            $empresas->idEmpresaContraEmp  = $request->idEmpresaContraEmp;
+            $empresas->administracionEmp   = $request->administracionEmp;
+            $empresas->inscripcionEmp      = $request->inscripcionEmp;
+            $empresas->idNIT               = $request->idNIT;
+            $empresas->nombreEmp           = $request->nombreEmp;
+            $empresas->estadoPago          = $request->estadoPago;
 
             $empresas->save();
 

@@ -15,15 +15,23 @@ class CreateEmpresasTable extends Migration
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nuip')->unique();
-            $table->string('estadoEmp');
             $table->string('tipoIdEmp');
-            $table->string('nombreCli');
+            $table->string('nombreRep');
             $table->string('direccionEmp');
             $table->string('oficinaEmp');
             $table->string('ciudadEmp');
             $table->string('telefonoEmp');
             $table->string('emailEmp');
+            $table->double('EPScli');
+            $table->string('nombreEPSEmp');
+            $table->double('ARLEmp');
+            $table->string('nombreARLEmp');
+            $table->double('AFPEmp');
+            $table->string('nombreAFPEmp');
+            $table->double('cajaCompEmp');
+            $table->string('nombreCajaCompEmp');
+            $table->double('administracionEmp');
+            $table->double('inscripcionEmp');
             $table->date('fechaIngEmp');
             $table->string('tipoEmp');
             $table->string('idEmpresaContraEmp')->unique();

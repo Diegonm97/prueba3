@@ -24,15 +24,18 @@ class EmpresasRequest extends FormRequest
     public function rules()
     {
         return [
-            'nuip'  => 'required',
-            'nombreEmp'  => 'required',
+            
             'estadoEmp'  => 'required',
             'tipoIdEmp'  => 'required',
             'direccionEmp'  => 'required',
             'oficinaEmp'  => 'required',
             'ciudadEmp'  => 'required',
+            'nombreRep' => 'required',
             'telefonoEmp'  => 'required',
             'emailEmp' => 'required',
+            'nombreEPSEmp' => 'required',
+            'nombreARLEmp' => 'required',
+            'nombreAFPEmp' => 'required',
             'fechaIngEmp'  => 'required',
             'idEmpresaContraEmp'  => 'required',
             'idNIT'  => 'required',

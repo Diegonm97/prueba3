@@ -76,19 +76,19 @@ class ClientesController extends Controller
             $clientes->nombreAFPcli    = $request->nombreAFPcli;
             $clientes->cajaCompCli     = $request->cajaCompCli;
             $clientes->nombreCajaCompCli     = $request->nombreCajaCompCli;
-            $clientes->beneficioCli    = $request->beneficioCli;
-//            $clientes->administracionCli    = $request->administracionCli;
- //           $clientes->inscripcionCli    = $request->inscripcionCli;
-  //          $clientes->activacionCli    = $request->activacionCli;
-   //         $clientes->EMICli    = $request->EMICli;
-    //        $clientes->sevFuneCli    = $request->sevFuneCli;
-            $clientes->fechaIngCli     = $request->fechaIngCli;
-            $clientes->tipoCli     = $request->tipoCli;
-            $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
-            $clientes->idNIT           = $request->idNIT;
-            $clientes->nombreEmpCli    = $request->nombreEmpCli;
-            $clientes->UPCadicCli    = $request->UPCadicCli;
-            $clientes->estadoPago      = $request->estadoPago;
+            $clientes->beneficioCli        = $request->beneficioCli;
+            $clientes->administracionCli   = $request->administracionCli;
+            $clientes->inscripcionCli      = $request->inscripcionCli;
+    //        $clientes->activacionCli       = $request->activacionCli;
+   //         $clientes->EMICli              = $request->EMICli;
+    //        $clientes->sevFuneCli          = $request->sevFuneCli;
+            $clientes->fechaIngCli           = $request->fechaIngCli;
+            $clientes->tipoCli               = $request->tipoCli;
+            $clientes->idEmpresaContraCli    = $request->idEmpresaContraCli;
+            $clientes->idNIT                 = $request->idNIT;
+            $clientes->nombreEmpCli          = $request->nombreEmpCli;
+            $clientes->UPCadicCli            = $request->UPCadicCli;
+            $clientes->estadoPago            = $request->estadoPago;
 
             $clientes->save();
 
@@ -102,7 +102,7 @@ class ClientesController extends Controller
     {
         $clientes = new Clientes;
 
-            $clientes->nuip            = $request->nuip;
+        $clientes->nuip            = $request->nuip;
             $clientes->nombreCli       = $request->nombreCli;
             $clientes->apellidoCli     = $request->apellidoCli;
             $clientes->estadoCli       = $request->estadoCli;
@@ -123,19 +123,19 @@ class ClientesController extends Controller
             $clientes->nombreAFPcli    = $request->nombreAFPcli;
             $clientes->cajaCompCli     = $request->cajaCompCli;
             $clientes->nombreCajaCompCli     = $request->nombreCajaCompCli;
-            $clientes->beneficioCli    = $request->beneficioCli;
-//            $clientes->administracionCli    = $request->administracionCli;
- //           $clientes->inscripcionCli    = $request->inscripcionCli;
-  //          $clientes->activacionCli    = $request->activacionCli;
-   //         $clientes->EMICli    = $request->EMICli;
-    //        $clientes->sevFuneCli    = $request->sevFuneCli;
-            $clientes->fechaIngCli     = $request->fechaIngCli;
-            $clientes->tipoCli     = $request->tipoCli;
-            $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
-            $clientes->idNIT           = $request->idNIT;
-            $clientes->nombreEmpCli    = $request->nombreEmpCli;
-            $clientes->UPCadicCli    = $request->UPCadicCli;
-            $clientes->estadoPago      = $request->estadoPago;
+            $clientes->beneficioCli        = $request->beneficioCli;
+            $clientes->administracionCli   = $request->administracionCli;
+            $clientes->inscripcionCli      = $request->inscripcionCli;
+    //        $clientes->activacionCli       = $request->activacionCli;
+   //         $clientes->EMICli              = $request->EMICli;
+    //        $clientes->sevFuneCli          = $request->sevFuneCli;
+            $clientes->fechaIngCli           = $request->fechaIngCli;
+            $clientes->tipoCli               = $request->tipoCli;
+            $clientes->idEmpresaContraCli    = $request->idEmpresaContraCli;
+            $clientes->idNIT                 = $request->idNIT;
+            $clientes->nombreEmpCli          = $request->nombreEmpCli;
+            $clientes->UPCadicCli            = $request->UPCadicCli;
+            $clientes->estadoPago            = $request->estadoPago;
 
             $clientes->save();
 
@@ -179,7 +179,6 @@ class ClientesController extends Controller
     public function update(ClientesRequest $request, $id)
     {
             $clientes = Clientes::find($id);
-
             $clientes->nuip            = $request->nuip;
             $clientes->nombreCli       = $request->nombreCli;
             $clientes->apellidoCli     = $request->apellidoCli;
@@ -201,19 +200,19 @@ class ClientesController extends Controller
             $clientes->nombreAFPcli    = $request->nombreAFPcli;
             $clientes->cajaCompCli     = $request->cajaCompCli;
             $clientes->nombreCajaCompCli     = $request->nombreCajaCompCli;
-            $clientes->beneficioCli    = $request->beneficioCli;
-//            $clientes->administracionCli    = $request->administracionCli;
- //           $clientes->inscripcionCli    = $request->inscripcionCli;
-  //          $clientes->activacionCli    = $request->activacionCli;
-   //         $clientes->EMICli    = $request->EMICli;
-    //        $clientes->sevFuneCli    = $request->sevFuneCli;
-            $clientes->fechaIngCli     = $request->fechaIngCli;
-            $clientes->tipoCli     = $request->tipoCli;
-            $clientes->idEmpresaContraCli = $request->idEmpresaContraCli;
-            $clientes->idNIT           = $request->idNIT;
-            $clientes->nombreEmpCli    = $request->nombreEmpCli;
-            $clientes->UPCadicCli    = $request->UPCadicCli;
-            $clientes->estadoPago      = $request->estadoPago;
+            $clientes->beneficioCli        = $request->beneficioCli;
+            $clientes->administracionCli   = $request->administracionCli;
+           $clientes->inscripcionCli      = $request->inscripcionCli;
+  //          $clientes->activacionCli       = $request->activacionCli;
+   //         $clientes->EMICli              = $request->EMICli;
+    //        $clientes->sevFuneCli          = $request->sevFuneCli;
+            $clientes->fechaIngCli           = $request->fechaIngCli;
+            $clientes->tipoCli               = $request->tipoCli;
+            $clientes->idEmpresaContraCli    = $request->idEmpresaContraCli;
+            $clientes->idNIT                 = $request->idNIT;
+            $clientes->nombreEmpCli          = $request->nombreEmpCli;
+            $clientes->UPCadicCli            = $request->UPCadicCli;
+            $clientes->estadoPago            = $request->estadoPago;
 
             $clientes->save();
 

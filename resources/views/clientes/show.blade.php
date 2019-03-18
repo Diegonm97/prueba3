@@ -89,21 +89,41 @@
 
             <tr>
             <td><strong>EPS: </strong></td>
+            <td>  {{$cliente->nombreEPScli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Valor Esp: </strong></td>
             <td>  {{$cliente->EPScli}}  </td>
             </tr>
 
             <tr>
             <td><strong>ARL: </strong></td>
+            <td>  {{$cliente->nombreARLcli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Valor Arl: </strong></td>
             <td>  {{$cliente->ARLcli}}  </td>
             </tr>
 
             <tr>
             <td><strong>AFP: </strong></td>
+            <td>  {{$cliente->nombreAFPcli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Valor Afp: </strong></td>
             <td>  {{$cliente->AFPcli}}  </td>
             </tr>
 
             <tr>
             <td><strong>Caja de Compensacion: </strong></td>
+            <td>  {{$cliente->nombreCajaCompCli}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Valor Caja de Compensacion: </strong></td>
             <td>  {{$cliente->cajaCompCli}}  </td>
             </tr>
 
