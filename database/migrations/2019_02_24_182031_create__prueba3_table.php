@@ -71,9 +71,11 @@ class CreatePrueba3Table extends Migration
             $table->string('direccion');
             $table->integer('estado');
             $table->integer('beneficio');
-            $table->integer('incripcion');
+            $table->integer('inscripcion');
+            $table->integer('administracion');
             $table->integer('id_usuario')->unsigned();
             $table->date('fecha_ingreso');
+            $table->date('observacion');
 
             $table->timestamps();
 

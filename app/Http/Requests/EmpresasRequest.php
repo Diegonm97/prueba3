@@ -24,24 +24,18 @@ class EmpresasRequest extends FormRequest
     public function rules()
     {
         return [
-            
-            'estadoEmp'  => 'required',
-            'tipoIdEmp'  => 'required',
-            'direccionEmp'  => 'required',
-            'oficinaEmp'  => 'required',
-            'ciudadEmp'  => 'required',
-            'nombreRep' => 'required',
-            'telefonoEmp'  => 'required',
-            'emailEmp' => 'required',
-            'nombreEPSEmp' => 'required',
-            'nombreARLEmp' => 'required',
-            'nombreAFPEmp' => 'required',
-            'fechaIngEmp'  => 'required',
-            'idEmpresaContraEmp'  => 'required',
-            'idNIT'  => 'required',
-            'nombreEmp'  => 'required',
-            'estadoPago'  => 'required'
-            //
+            'nit'  => 'required',
+            'nombre' => 'required',
+            'nombre_contacto' => 'required',
+            'telefono_contacto'  => 'required',
+            'email_contacto'  => 'required',
+            'id_ciudad'  => 'required',
+            'direccion'  => 'required',
+            'estado'  => 'required',
+            'beneficio' => 'required',
+            'inscripcion'  => 'required',
+            'administracion' => 'required',
+            'fecha_ingreso' => 'required',
         ];
     }
 }

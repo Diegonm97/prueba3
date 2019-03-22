@@ -2,25 +2,24 @@
     <div class="col-sm-3">
         <div class="form-group row has-success">
             {!! Form::label('nit','Numero de Nit(*).')!!}
-			{!!Form::number('nit',null,['class'=>'form-control','title'=>'Ingresa un numero de nit no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'nuip','required'=>'required'])!!}
+			{!!Form::text('nit',null,['class'=>'form-control','title'=>'Ingresa un numero de nit no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'nuip','required'=>'required'])!!}
         </div>
     </div>
-
-
     <div class="col-sm-6">
         <div class="form-group row has-success">
             {!! Form::label('nombre','Nombre de la empresa(*).')!!}
 			{!!Form::text('nombre',null,['class'=>'form-control','title'=>'Ingresa el nombre de la Empresa.' , 'placeholder'=>'Ej: Intersalud del valle','id'=>'nombre','required'=>'required' ])!!}
         </div>
     </div>
-</div>
-<div class="col-sm-12">
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         <div class="form-group row has-success">
             {!! Form::label('estado','Estado del Empresa(*).')!!}
 			{!!Form::select('estado', [ 1=>'Activo', 2=>'Retirado'],null,['class'=>'form-control','title'=>'Ingresa un estado del Empente.','title'=>'A,R','id'=>'estado','required'=>'required' ])!!}
         </div>
     </div>
+</div>
+<div class="col-sm-12">
+   
     <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('direccion','Dirección(*).')!!}
@@ -33,15 +32,15 @@
 			{!!Form::text('id_ciudad',null,['class'=>'form-control','title'=>'Ingresa la ciudad de la Empresa.' , 'placeholder'=>'Ej: Palmira','id'=>'id_ciudad','required'=>'required' ])!!}
         </div>
     </div>
-</div>
-
-<div class="col-sm-12">
     <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('nombre_contacto','Nombre contacto(*).')!!}
 			{!!Form::text('nombre_contacto',null,['class'=>'form-control','title'=>'Ingresar nombre de contacto de la Empresa.' , 'placeholder'=>'Ej: Pepito Perez','id'=>'nombre_contacto','required'=>'required' ])!!}
         </div>
     </div>
+</div>
+
+<div class="col-sm-12">
     <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('email_contacto','Email contacto(*).')!!}
@@ -54,35 +53,43 @@
 			{!!Form::text('telefono_contacto',null,['class'=>'form-control','title'=>'Ingresar telefono del contacto de la Empresa.' , 'placeholder'=>'Ej: 3201782323 ','id'=>'telefono_contacto','required'=>'required' ])!!}
         </div>
     </div>
-</div>
-
-<div class="col-sm-12">
-	<div class="col-sm-4">
+    <div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('beneficio','Beneficio.')!!}
 			{!!Form::select('beneficio', ['No'=>'No', 'Si' => 'Si'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.' ,'id'=>'beneficio'])!!}
 		</div>
 	</div>
+</div>
+
+<div class="col-sm-12">
+
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('administracion','Administracion cliente.')!!}
 			{!!Form::text('administracion',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'administracion','required'=>'required' ])!!}
 		</div>
 	</div>
-	<div class="col-sm-3">
+	<div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('inscripcion','Inscripcion.')!!}
 			{!!Form::text('inscripcion',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'inscripcion','required'=>'required' ])!!}
 		</div>
 	</div>
-    <div class="col-sm-2">
+    <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('fecha_ingreso','Fecha de Ingreso(*).')!!}
             {!!Form::date('fecha_ingreso',null,['class'=>'form-control', 'title'=>'Elige un fecha de nacimiento', 'placeholder'=>'Ej: 23/10/1997','required'=>'required'])!!}
         </div>
     </div>
 </div>
-
+<div class="col-sm-12">
+<div class="col-sm-12">
+        <div class="form-group row has-success">
+            {!! Form::label('observacion','observaciones(*).')!!}
+            {!!Form::textarea('observacion',null,['class'=>'form-control', 'title'=>'observaciones sobre el', 'placeholder'=>'Ej: observaciones sobre el cliente'])!!}
+        </div>
+    </div>
+</div>
 <br>
 <br>
 <div class="form-group text-center">
