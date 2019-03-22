@@ -61,8 +61,10 @@ class EmpresaController extends Controller
             $empresas->estado = $request->estado;
             $empresas->beneficio = $request->beneficio;
             $empresas->inscripcion = $request->inscripcion;
+            $empresas->administracion = $request->administracion;
             $empresas->id_usuario = $request->id_usuario;
             $empresas->fecha_ingreso = $request->fecha_ingreso;
+            $empresas->observacion = $request->observacion;
            
             $empresas->save();
 
@@ -121,7 +123,7 @@ class EmpresaController extends Controller
             $empresas->inscripcion = $request->inscripcion;
             $empresas->id_usuario = $request->id_usuario;
             $empresas->fecha_ingreso = $request->fecha_ingreso;
-            
+            $empresas->observacion = $request->observacion;
             $empresas->save();
 
             return redirect()->route('empresa.index')

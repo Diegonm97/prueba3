@@ -26,7 +26,7 @@ class EntidadRequest extends FormRequest
         return [
             'nombre'  => 'required',
             'tipo'  => 'required',
-            'contacto'  => 'required',
+            
             
         ];
     }
