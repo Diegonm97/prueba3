@@ -90,6 +90,12 @@
                         <p>Entidades</p>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('ciudad.index')}}">
+                        <i class="pe-7s-home"></i>
+                        <p>Ciudades</p>
+                    </a>
+                </li>
                     @endcan
                 @can('Configuaracion.index')
                 <li>

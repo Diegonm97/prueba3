@@ -18,7 +18,7 @@ class CreatePrueba3Table extends Migration
 
         Schema::create('ciudad', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('nombre');
+            $table->string('nombre');
             $table->integer('codigo');
             $table->timestamps();
         });
@@ -27,8 +27,8 @@ class CreatePrueba3Table extends Migration
 //================================ entidad =============================================
         Schema::create('entidad', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->integer('nombre');;
-            $table->double('tipo');
+            $table->string('nombre');;
+            $table->integer('tipo');
             $table->timestamps();
         });
 
@@ -90,6 +90,7 @@ class CreatePrueba3Table extends Migration
             $table->integer('tipo_id');
             $table->string('nombres');
             $table->string('apellidos');
+            $table->integer('estado');
             $table->string('telefono');
             $table->string('direccion');
             $table->string('email');
@@ -102,12 +103,12 @@ class CreatePrueba3Table extends Migration
             $table->integer('id_arl')->unsigned();
             $table->integer('id_afp')->unsigned();
             $table->integer('id_cjc')->unsigned();
-            $table->integer('estado');
             $table->integer('beneficio');
             $table->integer('rango');
             $table->integer('upc');
-            $table->integer('incripcion');
+            $table->integer('inscripcion');
             $table->integer('administracion');
+            $table->integer('observacion');
             $table->integer('id_usuario')->unsigned();            
             $table->timestamps();
 

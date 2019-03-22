@@ -43,7 +43,26 @@
                                         @foreach ($entidades as $entidad)
                                         <tr>
                                         	<th>{{$entidad->nombre}}</th>
-                                            <th>{{$entidad->tipo}}</th>
+                                            <th>
+                                            @if($entidad->tipo == 1)
+                                                EPS
+                                          
+                                            @endif
+                                            @if($entidad->tipo == 2)
+                                                ARL
+                                          
+                                            @endif
+                                            @if($entidad->tipo == 3)
+                                                AFP
+                                          
+                                            @endif
+                                            @if($entidad->tipo == 4)
+                                                CajaComp
+
+                                            
+                                            @endif
+
+                                            </th>
                                             
                                             <th>
                                                 @can('Entidades.show')

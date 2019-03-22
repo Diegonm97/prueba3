@@ -6,12 +6,12 @@
 </div>
 <div class="col-sm-7" >
     
-    <h1 align="center">Informacion de la entidad</h1>
+    <h1 align="center">Informacion de la ciudad</h1>
 </div>
 
 <div class="col-sm-3">
       
-      @include('entidades.fragment.error')
+      @include('ciudades.fragment.error')
 
 </div>
 
@@ -26,14 +26,16 @@
         <tbody>
             <tr>
             <td><strong>Nombre: </strong></td>
-            <td>{{$entidades->nombre}}</td>
+            <td>{{$ciudades->nombre}}</td>
             </tr>
         
             <tr>
             <td><strong>Tipo: </strong></td>
-            <td>  {{$entidades->tipo}}  </td>
+            <td>  {{$ciudades->codigo}}  </td>
             </tr>
 
+            
+            
 
             
         </tbody>

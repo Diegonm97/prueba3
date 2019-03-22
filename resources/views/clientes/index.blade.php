@@ -35,7 +35,7 @@
                                     <div class="container">
                                         <div class="row">
                                     <thead>
-                                          	<th>nuip</th>
+                                          	<th>Identificacion</th>
                                             <th>Nombre</th>
                                             <th>Apellido</th>
                                         	<th>Estado</th>
@@ -47,13 +47,13 @@
                                     <tbody>
                                         @foreach ($clientes as $cliente)
                                         <tr>
-                                        	<th>{{$cliente->nuip}}</th>
-                                            <th>{{$cliente->nombreCli}}</th>
-                                            <th>{{$cliente->apellidoCli}}</th>
-                                            <th>{{$cliente->estadoCli}}</th>
-                                            <th>{{$cliente->tipoIdCli}}</th>
-                                            <th>{{$cliente->telefonoCli}}</th>
-                                            <th>{{$cliente->rangoCli}}</th>
+                                        	<th>{{$cliente->identificacion}}</th>
+                                            <th>{{$cliente->nombres}}</th>
+                                            <th>{{$cliente->apellidos}}</th>
+                                            <th>{{$cliente->estado}}</th>
+                                            <th>{{$cliente->tipo_cliente}}</th>
+                                            <th>{{$cliente->telefono}}</th>
+                                            <th>{{$cliente->rango}}</th>
                                             <th>
                                                 @can('Clientes.show')
                                                 <a href="{{route('clientes.show', $cliente->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
