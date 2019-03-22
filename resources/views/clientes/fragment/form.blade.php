@@ -1,26 +1,26 @@
 <div class="col-sm-12">
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
-			{!! Form::label('tipoIdCli','Tipo ID(*).')!!}
-			{!!Form::select('tipoIdCli', ['Cc'=>'Cc', 'Pasaporte'=>'Pasaporte', 'Permiso de Trabajo'=>'Permiso de Trabajo'],null,['class'=>'form-control','title'=>'Ingresa el tipo de id del cliente.','id'=>'tipoIdCli','required'=>'required' ])!!}
+			{!! Form::label('tipo_id','Tipo ID(*).')!!}
+			{!!Form::select('tipo_id', ['Cc'=>'Cc', 'Pasaporte'=>'Pasaporte', 'Permiso de Trabajo'=>'Permiso de Trabajo'],null,['class'=>'form-control','title'=>'Ingresa el tipo de id del cliente.','id'=>'tipo_id','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
-			{!! Form::label('nuip','Numero de cedula(*).')!!}
-			{!!Form::number('nuip',null,['class'=>'form-control','title'=>'Ingresa un numero de identificacion, no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'nuip','required'=>'required'])!!}
+			{!! Form::label('identificacion','Numero de cedula(*).')!!}
+			{!!Form::number('identificacion',null,['class'=>'form-control','title'=>'Ingresa un numero de identificacion, no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'identificacion','required'=>'required'])!!}
 		</div>
 	</div>
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
-		{!! Form::label('nombreCli','Nombre(s) del cliente(*).')!!}
-		{!!Form::text('nombreCli',null,['class'=>'form-control','title'=>'Ingresa el nombre del cliente.' , 'placeholder'=>'Ej: Juan Rodrigo','id'=>'nombreCli','required'=>'required' ])!!}
+		{!! Form::label('nombres','Nombre(s) del cliente(*).')!!}
+		{!!Form::text('nombres',null,['class'=>'form-control','title'=>'Ingresa el nombre del cliente.' , 'placeholder'=>'Ej: Juan Rodrigo','id'=>'nombres','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
-			{!! Form::label('apellidoCli','Apellido(s) del cliente(*).')!!}
-			{!!Form::text('apellidoCli',null,['class'=>'form-control','title'=>'Ingresa el apellido del cliente.' , 'placeholder'=>'Ej: Perez Lopez','id'=>'apellidoCli','required'=>'required' ])!!}
+			{!! Form::label('apellidos','Apellido(s) del cliente(*).')!!}
+			{!!Form::text('apellidos',null,['class'=>'form-control','title'=>'Ingresa el apellido del cliente.' , 'placeholder'=>'Ej: Perez Lopez','id'=>'apellidos','required'=>'required' ])!!}
 		</div>
 	</div>
 </div>
@@ -28,20 +28,20 @@
 <div class="col-sm-12">
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-			{!! Form::label('estadoCli','Estado del cliente(*).')!!}
-			{!!Form::select('estadoCli', ['Activo'=>'Activo', 'Retirado'=>'Retirado'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.','title'=>'A,R','id'=>'estadoCli','required'=>'required' ])!!}
+			{!! Form::label('tipo_cliente','Seleccione tipo de clinte(*).')!!}
+			{!!Form::select('tipo_cliente', [1=>'Independiente', 2=>'Asociado'],null,['class'=>'form-control','title'=>'Ingresa tipo de cliente.' ,'id'=>'tipo_cliente','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-			{!! Form::label('direccionCli','Direccion(*).')!!}
-			{!!Form::text('direccionCli',null,['class'=>'form-control','title'=>'Ingresa la direccion del cliente.', 'placeholder'=>'Ej: Cra 10a #34-14','id'=>'direccionCli','required'=>'required' ])!!}
+			{!! Form::label('estado','Estado del cliente(*).')!!}
+			{!!Form::select('estado', ['Activo'=>'Activo', 'Retirado'=>'Retirado'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.','title'=>'A,R','id'=>'estado','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-			{!! Form::label('oficinaCli','Oficina(*).')!!}
-			{!!Form::select('oficinaCli', ['Sede Principal'=>'Sede Principal', 'Sede Llanogrande 1'=>'Sede Llanogrande 1', 'Sede Llanogrande 2'=>'Sede Llanogrande 2' , 'Sede Cali'=>'Sede Cali', 'Sede Buga'=>'Sede Buga', 'Sede Rozo'=>'Sede Rozo'],null,['class'=>'form-control','title'=>'Ingresa la oficina donde se afilio al cliente.' ,'id'=>'oficinaCli','required'=>'required' ])!!}
+			{!! Form::label('direccion','Direccion(*).')!!}
+			{!!Form::text('direccion',null,['class'=>'form-control','title'=>'Ingresa la direccion del cliente.', 'placeholder'=>'Ej: Cra 10a #34-14','id'=>'direccion','required'=>'required' ])!!}
 		</div>
 	</div>
 </div>
@@ -49,20 +49,20 @@
 <div class="col-sm-12">
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-			{!! Form::label('ciudadCli','Ciudad(*).')!!}
-			{!!Form::text('ciudadCli',null,['class'=>'form-control','title'=>'Ingresa la ciudad del cliente.' , 'placeholder'=>'Ej: Palmira','id'=>'ciudadCli','required'=>'required' ])!!}
+			{!! Form::label('id_ciudad','Ciudad(*).')!!}
+			{!!Form::text('id_ciudad',null,['class'=>'form-control','title'=>'Ingresa la ciudad del cliente.' , 'placeholder'=>'Ej: Palmira','id'=>'id_ciudad','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-			{!! Form::label('telefonoCli','Telefono(*).')!!}
-			{!!Form::number('telefonoCli',null,['class'=>'form-control','title'=>'Ingresa el telefono del cliente.' , 'placeholder'=>'Ej: 3209523123','id'=>'telefonoCli','required'=>'required' ])!!}
+			{!! Form::label('telefono','Telefono(*).')!!}
+			{!!Form::number('telefono',null,['class'=>'form-control','title'=>'Ingresa el telefono del cliente.' , 'placeholder'=>'Ej: 3209523123','id'=>'telefono','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-			{!! Form::label('emailCli','Correo Electronico.')!!}
-			{!!Form::text('emailCli',null,['class'=>'form-control','title'=>'Ingresa el correo electronico del cliente.' , 'placeholder'=>'Ej: ejemplo@ejemplo.com ','id'=>'emailCli','required'=>'required' ])!!}
+			{!! Form::label('email','Correo Electronico.')!!}
+			{!!Form::text('email',null,['class'=>'form-control','title'=>'Ingresa el correo electronico del cliente.' , 'placeholder'=>'Ej: ejemplo@ejemplo.com ','id'=>'email','required'=>'required' ])!!}
 		</div>
 	</div>
 </div>
@@ -70,114 +70,51 @@
 <div class="col-sm-12">
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-		{!! Form::label('fechaNacCli','Fecha de nacimiento(*).')!!}
-		{!!Form::date('fechaNacCli',null,['class'=>'form-control', 'title'=>'Elige un fecha de nacimiento', 'placeholder'=>'Ej: 23/10/1997','required'=>'required'])!!}
+		{!! Form::label('fecha_nacimiento','Fecha de nacimiento(*).')!!}
+		{!!Form::date('fecha_nacimiento',null,['class'=>'form-control', 'title'=>'Elige un fecha de nacimiento', 'placeholder'=>'Ej: 23/10/1997','required'=>'required'])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-			{!! Form::label('salarioCli','Salario(*).')!!}
-			{!!Form::number('salarioCli',null,['class'=>'form-control','title'=>'Ingresa el salario del cliente.' , 'placeholder'=>'Ej: 680000','id'=>'salarioCli','required'=>'required', 'onkeyup'=>'calcular()' ])!!}
+			{!! Form::label('salario','Salario(*).')!!}
+			{!!Form::number('salario',null,['class'=>'form-control','title'=>'Ingresa el salario del cliente.' , 'placeholder'=>'Ej: 680000','id'=>'salario','required'=>'required', 'onkeyup'=>'calcular()' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-			<label for="rangoCli">Rango(*).</label>
-				<select onchange="calcular()" class="form-control" title="Ingresa el rango del cliente." id="rangoCli" required="required" name="rangoCli">
-					@for ($i = 1; $i <= 5; $i++)
-				<option value="{{$i}}">{{$i}}</option>
-
-					@endfor
-				</select>
+			{!! Form::label('rango','Seleccione rango(*).')!!}
+			{!!Form::select('rango', [1=>'1', 2=>'2', 3=>'3', 4=>'4'],null,['class'=>'form-control','title'=>'Ingresa rango del cliente.' ,'id'=>'rango','required'=>'required' ])!!}
 		</div>
 	</div>
 </div>
 
 <div class="col-sm-12">
+
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
-		{!! Form::label('nombreEPScli','Nombre EPS(*).')!!}
-			<select class="form-control" id="nombreEPScli" required="required" name="nombreEPScli">
-				<option value=""></option>
-				@foreach ($epss as $eps)
-
-					<option value="{{$eps->id}}">{{$eps->nombre}}</option>
-
-				@endforeach
-			</select>
+			{!! Form::label('id_eps','Valor por del Eps cliente(*).')!!}
+			{!!Form::number('id_eps',null,['class'=>'form-control','title'=>'Ingresa la EPS  del cliente.' , 'placeholder'=>'Ej: 13000','id'=>'id_eps','required'=>'required' ])!!}
 		</div>
 	</div>
 
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
-			{!! Form::label('EPScli','Valor por del Eps cliente(*).')!!}
-			{!!Form::number('EPScli',null,['class'=>'form-control','title'=>'Ingresa el valor de la EPS  del cliente.' , 'placeholder'=>'Ej: 13000','id'=>'EPScli','required'=>'required' ])!!}
-		</div>
-	</div>
-
-
-	<div class="col-sm-3">
-		<div class="form-group row has-success">
-			{!! Form::label('nombreARLcli','Nombre ARL(*).')!!}
-			<select class="form-control" id="nombreARLcli" name="nombreARLcli">
-				<option value=""></option>
-					@foreach ($arls as $arl)
-
-						<option value="{{$arl->id}}">{{$arl->nombre}}</option>
-
-					@endforeach
-			</select>
+			{!! Form::label('id_arl','Valor por del ARL del cliente.')!!}
+			{!!Form::number('id_arl',null,['class'=>'form-control','title'=>'Ingresa la ARL del cliente.' , 'placeholder'=>'Ej: 15000','id'=>'id_arl'])!!}
 		</div>
 	</div>
 
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
-			{!! Form::label('ARLcli','Valor por del ARL del cliente.')!!}
-			{!!Form::number('ARLcli',null,['class'=>'form-control','title'=>'Ingresa el valor de la ARL del cliente.' , 'placeholder'=>'Ej: 15000','id'=>'ARLcli'])!!}
-		</div>
-	</div>
-</div>
-
-<div class="col-sm-12">
-	<div class="col-sm-3">
-		<div class="form-group row has-success">
-			{!! Form::label('nombreAFPcli','Nombre AFP(*).')!!}
-			<select class="form-control" id="nombreAFPcli"  name="nombreAFPcli">
-				<option value=""></option>
-				@foreach ($afps as $afp)
-
-					<option value="{{$afp->id}}">{{$afp->nombre}}</option>
-
-				@endforeach
-			</select>
-		</div>
-	</div>
-	<div class="col-sm-3">
-		<div class="form-group row has-success">
-			{!! Form::label('AFPcli','Valor por del AFP del cliente.')!!}
-			{!!Form::number('AFPcli',null,['class'=>'form-control','title'=>'Ingresa el valor de la AFP del cliente.' , 'placeholder'=>'Ej: 14000','id'=>'AFPcli'])!!}
-		</div>
-	</div>
-
-
-	<div class="col-sm-3">
-		<div class="form-group row has-success">
-			{!! Form::label('nombreCajaCompCli','Nombre Caja de Compensacion(*).')!!}
-			<select class="form-control" id="nombreCajaCompCli"  name="nombreCajaCompCli">
-				<option value=""></option>
-					@foreach ($cajacomps as $cajacomp)
-
-						<option value="{{$cajacomp->id}}">{{$cajacomp->nombre}}</option>
-
-					@endforeach
-			</select>
+			{!! Form::label('id_afp','Valor por del AFP del cliente.')!!}
+			{!!Form::number('id_afp',null,['class'=>'form-control','title'=>'Ingresa la AFP del cliente.' , 'placeholder'=>'Ej: 14000','id'=>'id_afp'])!!}
 		</div>
 	</div>
 
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
-			{!! Form::label('cajaCompCli','Valor por del Caja de Compensacion.')!!}
-			{!!Form::text('cajaCompCli',null,['class'=>'form-control','title'=>'Ingresa el valor la caja de compensacion del cliente.' , 'placeholder'=>'Ej: 12000','id'=>'cajaCompCli'])!!}
+			{!! Form::label('id_cjc','Valor por del Caja de Compensacion.')!!}
+			{!!Form::text('id_cjc',null,['class'=>'form-control','title'=>'Ingresa la caja de compensacion del cliente.' , 'placeholder'=>'Ej: 12000','id'=>'id_cjc'])!!}
 		</div>
 	</div>
 </div>
@@ -186,20 +123,20 @@
 <div class="col-sm-12">
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-			{!! Form::label('beneficioCli','Beneficio.')!!}
-			{!!Form::select('beneficioCli', ['No'=>'No', 'Si' => 'Si'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.' ,'id'=>'beneficioCli'])!!}
+			{!! Form::label('beneficio','Beneficio.')!!}
+			{!!Form::select('beneficio', [1=>'No', 2 => 'Si'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.' ,'id'=>'beneficio'])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-			{!! Form::label('administracionCli','Administracion cliente.')!!}
-			{!!Form::text('administracionCli',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'nombreEmpCli','required'=>'required' ])!!}
+			{!! Form::label('administracion','Administracion cliente.')!!}
+			{!!Form::text('administracion',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'administracion','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
-			{!! Form::label('inscripcionCli','Inscripcion.')!!}
-			{!!Form::text('inscripcionCli',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'nombreEmpCli','required'=>'required' ])!!}
+			{!! Form::label('inscripcion','Inscripcion.')!!}
+			{!!Form::text('inscripcion',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'inscripcion','required'=>'required' ])!!}
 		</div>
 	</div>
 </div>
@@ -208,57 +145,17 @@
 <div class="col-sm-12">
 <div class="col-sm-5">
 <div class="form-group row has-success">
-{!! Form::label('UPCadicCli','UPC del cliente.')!!}
-{!!Form::text('UPCadicCli',null,['class'=>'form-control','title'=>'Ingresa el UPC del cliente.' , 'placeholder'=>'Ej: 1','id'=>'UPCadicCli' ])!!}
+{!! Form::label('upc','UPC del cliente.')!!}
+{!!Form::text('upc',null,['class'=>'form-control','title'=>'Ingresa el UPC del cliente.' , 'placeholder'=>'Ej: 1','id'=>'upc' ])!!}
 </div>
 </div>
 <div class="col-sm-5">
 <div class="form-group row has-success">
-{!! Form::label('fechaIngCli','Fecha de Ingreso(*).')!!}
-{!!Form::date('fechaIngCli',null,['class'=>'form-control', 'title'=>'Elige un fecha de nacimiento', 'placeholder'=>'Ej: 23/10/1997','required'=>'required'])!!}
-</div>
-</div>
-
-
-<div class="col-sm-2">
-<div class="form-group row has-success">
-{!! Form::label('tipoCli','Tipo de cliente(*).')!!}
-{!!Form::select('tipoCli', ['Independiente' => 'Independiente', 'Asociado'=>'Asociado', 'Empresa'=>'Empresa'], null,['class'=>'form-control','title'=>'Elige tu tipoCli.', 'required'=>'required','name'=>'tipoCli'])!!}
+{!! Form::label('fecha_ingreso','Fecha de Ingreso(*).')!!}
+{!!Form::date('fecha_ingreso',null,['class'=>'form-control', 'title'=>'Elige un fecha de nacimiento', 'placeholder'=>'Ej: 23/10/1997','required'=>'required'])!!}
 </div>
 </div>
 </div>
-<div class="col-sm-12">
-<div class="col-sm-3">
-<div class="form-group row has-success">
-{!! Form::label('idEmpresaContraCli','Id de la empresa(*).')!!}
-{!!Form::text('idEmpresaContraCli',null,['class'=>'form-control','title'=>'Ingresa el id de la empresa del cliente.' , 'placeholder'=>'Ej: 12345678','id'=>'idEmpresaContraCli','required'=>'required' ])!!}
-</div>
-</div>
-<div class="col-sm-1">
-<div class="form-group row has-success">
-{!! Form::label('idNIT','Id del Nit(*).')!!}
-{!!Form::text('idNIT',null,['class'=>'form-control','title'=>'Ingresa el id del Nit.' , 'placeholder'=>'Ej: 1','id'=>'idNIT'])!!}
-</div>
-</div>
-
-<div class="col-sm-4">
-<div class="form-group row has-success">
-{!! Form::label('nombreEmpCli','Nombre de la Empresa(*).')!!}
-{!!Form::text('nombreEmpCli',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'nombreEmpCli','required'=>'required' ])!!}
-</div>
-</div>
-<div class="col-sm-4">
-<div class="form-group row has-success">
-{!! Form::label('estadoPago','Estado de pago(*).')!!}
-{!!Form::select('estadoPago', ['Pago'=>'Pago', 'No Pago'=>'No Pago'],null,['class'=>'form-control','title'=>'Ingresa un estado de pago del cliente.', 'id'=>'estadoPago','required'=>'required' ])!!}
-</div>
-</div>
-</div>
-
-
-
-
-
 
 <br>
 <br>

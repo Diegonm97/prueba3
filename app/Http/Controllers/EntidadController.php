@@ -43,7 +43,6 @@ class EntidadController extends Controller
 
             $entidad->nombre         = $request->nombre;
             $entidad->tipo           = $request->tipo;
-            $entidad->contacto       = $request->contacto;
             
 
             $entidad->save();
@@ -92,7 +91,6 @@ class EntidadController extends Controller
 
             $entidad->nombre         = $request->nombre;
             $entidad->tipo           = $request->tipo;
-            $entidad->contacto       = $request->contacto;
             
             $entidad->save();
 

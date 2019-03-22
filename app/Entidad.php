@@ -8,7 +8,7 @@ class Entidad extends Model
 {
     protected $table = 'entidad';
 
-     protected $fillable=['nombre','tipo','contacto'];
+     protected $fillable=['nombre','tipo'];
 
 // Realiza la busqueda en base de datos de acuerdo al nuip
 	public function scopeSearch1($query, $nombre) 

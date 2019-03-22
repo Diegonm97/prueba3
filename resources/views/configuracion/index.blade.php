@@ -14,150 +14,54 @@
       @include('configuracion.fragment.error')
 
 </div>
-<div class="col-sm-1">
-      <a href="{{route('configuracion.edit', $configuracion->id)}}">
-      <i class="fas fa-pen fa-2x" style="color: #2C7CE1"></i></a>
-</div>
-    
+ <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Confiuración
+                                    @can('Configuracion.create')
+                                    <a href="{{route('configuracion.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
+                                    @endcan
 
-<div class="col-md-12">
-                        
-    <div class="table-responsive table-full-width">
-    <table class="table table-hover table-striped">
-        <div class="container">
-            <div class="row">
-        <tbody>
-            <tr>
-            <td><strong>EPS: </strong></td>
-            <td>{{$configuracion->tarifaEPS}}</td>
-            </tr>
-        
-            <tr>
-            <td><strong>RANGO 1:</strong></td>
-            <td>  {{$configuracion->tarifaARLr1}}  </td>
-            </tr>
+                                <p class="category">Aquí se muestran datos de configuración</p>
+                            {!!Form::open(['route'=>'configuracion.index', 'method'=>'GET','class'=>'navbar-form'])!!}
+                                <div class="form group">
+                                    {!!Form::text('nombre',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+                                    
+                                    
+                                </div>
+                            {!!Form::close()!!}
+                            </div>
 
-            <tr>
-            <td><strong>RANGO 2:</strong></td>
-            <td>  {{$configuracion->tarifaARLr2}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>RANGO 3:</strong></td>
-            <td>  {{$configuracion->tarifaARLr3}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>RANGO 4:</strong></td>
-            <td>  {{$configuracion->tarifaARLr4}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>RANGO 5:</strong></td>
-            <td>  {{$configuracion->tarifaARLr5}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>AFP:</strong></td>
-            <td>  {{$configuracion->tarifaAFP}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Caja de compensacion</strong></td>
-            <td>  {{$configuracion->cajaComp}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>CCF autoliquidacion</strong></td>
-            <td>  {{$configuracion->CCFautoliquidacion}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Sena</strong></td>
-            <td>  {{$configuracion->tarifaSena}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>ICBF</strong></td>
-            <td>  {{$configuracion->tarifaICBF}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>EPS Ley 1607</strong></td>
-            <td>  {{$configuracion->tarifaEPS1607}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Caja de compensacion 1607</strong></td>
-            <td>  {{$configuracion->tarifaCAJA1607}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>EPS Colombiano en el exterior</strong></td>
-            <td>  {{$configuracion->tarifaEPScolExt}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>IVA</strong></td>
-            <td>  {{$configuracion->IVA}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Salario minimo</strong></td>
-            <td>  {{$configuracion->salarioMinimo}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Administración</strong></td>
-            <td>  {{$configuracion->Administracion}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Administración independientes</strong></td>
-            <td>  {{$configuracion->AdminIndepen}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Inscripción</strong></td>
-            <td>  {{$configuracion->Inscripcion}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Activación</strong></td>
-            <td>  {{$configuracion->Activacion}}</td>
-            </tr>
-
-            <tr>
-            <td><strong>Dias habiles</strong></td>
-            <td>  {{$configuracion->DiasHabiles}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Vencimiento independiente</strong></td>
-            <td>  {{$configuracion->IndepVencimiento}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Intereses de mora</strong></td>
-            <td>  {{$configuracion->Intereses}}  </td>
-            </tr>
-
-            
-            
-
-            
-
-            
-        </tbody>
-        </div>
-    </div>
-</table>
-</div>
-</div>
-
-
-
-
-
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover table-striped">
+                                    <div class="container">
+                                        <div class="row">
+                                     <thead>
+                                          <th>Nombre</th>
+                                          <th>Código</th>
+                                          <th>Valor</th>
+                                          <th></th>
+                                    </thead>
+                                    <tbody>
+                                          @foreach ($configuracion as $config)
+                                              <tr>
+                                                  <th>{{$config->nombre}}</th>
+                                                  <th>{{$config->codigo}}</th>
+                                                  <th>{{$config->valor}}</th>
+                                                  <th><a href="{{route('configuracion.edit', $config->id)}}"><i class="fas fa-pen"></i></a</th>
+                                                              
+                                              </tr>
+                                          @endforeach
+                              
+                                    </tbody>
+                                    </div>
+                                </div>
+                                </table>
+                                <div align="center">
+                                        {!!$configuracion->render() !!}
+                                </div>
+                                </div>
+                            </div>
+                        </div>
 
 @endsection

@@ -38,7 +38,6 @@
                                           	<th>NIT</th>
                                             <th>Nombre de la Empresa</th>
                                         	<th>Estado</th>
-                                        	<th>Tipo Cliente</th>
                                             <th>Telefono</th>
                                         	<th>Ciudad</th>
                                         	<th>Acción</th>
@@ -46,12 +45,11 @@
                                     <tbody>
                                         @foreach ($empresas as $empresa)
                                         <tr>
-                                        	<th>{{$empresa->idEmpresaContraEmp}}-{{$empresa->idNIT}}</th>
-                                            <th>{{$empresa->nombreEmp}}</th>
-                                            <th>{{$empresa->estadoEmp}}</th>
-                                            <th>{{$empresa->tipoIdEmp}}</th>
-                                            <th>{{$empresa->telefonoEmp}}</th>
-                                            <th>{{$empresa->ciudadEmp}}</th>
+                                        	<th>{{$empresa->nit}}</th>
+                                            <th>{{$empresa->nombre}}</th>
+                                            <th>{{$empresa->estado}}</th>
+                                            <th>{{$empresa->telefono}}</th>
+                                            <th>{{$empresa->ciudad}}</th>
                                             <th>
                                                 @can('Empresas.show')
                                                 <a href="{{route('empresa.show', $empresa->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

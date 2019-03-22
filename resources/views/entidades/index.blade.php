@@ -37,15 +37,13 @@
                                     <thead>
                                           	<th>Nombre</th>
                                             <th>Tipo</th>
-                                        	<th>Contacto</th>
-                                        	
+                                        	<th></th>
                                     </thead>
                                     <tbody>
                                         @foreach ($entidades as $entidad)
                                         <tr>
                                         	<th>{{$entidad->nombre}}</th>
                                             <th>{{$entidad->tipo}}</th>
-                                            <th>{{$entidad->contacto}}</th>
                                             
                                             <th>
                                                 @can('Entidades.show')

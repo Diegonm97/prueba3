@@ -114,6 +114,10 @@ Route::middleware(['auth'])->group(function() {
 
 	//configuracion
 	
+	Route::post('configuracion/store', 'configuracionController@store')->name('configuracion.store')
+		->middleware('permission:Configuracion.create');
+	Route::get('configuracion/create', 'configuracionController@create')->name('configuracion.create')
+		->middleware('permission:Configuracion.create');
 	Route::get('configuracion', 'configuracionController@index')->name('configuracion.index')
 		->middleware('permission:Configuracion.index');
 	Route::put('configuracion/{id}', 'configuracionController@update')->name('configuracion.update')
