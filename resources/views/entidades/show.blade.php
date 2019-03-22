@@ -31,7 +31,18 @@
         
             <tr>
             <td><strong>Tipo: </strong></td>
-            <td>  {{$entidades->tipo}}  </td>
+            <td>    @if($entidades->tipo == 1)
+                        EPS
+                    @endif
+                    @if($entidades->tipo == 2)
+                        ARL
+                    @endif
+                    @if($entidades->tipo == 3)
+                        AFP
+                    @endif
+                    @if($entidades->tipo == 4)
+                        CajaComp                        
+                    @endif  </td>
             </tr>
 
 

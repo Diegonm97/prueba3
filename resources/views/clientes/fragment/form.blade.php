@@ -47,10 +47,17 @@
 </div>
 
 <div class="col-sm-12">
-	<div class="col-sm-4">
+<div class="col-sm-3">
 		<div class="form-group row has-success">
-			{!! Form::label('id_ciudad','Ciudad(*).')!!}
-			{!!Form::text('id_ciudad',null,['class'=>'form-control','title'=>'Ingresa la ciudad del cliente.' , 'placeholder'=>'Ej: Palmira','id'=>'id_ciudad','required'=>'required' ])!!}
+		{!! Form::label('id_ciudad','Nombre Ciudad(*).')!!}
+			<select class="form-control" id="id_ciudad" required="required" name="id_ciudad">
+				<option value=""></option>
+				@foreach ($ciudades as $ciudad)
+
+					<option value="{{$ciudad->id}}">{{$ciudad->nombre}}</option>
+
+				@endforeach
+			</select>
 		</div>
 	</div>
 	<div class="col-sm-4">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Clientes;
 use App\Entidad;
 use App\Empresa;
+use App\Ciudad;
 use Illuminate\Http\Request;
 use App\Http\Requests\ClientesRequest;
 
@@ -33,8 +34,9 @@ class ClientesController extends Controller
         $arls = Entidad::Search()->where('tipo','=', "2")->get();
         $afps = Entidad::Search()->where('tipo','=', "3")->get();
         $cajacomps = Entidad::Search()->where('tipo','=', "4")->get();
+        $ciudades = Ciudad::Search()->get();
         $porcentaje = 10;
-        return view('clientes.create',compact('porcentaje', 'epss','arls','afps','cajacomps'));  
+        return view('clientes.create',compact('porcentaje', 'epss','arls','afps','cajacomps', 'ciudades'));  
     }
 
     public function createEmp($id)
