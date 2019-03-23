@@ -29,8 +29,15 @@
     <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('id_ciudad','Ciudad(*).')!!}
-			{!!Form::text('id_ciudad',null,['class'=>'form-control','title'=>'Ingresa la ciudad de la Empresa.' , 'placeholder'=>'Ej: Palmira','id'=>'id_ciudad','required'=>'required' ])!!}
-        </div>
+            <select class="form-control" id="id_ciudad" required="required" name="id_ciudad">
+            <option value=""></option>
+				@foreach ($ciudades as $ciudad)
+
+					<option value="{{$ciudad->id}}">{{$ciudad->nombre}}</option>
+
+				@endforeach
+			</select>
+			</div>
     </div>
     <div class="col-sm-4">
         <div class="form-group row has-success">
@@ -56,7 +63,7 @@
     <div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('beneficio','Beneficio.')!!}
-			{!!Form::select('beneficio', ['No'=>'No', 'Si' => 'Si'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.' ,'id'=>'beneficio'])!!}
+			{!!Form::select('beneficio', [1=>'No', 2 => 'Si'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.' ,'id'=>'beneficio'])!!}
 		</div>
 	</div>
 </div>

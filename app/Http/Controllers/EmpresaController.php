@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Clientes;
 use App\Empresa;
 use App\Entidad;
+use App\Ciudad;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresasRequest;
 
@@ -37,7 +38,8 @@ class EmpresaController extends Controller
         $arls = Entidad::Search()->where('tipo','=', "arl")->get();
         $afps = Entidad::Search()->where('tipo','=', "afp")->get();
         $cajacomps = Entidad::Search()->where('tipo','=', "cajacomp")->get();
-        return view('empresas.create',compact('epss','arls','afps','cajacomps'));   
+        $ciudades = Ciudad::Search()->get();
+        return view('empresas.create',compact('epss','arls','afps','cajacomps','ciudades'));   
     }
     
     /**
@@ -70,7 +72,8 @@ class EmpresaController extends Controller
 
 
             
-            return redirect("/createEmp/$empresas->id");
+            return redirect()->route('empresa.index')
+            ->with('info','La empresa fue creado');
     }
 
     /**
@@ -85,8 +88,9 @@ class EmpresaController extends Controller
 
         
         //$clientes = Clientes::where('idEmpresaContraCli','=', $empresa->idEmpresaContraEmp)->get();
+        $ciudad = Ciudad::Search()->where('id', '=', $empresa->id_ciudad)->first();
         
-        return view('empresas.show', compact('empresa', 'clientes'));
+        return view('empresas.show', compact('empresa', 'ciudad'));
     }
 
     /**
