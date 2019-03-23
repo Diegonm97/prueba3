@@ -63,12 +63,28 @@
 
             <tr>
             <td><strong>Estado </strong></td>
-            <td>  {{$empresa->estado}}  </td>
+            <td>  
+            @if($empresa->estado == 1)
+                    Activo
+                                          
+            @endif
+            @if($empresa->estado == 2)  
+                    Retirado
+            @endif
+            </td>
             </tr>
 
             <tr>
             <td><strong>Beneficio: </strong></td>
-            <td>  {{$empresa->beneficio}}  </td>
+            <td>
+            @if($empresa->beneficio == 1)
+                    No
+                                          
+            @endif
+            @if($empresa->beneficio == 2)  
+                    Si
+            @endif
+            </td>
             </tr>
 
             <tr>

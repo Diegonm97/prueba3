@@ -39,12 +39,7 @@ class ClientesController extends Controller
         return view('clientes.create',compact('porcentaje', 'epss','arls','afps','cajacomps', 'ciudades'));  
     }
 
-    public function createEmp($id)
-    {
-        
-        $empresa = Empresa::findOrFail($id);
-        return view('clientes.createEmp', compact('empresa'));
-    }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -101,7 +96,12 @@ class ClientesController extends Controller
     public function show($id)
     {
         $cliente = Clientes::find($id);
-        return view('clientes.show', compact('cliente'));
+        $ciudad = Ciudad::Search()->where('id', '=', $cliente->id_ciudad)->first();
+        $eps = Entidad::Search()->where('id','=', $cliente->id_eps)->first();
+        $arl = Entidad::Search()->where('id','=', $cliente->id_arl)->first();
+        $afp = Entidad::Search()->where('id','=', $cliente->id_afp)->first();
+        $cajacomp = Entidad::Search()->where('id','=', $cliente->id_cjc)->first();
+        return view('clientes.show', compact('cliente','ciudad','eps','arl','afp','cajacomp'));
     }
 
     /**

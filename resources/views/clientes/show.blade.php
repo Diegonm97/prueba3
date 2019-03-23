@@ -23,143 +23,146 @@
             <div class="row">
         <tbody>
             <tr>
-            <td><strong>Nuip: </strong></td>
-            <td>{{$cliente->nuip}}</td>
+            <td><strong>Identificacion: </strong></td>
+            <td>{{$cliente->identificacion}}</td>
             </tr>
         
             <tr>
-            <td><strong>Nombre: </strong></td>
-            <td>  {{$cliente->nombreCli}}  </td>
+            <td><strong>Tipo Id: </strong></td>
+            <td>             
+            @if($cliente->tipo_id == 1)
+                    CC
+                                          
+            @endif
+            @if($cliente->tipo_id == 2)  
+                    PASAPORTE
+            @endif
+            @if($cliente->tipo_id == 3)  
+                    PERMISO DE TRABAJO
+            @endif
+            </td>
             </tr>
 
             <tr>
-            <td><strong>Apellido: </strong></td>
-            <td>  {{$cliente->nombreCli}}  </td>
+            <td><strong>Nombre(s): </strong></td>
+            <td>  {{$cliente->nombres}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Apellido(s): </strong></td>
+            <td>  {{$cliente->apellidos}}  </td>
             </tr>
 
             <tr>
             <td><strong>Estado: </strong></td>
-            <td>  {{$cliente->estadoCli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Tipo: </strong></td>
-            <td>  {{$cliente->tipoIdCli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Direccion: </strong></td>
-            <td>  {{$cliente->direccionCli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Oficina: </strong></td>
-            <td>  {{$cliente->oficinaCli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Ciudad: </strong></td>
-            <td>  {{$cliente->ciudadCli}}  </td>
+            <td>  
+            @if($cliente->estado == 1)
+                    Activo
+                                          
+            @endif
+            @if($cliente->estado == 2)  
+                    Retirado
+            @endif
+            </td>
             </tr>
 
             <tr>
             <td><strong>Telefono: </strong></td>
-            <td>  {{$cliente->telefonoCli}}  </td>
+            <td>  {{$cliente->telefono}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Direccion: </strong></td>
+            <td>  {{$cliente->direccion}}  </td>
             </tr>
 
             <tr>
             <td><strong>Email: </strong></td>
-            <td>  {{$cliente->emailCli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Fecha de Nacimiento: </strong></td>
-            <td>  {{$cliente->fechaNacCli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Salario: </strong></td>
-            <td>  {{$cliente->salarioCli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Rango: </strong></td>
-            <td>  {{$cliente->rangoCli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>EPS: </strong></td>
-            <td>  {{$cliente->nombreEPScli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Valor Esp: </strong></td>
-            <td>  {{$cliente->EPScli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>ARL: </strong></td>
-            <td>  {{$cliente->nombreARLcli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Valor Arl: </strong></td>
-            <td>  {{$cliente->ARLcli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>AFP: </strong></td>
-            <td>  {{$cliente->nombreAFPcli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Valor Afp: </strong></td>
-            <td>  {{$cliente->AFPcli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Caja de Compensacion: </strong></td>
-            <td>  {{$cliente->nombreCajaCompCli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Valor Caja de Compensacion: </strong></td>
-            <td>  {{$cliente->cajaCompCli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Beneficio: </strong></td>
-            <td>  {{$cliente->beneficioCli}}  </td>
-            </tr>
-
-            <tr>
-            <td><strong>Fecha de Ingreso: </strong></td>
-            <td>  {{$cliente->fechaIngCli}}  </td>
+            <td>  {{$cliente->email}}  </td>
             </tr>
 
             <tr>
             <td><strong>Tipo Cliente: </strong></td>
-            <td>  {{$cliente->tipoCli}}  </td>
+            <td>  {{$cliente->tipo_cliente}}  </td>
             </tr>
 
             <tr>
-            <td><strong>Nuip Empresa: </strong></td>
-            <td>  {{$cliente->idEmpresaContraCli}}-{{$cliente->idNIT}}  </td>
+            <td><strong>Fecha Ingreso: </strong></td>
+            <td>  {{$cliente->fecha_ingreso}}  </td>
             </tr>
 
             <tr>
-            <td><strong>Nombre Empresa: </strong></td>
-            <td>  {{$cliente->nombreEmpCli}}  </td>
+            <td><strong>Fecha Nacimiento: </strong></td>
+            <td>  {{$cliente->fecha_nacimiento}}  </td>
             </tr>
 
             <tr>
-            <td><strong>UPC Adicional: </strong></td>
-            <td>  {{$cliente->UPCadicCli}}  </td>
+            <td><strong>Salario: </strong></td>
+            <td>  {{$cliente->salario}}  </td>
             </tr>
 
             <tr>
-            <td><strong>Estado: </strong></td>
-            <td>  {{$cliente->estadoPago}}  </td>
+            <td><strong>Ciudad: </strong></td>
+            <td>  {{$ciudad->nombre}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>EPS: </strong></td>
+            <td>  {{$eps->nombre}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>ARL: </strong></td>
+            <td>  {{$arl->nombre}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>AFP: </strong></td>
+            <td>  {{$afp->nombre}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Caja de Compensacion: </strong></td>
+            <td>  {{$cajacomp->nombre}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Beneficio: </strong></td>
+            <td>  
+            @if($cliente->beneficio == 1)
+                    No
+                                          
+            @endif
+            @if($cliente->beneficio == 2)  
+                    Si
+            @endif
+            
+            </td>
+            </tr>
+
+            <tr>
+            <td><strong>Rango: </strong></td>
+            <td>  {{$cliente->rango}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>UPC Adic.: </strong></td>
+            <td>  {{$cliente->upc}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Inscripcion: </strong></td>
+            <td>  {{$cliente->inscripcion}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Administracion: </strong></td>
+            <td>  {{$cliente->administracion}}  </td>
+            </tr>
+
+            <tr>
+            <td><strong>Observacion: </strong></td>
+            <td>  {{$cliente->observacion}}  </td>
             </tr>
 
             

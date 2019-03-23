@@ -20,7 +20,6 @@ class EmpresaController extends Controller
     {   
         
         $empresas = Empresa::search1($request->idEmpresaContraEmp)->orderByDesc('id')->paginate('8');
-        
        
         
 

@@ -75,7 +75,7 @@ class CreatePrueba3Table extends Migration
             $table->integer('administracion');
             $table->integer('id_usuario')->unsigned()->nullable();
             $table->date('fecha_ingreso');
-            $table->integer('observacion');
+            $table->string('observacion');
 
             $table->timestamps();
 
@@ -110,8 +110,8 @@ class CreatePrueba3Table extends Migration
             $table->integer('upc');
             $table->integer('inscripcion');
             $table->integer('administracion');
-            $table->integer('observacion');
-            $table->integer('id_usuario')->unsigned();            
+            $table->string('observacion');
+            $table->integer('id_usuario')->unsigned()->nullable();            
             $table->timestamps();
 
             
