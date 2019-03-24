@@ -207,7 +207,7 @@ class CreatePrueba3Table extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('codigo');
-            $table->integer('valor');
+            $table->double('valor');
             $table->timestamps();
         });
 

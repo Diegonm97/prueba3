@@ -39,7 +39,7 @@ class ConfiguracionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(configuracionRequest $request)
+    public function store(Request $request)
     {
         $configuracion = new configuracion;
 
@@ -86,7 +86,7 @@ class ConfiguracionController extends Controller
      * @param  \App\Configuracion  $configuracion
      * @return \Illuminate\Http\Response
      */
-    public function update(ConfiguracionRequest $request, $id)
+    public function update(Request $request, $id)
     {
             $configuracion = Configuracion::find($id);
 
