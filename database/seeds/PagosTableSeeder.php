@@ -12,6 +12,6 @@ class PagosTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Pago::class,20)->create();
+        //factory(Pago::class,20)->create();
     }
 }

@@ -4,7 +4,7 @@
 
 <div class="col-m-9" >
     
-    <h1 align="center">Informacion Clientes</h1>
+    <h1 align="center">Informacion Empleados de la empresa</h1>
 </div>
 <div class="col-m-3">
     
