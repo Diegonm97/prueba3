@@ -76,6 +76,14 @@
                     </a>
                 </li>
                     @endcan
+                    @can('empleado_empresa.index')
+                <li>
+                    <a href="{{route('empleado_empresa.index')}}">
+                        <i class="pe-7s-portfolio"></i>
+                        <p>Empleado empresa</p>
+                    </a>
+                </li>
+                    @endcan
 
                 <li>
                     <a href="">

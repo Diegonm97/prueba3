@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Clientes;
 use App\Entidad;
-use App\Empresa;
 use App\Ciudad;
 use Illuminate\Http\Request;
 use App\Http\Requests\ClientesRequest;
@@ -18,7 +17,7 @@ class ClientesController extends Controller
      */
     public function index(Request $request)
     {   
-        $clientes = Clientes::search1($request->nuip)->orderbydesc('id')->paginate('8');
+        $clientes = Clientes::search1($request->identificacion)->orderbydesc('id')->paginate('8');
 
         return view('clientes.index', compact('clientes'));
     }
@@ -38,14 +37,7 @@ class ClientesController extends Controller
         $porcentaje = 10;
         return view('clientes.create',compact('porcentaje', 'epss','arls','afps','cajacomps', 'ciudades'));  
     }
-
-    public function createEmp($id)
-    {
-        
-        $empresa = Empresa::findOrFail($id);
-        return view('clientes.createEmp', compact('empresa'));
-    }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -156,7 +148,8 @@ class ClientesController extends Controller
             
             $clientes->save();
 
-            return redirect()->route('clientes.index')->with('info','El cliente fue actualizado');
+            return redirect()->route('clientes.index')
+            ->with('info','El cliente fue actualizado');
     }
 
     /**
