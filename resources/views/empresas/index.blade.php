@@ -47,7 +47,17 @@
                                         <tr>
                                         	<th>{{$empresa->nit}}</th>
                                             <th>{{$empresa->nombre}}</th>
-                                            <th>{{$empresa->estado}}</th>
+                                            <th>
+                                            @if($empresa->estado ==1)
+                                                    Activo
+                                            @endif
+
+                                            @if($empresa->estado ==2)
+                                                    Retirado
+                                            @endif
+
+                                            </th>
+
                                             <th>{{$empresa->telefono_contacto}}</th>
                                             <th>{{$empresa->nombre_contacto}}</th>
                                             <th>

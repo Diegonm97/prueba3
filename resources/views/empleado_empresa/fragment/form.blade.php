@@ -1,10 +1,6 @@
 <div class="col-sm-12">
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
-<<<<<<< HEAD
-			{!! Form::label('id_empresa','Empresa(*).')!!}
-			{!!Form::text('id_empresa', null,['class'=>'form-control','title'=>'Ingresa el nombre del cliente.' , 'placeholder'=>'Ej: Juan Rodrigo','id'=>'nombres','required'=>'required' ])!!}
-=======
 		{!! Form::label('id_empresa','Empresa(*).')!!}
 			<select class="form-control" id="id_empresa" required="required" name="id_empresa">
 				<option value=""></option>
@@ -14,7 +10,6 @@
 
 				@endforeach
 			</select>
->>>>>>> da3c98e59caec2221c14ae93c99c646ebd9d9cab
 		</div>
 		</div>
 	
@@ -36,18 +31,11 @@
 		{!!Form::text('nombres',null,['class'=>'form-control','title'=>'Ingresa el nombre del cliente.' , 'onKeyUp'=>'this.value = this.value.toUpperCase()', 'placeholder'=>'Ej: Juan Rodrigo','id'=>'nombres','required'=>'required' ])!!}
 		</div>
 	</div>
-<<<<<<< HEAD
-</div>
-
-<div class="col-sm-12">
-	<div class="col-sm-3">
-=======
 	
 </div>
 
 <div class="col-sm-12">
 <div class="col-sm-4">
->>>>>>> da3c98e59caec2221c14ae93c99c646ebd9d9cab
 		<div class="form-group row has-success">
 			{!! Form::label('apellidos','Apellido(s) del cliente(*).')!!}
 			{!!Form::text('apellidos',null,['class'=>'form-control','title'=>'Ingresa el apellido del cliente.' , 'onKeyUp'=>'this.value = this.value.toUpperCase()', 'placeholder'=>'Ej: Perez Lopez','id'=>'apellidos','required'=>'required' ])!!}
