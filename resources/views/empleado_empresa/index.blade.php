@@ -4,7 +4,7 @@
 
 <div class="col-m-9" >
     
-    <h1 align="center">Informacion Clientes</h1>
+    <h1 align="center">Informacion Empleados Empresas</h1>
 </div>
 <div class="col-m-3">
     
@@ -39,7 +39,7 @@
                                             <th>Nombre</th>
                                             <th>Apellido</th>
                                         	<th>Estado</th>
-                                        	<th>Tipo Cliente</th>
+                                        	<th>Empresa</th>
                                             <th>Telefono</th>
                                         	<th>Rango</th>
                                         	<th>Acción</th>
@@ -50,8 +50,25 @@
                                         	<th>{{$empleadoEmp->identificacion}}</th>
                                             <th>{{$empleadoEmp->nombres}}</th>
                                             <th>{{$empleadoEmp->apellidos}}</th>
-                                            <th>{{$empleadoEmp->estado}}</th>
-                                            <th>{{$empleadoEmp->tipo_cliente}}</th>
+                                            <th>
+                                            @if($empleadoEmp->estado == 1)
+                                                    Activo
+                                          
+                                            @endif
+                                            @if($empleadoEmp->estado == 2)  
+                                                    Retirado
+                                            @endif
+                                            </th>
+                                            <th>
+                                            
+                                            @foreach($empresas as $empresa)
+                                                @if($empresa->id == $empleadoEmp->id_empresa)
+                                                
+                                                {{$empresa->nombre}}
+
+                                                @endif
+                                            @endforeach
+                                            </th>
                                             <th>{{$empleadoEmp->telefono}}</th>
                                             <th>{{$empleadoEmp->rango}}</th>
                                             <th>
