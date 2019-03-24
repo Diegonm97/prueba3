@@ -2,7 +2,7 @@
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
 			{!! Form::label('tipo_id','Tipo ID(*).')!!}
-			{!!Form::select('tipo_id', [1 =>'Cc', 2 =>'Pasaporte', 3 =>'Permiso de Trabajo'],null,['class'=>'form-control','title'=>'Ingresa el tipo de id del cliente.','id'=>'tipo_id','required'=>'required' ])!!}
+			{!!Form::select('tipo_id', [1 =>'CC', 2 =>'PASAPORTE', 3 =>'PERMISO DE TRABAJO'],null,['class'=>'form-control','title'=>'Ingresa el tipo de id del cliente.','id'=>'tipo_id','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-3">
@@ -14,13 +14,13 @@
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
 		{!! Form::label('nombres','Nombre(s) del cliente(*).')!!}
-		{!!Form::text('nombres',null,['class'=>'form-control','title'=>'Ingresa el nombre del cliente.' , 'placeholder'=>'Ej: Juan Rodrigo','id'=>'nombres','required'=>'required' ])!!}
+		{!!Form::text('nombres',null,['class'=>'form-control','title'=>'Ingresa el nombre del cliente.' , 'placeholder'=>'Ej: Juan Rodrigo', 'onKeyUp'=>'this.value = this.value.toUpperCase()','id'=>'nombres','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-3">
 		<div class="form-group row has-success">
 			{!! Form::label('apellidos','Apellido(s) del cliente(*).')!!}
-			{!!Form::text('apellidos',null,['class'=>'form-control','title'=>'Ingresa el apellido del cliente.' , 'placeholder'=>'Ej: Perez Lopez','id'=>'apellidos','required'=>'required' ])!!}
+			{!!Form::text('apellidos',null,['class'=>'form-control','title'=>'Ingresa el apellido del cliente.' , 'placeholder'=>'Ej: Perez Lopez', 'onKeyUp'=>'this.value = this.value.toUpperCase()','id'=>'apellidos','required'=>'required' ])!!}
 		</div>
 	</div>
 </div>
@@ -29,19 +29,19 @@
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('tipo_cliente','Seleccione tipo de cliente(*).')!!}
-			{!!Form::select('tipo_cliente', [1=>'Independiente', 2=>'Asociado'],null,['class'=>'form-control','title'=>'Ingresa tipo de cliente.' ,'id'=>'tipo_cliente','required'=>'required' ])!!}
+			{!!Form::select('tipo_cliente', [1=>'INDEPENDIENTE', 2=>'ASOCIADO'],null,['class'=>'form-control','title'=>'Ingresa tipo de cliente.' ,'id'=>'tipo_cliente','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('estado','Estado del cliente(*).')!!}
-			{!!Form::select('estado', [1=>'Activo', 2=>'Retirado'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.','title'=>'A,R','id'=>'estado','required'=>'required' ])!!}
+			{!!Form::select('estado', [1=>'ACTIVO', 2=>'RETIRADO'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.','title'=>'A,R','id'=>'estado','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('direccion','Direccion(*).')!!}
-			{!!Form::text('direccion',null,['class'=>'form-control','title'=>'Ingresa la direccion del cliente.', 'placeholder'=>'Ej: Cra 10a #34-14','id'=>'direccion','required'=>'required' ])!!}
+			{!!Form::text('direccion',null,['class'=>'form-control','title'=>'Ingresa la direccion del cliente.', 'placeholder'=>'Ej: Cra 10a #34-14', 'onKeyUp'=>'this.value = this.value.toUpperCase()','id'=>'direccion','required'=>'required' ])!!}
 		</div>
 	</div>
 </div>
@@ -90,7 +90,7 @@
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('rango','Seleccione rango(*).')!!}
-			{!!Form::select('rango', [1=>'1', 2=>'2', 3=>'3', 4=>'4'],null,['class'=>'form-control','title'=>'Ingresa rango del cliente.' ,'id'=>'rango','required'=>'required' ])!!}
+			{!!Form::select('rango', [1=>'1', 2=>'2', 3=>'3', 4=>'4', 5=>'5'],null,['class'=>'form-control','title'=>'Ingresa rango del cliente.' ,'id'=>'rango','required'=>'required' ])!!}
 		</div>
 	</div>
 </div>
@@ -164,19 +164,19 @@
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('beneficio','Beneficio.')!!}
-			{!!Form::select('beneficio', [1=>'No', 2 => 'Si'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.' ,'id'=>'beneficio'])!!}
+			{!!Form::select('beneficio', [1=>'NO', 2 => 'SI'],null,['class'=>'form-control','title'=>'Beneficio del cliente.' ,'id'=>'beneficio'])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('administracion','Administracion cliente.')!!}
-			{!!Form::text('administracion',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'administracion','required'=>'required' ])!!}
+			{!!Form::text('administracion',null,['class'=>'form-control','title'=>'Ingresa el costo por administracion.' , 'placeholder'=>'Ej: 20000','id'=>'administracion','required'=>'required' ])!!}
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('inscripcion','Inscripcion.')!!}
-			{!!Form::text('inscripcion',null,['class'=>'form-control','title'=>'Ingresa el nombre de la empresa.' , 'placeholder'=>'Ej: La brasa roja','id'=>'inscripcion','required'=>'required' ])!!}
+			{!!Form::text('inscripcion',null,['class'=>'form-control','title'=>'Ingresa el costo por inscripcion.' , 'placeholder'=>'Ej: 20000','id'=>'inscripcion','required'=>'required' ])!!}
 		</div>
 	</div>
 </div>
@@ -192,7 +192,7 @@
 <div class="col-sm-4">
 <div class="form-group row has-success">
 {!! Form::label('fecha_ingreso','Fecha de Ingreso(*).')!!}
-{!!Form::date('fecha_ingreso',null,['class'=>'form-control', 'title'=>'Elige un fecha de nacimiento', 'placeholder'=>'Ej: 23/10/1997','required'=>'required'])!!}
+{!!Form::date('fecha_ingreso',null,['class'=>'form-control', 'title'=>'Elige un fecha de ingreso', 'placeholder'=>'Ej: 23/10/1997','required'=>'required'])!!}
 </div>
 </div>
 </div>

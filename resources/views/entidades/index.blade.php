@@ -58,8 +58,7 @@
                                             @endif
                                             @if($entidad->tipo == 4)
                                                 CajaComp
-
-                                            
+                                          
                                             @endif
 
                                             </th>

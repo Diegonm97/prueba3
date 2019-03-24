@@ -3,7 +3,7 @@
 <div class="col-sm-3">
 <div class="form-group row has-success">
 {!! Form::label('nombre','Nombre de la Entidad(*).')!!}
-{!!Form::text('nombre',null,['class'=>'form-control','title'=>'Ingresa el nombre de la entidad.' , 'placeholder'=>'Ej: Confandi','id'=>'nombre','required'=>'required' ])!!}
+{!!Form::text('nombre',null,['class'=>'form-control','title'=>'Ingresa el nombre de la entidad.' , 'placeholder'=>'Ej: Confandi', 'onKeyUp'=>'this.value = this.value.toUpperCase()','id'=>'nombre','required'=>'required' ])!!}
 </div>
 </div>
 

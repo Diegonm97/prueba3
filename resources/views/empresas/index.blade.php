@@ -39,7 +39,7 @@
                                             <th>Nombre de la Empresa</th>
                                         	<th>Estado</th>
                                             <th>Telefono</th>
-                                        	<th>Ciudad</th>
+                                        	<th>Nombre Contacto</th>
                                         	<th>Acción</th>
                                     </thead>
                                     <tbody>
@@ -48,8 +48,8 @@
                                         	<th>{{$empresa->nit}}</th>
                                             <th>{{$empresa->nombre}}</th>
                                             <th>{{$empresa->estado}}</th>
-                                            <th>{{$empresa->telefono}}</th>
-                                            <th>{{$empresa->ciudad}}</th>
+                                            <th>{{$empresa->telefono_contacto}}</th>
+                                            <th>{{$empresa->nombre_contacto}}</th>
                                             <th>
                                                 @can('Empresas.show')
                                                 <a href="{{route('empresa.show', $empresa->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
