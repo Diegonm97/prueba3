@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Clientes;
 use App\Entidad;
-use App\Empresa;
 use App\Ciudad;
 use Illuminate\Http\Request;
 use App\Http\Requests\ClientesRequest;

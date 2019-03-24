@@ -50,8 +50,26 @@
                                         	<th>{{$cliente->identificacion}}</th>
                                             <th>{{$cliente->nombres}}</th>
                                             <th>{{$cliente->apellidos}}</th>
-                                            <th>{{$cliente->estado}}</th>
-                                            <th>{{$cliente->tipo_cliente}}</th>
+                                            <th>
+                                            @if($cliente->estado == 1)
+                                                    Activo
+                                          
+                                            @endif
+                                            @if($cliente->estado == 2)  
+                                                    Retirado
+                                            @endif
+                                            </th>
+                                            <th>
+                                            @if($cliente->tipo_id == 1)
+                                                    CC                                          
+                                            @endif
+                                            @if($cliente->tipo_id == 2)  
+                                                    PASAPORTE
+                                            @endif
+                                            @if($cliente->tipo_id == 3)  
+                                                    PERMISO DE TRABAJO
+                                            @endif
+                                            </th>
                                             <th>{{$cliente->telefono}}</th>
                                             <th>{{$cliente->rango}}</th>
                                             <th>
