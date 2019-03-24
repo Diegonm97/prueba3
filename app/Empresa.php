@@ -29,6 +29,10 @@ class Empresa extends Model
 
 
     }
+    public function scopeSearch($query) 
+	{
+   	return $query->select('*');
+    }
 
 
     

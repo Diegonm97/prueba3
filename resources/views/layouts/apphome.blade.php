@@ -29,7 +29,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="{{asset('assets/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
     
-
+    
 </head>
 <body>
 

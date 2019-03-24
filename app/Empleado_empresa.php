@@ -18,4 +18,6 @@ class Empleado_empresa extends Model
    	return $query->where('identificacion','LIKE',"%$identificacion%");
     }
 
+
+    
 }

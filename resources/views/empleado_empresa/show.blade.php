@@ -23,7 +23,7 @@
             <div class="row">
         <tbody>
             <tr>
-            <td><strong>Nuip: </strong></td>
+            <td><strong>Empresa: </strong></td>
             <td>{{$empleadoEmp->id_empresa}}</td>
             </tr>
         
@@ -34,7 +34,18 @@
 
             <tr>
             <td><strong>Tipo id: </strong></td>
-            <td>  {{$empleadoEmp->tipo_id}}  </td>
+            <td>  
+            @if($empleadoEmp->tipo_id == 1)
+                    CC
+                                          
+            @endif
+            @if($empleadoEmp->tipo_id == 2)  
+                    PASAPORTE
+            @endif
+            @if($empleadoEmp->tipo_id == 3)  
+                    PERMISO DE TRABAJO
+            @endif
+            </td>
             </tr>
 
             <tr>
@@ -64,7 +75,14 @@
 
             <tr>
             <td><strong>tipo_cliente: </strong></td>
-            <td>  {{$empleadoEmp->tipo_cliente}}  </td>
+            <td>  
+            @if($empleadoEmp->tipo_cliente == 1)
+                        INDEPENDIENTE
+            @endif 
+            @if($empleadoEmp->tipo_cliente == 2)
+                        ASOCIADO
+            @endif             
+            </td>
             </tr>
 
             <tr>
@@ -98,28 +116,36 @@
             </tr>
 
             <tr>
-            <td><strong>id_eps: </strong></td>
-            <td>  {{$empleadoEmp->id_eps}}  </td>
+            <td><strong>EPS: </strong></td>
+            <td>  {{$eps->nombre}}  </td>
             </tr>
 
             <tr>
-            <td><strong>id_arl: </strong></td>
-            <td>  {{$empleadoEmp->id_arl}}  </td>
+            <td><strong>ARL: </strong></td>
+            <td>  {{$arl->nombre}}  </td>
             </tr>
 
             <tr>
             <td><strong>AFP: </strong></td>
-            <td>  {{$empleadoEmp->id_afp}}  </td>
+            <td>  {{$afp->nombre}}  </td>
             </tr>
 
             <tr>
             <td><strong>Caja de Compensacion: </strong></td>
-            <td>  {{$empleadoEmp->id_cjc}}  </td>
+            <td>  {{$cajacomp->nombre}}  </td>
             </tr>
 
             <tr>
             <td><strong>estado: </strong></td>
-            <td>  {{$empleadoEmp->estado}}  </td>
+            <td> 
+            @if($empleadoEmp->estado == 1)
+                    Activo
+                                          
+            @endif
+            @if($empleadoEmp->estado == 2)  
+                    Retirado
+            @endif
+            </td>
             </tr>
 
           

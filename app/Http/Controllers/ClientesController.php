@@ -37,6 +37,10 @@ class ClientesController extends Controller
         $porcentaje = 10;
         return view('clientes.create',compact('porcentaje', 'epss','arls','afps','cajacomps', 'ciudades'));  
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> da3c98e59caec2221c14ae93c99c646ebd9d9cab
     /**
      * Store a newly created resource in storage.
      *

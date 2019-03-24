@@ -83,7 +83,15 @@
 
             <tr>
             <td><strong>Tipo Cliente: </strong></td>
-            <td>  {{$cliente->tipo_cliente}}  </td>
+            <td> 
+            @if($cliente->tipo_cliente == 1)
+                        INDEPENDIENTE
+            @endif 
+            @if($cliente->tipo_cliente == 2)
+                        ASOCIADO
+            @endif 
+            
+            </td>
             </tr>
 
             <tr>

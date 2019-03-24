@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Empleado_empresa;
 use App\Entidad;
 use App\Ciudad;
+use App\Empresa;
 use Illuminate\Http\Request;
-use Illuminate\Http\Empleado_empresaRequest;
+use App\Http\Requests\Empleado_empresaRequest;
 
 class Empleado_empresaController extends Controller
 {
@@ -18,8 +19,9 @@ class Empleado_empresaController extends Controller
     public function index(Request $request)
     {
         $empleadoEmpS = Empleado_empresa::search1($request->identificacion)->orderbydesc('id')->paginate('8');
+        $empresas = Empresa::search()->get();
        
-        return view('empleado_empresa.index', compact('empleadoEmpS'));
+        return view('empleado_empresa.index', compact('empleadoEmpS','empresas'));
     }
 
     /**
@@ -27,6 +29,8 @@ class Empleado_empresaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     
     public function create()
     {
         $epss = Entidad::Search()->where('tipo','=', "1")->get();
@@ -34,9 +38,10 @@ class Empleado_empresaController extends Controller
         $afps = Entidad::Search()->where('tipo','=', "3")->get();
         $cajacomps = Entidad::Search()->where('tipo','=', "4")->get();
         $ciudades = Ciudad::Search()->get();
+        $empresas = Empresa::Search()->get();
         $porcentaje = 10;
         return view('empleado_empresa.create',
-        compact('porcentaje', 'epss','arls','afps','cajacomps', 'ciudades'));
+        compact('porcentaje', 'epss','arls','afps','cajacomps', 'ciudades','empresas'));
     }
 
     /**
@@ -66,9 +71,9 @@ class Empleado_empresaController extends Controller
         $empleadoEmpS->id_ciudad        = $request->id_ciudad;
         $empleadoEmpS->id_eps           = $request->id_eps;
         $empleadoEmpS->id_arl           = $request->id_arl;
-        $empleadoEmpS->id_arl           = $request->id_afp;
-        $empleadoEmpS->id_arl           = $request->id_cjc;
-        $empleadoEmpS->id_arl           = $request->estado;
+        $empleadoEmpS->id_afp           = $request->id_afp;
+        $empleadoEmpS->id_cjc           = $request->id_cjc;
+        $empleadoEmpS->estado           = $request->estado;
 
         $empleadoEmpS->save();
 
@@ -90,7 +95,12 @@ class Empleado_empresaController extends Controller
     public function show($id)
     {
         $empleadoEmp = Empleado_empresa::find($id);
-        return view('empleado_empresa.show', compact('empleadoEmp'));
+        $ciudad = Ciudad::Search()->where('id', '=', $empleadoEmp->id_ciudad)->first();
+        $eps = Entidad::Search()->where('id','=', $empleadoEmp->id_eps)->first();
+        $arl = Entidad::Search()->where('id','=', $empleadoEmp->id_arl)->first();
+        $afp = Entidad::Search()->where('id','=', $empleadoEmp->id_afp)->first();
+        $cajacomp = Entidad::Search()->where('id','=', $empleadoEmp->id_cjc)->first();
+        return view('empleado_empresa.show', compact('empleadoEmp','ciudad','eps','arl','afp','cajacomp'));
     }
 
     /**
