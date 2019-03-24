@@ -79,7 +79,7 @@
                     @can('empleado_empresa.index')
                 <li>
                     <a href="{{route('empleado_empresa.index')}}">
-                        <i class="pe-7s-portfolio"></i>
+                        <i class="pe-7s-users"></i>
                         <p>Empleado empresa</p>
                     </a>
                 </li>
