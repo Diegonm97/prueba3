@@ -17,7 +17,7 @@ class ClientesController extends Controller
      */
     public function index(Request $request)
     {   
-        $clientes = Clientes::search1($request->nuip)->orderbydesc('id')->paginate('8');
+        $clientes = Clientes::search1($request->identificacion)->orderbydesc('id')->paginate('8');
 
         return view('clientes.index', compact('clientes'));
     }
@@ -37,9 +37,13 @@ class ClientesController extends Controller
         $porcentaje = 10;
         return view('clientes.create',compact('porcentaje', 'epss','arls','afps','cajacomps', 'ciudades'));  
     }
+<<<<<<< HEAD
+    
+=======
 
     
 
+>>>>>>> 2dab0e532df03336ddffc6c4e498d1a15fa01134
     /**
      * Store a newly created resource in storage.
      *
@@ -155,7 +159,8 @@ class ClientesController extends Controller
             
             $clientes->save();
 
-            return redirect()->route('clientes.index')->with('info','El cliente fue actualizado');
+            return redirect()->route('clientes.index')
+            ->with('info','El cliente fue actualizado');
     }
 
     /**
