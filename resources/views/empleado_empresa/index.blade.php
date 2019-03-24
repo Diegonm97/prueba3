@@ -4,11 +4,7 @@
 
 <div class="col-m-9" >
     
-<<<<<<< HEAD
     <h1 align="center">Informacion Empleados de la empresa</h1>
-=======
-    <h1 align="center">Informacion Empleados Empresas</h1>
->>>>>>> da3c98e59caec2221c14ae93c99c646ebd9d9cab
 </div>
 <div class="col-m-3">
     
