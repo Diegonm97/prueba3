@@ -14,7 +14,7 @@ class CiudadController extends Controller
      */
     public function index(Request $request)
     {
-        $ciudades = Ciudad::search1($request->nombre)->orderbydesc('nombre')->paginate('8');
+        $ciudades = Ciudad::search1($request->nombre)->orderby('nombre')->paginate('8');
 
         return view('ciudades.index', compact('ciudades'));
     }
@@ -67,7 +67,7 @@ class CiudadController extends Controller
      * @param  \App\Ciudad  $ciudad
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ciudad $ciudad)
+    public function edit($id)
     {
         $ciudades = Ciudad::find($id);
 
@@ -81,7 +81,7 @@ class CiudadController extends Controller
      * @param  \App\Ciudad  $ciudad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ciudad $ciudad)
+    public function update(Request $request, $id)
     {
         $ciudad = Ciudad::find($id);
 
@@ -90,7 +90,7 @@ class CiudadController extends Controller
             
             $ciudad->save();
 
-            return redirect()->route('ciudades.index')->with('info','La ciudad fue actualizado');
+            return redirect()->route('ciudad.index')->with('info','La ciudad fue actualizado');
     }
 
     /**

@@ -6,18 +6,18 @@
 </div>
 <div class="col-sm-8" >
     
-    <h1 align="center">Editar ciudad</h1>
+    <h1 align="center">Editar Ciudad</h1>
 </div>
 <div class="col-sm-3">
 	
-	@include('ciudad.fragment.error')
+	@include('ciudades.fragment.error')
 
 
 
 </div>
 
  <p>				
- 	{!! Form::model($ciudades, ['route' => ['ciudades.update', $ciudades->id], 'method' => 'PUT']) !!}
+ 	{!! Form::model($ciudades, ['route' => ['ciudad.update', $ciudades->id], 'method' => 'PUT']) !!}
 
         @include('ciudades.fragment.form')
 

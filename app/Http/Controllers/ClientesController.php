@@ -34,8 +34,13 @@ class ClientesController extends Controller
         $afps = Entidad::Search()->where('tipo','=', "3")->get();
         $cajacomps = Entidad::Search()->where('tipo','=', "4")->get();
         $ciudades = Ciudad::Search()->get();
+        $ciudad = null;
+        $eps = null;
+        $arl = null;
+        $afp = null;
+        $cajacomp = null;
         $porcentaje = 10;
-        return view('clientes.create',compact('porcentaje', 'epss','arls','afps','cajacomps', 'ciudades'));  
+        return view('clientes.create',compact('porcentaje','ciudad','eps','arl','afp','cajacomp', 'epss','arls','afps','cajacomps', 'ciudades'));  
     }
     /**
      * Store a newly created resource in storage.
@@ -110,8 +115,19 @@ class ClientesController extends Controller
     {
         $porcentaje = 10;
         $cliente =Clientes::find($id);
+        $epss = Entidad::Search()->where('tipo','=', "1")->get();
+        $arls = Entidad::Search()->where('tipo','=', "2")->get();
+        $afps = Entidad::Search()->where('tipo','=', "3")->get();
+        $eps = Entidad::Search()->where('id','=', $cliente->id_eps)->first();
+        $arl = Entidad::Search()->where('id','=', $cliente->id_arl)->first();
+        $afp = Entidad::Search()->where('id','=', $cliente->id_afp)->first();
+        $cajacomp = Entidad::Search()->where('id','=', $cliente->id_cjc)->first();
+        $cajacomps = Entidad::Search()->where('tipo','=', "4")->get();
+        $ciudad = Ciudad::Search()->where('id', '=', $cliente->id_ciudad)->first();
+        $ciudades = Ciudad::Search()->get();
+        
 
-        return view('clientes.edit', compact('cliente','porcentaje'));
+        return view('clientes.edit', compact('cliente','porcentaje','ciudades','ciudad', 'epss','arls','afps','cajacomps','eps','arl','afp','cajacomp'));
     }
 
     /**
@@ -145,9 +161,9 @@ class ClientesController extends Controller
             $clientes->beneficio        = $request->beneficio;
             $clientes->rango            = $request->rango;
             $clientes->upc              = $request->upc;
-            $clientes->incripcion       = $request->incripcion;
+            $clientes->inscripcion       = $request->inscripcion;
             $clientes->administracion   = $request->administracion;
-            $clientes->id_usuario      = $request->id_usuario;
+ //           $clientes->id_usuario      = $request->id_usuario;
             
             
             $clientes->save();

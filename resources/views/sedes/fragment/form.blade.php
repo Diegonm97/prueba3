@@ -11,7 +11,9 @@
 		<div class="form-group row has-success">
 		{!! Form::label('id_ciudad','Nombre Ciudad(*).')!!}
 			<select class="form-control" id="id_ciudad" required="required" name="id_ciudad">
-				<option value=""></option>
+			@if ($ciudades != null)
+				<option value="{{$ciudad->id}}">{{$ciudad->nombre}}</option>
+				@endif
 				@foreach ($ciudades as $ciudad)
 
 					<option value="{{$ciudad->id}}">{{$ciudad->nombre}}</option>

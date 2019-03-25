@@ -4,7 +4,7 @@
 <div class="col-sm-1">
       <a href="javascript:history.back()"><i class="fas fa-arrow-alt-circle-left fa-3x" style="color: #2C7CE1"></i></a>
 </div>
-<div class="col-sm-7" >
+<div class="col-sm-8" >
     
     <h1 align="center">Informacion Empresas</h1>
 </div>
@@ -14,8 +14,7 @@
       @include('empresas.fragment.error')
 
 </div>
-<div class="col-sm-1" >
-    <a href="{{route('createEmp',$empresa->id)}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></div>
+
 
 
 

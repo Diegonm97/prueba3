@@ -38,7 +38,8 @@ class EmpresaController extends Controller
         $afps = Entidad::Search()->where('tipo','=', "afp")->get();
         $cajacomps = Entidad::Search()->where('tipo','=', "cajacomp")->get();
         $ciudades = Ciudad::Search()->get();
-        return view('empresas.create',compact('epss','arls','afps','cajacomps','ciudades'));   
+        $ciudad = null;
+        return view('empresas.create',compact('epss','arls','afps','cajacomps','ciudades', 'ciudad'));   
     }
     
     /**
@@ -101,7 +102,9 @@ class EmpresaController extends Controller
     public function edit($id)
     {
         $empresa = Empresa::find($id);
-        return view('empresas.edit', compact('empresa'));
+        $ciudades = Ciudad::Search()->get();
+        $ciudad = Ciudad::Search()->where('id', '=', $empresa->id_ciudad)->first();
+        return view('empresas.edit', compact('empresa','ciudad','ciudades'));
     }
 
     /**
