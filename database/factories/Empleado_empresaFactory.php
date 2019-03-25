@@ -19,10 +19,10 @@ $factory->define(App\Empleado_empresa::class, function (Faker $faker) {
         'rango'=> rand(1,5),
         'upc'=> rand(1,5),
         'id_ciudad'=> rand(1,6),
-		'id_eps'=> rand(1,12),
-		'id_arl'=> rand(1,12),
-		'id_afp'=>rand(1,12),
-		'id_cjc'=> rand(1,12),
+		'id_eps'=> rand(1,3),
+	    'id_arl'=> rand(4,6),
+		'id_afp'=>rand(7,9),
+		'id_cjc'=> rand(10,12),
 		'estado'=> rand(1,2),
     ];
 });

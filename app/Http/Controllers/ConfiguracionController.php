@@ -16,7 +16,7 @@ class ConfiguracionController extends Controller
     public function index()
     {
 
-        $configuracion = Configuracion::paginate();
+        $configuracion = Configuracion::paginate(20);
         
 
         return view('configuracion.index', compact('configuracion'));

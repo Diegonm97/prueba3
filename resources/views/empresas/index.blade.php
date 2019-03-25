@@ -68,7 +68,7 @@
                                             <a href="{{route('empresa.edit', $empresa->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 @endcan
                                                 
-                                            <a href="{{route('createEmp',$empresa->id)}}"><i class="fas fa-plus"></i></a>
+                                            
                                             
                                             </th>
                                             

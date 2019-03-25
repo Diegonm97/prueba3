@@ -17,7 +17,7 @@
  <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Confiuración
+                                <h4 class="title">Configuración
                                     @can('Configuracion.create')
                                     <a href="{{route('configuracion.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
                                     @endcan

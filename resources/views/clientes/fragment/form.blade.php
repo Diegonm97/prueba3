@@ -51,6 +51,10 @@
 		<div class="form-group row has-success">
 		{!! Form::label('id_ciudad','Nombre Ciudad(*).')!!}
 			<select class="form-control" id="id_ciudad" required="required" name="id_ciudad">
+			@if ($ciudad != null)
+			<option value="{{$ciudad->id}}">{{$ciudad->nombre}}</option>
+			@endif
+			
 				<option value=""></option>
 				@foreach ($ciudades as $ciudad)
 
@@ -100,6 +104,10 @@
 		<div class="form-group row has-success">
 		{!! Form::label('id_eps','Nombre EPS(*).')!!}
 			<select class="form-control" id="id_eps" required="required" name="id_eps">
+			@if ($eps != null)
+			<option value="{{$eps->id}}">{{$eps->nombre}}</option>
+			@endif
+			
 				<option value=""></option>
 				@foreach ($epss as $eps)
 
@@ -117,6 +125,10 @@
 		<div class="form-group row has-success">
 			{!! Form::label('id_arl','Nombre ARL(*).')!!}
 			<select class="form-control" id="id_arl" name="id_arl">
+			@if ($arl != null)
+			<option value="{{$arl->id}}">{{$arl->nombre}}</option>
+			@endif
+			
 				<option value=""></option>
 					@foreach ($arls as $arl)
 
@@ -131,6 +143,10 @@
 		<div class="form-group row has-success">
 			{!! Form::label('id_afp','Nombre AFP(*).')!!}
 			<select class="form-control" id="id_afp"  name="id_afp">
+			@if ($afp != null)
+			<option value="{{$afp->id}}">{{$afp->nombre}}</option>
+			@endif
+			
 				<option value=""></option>
 				@foreach ($afps as $afp)
 
@@ -146,6 +162,10 @@
 		<div class="form-group row has-success">
 			{!! Form::label('id_cjc','Nombre Caja de Compensacion(*).')!!}
 			<select class="form-control" id="id_cjc"  name="id_cjc">
+			@if ($cajacomp != null)
+			<option value="{{$cajacomp->id}}">{{$cajacomp->nombre}}</option>
+			@endif
+			
 				<option value=""></option>
 					@foreach ($cajacomps as $cajacomp)
 
