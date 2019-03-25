@@ -45,7 +45,7 @@
     <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('nombre_contacto','Nombre contacto(*).')!!}
-			{!!Form::text('nombre_contacto',null,['class'=>'form-control','title'=>'Ingresar nombre de contacto de la Empresa.' , 'placeholder'=>'Ej: Pepito Perez','id'=>'nombre_contacto','required'=>'required' ])!!}
+			{!!Form::text('nombre_contacto',null,['class'=>'form-control','title'=>'Ingresar nombre de contacto de la Empresa.', 'onKeyUp'=>'this.value = this.value.toUpperCase()' , 'placeholder'=>'Ej: Pepito Perez','id'=>'nombre_contacto','required'=>'required' ])!!}
         </div>
     </div>
 </div>

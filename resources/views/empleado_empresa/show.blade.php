@@ -59,39 +59,42 @@
             </tr>
 
             <tr>
-            <td><strong>telefono: </strong></td>
+            <td><strong>Telefono: </strong></td>
             <td>  {{$empleadoEmp->telefono}}  </td>
             </tr>
 
             <tr>
-            <td><strong>direccion: </strong></td>
+            <td><strong>Direccion: </strong></td>
             <td>  {{$empleadoEmp->direccion}}  </td>
             </tr>
 
             <tr>
-            <td><strong>email: </strong></td>
+            <td><strong>Email: </strong></td>
             <td>  {{$empleadoEmp->email}}  </td>
             </tr>
 
             <tr>
-            <td><strong>tipo_cliente: </strong></td>
+            <td><strong>Tipo cliente: </strong></td>
             <td>  
             @if($empleadoEmp->tipo_cliente == 1)
                         INDEPENDIENTE
             @endif 
             @if($empleadoEmp->tipo_cliente == 2)
                         ASOCIADO
-            @endif             
+            @endif
+            @if($empleadoEmp->tipo_cliente == 3)
+                        EMPRESA
+            @endif              
             </td>
             </tr>
 
             <tr>
-            <td><strong>fecha_ingreso: </strong></td>
+            <td><strong>Fecha ingreso: </strong></td>
             <td>  {{$empleadoEmp->fecha_ingreso}}  </td>
             </tr>
 
             <tr>
-            <td><strong>fecha_nacimiento: </strong></td>
+            <td><strong>Fecha de nacimiento: </strong></td>
             <td>  {{$empleadoEmp->fecha_nacimiento}}  </td>
             </tr>
 
@@ -106,7 +109,7 @@
             </tr>
 
             <tr>
-            <td><strong>upc: </strong></td>
+            <td><strong>UPC: </strong></td>
             <td>  {{$empleadoEmp->upc}}  </td>
             </tr>
 
@@ -136,7 +139,7 @@
             </tr>
 
             <tr>
-            <td><strong>estado: </strong></td>
+            <td><strong>Estado: </strong></td>
             <td> 
             @if($empleadoEmp->estado == 1)
                     Activo

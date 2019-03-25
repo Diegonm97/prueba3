@@ -47,7 +47,7 @@
 	<div class="col-sm-4">
 		<div class="form-group row has-success">
 			{!! Form::label('tipo_cliente','Seleccione tipo de cliente(*).')!!}
-			{!!Form::select('tipo_cliente', [1=>'Independiente', 2=>'Asociado'],null,['class'=>'form-control','title'=>'Ingresa tipo de cliente.' ,'id'=>'tipo_cliente','required'=>'required' ])!!}
+			{!!Form::select('tipo_cliente', [3=>'Empresa'],null,['class'=>'form-control','title'=>'Ingresa tipo de cliente.' ,'id'=>'tipo_cliente','required'=>'required' ])!!}
 		</div>
 	</div>
 	
