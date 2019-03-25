@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Sede;
+use App\Ciudad;
 use Illuminate\Http\Request;
 
 class SedeController extends Controller
@@ -12,9 +13,11 @@ class SedeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $sedes = Sede::search1($request->nombre)->orderbydesc('nombre')->paginate('8');
+
+        return view('sedes.index', compact('sedes'));
     }
 
     /**
@@ -24,7 +27,9 @@ class SedeController extends Controller
      */
     public function create()
     {
-        //
+        $ciudades = Ciudad::Search()->get();
+        
+        return view('sedes.create',compact('ciudades'));
     }
 
     /**
@@ -35,7 +40,17 @@ class SedeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sede = new Sede;
+
+            $sede->nombre         = $request->nombre;
+            $sede->id_ciudad      = $request->id_ciudad;
+            $sede->telefono       = $request->telefono;
+            $sede->direccion      = $request->direccion;            
+
+            $sede->save();
+
+            return redirect()->route('sede.index')
+            ->with('info','La sede fue creada');
     }
 
     /**
@@ -44,9 +59,10 @@ class SedeController extends Controller
      * @param  \App\Sede  $sede
      * @return \Illuminate\Http\Response
      */
-    public function show(Sede $sede)
+    public function show($id)
     {
-        //
+        $sede = Sede::find($id);
+        return view('sedes.show', compact('sede'));
     }
 
     /**
@@ -55,9 +71,12 @@ class SedeController extends Controller
      * @param  \App\Sede  $sede
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sede $sede)
+    public function edit($id)
     {
-        //
+        $sede = Sede::find($id);
+        $ciudades = Ciudad::Search()->get();
+
+        return view('sedes.edit', compact('sede','ciudades'));
     }
 
     /**
@@ -67,9 +86,19 @@ class SedeController extends Controller
      * @param  \App\Sede  $sede
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sede $sede)
+    public function update(Request $request,$id)
     {
-        //
+        $sede = Sede::find($id);
+
+        $sede->nombre         = $request->nombre;
+        $sede->id_ciudad      = $request->id_ciudad;
+        $sede->telefono       = $request->telefono;
+        $sede->direccion      = $request->direccion;            
+
+        $sede->save();
+
+        return redirect()->route('sedes.index')
+        ->with('info','La sede fue actualizado');
     }
 
     /**

@@ -86,7 +86,7 @@
                     @endcan
 
                 <li>
-                    <a href="">
+                    <a href="{{route('sede.index')}}">
                         <i class="pe-7s-map-marker"></i>
                         <p>Sedes</p>
                     </a>
