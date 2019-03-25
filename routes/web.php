@@ -24,6 +24,7 @@ Route::resource('pago','PagoController');
 Route::resource('entidad','entidadController');
 Route::resource('ciudad','ciudadController');
 Route::resource('empleado_empresa','Empleado_empresaController');
+Route::resource('sede','SedeController');
 
 Route::get("/createEmp/{id}","clientesController@createEmp")->name('createEmp');
 
