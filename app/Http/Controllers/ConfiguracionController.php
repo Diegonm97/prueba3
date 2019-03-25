@@ -17,10 +17,9 @@ class ConfiguracionController extends Controller
     {
 
         $configuracion = Configuracion::paginate(20);
-        
+
 
         return view('configuracion.index', compact('configuracion'));
-        
     }
 
     /**
@@ -43,15 +42,13 @@ class ConfiguracionController extends Controller
     {
         $configuracion = new configuracion;
 
-            $configuracion->nombre  = $request->nombre;
-            $configuracion->codigo  = $request->codigo;
-            $configuracion->valor  = $request->valor;
-            
-            $configuracion->save();
+        $configuracion->nombre  = $request->nombre;
+        $configuracion->codigo  = $request->codigo;
+        $configuracion->valor  = $request->valor;
 
-            return redirect()->route('configuracion.index');
-            
-            
+        $configuracion->save();
+
+        return redirect()->route('configuracion.index');
     }
 
     /**
@@ -62,7 +59,7 @@ class ConfiguracionController extends Controller
      */
     public function show($id)
     {
-        
+
         //
     }
 
@@ -74,9 +71,8 @@ class ConfiguracionController extends Controller
      */
     public function edit($id)
     {
-        $configuracion =Configuracion::find($id);
+        $configuracion = Configuracion::find($id);
         return view('configuracion.edit', compact('configuracion'));
-        
     }
 
     /**
@@ -88,16 +84,15 @@ class ConfiguracionController extends Controller
      */
     public function update(Request $request, $id)
     {
-            $configuracion = Configuracion::find($id);
+        $configuracion = Configuracion::find($id);
 
-            $configuracion->nombre  = $request->nombre;
-            $configuracion->codigo  = $request->codigo;
-            $configuracion->valor  = $request->valor;
-            
-            $configuracion->save();
+        $configuracion->nombre  = $request->nombre;
+        $configuracion->codigo  = $request->codigo;
+        $configuracion->valor  = $request->valor;
 
-            return redirect()->route('configuracion.index')->with('info','La configuracion fue actualizado');
-        
+        $configuracion->save();
+
+        return redirect()->route('configuracion.index')->with('info', 'La configuracion fue actualizado');
     }
 
     /**

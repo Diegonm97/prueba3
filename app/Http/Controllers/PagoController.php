@@ -28,7 +28,7 @@ class PagoController extends Controller
      */
     public function create()
     {
-        return view('pagos.create');  
+        return view('pagos.create');
     }
 
     /**
@@ -39,45 +39,44 @@ class PagoController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $pagos = new Pago;
 
-            $pagos->nuipPago             =       $request->nuipPago;
-            $pagos->nombrePago           =       $request->nombrePago;
-            $pagos->oficinaPago          =       $request->oficinaPago;
-            $pagos->telefonoPago         =       $request->telefonoPago;
-            $pagos->emailPago            =       $request->emailPago;
-            $pagos->salarioPago          =       $request->salarioPago;
-            $pagos->EPSpago              =       $request->EPSpago;
-            $pagos->AFPpago              =       $request->AFPpago;
-            $pagos->ARLpago              =       $request->ARLpago;
-            $pagos->cajaCompPago         =       $request->cajaCompPago;
-            $pagos->mesPago              =       $request->mesPago;
-            $pagos->estadoClientePago    =       $request->estadoClientePago;
-            $pagos->sumaPago             =       $request->sumaPago;
-            $pagos->interesesPago        =       $request->interesesPago;
-            $pagos->sumTotalPago         =       $request->sumTotalPago;
-            $pagos->abonoPago            =       $request->abonoPago;
-            $pagos->formaPago            =       $request->formaPago;
-            $pagos->proximoPago          =       $request->proximoPago;
-            $pagos->observacionPago      =       $request->observacionPago;
-            $pagos->informePago          =       $request->informePago;
-            $pagos->empresaContPago      =       $request->empresaContPago;
-            $pagos->costoAdminPago       =       $request->costoAdminPago;
-            $pagos->EMIpago              =       $request->EMIpago;
-            $pagos->descuentoPago        =       $request->descuentoPago;
-            $pagos->UPCadicPago          =       $request->UPCadicPago;
-            $pagos->sevFunePago          =       $request->sevFunePago;
-            $pagos->inscripcionPago      =       $request->inscripcionPago;
-            $pagos->activacionPago       =       $request->activacionPago;
-            $pagos->aporteVoluPago       =       $request->aporteVoluPago;
+        $pagos->nuipPago             =       $request->nuipPago;
+        $pagos->nombrePago           =       $request->nombrePago;
+        $pagos->oficinaPago          =       $request->oficinaPago;
+        $pagos->telefonoPago         =       $request->telefonoPago;
+        $pagos->emailPago            =       $request->emailPago;
+        $pagos->salarioPago          =       $request->salarioPago;
+        $pagos->EPSpago              =       $request->EPSpago;
+        $pagos->AFPpago              =       $request->AFPpago;
+        $pagos->ARLpago              =       $request->ARLpago;
+        $pagos->cajaCompPago         =       $request->cajaCompPago;
+        $pagos->mesPago              =       $request->mesPago;
+        $pagos->estadoClientePago    =       $request->estadoClientePago;
+        $pagos->sumaPago             =       $request->sumaPago;
+        $pagos->interesesPago        =       $request->interesesPago;
+        $pagos->sumTotalPago         =       $request->sumTotalPago;
+        $pagos->abonoPago            =       $request->abonoPago;
+        $pagos->formaPago            =       $request->formaPago;
+        $pagos->proximoPago          =       $request->proximoPago;
+        $pagos->observacionPago      =       $request->observacionPago;
+        $pagos->informePago          =       $request->informePago;
+        $pagos->empresaContPago      =       $request->empresaContPago;
+        $pagos->costoAdminPago       =       $request->costoAdminPago;
+        $pagos->EMIpago              =       $request->EMIpago;
+        $pagos->descuentoPago        =       $request->descuentoPago;
+        $pagos->UPCadicPago          =       $request->UPCadicPago;
+        $pagos->sevFunePago          =       $request->sevFunePago;
+        $pagos->inscripcionPago      =       $request->inscripcionPago;
+        $pagos->activacionPago       =       $request->activacionPago;
+        $pagos->aporteVoluPago       =       $request->aporteVoluPago;
 
 
-            $pagos->save();
+        $pagos->save();
 
-            return redirect()->route('pago.index')
-            ->with('info','El cliente fue creado');
-
+        return redirect()->route('pago.index')
+            ->with('info', 'El cliente fue creado');
     }
 
     /**
@@ -89,7 +88,8 @@ class PagoController extends Controller
     public function show($id)
     {
         $pagos = Pago::find($id);
-        return view('pagos.show', compact('pagos'));    }
+        return view('pagos.show', compact('pagos'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -99,9 +99,9 @@ class PagoController extends Controller
      */
     public function edit($id)
     {
-        $pago =Pago::find($id);
+        $pago = Pago::find($id);
 
-        
+
 
         return view('pagos.edit', compact('pago'));
     }
@@ -115,43 +115,43 @@ class PagoController extends Controller
      */
     public function update(PagosRequest $request, $id)
     {
-            $pagos = Pago::find($id);
+        $pagos = Pago::find($id);
 
-            $pagos->nuipPago             =       $request->nuipPago;
-            $pagos->nombrePago           =       $request->nombrePago;
-            $pagos->oficinaPago          =       $request->oficinaPago;
-            $pagos->telefonoPago         =       $request->telefonoPago;
-            $pagos->emailPago            =       $request->emailPago;
-            $pagos->salarioPago          =       $request->salarioPago;
-            $pagos->EPSpago              =       $request->EPSpago;
-            $pagos->AFPpago              =       $request->AFPpago;
-            $pagos->ARLpago              =       $request->ARLpago;
-            $pagos->cajaCompPago         =       $request->cajaCompPago;
-            $pagos->mesPago              =       $request->mesPago;
-            $pagos->estadoClientePago    =       $request->estadoClientePago;
-            $pagos->sumaPago             =       $request->sumaPago;
-            $pagos->interesesPago        =       $request->interesesPago;
-            $pagos->sumTotalPago         =       $request->sumTotalPago;
-            $pagos->abonoPago            =       $request->abonoPago;
-            $pagos->formaPago            =       $request->formaPago;
-            $pagos->proximoPago          =       $request->proximoPago;
-            $pagos->observacionPago      =       $request->observacionPago;
-            $pagos->informePago          =       $request->informePago;
-            $pagos->empresaContPago      =       $request->empresaContPago;
-            $pagos->costoAdminPago       =       $request->costoAdminPago;
-            $pagos->EMIpago              =       $request->EMIpago;
-            $pagos->descuentoPago        =       $request->descuentoPago;
-            $pagos->UPCadicPago          =       $request->UPCadicPago;
-            $pagos->sevFunePago          =       $request->sevFunePago;
-            $pagos->inscripcionPago      =       $request->inscripcionPago;
-            $pagos->activacionPago       =       $request->activacionPago;
-            $pagos->aporteVoluPago       =       $request->aporteVoluPago;
+        $pagos->nuipPago             =       $request->nuipPago;
+        $pagos->nombrePago           =       $request->nombrePago;
+        $pagos->oficinaPago          =       $request->oficinaPago;
+        $pagos->telefonoPago         =       $request->telefonoPago;
+        $pagos->emailPago            =       $request->emailPago;
+        $pagos->salarioPago          =       $request->salarioPago;
+        $pagos->EPSpago              =       $request->EPSpago;
+        $pagos->AFPpago              =       $request->AFPpago;
+        $pagos->ARLpago              =       $request->ARLpago;
+        $pagos->cajaCompPago         =       $request->cajaCompPago;
+        $pagos->mesPago              =       $request->mesPago;
+        $pagos->estadoClientePago    =       $request->estadoClientePago;
+        $pagos->sumaPago             =       $request->sumaPago;
+        $pagos->interesesPago        =       $request->interesesPago;
+        $pagos->sumTotalPago         =       $request->sumTotalPago;
+        $pagos->abonoPago            =       $request->abonoPago;
+        $pagos->formaPago            =       $request->formaPago;
+        $pagos->proximoPago          =       $request->proximoPago;
+        $pagos->observacionPago      =       $request->observacionPago;
+        $pagos->informePago          =       $request->informePago;
+        $pagos->empresaContPago      =       $request->empresaContPago;
+        $pagos->costoAdminPago       =       $request->costoAdminPago;
+        $pagos->EMIpago              =       $request->EMIpago;
+        $pagos->descuentoPago        =       $request->descuentoPago;
+        $pagos->UPCadicPago          =       $request->UPCadicPago;
+        $pagos->sevFunePago          =       $request->sevFunePago;
+        $pagos->inscripcionPago      =       $request->inscripcionPago;
+        $pagos->activacionPago       =       $request->activacionPago;
+        $pagos->aporteVoluPago       =       $request->aporteVoluPago;
 
 
-            $pagos->save();
+        $pagos->save();
 
-            return redirect()->route('pago.index')
-            ->with('info','El pago fue modificado');
+        return redirect()->route('pago.index')
+            ->with('info', 'El pago fue modificado');
     }
 
     /**

@@ -16,14 +16,14 @@ class EmpresaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   public function index(Request $request)
-    {   
-        
-        $empresas = Empresa::search1($request->idEmpresaContraEmp)->orderByDesc('id')->paginate('8');
-       
-        
+    public function index(Request $request)
+    {
 
-        return view('empresas.index',compact('empresas'));
+        $empresas = Empresa::search1($request->idEmpresaContraEmp)->orderByDesc('id')->paginate('8');
+
+
+
+        return view('empresas.index', compact('empresas'));
     }
 
     /**
@@ -33,15 +33,15 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        $epss = Entidad::Search()->where('tipo','=', "eps")->get();
-        $arls = Entidad::Search()->where('tipo','=', "arl")->get();
-        $afps = Entidad::Search()->where('tipo','=', "afp")->get();
-        $cajacomps = Entidad::Search()->where('tipo','=', "cajacomp")->get();
+        $epss = Entidad::Search()->where('tipo', '=', "eps")->get();
+        $arls = Entidad::Search()->where('tipo', '=', "arl")->get();
+        $afps = Entidad::Search()->where('tipo', '=', "afp")->get();
+        $cajacomps = Entidad::Search()->where('tipo', '=', "cajacomp")->get();
         $ciudades = Ciudad::Search()->get();
         $ciudad = null;
-        return view('empresas.create',compact('epss','arls','afps','cajacomps','ciudades', 'ciudad'));   
+        return view('empresas.create', compact('epss', 'arls', 'afps', 'cajacomps', 'ciudades', 'ciudad'));
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -52,28 +52,28 @@ class EmpresaController extends Controller
     {
         $empresas = new Empresa;
 
-          
-            $empresas->nit = $request->nit;
-            $empresas->nombre = $request->nombre;
-            $empresas->nombre_contacto = $request->nombre_contacto;
-            $empresas->telefono_contacto = $request->telefono_contacto;
-            $empresas->email_contacto = $request->email_contacto;
-            $empresas->id_ciudad = $request->id_ciudad;
-            $empresas->direccion = $request->direccion;
-            $empresas->estado = $request->estado;
-            $empresas->beneficio = $request->beneficio;
-            $empresas->inscripcion = $request->inscripcion;
-            $empresas->administracion = $request->administracion;
-            $empresas->id_usuario = $request->id_usuario;
-            $empresas->fecha_ingreso = $request->fecha_ingreso;
-            $empresas->observacion = $request->observacion;
-           
-            $empresas->save();
+
+        $empresas->nit = $request->nit;
+        $empresas->nombre = $request->nombre;
+        $empresas->nombre_contacto = $request->nombre_contacto;
+        $empresas->telefono_contacto = $request->telefono_contacto;
+        $empresas->email_contacto = $request->email_contacto;
+        $empresas->id_ciudad = $request->id_ciudad;
+        $empresas->direccion = $request->direccion;
+        $empresas->estado = $request->estado;
+        $empresas->beneficio = $request->beneficio;
+        $empresas->inscripcion = $request->inscripcion;
+        $empresas->administracion = $request->administracion;
+        $empresas->id_usuario = $request->id_usuario;
+        $empresas->fecha_ingreso = $request->fecha_ingreso;
+        $empresas->observacion = $request->observacion;
+
+        $empresas->save();
 
 
-            
-            return redirect()->route('empresa.index')
-            ->with('info','La empresa fue creado');
+
+        return redirect()->route('empresa.index')
+            ->with('info', 'La empresa fue creado');
     }
 
     /**
@@ -86,10 +86,10 @@ class EmpresaController extends Controller
     {
         $empresa = Empresa::find($id);
 
-        
+
         //$clientes = Clientes::where('idEmpresaContraCli','=', $empresa->idEmpresaContraEmp)->get();
         $ciudad = Ciudad::Search()->where('id', '=', $empresa->id_ciudad)->first();
-        
+
         return view('empresas.show', compact('empresa', 'ciudad'));
     }
 
@@ -104,7 +104,7 @@ class EmpresaController extends Controller
         $empresa = Empresa::find($id);
         $ciudades = Ciudad::Search()->get();
         $ciudad = Ciudad::Search()->where('id', '=', $empresa->id_ciudad)->first();
-        return view('empresas.edit', compact('empresa','ciudad','ciudades'));
+        return view('empresas.edit', compact('empresa', 'ciudad', 'ciudades'));
     }
 
     /**
@@ -116,24 +116,24 @@ class EmpresaController extends Controller
      */
     public function update(empresasRequest $request, $id)
     {
-            $empresas = Empresa::find($id);
-            $empresas->nit = $request->nit;
-            $empresas->nombre = $request->nombre;
-            $empresas->nombre_contacto = $request->nombre_contacto;
-            $empresas->telefono_contacto = $request->telefono_contacto;
-            $empresas->email_contacto = $request->email_contacto;
-            $empresas->id_ciudad = $request->id_ciudad;
-            $empresas->direccion = $request->direccion;
-            $empresas->estado = $request->estado;
-            $empresas->beneficio = $request->beneficio;
-            $empresas->inscripcion = $request->inscripcion;
-            $empresas->id_usuario = $request->id_usuario;
-            $empresas->fecha_ingreso = $request->fecha_ingreso;
-            $empresas->observacion = $request->observacion;
-            $empresas->save();
+        $empresas = Empresa::find($id);
+        $empresas->nit = $request->nit;
+        $empresas->nombre = $request->nombre;
+        $empresas->nombre_contacto = $request->nombre_contacto;
+        $empresas->telefono_contacto = $request->telefono_contacto;
+        $empresas->email_contacto = $request->email_contacto;
+        $empresas->id_ciudad = $request->id_ciudad;
+        $empresas->direccion = $request->direccion;
+        $empresas->estado = $request->estado;
+        $empresas->beneficio = $request->beneficio;
+        $empresas->inscripcion = $request->inscripcion;
+        $empresas->id_usuario = $request->id_usuario;
+        $empresas->fecha_ingreso = $request->fecha_ingreso;
+        $empresas->observacion = $request->observacion;
+        $empresas->save();
 
-            return redirect()->route('empresa.index')
-            ->with('info','El empresa fue actualizado');
+        return redirect()->route('empresa.index')
+            ->with('info', 'El empresa fue actualizado');
     }
     public function destroy(Empresa $empresa)
     {

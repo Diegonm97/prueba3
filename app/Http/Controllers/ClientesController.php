@@ -16,7 +16,7 @@ class ClientesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {   
+    {
         $clientes = Clientes::search1($request->identificacion)->orderbydesc('id')->paginate('8');
 
         return view('clientes.index', compact('clientes'));
@@ -29,10 +29,10 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        $epss = Entidad::Search()->where('tipo','=', "1")->get();
-        $arls = Entidad::Search()->where('tipo','=', "2")->get();
-        $afps = Entidad::Search()->where('tipo','=', "3")->get();
-        $cajacomps = Entidad::Search()->where('tipo','=', "4")->get();
+        $epss = Entidad::Search()->where('tipo', '=', "1")->get();
+        $arls = Entidad::Search()->where('tipo', '=', "2")->get();
+        $afps = Entidad::Search()->where('tipo', '=', "3")->get();
+        $cajacomps = Entidad::Search()->where('tipo', '=', "4")->get();
         $ciudades = Ciudad::Search()->get();
         $ciudad = null;
         $eps = null;
@@ -40,7 +40,7 @@ class ClientesController extends Controller
         $afp = null;
         $cajacomp = null;
         $porcentaje = 10;
-        return view('clientes.create',compact('porcentaje','ciudad','eps','arl','afp','cajacomp', 'epss','arls','afps','cajacomps', 'ciudades'));  
+        return view('clientes.create', compact('porcentaje', 'ciudad', 'eps', 'arl', 'afp', 'cajacomp', 'epss', 'arls', 'afps', 'cajacomps', 'ciudades'));
     }
     /**
      * Store a newly created resource in storage.
@@ -77,16 +77,16 @@ class ClientesController extends Controller
         $clientes->administracion   = $request->administracion;
         $clientes->observacion   = $request->observacion;
         $clientes->id_usuario      = $request->id_usuario;
-            
+
         $clientes->save();
 
-            return redirect()->route('clientes.index')
-            ->with('info','El cliente fue creado');
+        return redirect()->route('clientes.index')
+            ->with('info', 'El cliente fue creado');
     }
 
 
 
-    
+
 
     /**
      * Display the specified resource.
@@ -98,11 +98,11 @@ class ClientesController extends Controller
     {
         $cliente = Clientes::find($id);
         $ciudad = Ciudad::Search()->where('id', '=', $cliente->id_ciudad)->first();
-        $eps = Entidad::Search()->where('id','=', $cliente->id_eps)->first();
-        $arl = Entidad::Search()->where('id','=', $cliente->id_arl)->first();
-        $afp = Entidad::Search()->where('id','=', $cliente->id_afp)->first();
-        $cajacomp = Entidad::Search()->where('id','=', $cliente->id_cjc)->first();
-        return view('clientes.show', compact('cliente','ciudad','eps','arl','afp','cajacomp'));
+        $eps = Entidad::Search()->where('id', '=', $cliente->id_eps)->first();
+        $arl = Entidad::Search()->where('id', '=', $cliente->id_arl)->first();
+        $afp = Entidad::Search()->where('id', '=', $cliente->id_afp)->first();
+        $cajacomp = Entidad::Search()->where('id', '=', $cliente->id_cjc)->first();
+        return view('clientes.show', compact('cliente', 'ciudad', 'eps', 'arl', 'afp', 'cajacomp'));
     }
 
     /**
@@ -114,20 +114,20 @@ class ClientesController extends Controller
     public function edit($id)
     {
         $porcentaje = 10;
-        $cliente =Clientes::find($id);
-        $epss = Entidad::Search()->where('tipo','=', "1")->get();
-        $arls = Entidad::Search()->where('tipo','=', "2")->get();
-        $afps = Entidad::Search()->where('tipo','=', "3")->get();
-        $eps = Entidad::Search()->where('id','=', $cliente->id_eps)->first();
-        $arl = Entidad::Search()->where('id','=', $cliente->id_arl)->first();
-        $afp = Entidad::Search()->where('id','=', $cliente->id_afp)->first();
-        $cajacomp = Entidad::Search()->where('id','=', $cliente->id_cjc)->first();
-        $cajacomps = Entidad::Search()->where('tipo','=', "4")->get();
+        $cliente = Clientes::find($id);
+        $epss = Entidad::Search()->where('tipo', '=', "1")->get();
+        $arls = Entidad::Search()->where('tipo', '=', "2")->get();
+        $afps = Entidad::Search()->where('tipo', '=', "3")->get();
+        $eps = Entidad::Search()->where('id', '=', $cliente->id_eps)->first();
+        $arl = Entidad::Search()->where('id', '=', $cliente->id_arl)->first();
+        $afp = Entidad::Search()->where('id', '=', $cliente->id_afp)->first();
+        $cajacomp = Entidad::Search()->where('id', '=', $cliente->id_cjc)->first();
+        $cajacomps = Entidad::Search()->where('tipo', '=', "4")->get();
         $ciudad = Ciudad::Search()->where('id', '=', $cliente->id_ciudad)->first();
         $ciudades = Ciudad::Search()->get();
-        
 
-        return view('clientes.edit', compact('cliente','porcentaje','ciudades','ciudad', 'epss','arls','afps','cajacomps','eps','arl','afp','cajacomp'));
+
+        return view('clientes.edit', compact('cliente', 'porcentaje', 'ciudades', 'ciudad', 'epss', 'arls', 'afps', 'cajacomps', 'eps', 'arl', 'afp', 'cajacomp'));
     }
 
     /**
@@ -139,37 +139,37 @@ class ClientesController extends Controller
      */
     public function update(ClientesRequest $request, $id)
     {
-            $clientes = Clientes::find($id);
+        $clientes = Clientes::find($id);
 
-            $clientes->identificacion   = $request->identificacion;
-            $clientes->tipo_id          = $request->tipo_id;
-            $clientes->nombres          = $request->nombres;
-            $clientes->apellidos        = $request->apellidos;
-            $clientes->estado           = $request->estado;
-            $clientes->telefono         = $request->telefono;
-            $clientes->direccion        = $request->direccion;
-            $clientes->email            = $request->email;
-            $clientes->tipo_cliente     = $request->tipo_cliente;
-            $clientes->fecha_ingreso    = $request->fecha_ingreso;
-            $clientes->fecha_nacimiento = $request->fecha_nacimiento;
-            $clientes->salario          = $request->salario;
-            $clientes->id_ciudad        = $request->id_ciudad;
-            $clientes->id_eps           = $request->id_eps;
-            $clientes->id_arl           = $request->id_arl;
-            $clientes->id_afp           = $request->id_afp;
-            $clientes->id_cjc           = $request->id_cjc;
-            $clientes->beneficio        = $request->beneficio;
-            $clientes->rango            = $request->rango;
-            $clientes->upc              = $request->upc;
-            $clientes->inscripcion       = $request->inscripcion;
-            $clientes->administracion   = $request->administracion;
- //           $clientes->id_usuario      = $request->id_usuario;
-            
-            
-            $clientes->save();
+        $clientes->identificacion   = $request->identificacion;
+        $clientes->tipo_id          = $request->tipo_id;
+        $clientes->nombres          = $request->nombres;
+        $clientes->apellidos        = $request->apellidos;
+        $clientes->estado           = $request->estado;
+        $clientes->telefono         = $request->telefono;
+        $clientes->direccion        = $request->direccion;
+        $clientes->email            = $request->email;
+        $clientes->tipo_cliente     = $request->tipo_cliente;
+        $clientes->fecha_ingreso    = $request->fecha_ingreso;
+        $clientes->fecha_nacimiento = $request->fecha_nacimiento;
+        $clientes->salario          = $request->salario;
+        $clientes->id_ciudad        = $request->id_ciudad;
+        $clientes->id_eps           = $request->id_eps;
+        $clientes->id_arl           = $request->id_arl;
+        $clientes->id_afp           = $request->id_afp;
+        $clientes->id_cjc           = $request->id_cjc;
+        $clientes->beneficio        = $request->beneficio;
+        $clientes->rango            = $request->rango;
+        $clientes->upc              = $request->upc;
+        $clientes->inscripcion       = $request->inscripcion;
+        $clientes->administracion   = $request->administracion;
+        //           $clientes->id_usuario      = $request->id_usuario;
 
-            return redirect()->route('clientes.index')
-            ->with('info','El cliente fue actualizado');
+
+        $clientes->save();
+
+        return redirect()->route('clientes.index')
+            ->with('info', 'El cliente fue actualizado');
     }
 
     /**

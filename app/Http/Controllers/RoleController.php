@@ -13,11 +13,11 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function index(Request $request)
-    {   
-        
+    public function index(Request $request)
+    {
+
         $roles = Role::paginate();
-        
+
         return view('roles.index', compact('roles'));
     }
 
@@ -32,25 +32,25 @@ class RoleController extends Controller
     public function create()
     {
         $permissions = Permission::get();
-        
-        return view('roles.create', compact('permissions'));   
+
+        return view('roles.create', compact('permissions'));
     }
 
     public function store(Request $request)
     {
-            $role = Role::create($request->all());
-           
-            $role->permissions()->sync($request->get('permissions'));
-            
+        $role = Role::create($request->all());
 
-            return redirect()->route('roles.edit', $role->id)
-            ->with('info','El rol fue actualizado');
+        $role->permissions()->sync($request->get('permissions'));
+
+
+        return redirect()->route('roles.edit', $role->id)
+            ->with('info', 'El rol fue actualizado');
     }
 
 
     public function show(Role $role)
     {
-        
+
         return view('roles.show', compact('role'));
     }
 
@@ -76,13 +76,13 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-            $role->update($request->all());
-           
-            $role->permissions()->sync($request->get('permissions'));
-            
+        $role->update($request->all());
 
-            return redirect()->route('roles.edit', $role->id)
-            ->with('info','El rol fue actualizado');
+        $role->permissions()->sync($request->get('permissions'));
+
+
+        return redirect()->route('roles.edit', $role->id)
+            ->with('info', 'El rol fue actualizado');
     }
 
     /**
@@ -96,3 +96,4 @@ class RoleController extends Controller
         //
     }
 }
+

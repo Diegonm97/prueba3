@@ -18,7 +18,7 @@ class SedeController extends Controller
         $sedes = Sede::search1($request->nombre)->orderby('nombre')->paginate('8');
         $ciudades = Ciudad::Search()->get();
 
-        return view('sedes.index', compact('sedes','ciudades'));
+        return view('sedes.index', compact('sedes', 'ciudades'));
     }
 
     /**
@@ -30,7 +30,7 @@ class SedeController extends Controller
     {
         $ciudades = Ciudad::Search()->get();
         $ciudad = null;
-        return view('sedes.create',compact('ciudades','ciudad'));
+        return view('sedes.create', compact('ciudades', 'ciudad'));
     }
 
     /**
@@ -43,15 +43,15 @@ class SedeController extends Controller
     {
         $sede = new Sede;
 
-            $sede->nombre         = $request->nombre;
-            $sede->id_ciudad      = $request->id_ciudad;
-            $sede->telefono       = $request->telefono;
-            $sede->direccion      = $request->direccion;            
+        $sede->nombre         = $request->nombre;
+        $sede->id_ciudad      = $request->id_ciudad;
+        $sede->telefono       = $request->telefono;
+        $sede->direccion      = $request->direccion;
 
-            $sede->save();
+        $sede->save();
 
-            return redirect()->route('sede.index')
-            ->with('info','La sede fue creada');
+        return redirect()->route('sede.index')
+            ->with('info', 'La sede fue creada');
     }
 
     /**
@@ -76,9 +76,9 @@ class SedeController extends Controller
     {
         $sede = Sede::find($id);
         $ciudades = Ciudad::Search()->get();
-        $ciudad = Ciudad::Search()->where('id','=',$sede->id_ciudad)->first();
+        $ciudad = Ciudad::Search()->where('id', '=', $sede->id_ciudad)->first();
 
-        return view('sedes.edit', compact('sede','ciudades','ciudad'));
+        return view('sedes.edit', compact('sede', 'ciudades', 'ciudad'));
     }
 
     /**
@@ -88,19 +88,19 @@ class SedeController extends Controller
      * @param  \App\Sede  $sede
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $sede = Sede::find($id);
 
         $sede->nombre         = $request->nombre;
         $sede->id_ciudad      = $request->id_ciudad;
         $sede->telefono       = $request->telefono;
-        $sede->direccion      = $request->direccion;            
+        $sede->direccion      = $request->direccion;
 
         $sede->save();
 
         return redirect()->route('sede.index')
-        ->with('info','La sede fue actualizado');
+            ->with('info', 'La sede fue actualizado');
     }
 
     /**

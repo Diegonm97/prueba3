@@ -9,14 +9,14 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
-                    Has ingresado al sistema!                </div>
+                    Has ingresado al sistema! </div>
             </div>
         </div>
     </div>
 </div>
-@endsection
+@endsection 

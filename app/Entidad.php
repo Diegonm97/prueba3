@@ -8,17 +8,16 @@ class Entidad extends Model
 {
     protected $table = 'entidad';
 
-     protected $fillable=['nombre','tipo'];
+    protected $fillable = ['nombre', 'tipo'];
 
-// Realiza la busqueda en base de datos de acuerdo al nuip
-	public function scopeSearch1($query, $nombre) 
-	{
-   	return $query->where('nombre','LIKE',"%$nombre%");
+    // Realiza la busqueda en base de datos de acuerdo al nuip
+    public function scopeSearch1($query, $nombre)
+    {
+        return $query->where('nombre', 'LIKE', "%$nombre%");
     }
 
-    public function scopeSearch($query) 
-	{
-   	return $query->select('*');
+    public function scopeSearch($query)
+    {
+        return $query->select('*');
     }
-
 }

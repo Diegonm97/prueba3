@@ -22,6 +22,5 @@ class DatabaseSeeder extends Seeder
         $this->call(RolesTableSeeder::class);
         $this->call(Role_userTableSeeder::class);
         //$this->call(PagosTableSeeder::class);
-        
     }
 }
