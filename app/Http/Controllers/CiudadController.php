@@ -26,7 +26,7 @@ class CiudadController extends Controller
      */
     public function create()
     {
-        return view('ciudades.create');  
+        return view('ciudades.create');
     }
 
     /**
@@ -39,14 +39,14 @@ class CiudadController extends Controller
     {
         $ciudad = new Ciudad;
 
-            $ciudad->nombre         = $request->nombre;
-            $ciudad->codigo           = $request->codigo;
-            
+        $ciudad->nombre         = $request->nombre;
+        $ciudad->codigo           = $request->codigo;
 
-            $ciudad->save();
 
-            return redirect()->route('ciudad.index')
-            ->with('info','La ciudad fue creada');
+        $ciudad->save();
+
+        return redirect()->route('ciudad.index')
+            ->with('info', 'La ciudad fue creada');
     }
 
     /**
@@ -85,12 +85,12 @@ class CiudadController extends Controller
     {
         $ciudad = Ciudad::find($id);
 
-            $ciudad->nombre         = $request->nombre;
-            $ciudad->codigo           = $request->codigo;
-            
-            $ciudad->save();
+        $ciudad->nombre         = $request->nombre;
+        $ciudad->codigo           = $request->codigo;
 
-            return redirect()->route('ciudad.index')->with('info','La ciudad fue actualizado');
+        $ciudad->save();
+
+        return redirect()->route('ciudad.index')->with('info', 'La ciudad fue actualizado');
     }
 
     /**

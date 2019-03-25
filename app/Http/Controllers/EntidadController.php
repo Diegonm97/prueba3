@@ -14,7 +14,7 @@ class EntidadController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {   
+    {
         $entidades = Entidad::search1($request->nombre)->orderbydesc('nombre')->paginate('8');
 
         return view('entidades.index', compact('entidades'));
@@ -27,8 +27,8 @@ class EntidadController extends Controller
      */
     public function create()
     {
-       
-        return view('entidades.create');  
+
+        return view('entidades.create');
     }
 
     /**
@@ -41,14 +41,14 @@ class EntidadController extends Controller
     {
         $entidad = new Entidad;
 
-            $entidad->nombre         = $request->nombre;
-            $entidad->tipo           = $request->tipo;
-            
+        $entidad->nombre         = $request->nombre;
+        $entidad->tipo           = $request->tipo;
 
-            $entidad->save();
 
-            return redirect()->route('entidad.index')
-            ->with('info','La entidad fue creada');
+        $entidad->save();
+
+        return redirect()->route('entidad.index')
+            ->with('info', 'La entidad fue creada');
     }
 
 
@@ -72,7 +72,7 @@ class EntidadController extends Controller
      */
     public function edit($id)
     {
-        
+
         $entidades = Entidad::find($id);
 
         return view('entidades.edit', compact('entidades'));
@@ -87,14 +87,14 @@ class EntidadController extends Controller
      */
     public function update(entidadRequest $request, $id)
     {
-            $entidad = Entidad::find($id);
+        $entidad = Entidad::find($id);
 
-            $entidad->nombre         = $request->nombre;
-            $entidad->tipo           = $request->tipo;
-            
-            $entidad->save();
+        $entidad->nombre         = $request->nombre;
+        $entidad->tipo           = $request->tipo;
 
-            return redirect()->route('entidad.index')->with('info','La entidad fue actualizado');
+        $entidad->save();
+
+        return redirect()->route('entidad.index')->with('info', 'La entidad fue actualizado');
     }
 
     /**

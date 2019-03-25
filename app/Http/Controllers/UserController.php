@@ -13,11 +13,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function index(Request $request)
-    {   
-        
+    public function index(Request $request)
+    {
+
         $users = User::Nombre($request->name)->orderBy('name')->paginate();
-        
+
         return view('users.index', compact('users'));
     }
 
@@ -57,14 +57,14 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         //Actualizar Usuario
-            $user->update($request->all());
+        $user->update($request->all());
 
         //Actualizar rol
-            $user->roles()->sync($request->get('roles'));
+        $user->roles()->sync($request->get('roles'));
 
-            
-            return redirect()->route('users.index', $user->id)
-            ->with('info','El usuario fue actualizado');
+
+        return redirect()->route('users.index', $user->id)
+            ->with('info', 'El usuario fue actualizado');
     }
 
     /**
@@ -78,3 +78,4 @@ class UserController extends Controller
         //
     }
 }
+

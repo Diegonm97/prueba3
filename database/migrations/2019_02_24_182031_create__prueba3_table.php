@@ -14,7 +14,7 @@ class CreatePrueba3Table extends Migration
     public function up()
     {
 
-//================================== Ciudad ================================================
+        //================================== Ciudad ================================================
 
         Schema::create('ciudad', function (Blueprint $table) {
             $table->increments('id');
@@ -24,7 +24,7 @@ class CreatePrueba3Table extends Migration
         });
 
 
-//================================ entidad =============================================
+        //================================ entidad =============================================
         Schema::create('entidad', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('nombre');;
@@ -33,7 +33,7 @@ class CreatePrueba3Table extends Migration
         });
 
 
-//================================ sede =============================================
+        //================================ sede =============================================
         Schema::create('sede', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('nombre');
@@ -46,7 +46,7 @@ class CreatePrueba3Table extends Migration
         });
 
 
-//================================ sede_cliente =============================================
+        //================================ sede_cliente =============================================
         Schema::create('sede_usuario', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_sede')->unsigned();
@@ -58,7 +58,7 @@ class CreatePrueba3Table extends Migration
             $table->foreign('id_sede')->references('id')->on('sede');
         });
 
-// =============================== Empresa =================================================
+        // =============================== Empresa =================================================
 
         Schema::create('empresa', function (Blueprint $table) {
             $table->increments('id');
@@ -67,7 +67,7 @@ class CreatePrueba3Table extends Migration
             $table->string('nombre_contacto');
             $table->string('telefono_contacto');
             $table->string('email_contacto');
-            $table->integer('id_ciudad')->unsigned(); 
+            $table->integer('id_ciudad')->unsigned();
             $table->string('direccion');
             $table->integer('estado');
             $table->integer('beneficio');
@@ -79,13 +79,12 @@ class CreatePrueba3Table extends Migration
 
             $table->timestamps();
 
-            
+
             $table->foreign('id_usuario')->references('id')->on('users');
             $table->foreign('id_ciudad')->references('id')->on('ciudad');
-
         });
 
-//================================ cliente asociados/indpendientes =========================
+        //================================ cliente asociados/indpendientes =========================
         Schema::create('cliente', function (Blueprint $table) {
             $table->increments('id');
             $table->string('identificacion')->unique();
@@ -111,22 +110,19 @@ class CreatePrueba3Table extends Migration
             $table->integer('inscripcion');
             $table->integer('administracion');
             $table->string('observacion');
-            $table->integer('id_usuario')->unsigned()->nullable();            
+            $table->integer('id_usuario')->unsigned()->nullable();
             $table->timestamps();
 
-            
+
             $table->foreign('id_usuario')->references('id')->on('users');
             $table->foreign('id_ciudad')->references('id')->on('ciudad');
             $table->foreign('id_eps')->references('id')->on('entidad');
             $table->foreign('id_arl')->references('id')->on('entidad');
             $table->foreign('id_afp')->references('id')->on('entidad');
             $table->foreign('id_cjc')->references('id')->on('entidad');
-            
-
-
         });
 
-//================================ Empleado - empresa ===================================
+        //================================ Empleado - empresa ===================================
         Schema::create('empleado_empresa', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_empresa')->unsigned();
@@ -160,7 +156,7 @@ class CreatePrueba3Table extends Migration
             $table->foreign('id_cjc')->references('id')->on('entidad');
         });
 
-//================================ Beneficiario - empresa  ================================
+        //================================ Beneficiario - empresa  ================================
         Schema::create('beneficiario_empresa', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_empleado')->unsigned();
@@ -174,7 +170,7 @@ class CreatePrueba3Table extends Migration
             $table->foreign('id_empleado')->references('id')->on('empleado_empresa');
         });
 
-//================================ Beneficiario - cliente  ================================
+        //================================ Beneficiario - cliente  ================================
         Schema::create('beneficiario_cliente', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_cliente')->unsigned();
@@ -187,7 +183,7 @@ class CreatePrueba3Table extends Migration
 
             $table->foreign('id_cliente')->references('id')->on('cliente');
         });
-//================================ Empleado ============================================
+        //================================ Empleado ============================================
         Schema::create('empleado', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombres');
@@ -202,7 +198,7 @@ class CreatePrueba3Table extends Migration
         });
 
 
-//================================ Configuracion ============================================
+        //================================ Configuracion ============================================
         Schema::create('configuracion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
@@ -211,7 +207,7 @@ class CreatePrueba3Table extends Migration
             $table->timestamps();
         });
 
-//================================ facturacion =============================================
+        //================================ facturacion =============================================
         // Schema::create('facturacion', function (Blueprint $table) {
         //     $table->increments('id')->unsigned();
         //     $table->integer('id_cliente')->unsigned();
@@ -227,7 +223,6 @@ class CreatePrueba3Table extends Migration
         //     $table->foreign('id_eps')->references('id')->on('entidad');            
         //     $table->foreign('id_afp')->references('id')->on('entidad');            
         // });
-
     }
 
     /**

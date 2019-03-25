@@ -20,8 +20,8 @@ class Empleado_empresaController extends Controller
     {
         $empleadoEmpS = Empleado_empresa::search1($request->identificacion)->orderbydesc('id')->paginate('8');
         $empresas = Empresa::search()->get();
-       
-        return view('empleado_empresa.index', compact('empleadoEmpS','empresas'));
+
+        return view('empleado_empresa.index', compact('empleadoEmpS', 'empresas'));
     }
 
     /**
@@ -30,13 +30,13 @@ class Empleado_empresaController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     
+
     public function create()
     {
-        $epss = Entidad::Search()->where('tipo','=', "1")->get();
-        $arls = Entidad::Search()->where('tipo','=', "2")->get();
-        $afps = Entidad::Search()->where('tipo','=', "3")->get();
-        $cajacomps = Entidad::Search()->where('tipo','=', "4")->get();
+        $epss = Entidad::Search()->where('tipo', '=', "1")->get();
+        $arls = Entidad::Search()->where('tipo', '=', "2")->get();
+        $afps = Entidad::Search()->where('tipo', '=', "3")->get();
+        $cajacomps = Entidad::Search()->where('tipo', '=', "4")->get();
         $ciudades = Ciudad::Search()->get();
         $empresas = Empresa::Search()->get();
         $porcentaje = 10;
@@ -46,8 +46,10 @@ class Empleado_empresaController extends Controller
         $arl = null;
         $afp = null;
         $cajacomp = null;
-        return view('empleado_empresa.create',
-        compact('porcentaje', 'epss','arls','afps','cajacomps', 'ciudades','empresas','empresa','ciudad','eps','arl','afp','cajacomp'));
+        return view(
+            'empleado_empresa.create',
+            compact('porcentaje', 'epss', 'arls', 'afps', 'cajacomps', 'ciudades', 'empresas', 'empresa', 'ciudad', 'eps', 'arl', 'afp', 'cajacomp')
+        );
     }
 
     /**
@@ -84,12 +86,7 @@ class Empleado_empresaController extends Controller
         $empleadoEmpS->save();
 
         return redirect()->route('empleado_empresa.index')
-            ->with('info','El empleado fue creado');
-
-
-
-
-
+            ->with('info', 'El empleado fue creado');
     }
 
     /**
@@ -102,11 +99,11 @@ class Empleado_empresaController extends Controller
     {
         $empleadoEmp = Empleado_empresa::find($id);
         $ciudad = Ciudad::Search()->where('id', '=', $empleadoEmp->id_ciudad)->first();
-        $eps = Entidad::Search()->where('id','=', $empleadoEmp->id_eps)->first();
-        $arl = Entidad::Search()->where('id','=', $empleadoEmp->id_arl)->first();
-        $afp = Entidad::Search()->where('id','=', $empleadoEmp->id_afp)->first();
-        $cajacomp = Entidad::Search()->where('id','=', $empleadoEmp->id_cjc)->first();
-        return view('empleado_empresa.show', compact('empleadoEmp','ciudad','eps','arl','afp','cajacomp'));
+        $eps = Entidad::Search()->where('id', '=', $empleadoEmp->id_eps)->first();
+        $arl = Entidad::Search()->where('id', '=', $empleadoEmp->id_arl)->first();
+        $afp = Entidad::Search()->where('id', '=', $empleadoEmp->id_afp)->first();
+        $cajacomp = Entidad::Search()->where('id', '=', $empleadoEmp->id_cjc)->first();
+        return view('empleado_empresa.show', compact('empleadoEmp', 'ciudad', 'eps', 'arl', 'afp', 'cajacomp'));
     }
 
     /**
@@ -120,19 +117,19 @@ class Empleado_empresaController extends Controller
         $empleadoEmp = Empleado_empresa::find($id);
         $ciudades = Ciudad::Search()->get();
         $empresas = Empresa::search()->get();
-        $empresa = Empresa::Search()->where('id','=', $empleadoEmp->id_empresa)->first();
-        $epss = Entidad::Search()->where('tipo','=', "1")->get();
-        $arls = Entidad::Search()->where('tipo','=', "2")->get();
-        $afps = Entidad::Search()->where('tipo','=', "3")->get();
-        $cajacomps = Entidad::Search()->where('tipo','=', "4")->get();
+        $empresa = Empresa::Search()->where('id', '=', $empleadoEmp->id_empresa)->first();
+        $epss = Entidad::Search()->where('tipo', '=', "1")->get();
+        $arls = Entidad::Search()->where('tipo', '=', "2")->get();
+        $afps = Entidad::Search()->where('tipo', '=', "3")->get();
+        $cajacomps = Entidad::Search()->where('tipo', '=', "4")->get();
         $ciudad = Ciudad::Search()->where('id', '=', $empleadoEmp->id_ciudad)->first();
-        $eps = Entidad::Search()->where('id','=', $empleadoEmp->id_eps)->first();
-        $arl = Entidad::Search()->where('id','=', $empleadoEmp->id_arl)->first();
-        $afp = Entidad::Search()->where('id','=', $empleadoEmp->id_afp)->first();
-        $cajacomp = Entidad::Search()->where('id','=', $empleadoEmp->id_cjc)->first();
+        $eps = Entidad::Search()->where('id', '=', $empleadoEmp->id_eps)->first();
+        $arl = Entidad::Search()->where('id', '=', $empleadoEmp->id_arl)->first();
+        $afp = Entidad::Search()->where('id', '=', $empleadoEmp->id_afp)->first();
+        $cajacomp = Entidad::Search()->where('id', '=', $empleadoEmp->id_cjc)->first();
         $porcentaje = 10;
-        
-        return view('empleado_empresa.edit',compact('empleadoEmp','ciudad','eps','arl','afp','cajacomp','ciudades','empresas','empresa', 'epss','arls','afps','cajacomps','porcentaje'));
+
+        return view('empleado_empresa.edit', compact('empleadoEmp', 'ciudad', 'eps', 'arl', 'afp', 'cajacomp', 'ciudades', 'empresas', 'empresa', 'epss', 'arls', 'afps', 'cajacomps', 'porcentaje'));
     }
 
     /**
@@ -144,7 +141,7 @@ class Empleado_empresaController extends Controller
      */
     public function update(Empleado_empresaRequest $request, $id)
     {
-        $empleadoEmp = Empleado_empresa::find($id);
+        $empleadoEmpS = Empleado_empresa::find($id);
 
         $empleadoEmpS->id_empresa       = $request->id_empresa;
         $empleadoEmpS->identificacion   = $request->identificacion;
@@ -170,7 +167,7 @@ class Empleado_empresaController extends Controller
         $empleadoEmpS->save();
 
         return redirect()->route('empleado_empresa.index')
-            ->with('info','El empleado fue actualizado');
+            ->with('info', 'El empleado fue actualizado');
     }
 
     /**

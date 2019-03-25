@@ -2,102 +2,102 @@
 @section('content')
 
 <div class="col-sm-12">
-<div class="col-m-3">                          
-                                    @can('sede.create')
-                                    <a href="{{route('sede.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
-                                    @endcan</div>
-<div class="col-m-7" >
-    
-    <h1 align="center">Informacion de Sedes</h1>
-</div>
-<div class="col-m-2">
-    
-    @include('sedes.fragment.info')
+    <div class="col-m-3">
+        @can('sede.create')
+        <a href="{{route('sede.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
+        @endcan</div>
+    <div class="col-m-7">
 
-</div>
-<br>
-<br>
+        <h1 align="center">Informacion de Sedes</h1>
+    </div>
+    <div class="col-m-2">
 
-                                    
+        @include('sedes.fragment.info')
+
+    </div>
+    <br>
+    <br>
+
+
 
 </div>
 <div class="col-sm-12">
-                                    @foreach ($sedes as $sede)
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">
-                                @foreach($ciudades as $ciudad)
-                                    @if($ciudad->id == $sede->id_ciudad)
-                                    
-                                    {{$ciudad->nombre}}
-                                    
-                                    @endif
-                                @endforeach
-                                <p class="category"></p>
-                           
-                                <div class="form group">
-                                    
-                                    
-                                    
-                                </div>
-                            
-                            </div>
+    @foreach ($sedes as $sede)
+    <div class="col-md-4">
+        <div class="card">
+            <div class="header">
+                <h4 class="title">
+                    @foreach($ciudades as $ciudad)
+                    @if($ciudad->id == $sede->id_ciudad)
 
-                            <div class="content table-responsive table-full-width">
-                                <table class="table table-hover table-striped">
-                                    <div class="container">
-                                        <div class="row">
-                                    <tbody>
-                                       
-                                        <tr>
-                                        <tr>
-                                        <td><strong>Nombre: </strong></td>
-                                        <td>{{$sede->nombre}}</td>
-                                        </tr>
-        
+                    {{$ciudad->nombre}}
 
-                                        <tr>
-                                        <td><strong>Telefono: </strong></td>
-                                        <td>  {{$sede->telefono}}  </td>
-                                        </tr>
+                    @endif
+                    @endforeach
+                    <p class="category"></p>
 
-                                        <tr>
-                                        <td><strong>Direccion: </strong></td>
-                                        <td>  {{$sede->direccion}}  </td>
-                                        </tr>
-                                            <th>
-                                                @can('ciudades.edit')                                 
-                                            <a href="{{route('sede.edit', $sede->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                @endcan
-                                                
-                                            
-                                            
-                                            </th>
-                                            
-                                        </tr>
-                                       
-                                        
-                                        
-                                    </tbody>
-                                    </div>
-                                </div>
-                                </table>
-                                <div align="center">
-                                        {!!$sedes->render() !!}
-                                </div>
-                                </div>
-                            </div>
+                    <div class="form group">
+
+
+
+                    </div>
+
+            </div>
+
+            <div class="content table-responsive table-full-width">
+                <table class="table table-hover table-striped">
+                    <div class="container">
+                        <div class="row">
+                            <tbody>
+
+                                <tr>
+                                <tr>
+                                    <td><strong>Nombre: </strong></td>
+                                    <td>{{$sede->nombre}}</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td><strong>Telefono: </strong></td>
+                                    <td> {{$sede->telefono}} </td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Direccion: </strong></td>
+                                    <td> {{$sede->direccion}} </td>
+                                </tr>
+                                <th>
+                                    @can('ciudades.edit')
+                                    <a href="{{route('sede.edit', $sede->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    @endcan
+
+
+
+                                </th>
+
+                                </tr>
+
+
+
+                            </tbody>
                         </div>
+                    </div>
+                </table>
+                <div align="center">
+                    {!!$sedes->render() !!}
+                </div>
+            </div>
+        </div>
+    </div>
 
-                        @endforeach
-                       
+    @endforeach
 
-                        </div>
 
-                    
+</div>
 
 
 
 
-@endsection
+
+
+@endsection 
