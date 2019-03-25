@@ -11,14 +11,15 @@
     @include('sedes.fragment.info')
 
 </div>
+<div>                               @can('sede.create')
+                                    <a href="{{route('sede.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
+                                    @endcan</div>
 
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Sedes
-                                    @can('sede.create')
-                                    <a href="{{route('sede.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
-                                    @endcan
+                                    
 
                                 <p class="category">Aqui se muestran datos de las Sedes registradas</p>
                             {!!Form::open(['route'=>'sede.index', 'method'=>'GET','class'=>'navbar-form'])!!}

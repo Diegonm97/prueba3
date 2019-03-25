@@ -28,7 +28,7 @@ class SedeController extends Controller
     public function create()
     {
         $ciudades = Ciudad::Search()->get();
-        
+        $ciudad = null;
         return view('sedes.create',compact('ciudades'));
     }
 
@@ -75,8 +75,9 @@ class SedeController extends Controller
     {
         $sede = Sede::find($id);
         $ciudades = Ciudad::Search()->get();
+        $ciudad = Ciudad::Search()->where('id','=',$sede->id_ciudad)->first();
 
-        return view('sedes.edit', compact('sede','ciudades'));
+        return view('sedes.edit', compact('sede','ciudades','ciudad'));
     }
 
     /**
@@ -97,7 +98,7 @@ class SedeController extends Controller
 
         $sede->save();
 
-        return redirect()->route('sedes.index')
+        return redirect()->route('sede.index')
         ->with('info','La sede fue actualizado');
     }
 
