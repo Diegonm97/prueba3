@@ -15,9 +15,10 @@ class SedeController extends Controller
      */
     public function index(Request $request)
     {
-        $sedes = Sede::search1($request->nombre)->orderbydesc('nombre')->paginate('8');
+        $sedes = Sede::search1($request->nombre)->orderby('nombre')->paginate('8');
+        $ciudades = Ciudad::Search()->get();
 
-        return view('sedes.index', compact('sedes'));
+        return view('sedes.index', compact('sedes','ciudades'));
     }
 
     /**
@@ -29,7 +30,7 @@ class SedeController extends Controller
     {
         $ciudades = Ciudad::Search()->get();
         $ciudad = null;
-        return view('sedes.create',compact('ciudades'));
+        return view('sedes.create',compact('ciudades','ciudad'));
     }
 
     /**

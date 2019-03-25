@@ -1,58 +1,72 @@
 @extends('layouts.apphome')
 @section('content')
 
-
-<div class="col-m-9" >
+<div class="col-sm-12">
+<div class="col-m-3">                          
+                                    @can('sede.create')
+                                    <a href="{{route('sede.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
+                                    @endcan</div>
+<div class="col-m-7" >
     
     <h1 align="center">Informacion de Sedes</h1>
 </div>
-<div class="col-m-3">
+<div class="col-m-2">
     
     @include('sedes.fragment.info')
 
 </div>
-<div>                               @can('sede.create')
-                                    <a href="{{route('sede.create')}}"class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
-                                    @endcan</div>
+<br>
+<br>
 
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">Sedes
                                     
 
-                                <p class="category">Aqui se muestran datos de las Sedes registradas</p>
-                            {!!Form::open(['route'=>'sede.index', 'method'=>'GET','class'=>'navbar-form'])!!}
+</div>
+<div class="col-sm-12">
+                                    @foreach ($sedes as $sede)
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">
+                                @foreach($ciudades as $ciudad)
+                                    @if($ciudad->id == $sede->id_ciudad)
+                                    
+                                    {{$ciudad->nombre}}
+                                    
+                                    @endif
+                                @endforeach
+                                <p class="category"></p>
+                           
                                 <div class="form group">
-                                    {!!Form::text('nombre',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+                                    
                                     
                                     
                                 </div>
-                            {!!Form::close()!!}
+                            
                             </div>
 
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <div class="container">
                                         <div class="row">
-                                    <thead>
-                                          	<th>Nombre</th>
-                                            <th>ciudad</th>
-                                            <th>telefono</th>
-                                        	<th>direccion</th>
-                                    </thead>
                                     <tbody>
-                                        @foreach ($sedes as $sede)
+                                       
                                         <tr>
-                                        	<th>{{$sede->nombre}}</th>
-                                            <th>{{$sede->id_ciudad}}</th>
-                                            <th>{{$sede->telefono}}</th>
-                                            <th>{{$sede->direccion}}</th>
-                                            
+                                        <tr>
+                                        <td><strong>Nombre: </strong></td>
+                                        <td>{{$sede->nombre}}</td>
+                                        </tr>
+        
+
+                                        <tr>
+                                        <td><strong>Telefono: </strong></td>
+                                        <td>  {{$sede->telefono}}  </td>
+                                        </tr>
+
+                                        <tr>
+                                        <td><strong>Direccion: </strong></td>
+                                        <td>  {{$sede->direccion}}  </td>
+                                        </tr>
                                             <th>
-                                                @can('sedes.show')
-                                                <a href="{{route('sede.show', $sede->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                @endcan
                                                 @can('ciudades.edit')                                 
                                             <a href="{{route('sede.edit', $sede->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 @endcan
@@ -62,7 +76,7 @@
                                             </th>
                                             
                                         </tr>
-                                        @endforeach
+                                       
                                         
                                         
                                     </tbody>
@@ -74,6 +88,11 @@
                                 </div>
                                 </div>
                             </div>
+                        </div>
+
+                        @endforeach
+                       
+
                         </div>
 
                     
