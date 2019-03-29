@@ -60,7 +60,7 @@
 </div>
 
 <div class="col-sm-12">
-    <div class="col-sm-3">
+    <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('id_ciudad','Nombre Ciudad(*).')!!}
             <select class="form-control" id="id_ciudad" required="required" name="id_ciudad">
@@ -212,7 +212,19 @@
     {!!Form::button('<i class="fa fa-floppy-o" aria-hidden="true"></i>', array('type' => 'submit', 'class'=>'btn btn-primary btn-lg btn-block'))!!}
 </div>
 
-<script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+<script type="text/javascript">
+
+      //$("#id_empresa").select2({
+        //    placeholder: "Selecciona una empresa",
+            
+        //});
+
+        
+
+
     function calcular() {
         var porcentaje = "{{$porcentaje}}";
         var array = [10, 20, 30, 40, 50];
@@ -243,3 +255,4 @@
         $("#cajaCompCli").val(salario * (porcentaje / 40));
     }
 </script> 
+

@@ -24,7 +24,7 @@
                     <tbody>
                         <tr>
                             <td><strong>Empresa: </strong></td>
-                            <td>{{$empleadoEmp->id_empresa}}</td>
+                            <td>{{$empresa->nombre}}</td>
                         </tr>
 
                         <tr>

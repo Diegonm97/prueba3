@@ -98,12 +98,13 @@ class Empleado_empresaController extends Controller
     public function show($id)
     {
         $empleadoEmp = Empleado_empresa::find($id);
+        $empresa = Empresa::Search()->where('id', '=', $empleadoEmp->id_empresa)->first();
         $ciudad = Ciudad::Search()->where('id', '=', $empleadoEmp->id_ciudad)->first();
         $eps = Entidad::Search()->where('id', '=', $empleadoEmp->id_eps)->first();
         $arl = Entidad::Search()->where('id', '=', $empleadoEmp->id_arl)->first();
         $afp = Entidad::Search()->where('id', '=', $empleadoEmp->id_afp)->first();
         $cajacomp = Entidad::Search()->where('id', '=', $empleadoEmp->id_cjc)->first();
-        return view('empleado_empresa.show', compact('empleadoEmp', 'ciudad', 'eps', 'arl', 'afp', 'cajacomp'));
+        return view('empleado_empresa.show', compact('empleadoEmp','empresa', 'ciudad', 'eps', 'arl', 'afp', 'cajacomp'));
     }
 
     /**
