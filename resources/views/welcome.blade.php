@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="{{ app()->getLocale() }}">
 
 <head>
@@ -17,6 +18,8 @@
 
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mdb.css') }}" rel="stylesheet">
+
+
 
 
     <!-- Styles -->
@@ -134,6 +137,50 @@
             color: white;
             border-top: #1B63BD;
         }
+
+        .tagline-sucursal {
+            text-shadow: 0 0 12px #000;
+            color: #fff;
+            text-align: left;
+            z-index: 999;
+        }
+
+
+
+        .fondo-mapa {
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            height: auto;
+            width: auto;
+            background-size: cover;
+        }
+
+        .nosotros {
+            padding: 40px 0;
+        }
+
+        .row {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+
+
+
+        .map {
+            border-radius: 50%;
+            border: 10px solid #f6f5f0;
+            box-shadow: 0px 0px 3px 3px #e7e4dc;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            width: 300px;
+        }
+
+        .map iframe {
+            border-radius: 50%;
+            height: 300px;
+            width: 300px;
+        }
     </style>
 </head>
 
@@ -180,7 +227,7 @@
         <div class="carousel-inner">
 
             <!-- First slide -->
-            <div class="carousel-item active hm-grey-strong" style="background-image: url('...'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item active hm-grey-strong" style="background-image: url('https://i.ytimg.com/vi/1AjNoUqe06g/maxresdefault.jpg'); background-repeat: no-repeat; background-size: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -207,7 +254,7 @@
             <!-- /.First slide -->
 
             <!-- Second slide -->
-            <div class="carousel-item hm-grey-strong" style="background-image: url('...'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item hm-grey-strong" style="background-image: url('https://jusamawi.files.wordpress.com/2010/09/gris.jpg'); background-repeat: no-repeat; background-size: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -235,7 +282,7 @@
             <!-- /.Second slide -->
 
             <!-- Third slide -->
-            <div class="carousel-item hm-grey-strong" style="background-image: url('...'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item hm-grey-strong" style="background-image: url('https://www.interazulejo.com/images/products/pizarra-gris-pizarra-gris.jpg'); background-repeat: no-repeat; background-size: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -265,7 +312,7 @@
 
             </div>
 
-            <div class="carousel-item hm-grey-strong" style="background-image: url('...'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item hm-grey-strong" style="background-image: url('https://www.inalco.es/archivos/productos/136/storm-gris-natural-150x300-sk-rect-1-100A.jpg'); background-repeat: no-repeat; background-size: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -292,87 +339,96 @@
             <!-- /.Third slide -->
 
         </div>
-        <a class="carousel-control-prev" href="#carousel-example-3" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel-example-3" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span>
-        </a>
+
 
     </div>
 
 
-    <section class="nosotros fondo-mapa" style="background-image: url('/assets/img/GoogleMapB.jpeg'); background-repeat: no-repeat; background-size: cover; height: 70vh">
+
+
+
+
+
+
+
+
+    <div class="nosotros fondo-mapa" style="background-image: url('/assets/img/GoogleMapB.jpeg'); background-repeat: no-repeat; background-size: cover; height: 80vh">
         <div class="container">
-            <div class="col-lg-12">
-                <h2 class="tagline-sucursal">Encuentranos</h2><br />
-                <div class="col-lg-11 col-lg-offset-1">
-                    <div class="col-lg-4">
-                        <div class="map"><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.261271576248!2d-76.30124683218324!3d3.527002402787925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a04e5b700c619%3A0xf54b19e78adff1c8!2sCra.+31+%2329-42%2C+Palmira%2C+Valle+del+Cauca!5e0!3m2!1ses!2sco!4v1441999181460" frameborder="0"></iframe><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe></div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="col-lg-9 col-lg-offset-1">
-                            <div class="row">
-                                <div class="col-lg-12"><br />
-                                    <table class="table table-bordered table-hover table-striped ">
-                                        <thead style="cursor: pointer">
-                                            <tr>
-                                                <th onclick="cambiar('palmira-centro')" class="active" id="palmira-centro"> Palmira - Centro</th>
-                                            </tr>
-                                            <tr>
-                                                <th onclick="cambiar('palmira-cc-llanogrande')" class="" id="palmira-cc-llanogrande"> Palmira - Cc. Llanogrande</th>
-                                            </tr>
-                                            <tr>
-                                                <th onclick="cambiar('cali')" class="" id="cali"> Cali</th>
-                                            </tr>
-                                            <tr>
-                                                <th onclick="cambiar('rozo')" class="" id="rozo"> Rozo</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <h2 class="tagline-sucursal" align="center">Encuentranos</h2>
+                        <div class="col-lg-12 col-lg-offset-1" align="center">
+                            <div class="col-lg-4">
+                                <div class="map" align="center"><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.261271576248!2d-76.30124683218324!3d3.527002402787925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a04e5b700c619%3A0xf54b19e78adff1c8!2sCra.+31+%2329-42%2C+Palmira%2C+Valle+del+Cauca!5e0!3m2!1ses!2sco!4v1441999181460" frameborder="0"></iframe><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe></div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-12 ">
-                                    <ul class="table-bordered" id="1">
-                                        <li><strong>Dirección:</strong> Carrera 31 no 29 – 42</li>
-                                        <li><strong>Teléfono:</strong> 287 25 47</li>
-                                        <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
-                                    </ul>
-                                    <ul class="table-bordered" id="2" style="display: none">
-                                        <li><strong>Dirección:</strong> Locales 206 – 207</li>
-                                        <li><strong>Teléfono:</strong> 2864016</li>
-                                        <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
-                                    </ul>
-                                    <ul class="table-bordered" id="3" style="display: none">
-                                        <li><strong>Dirección:</strong> Av. 2da. norte no 24N – 83</li>
-                                        <li><strong>Teléfono:</strong> 3734470</li>
-                                        <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
-                                    </ul>
-                                    <ul class="table-bordered" id="4" style="display: none">
-                                        <li><strong>Dirección:</strong> Calle 10 no 9a-23</li>
-                                        <li><strong>Teléfono:</strong> 317 387 2024</li>
-                                        <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
-                                    </ul>
-                                </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="row">
+                            <div class="col-md-8 ">
+                                <table class="table table-bordered table-hover table-striped ">
+                                    <thead style="cursor: pointer">
+                                        <tr>
+                                            <th onclick="cambiar('palmira-centro')" class="active" id="palmira-centro"><strong>
+                                                    <h5><a class="text-dark"> Palmira - Centro</a></h5>
+                                                </strong></th>
+                                        </tr>
+                                        <tr>
+                                            <th onclick="cambiar('palmira-cc-llanogrande')" class="" id="palmira-cc-llanogrande"><strong>
+                                                    <h5><a class="text-dark"> Palmira - Cc. Llanogrande</a></h5>
+                                                </strong></th>
+                                        </tr>
+                                        <tr>
+                                            <th onclick="cambiar('cali')" class="" id="cali"> <strong>
+                                                    <h5><a class="text-dark"> Cali</a></h5>
+                                                </strong></th>
+                                        </tr>
+                                        <tr>
+                                            <th onclick="cambiar('rozo')" class="" id="rozo"><strong>
+                                                    <h5><a class="text-dark"> Rozo</a></h5>
+                                                </strong></th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-8 ">
+                                <ul class="table-striped" id="1">
+                                    <li><strong>Dirección:</strong> Carrera 31 no 29 – 42</li>
+                                    <li><strong>Teléfono:</strong> 287 25 47</li>
+                                    <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                                </ul>
+                                <ul class="table-striped" id="2" style="display: none">
+                                    <li><strong>Dirección:</strong> Locales 206 – 207</li>
+                                    <li><strong>Teléfono:</strong> 2864016</li>
+                                    <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                                </ul>
+                                <ul class="table-striped" id="3" style="display: none">
+                                    <li><strong>Dirección:</strong> Av. 2da. norte no 24N – 83</li>
+                                    <li><strong>Teléfono:</strong> 3734470</li>
+                                    <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                                </ul>
+                                <ul class="table-striped" id="4" style="display: none">
+                                    <li><strong>Dirección:</strong> Calle 10 no 9a-23</li>
+                                    <li><strong>Teléfono:</strong> 317 387 2024</li>
+                                    <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
 
-
-
-
-
-
-
-
+    </div>
 
 
 
@@ -390,24 +446,6 @@
     </footer>
 
 
-
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-    <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.js') }}"></script>
-    <script src="{{ asset('js/mdb.js') }}"></script>
-
-    <script>
-        $('.carousel').carousel({
-            interval: 5000
-        })
-    </script>
 
     <script type="text/javascript">
         function cambiar(variable) {
@@ -461,7 +499,7 @@
                 document.getElementById('3').setAttribute('style', 'display: block');
                 document.getElementById('mapa').setAttribute('src', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.6332162313021!2d-76.52354381110703!3d3.4630242308794146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x78a09208593f684e!2sPROALNET!5e0!3m2!1ses!2sco!4v1442000732197');
                 if ('cali' != 'palmira-centro') {
-                    document.getElementById('palmira-centro').setAttribute('class', '');
+                    document.getElementById('palmira-centro').setAttribute('class', 'active');
                     document.getElementById('1').setAttribute('style', 'display: none');
                 }
                 if ('cali' != 'palmira-cc-llanogrande') {
@@ -503,7 +541,26 @@
     </script>
 
 
-    <script type='text/javascript' src='https://count.carrierzone.com/app/count_server/count.js'></script>
+
+
+
+
+    <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/mdb.js') }}"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <script>
+        $('.carousel').carousel({
+            interval: 5000
+        })
+    </script>
 
 </body>
 
