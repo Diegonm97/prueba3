@@ -124,6 +124,7 @@
             }
         }
 
+<<<<<<< HEAD
         .card-body {
         -webkit-box-flex: 1;
         flex: 1 1 auto;
@@ -138,6 +139,8 @@
             color: #fff !important;
         }
 
+=======
+>>>>>>> 1c0b3d366f54b8dc51a57a06e3266b790c1a9fb8
         footer {
             background: #1B63BD;
             color: white;
@@ -443,6 +446,19 @@
 
     <div class="nosotros fondo-mapa" style="background-image: url('/assets/img/GoogleMapB.jpeg'); background-repeat: no-repeat; background-size: cover; height: 80vh">
         <div class="container">
+<<<<<<< HEAD
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="tagline-sucursal">Encuentranos</h2><br />
+                <div class="col-lg-11 col-lg-offset-1">
+                    <div class="col-lg-4">
+                        <div class="map"><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.261271576248!2d-76.30124683218324!3d3.527002402787925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a04e5b700c619%3A0xf54b19e78adff1c8!2sCra.+31+%2329-42%2C+Palmira%2C+Valle+del+Cauca!5e0!3m2!1ses!2sco!4v1441999181460" 
+                        frameborder="0"></iframe>
+                        <iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe
+                        ><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0">
+                        </iframe><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+=======
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-6">
@@ -510,10 +526,59 @@
                                     <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
                                 </ul>
                             </div>
+>>>>>>> 366bc59e7181a351d7a1c89fc209add907b6cdd9
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
+
+            <div class="col-md-6">
+            <div class="row">
+                <table class="table table-bordered table-hover table-striped ">
+                                            <thead style="cursor: pointer">
+                                                <tr>
+                                                    <th onclick="cambiar('palmira-centro')" class="active" id="palmira-centro"> Palmira - Centro</th>
+                                                </tr>
+                                                <tr>
+                                                    <th onclick="cambiar('palmira-cc-llanogrande')" class="" id="palmira-cc-llanogrande"> Palmira - Cc. Llanogrande</th>
+                                                </tr>
+                                                <tr>
+                                                    <th onclick="cambiar('cali')" class="" id="cali"> Cali</th>
+                                                </tr>
+                                                <tr>
+                                                    <th onclick="cambiar('rozo')" class="" id="rozo"> Rozo</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        </div>
+
+                                <div class="row">
+                                    <div class="col-lg-12 ">
+                                        <ul class="table-bordered" id="1">
+                                            <li><strong>Dirección:</strong> Carrera 31 no 29 – 42</li>
+                                            <li><strong>Teléfono:</strong> 287 25 47</li>
+                                            <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                                        </ul>
+                                        <ul class="table-bordered" id="2" style="display: none">
+                                            <li><strong>Dirección:</strong> Locales 206 – 207</li>
+                                            <li><strong>Teléfono:</strong> 2864016</li>
+                                            <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                                        </ul>
+                                        <ul class="table-bordered" id="3" style="display: none">
+                                            <li><strong>Dirección:</strong> Av. 2da. norte no 24N – 83</li>
+                                            <li><strong>Teléfono:</strong> 3734470</li>
+                                            <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                                        </ul>
+                                        <ul class="table-bordered" id="4" style="display: none">
+                                            <li><strong>Dirección:</strong> Calle 10 no 9a-23</li>
+                                            <li><strong>Teléfono:</strong> 317 387 2024</li>
+                                            <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+            </div>
+        </div>
         </div>
 
 
@@ -525,7 +590,7 @@
     <footer>
         <br>
         <div class="container text-center">
-            <h2><strong>Intersalud del Valle SAS</strong></h2>
+            <h2><strong>Intersalud Colombia</strong></h2>
             <p><strong>Sede principal:</strong> Palmira, Valle del Cauca, carrera 31 no 29 - 42 <br /><strong>Email</strong> - <a id="mail" href="mailto:intersaludpalmira@intersaluddelvalle.com.co" style="color: white">intersaludpalmira@intersaluddelvalle.com.co</a><br />
                 Teléfonos: 287 25 47<br />
                 2019 Intersalud Colombia SAS. - Todos los derechos reservados.
