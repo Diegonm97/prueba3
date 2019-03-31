@@ -123,6 +123,11 @@
 
             position: relative;
         }
+
+        footer {
+            background-color: #1B63BD;
+            margin-top: 0;
+        }
     </style>
 
 </head>
@@ -163,14 +168,14 @@
             </div>
         </nav>
 
-        <div class="container">
 
 
-            @yield('content')
-
-
-        </div>
     </div>
+    @yield('content')
+
+
+
+
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
