@@ -441,7 +441,7 @@
 
 
 
-    <div class="nosotros fondo-mapa" style="background-image: url('/assets/img/GoogleMapB.jpeg'); background-repeat: no-repeat; background-size: cover; height: 80vh">
+    <div class="nosotros fondo-mapa" style="background-image: url('/assets/img/GoogleMapB.jpeg'); background-repeat: no-repeat; background-size: cover; height: 70vh">
         <div class="container">
         <div class="row">
             <div class="col-md-6">
