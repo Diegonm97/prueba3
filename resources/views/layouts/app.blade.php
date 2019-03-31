@@ -17,67 +17,170 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        body {
+
+            font-size: 2rem;
+        }
+
+        .h4 {
+            font-size: 2rem;
+        }
+
+        .navbar {
+            background-color: #1B63BD;
+            height: 70px
+        }
+
+        .md-form label {
+            transition: .2s ease-out;
+            color: #757575;
+            position: absolute;
+            top: 0rem;
+            left: 18px;
+            font-size: 2rem;
+            cursor: text;
+        }
+
+        .btn {
+            font-size: 1.2rem;
+        }
+
+        .navbar-nav {
+            padding-left: 700px;
+        }
+
+        .navbar-brand {
+            align-self: flex-start;
+            overflow: visible;
+            padding-top: 1.32rem;
+            font-size: 2rem;
+        }
+
+        .card-body {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            padding: 14.25rem;
+        }
+
+        .fa,
+        .fab,
+        .fal,
+        .far,
+        .fas {
+
+            line-height: 1;
+
+        }
+
+        .md-form .prefix {
+            font-size: 3rem;
+        }
+
+
+        .prefix~input {
+            width: 40rem
+        }
+
+        input[type=date],
+        input[type=datetime-local],
+        input[type=email],
+        input[type=number],
+        input[type=password],
+        input[type=search-md],
+        input[type=search],
+        input[type=tel],
+        input[type=text],
+        input[type=time],
+        input[type=url],
+        textarea.md-textarea {
+            font-size: 2rem;
+        }
+
+        .links>a {
+            color: white;
+            padding: 0 25px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .fixed-top {
+
+            position: relative;
+        }
+    </style>
 
 </head>
 
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+
+    <div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Intersalud del Valle
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <a class="navbar-brand" href="/">Intersalud Colombia</a>
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
-                    </ul>
+                    <div class="navbar-nav top-right links" id="navbarSupportedContent">
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+
                         @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            @if (Route::has('register'))
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-                            @endif
-                        </li>
+                        <a href="{{ route('login') }}">Ingresar</a>
+                        @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Registrarse</a>
+                        @endif
                         @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                         @endguest
-                    </ul>
+                    </div>
                 </div>
             </div>
         </nav>
 
-        <main class="py-4">
+        <div class="container">
+
+
             @yield('content')
-        </main>
+
+
+        </div>
     </div>
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{{asset('js/mdb.js')}}"></script>
 </body>
 
 </html> 
