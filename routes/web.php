@@ -26,6 +26,11 @@ Route::resource('ciudad','ciudadController');
 Route::resource('empleado_empresa','Empleado_empresaController');
 Route::resource('sede','SedeController');
 
+Route::get('/productos', function () {
+    return view('productos');
+});
+
+
 Route::get("/createEmp/{id}","clientesController@createEmp")->name('createEmp');
 
 Route::post("/createEmp/{id}","clientesController@storeEmp")->name('storeEmp');

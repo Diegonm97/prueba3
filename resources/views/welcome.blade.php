@@ -33,7 +33,7 @@
             height: 100vh;
             margin: 0;
         }
-
+        
         .navbar {
             background-color: transparent;
             height: 70px
@@ -124,6 +124,20 @@
             }
         }
 
+        .card-body {
+        -webkit-box-flex: 1;
+        flex: 1 1 auto;
+        padding: 1.2rem;
+}
+
+        .navbar .btn-group .dropdown-menu a:hover {
+            color: #000 !important;
+        }
+
+        .navbar .btn-group .dropdown-menu a:active {
+            color: #fff !important;
+        }
+
         footer {
             background: #1B63BD;
             color: white;
@@ -173,6 +187,9 @@
             height: 300px;
             width: 300px;
         }
+        button {
+            color: #1B63BD;
+}
     </style>
 </head>
 
@@ -253,7 +270,7 @@
                     <ul class="animated fadeInUp col-md-12">
                         <li>
                             <center>
-                                <img src="/assets/img/Botiquin.png">
+                                <img src="/assets/img/Botiquin.png" alt="botiquin" align="middle">
                             </center>
                             <br>
                             <h1 class="h1-responsive flex-item font-bold">¿Que es la seguridad social?</h1>
@@ -278,27 +295,107 @@
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
+                <center>
+                    <div class="container">
                     <ul class="animated fadeInUp col-md-12">
                         <li>
-                            <center>
-                                <img src="/assets/img/Hospital.png">
-                                <img src="/assets/img/Botiquin.png">
-                                <img src="/assets/img/Corazon.png">
-                                <img src="/assets/img/Cruz.png">
-                            </center>
-                            <br>
-
-                            <h1 class="h1-responsive flex-item font-bold">Nuestros servicios</h1>
+                        <h3 class="h2-responsive flex-item font-bold">Nuestros servicios</h3>
                         </li>
                         <li>
-                            <p class="my-4 h3-responsive flex-item" align="center" class="">
+                            <p class="my-4 h4-responsive flex-item" align="center" class="">
                                 Aqui podra visualizar los distintos productos que ofrecemos.<br>
                             </p>
                         </li>
-                        <li>
-
-                        </li>
                     </ul>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col">
+                            <div class="card">
+                                    <!-- Card image -->
+                                    
+                                    <!-- Card content -->
+                                    <div class="card-body">
+                                    <!-- Title -->
+                                    <!-- Card image -->
+                                        <center>
+                                            <img src="/assets/img/Hospital.png" width="100" height="100" 
+                                            align="middle" alt="Card image cap">
+                                        </center>
+                                    <!-- Title -->
+                                        <h4 class="card-title"><a>Servicios</a></h4>
+                                        <!-- Text -->
+                                        <p class="card-text">Prestadoras de salud abscritas.</p>
+                                        <!-- Button -->
+                                        <a href="/productos" class="btn btn-primary">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- Card -->
+                                <div class="card">
+                                    <!-- Card content -->
+                                    <div class="card-body">
+                                         <!-- Card image -->
+                                        <center>
+                                            <img src="/assets/img/Botiquin.png" width="100" height="100"
+                                            align="middle" alt="Card image cap">
+                                        </center>
+                                        <!-- Title -->
+                                        <h4 class="card-title"><a>Servicioas</a></h4>
+                                        <!-- Text -->
+                                        <p class="card-text">Aseguradoras de riesgos abscritas</p>
+                                        <!-- Button -->
+                                        <a href="#" class="btn btn-primary">Button</a>
+                                    </div>
+                                </div>
+                                <!-- Card -->
+                            </div>
+                            <div class="col">
+                                <!-- Card -->
+                                <div class="card">
+                                  
+                                    <!-- Card content -->
+                                    <div class="card-body">
+                                      <!-- Card image -->
+                                        <center>
+                                            <img src="/assets/img/Corazon.png" width="100" height="100" 
+                                            align="middle" alt="Card image cap">
+                                       </center>
+                                    <!-- Title -->
+                                        <h4 class="card-title"><a>Servicioas</a></h4>
+                                        <!-- Text -->
+                                        <p class="card-text">Caja de compensación abscritas</p>
+                                        <!-- Button -->
+                                        <a href="#" class="btn btn-primary">Button</a>
+                                    </div>
+                                </div>
+                                <!-- Card -->
+                            </div>
+                            <div class="col">
+                                 <!-- Card -->
+                                 <div class="card">
+                                    <!-- Card content -->
+                                    <div class="card-body">
+                                        <!-- Card image -->
+                                        <center>
+                                            <img src="/assets/img/Cruz.png" width="100" height="100" 
+                                            align="middle" alt="Card image cap">
+                                        </center>
+                                        <!-- Title -->
+                                        <h4 class="card-title"><a>Servicioas</a></h4>
+                                        <!-- Text -->
+                                        <p class="card-text">Fondos privados de pensiones</p>
+                                        <!-- Button -->
+                                        <a href="#" class="btn btn-primary">Button</a>
+                                    </div>
+                                </div>
+                                <!-- Card -->
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </center>
                 </div>
                 <!-- /.Caption -->
 
