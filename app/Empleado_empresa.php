@@ -15,7 +15,7 @@ class Empleado_empresa extends Model
     ];
 
     // Realiza la busqueda en base de datos de acuerdo a la identificación
-    public function scopeSearch1($query, $identificacion)
+    public function scopeSearch1($query, $identificacion)              //Buscador por medio de identificacion
     {
         return $query->where('identificacion', 'LIKE', "%$identificacion%");
     }

@@ -15,9 +15,9 @@ class EntidadController extends Controller
      */
     public function index(Request $request)
     {
-        $entidades = Entidad::search1($request->nombre)->orderbydesc('nombre')->paginate('8');
+        $entidades = Entidad::search1($request->nombre)->orderbydesc('nombre')->paginate('8');      //Realiza la busqueda por nombre
 
-        return view('entidades.index', compact('entidades'));
+        return view('entidades.index', compact('entidades'));   //Retorna a la vista index de entidades con la variable entidades
     }
 
     /**
@@ -28,7 +28,7 @@ class EntidadController extends Controller
     public function create()
     {
 
-        return view('entidades.create');
+        return view('entidades.create');                //Retorna a la vista create de entidades
     }
 
     /**
@@ -39,16 +39,16 @@ class EntidadController extends Controller
      */
     public function store(EntidadRequest $request)
     {
-        $entidad = new Entidad;
+        $entidad = new Entidad;                         //Crea un objeto de tipo entidad
 
         $entidad->nombre         = $request->nombre;
         $entidad->tipo           = $request->tipo;
 
 
-        $entidad->save();
+        $entidad->save();                               //Almacena los datos del objeto
 
-        return redirect()->route('entidad.index')
-            ->with('info', 'La entidad fue creada');
+        return redirect()->route('entidad.index')       //Retorna a la vista index de entidad
+            ->with('info', 'La entidad fue creada');    //Envia un mensaje de tipo info
     }
 
 
@@ -60,8 +60,8 @@ class EntidadController extends Controller
      */
     public function show($id)
     {
-        $entidades = Entidad::find($id);
-        return view('entidades.show', compact('entidades'));
+        $entidades = Entidad::find($id);                //Busca en la base de datos una entidad con el id especificado
+        return view('entidades.show', compact('entidades'));    //Retorna a la vista show con la variable entidades
     }
 
     /**
@@ -73,9 +73,9 @@ class EntidadController extends Controller
     public function edit($id)
     {
 
-        $entidades = Entidad::find($id);
+        $entidades = Entidad::find($id);                //Busca en la base de datos una entidad con el id especificado
 
-        return view('entidades.edit', compact('entidades'));
+        return view('entidades.edit', compact('entidades'));    //Retorna a la vista show con la variable entidades
     }
 
     /**
@@ -87,14 +87,15 @@ class EntidadController extends Controller
      */
     public function update(entidadRequest $request, $id)
     {
-        $entidad = Entidad::find($id);
+        $entidad = Entidad::find($id);                  //Busca en la base de datos una entidad con el id especificado
 
         $entidad->nombre         = $request->nombre;
         $entidad->tipo           = $request->tipo;
 
-        $entidad->save();
+        $entidad->save();                               //Almacena los nuevos datos del objeto entidad
 
         return redirect()->route('entidad.index')->with('info', 'La entidad fue actualizado');
+        //Retorna a la vista index de entidad con un mensaje de tipo info
     }
 
     /**
