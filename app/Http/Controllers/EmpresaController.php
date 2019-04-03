@@ -6,6 +6,7 @@ use App\Clientes;
 use App\Empresa;
 use App\Entidad;
 use App\Ciudad;
+use App\Empleado_empresa;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresasRequest;
 
@@ -86,13 +87,13 @@ class EmpresaController extends Controller
     public function show($id, Request $request)
     {
         $empresa = Empresa::find($id);              //Busca en la base de datos una empresa con el id especificado
-
+        $empleado_empresas= Empleado_empresa::Search()->where('id_empresa','=',$empresa->id)->orderByDesc('id')->paginate('8');
 
         //$clientes = Clientes::where('idEmpresaContraCli','=', $empresa->idEmpresaContraEmp)->get();
         $ciudad = Ciudad::Search()->where('id', '=', $empresa->id_ciudad)->first();
         //Busca una ciudad cullo id sea igual al id_ciudad  de la empresa encontrada
 
-        return view('empresas.show', compact('empresa', 'ciudad')); //Retorna a la vista show de empresas con las variables de empresa y ciudad
+        return view('empresas.show', compact('empresa', 'ciudad','empleado_empresas')); //Retorna a la vista show de empresas con las variables de empresa, ciudad y empleado_empresas
     }
 
     /**
