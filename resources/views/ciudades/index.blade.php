@@ -16,16 +16,16 @@
     <div class="card">
         <div class="header">
             <h4 class="title">Ciudades
+                <!-- Ruta al create de ciudad -->
                 @can('ciudades.create')
                 <a href="{{route('ciudad.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
             @endcan
 
             <p class="category">Aqui se muestran datos de las ciudades registradas</p>
+            <!-- Buscador -->
             {!!Form::open(['route'=>'ciudad.index', 'method'=>'GET','class'=>'navbar-form'])!!}
             <div class="form group">
                 {!!Form::text('nombre',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
-
-
             </div>
             {!!Form::close()!!}
         </div>
@@ -40,15 +40,18 @@
                             <th></th>
                         </thead>
                         <tbody>
+                            <!-- Cada ciudad las recorre una por una y obtiene sus datos -->
                             @foreach ($ciudades as $ciudad)
                             <tr>
                                 <th>{{$ciudad->nombre}}</th>
                                 <th>{{$ciudad->codigo}}</th>
 
                                 <th>
+                                    <!-- Ruta al show de  ciudad -->
                                     @can('ciudades.show')
                                     <a href="{{route('ciudad.show', $ciudad->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
+                                    <!-- Ruta al edit de ciudad -->
                                     @can('ciudades.edit')
                                     <a href="{{route('ciudad.edit', $ciudad->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan

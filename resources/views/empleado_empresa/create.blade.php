@@ -13,7 +13,7 @@
     <h4><strong>(*) : Campo obligatorio</strong></h4>
 
 </div>
-
+<!-- Incluye el formulario de empleado_empresa -->
 <div class="col-sm-12">
 
     {!! Form::open(['route' => 'empleado_empresa.store']) !!}

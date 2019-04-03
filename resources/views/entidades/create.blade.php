@@ -13,7 +13,7 @@
     <h4><strong>(*) : Campo obligatorio</strong></h4>
 
 </div>
-
+<!-- Incluye al form de entidades -->
 <div class="col-sm-12">
 
     {!! Form::open(['route' => 'entidad.store']) !!}
