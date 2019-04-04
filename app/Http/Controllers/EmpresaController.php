@@ -6,6 +6,7 @@ use App\Clientes;
 use App\Empresa;
 use App\Entidad;
 use App\Ciudad;
+use App\Empleado_empresa;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresasRequest;
 
@@ -19,11 +20,11 @@ class EmpresaController extends Controller
     public function index(Request $request)
     {
 
-        $empresas = Empresa::search1($request->idEmpresaContraEmp)->orderByDesc('id')->paginate('8');
+        $empresas = Empresa::search1($request->idEmpresaContraEmp)->orderByDesc('id')->paginate('8');   //Realiza la busqueda por idEmpresaContraEmp
 
 
 
-        return view('empresas.index', compact('empresas'));
+        return view('empresas.index', compact('empresas'));     //retorna a la vista index de empresas junto con la variable empresas
     }
 
     /**
@@ -33,13 +34,14 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        $epss = Entidad::Search()->where('tipo', '=', "eps")->get();
-        $arls = Entidad::Search()->where('tipo', '=', "arl")->get();
-        $afps = Entidad::Search()->where('tipo', '=', "afp")->get();
-        $cajacomps = Entidad::Search()->where('tipo', '=', "cajacomp")->get();
-        $ciudades = Ciudad::Search()->get();
+        $epss = Entidad::Search()->where('tipo', '=', "eps")->get();    //Busca a las entidades que tengan tipo = eps
+        $arls = Entidad::Search()->where('tipo', '=', "arl")->get();    //Busca a las entidades que tengan tipo = arl
+        $afps = Entidad::Search()->where('tipo', '=', "afp")->get();    //Busca a las entidades que tengan tipo = afp
+        $cajacomps = Entidad::Search()->where('tipo', '=', "cajacomp")->get();    //Busca a las entidades que tengan tipo = cajacomp
+        $ciudades = Ciudad::Search()->get();                            //Busca todas las ciudades
         $ciudad = null;
         return view('empresas.create', compact('epss', 'arls', 'afps', 'cajacomps', 'ciudades', 'ciudad'));
+        // Retorna a la vista create de empresas con las variables epss, arls, afps, cajacomps, ciudades y ciudad
     }
 
     /**
@@ -50,7 +52,7 @@ class EmpresaController extends Controller
      */
     public function store(empresasRequest $request)
     {
-        $empresas = new Empresa;
+        $empresas = new Empresa;                    //Crea un objeto de tipo empresa
 
 
         $empresas->nit = $request->nit;
@@ -68,12 +70,12 @@ class EmpresaController extends Controller
         $empresas->fecha_ingreso = $request->fecha_ingreso;
         $empresas->observacion = $request->observacion;
 
-        $empresas->save();
+        $empresas->save();                          //Almacena los datos del objeto empresas
 
 
 
-        return redirect()->route('empresa.index')
-            ->with('info', 'La empresa fue creado');
+        return redirect()->route('empresa.index')       //Retorna a la vista index de empresa
+            ->with('info', 'La empresa fue creado');    //Envia un mensaje de tipo info
     }
 
     /**
@@ -84,13 +86,14 @@ class EmpresaController extends Controller
      */
     public function show($id, Request $request)
     {
-        $empresa = Empresa::find($id);
-
+        $empresa = Empresa::find($id);              //Busca en la base de datos una empresa con el id especificado
+        $empleado_empresas= Empleado_empresa::Search()->where('id_empresa','=',$empresa->id)->orderByDesc('id')->paginate('8');
 
         //$clientes = Clientes::where('idEmpresaContraCli','=', $empresa->idEmpresaContraEmp)->get();
         $ciudad = Ciudad::Search()->where('id', '=', $empresa->id_ciudad)->first();
+        //Busca una ciudad cullo id sea igual al id_ciudad  de la empresa encontrada
 
-        return view('empresas.show', compact('empresa', 'ciudad'));
+        return view('empresas.show', compact('empresa', 'ciudad','empleado_empresas')); //Retorna a la vista show de empresas con las variables de empresa, ciudad y empleado_empresas
     }
 
     /**
@@ -101,10 +104,10 @@ class EmpresaController extends Controller
      */
     public function edit($id)
     {
-        $empresa = Empresa::find($id);
-        $ciudades = Ciudad::Search()->get();
-        $ciudad = Ciudad::Search()->where('id', '=', $empresa->id_ciudad)->first();
-        return view('empresas.edit', compact('empresa', 'ciudad', 'ciudades'));
+        $empresa = Empresa::find($id);                  //Busca en la base de datos una empresa con el id especificado
+        $ciudades = Ciudad::Search()->get();            //Busca en la base de datos todas las empresas
+        $ciudad = Ciudad::Search()->where('id', '=', $empresa->id_ciudad)->first(); //Busca en la base de datos ciudades cullo id sea igual al id_ciudad de la empresa encontrada
+        return view('empresas.edit', compact('empresa', 'ciudad', 'ciudades')); //Retorna a la vista edit de empresas con las variables empresa, ciudad y ciudades
     }
 
     /**
@@ -116,7 +119,9 @@ class EmpresaController extends Controller
      */
     public function update(empresasRequest $request, $id)
     {
-        $empresas = Empresa::find($id);
+        $empresas = Empresa::find($id);         //Busca en la base de datos una empresa con el id especificado
+
+
         $empresas->nit = $request->nit;
         $empresas->nombre = $request->nombre;
         $empresas->nombre_contacto = $request->nombre_contacto;
@@ -130,10 +135,12 @@ class EmpresaController extends Controller
         $empresas->id_usuario = $request->id_usuario;
         $empresas->fecha_ingreso = $request->fecha_ingreso;
         $empresas->observacion = $request->observacion;
-        $empresas->save();
 
-        return redirect()->route('empresa.index')
-            ->with('info', 'El empresa fue actualizado');
+
+        $empresas->save();                      //Almacena los nuevos datos del objeto empresas
+
+        return redirect()->route('empresa.index')   //Retorna a la vista index de empresa
+            ->with('info', 'El empresa fue actualizado');   //Envia un mensaje de tipo info
     }
     public function destroy(Empresa $empresa)
     {

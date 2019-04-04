@@ -58,8 +58,6 @@
 
                                     @endforeach
                                 </select>
-
-                                
                             </div>
                             <br>
                             <!--FIN SEDES-->

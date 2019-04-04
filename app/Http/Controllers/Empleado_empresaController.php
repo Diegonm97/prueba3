@@ -18,10 +18,10 @@ class Empleado_empresaController extends Controller
      */
     public function index(Request $request)
     {
-        $empleadoEmpS = Empleado_empresa::search1($request->identificacion)->orderbydesc('id')->paginate('8');
-        $empresas = Empresa::search()->get();
+        $empleadoEmpS = Empleado_empresa::search1($request->identificacion)->orderbydesc('id')->paginate('8');  //Realiza la busqueda por identificacion
+        $empresas = Empresa::search()->get();               //Realiza una busqueda de todas las empresas
 
-        return view('empleado_empresa.index', compact('empleadoEmpS', 'empresas'));
+        return view('empleado_empresa.index', compact('empleadoEmpS', 'empresas'));     //Retorna a la vista index de empleado_empresa junto con la variable empleadoEps y empresas
     }
 
     /**
@@ -33,12 +33,12 @@ class Empleado_empresaController extends Controller
 
     public function create()
     {
-        $epss = Entidad::Search()->where('tipo', '=', "1")->get();
-        $arls = Entidad::Search()->where('tipo', '=', "2")->get();
-        $afps = Entidad::Search()->where('tipo', '=', "3")->get();
-        $cajacomps = Entidad::Search()->where('tipo', '=', "4")->get();
-        $ciudades = Ciudad::Search()->get();
-        $empresas = Empresa::Search()->get();
+        $epss = Entidad::Search()->where('tipo', '=', "1")->get();      //Realiza la busqueda de entidades que tengan tipo = 1
+        $arls = Entidad::Search()->where('tipo', '=', "2")->get();      //Realiza la busqueda de entidades que tengan tipo = 2
+        $afps = Entidad::Search()->where('tipo', '=', "3")->get();      //Realiza la busqueda de entidades que tengan tipo = 3
+        $cajacomps = Entidad::Search()->where('tipo', '=', "4")->get(); //Realiza la busqueda de entidades que tengan tipo = 4
+        $ciudades = Ciudad::Search()->get();                            //Realiza la busqueda de todas las ciudades
+        $empresas = Empresa::Search()->get();                           //Realiza la busqueda de todas las empresas
         $porcentaje = 10;
         $empresa = null;
         $ciudad = null;
@@ -46,9 +46,9 @@ class Empleado_empresaController extends Controller
         $arl = null;
         $afp = null;
         $cajacomp = null;
-        return view(
-            'empleado_empresa.create',
+        return view('empleado_empresa.create',      //Retorna a la vista create de empleado_empresa
             compact('porcentaje', 'epss', 'arls', 'afps', 'cajacomps', 'ciudades', 'empresas', 'empresa', 'ciudad', 'eps', 'arl', 'afp', 'cajacomp')
+             //Retorna a al vista edit de clientes con las variables de porcentaje, cliente, clientes, ciudades, ciudad, epss, arls, afps, cajacomps, eps, arl, afp y cajacomp
         );
     }
 
@@ -60,7 +60,7 @@ class Empleado_empresaController extends Controller
      */
     public function store(Empleado_empresaRequest $request)
     {
-        $empleadoEmpS = new Empleado_empresa;
+        $empleadoEmpS = new Empleado_empresa;                       //Crea un objeto de tipo empleadoEmpS
 
         $empleadoEmpS->id_empresa       = $request->id_empresa;
         $empleadoEmpS->identificacion   = $request->identificacion;
@@ -83,10 +83,10 @@ class Empleado_empresaController extends Controller
         $empleadoEmpS->id_cjc           = $request->id_cjc;
         $empleadoEmpS->estado           = $request->estado;
 
-        $empleadoEmpS->save();
+        $empleadoEmpS->save();                                      //Almacena los datos del objeto empleadoEmpS
 
-        return redirect()->route('empleado_empresa.index')
-            ->with('info', 'El empleado fue creado');
+        return redirect()->route('empleado_empresa.index')          //Redirecciona a la vista index de empleado_empresa
+            ->with('info', 'El empleado fue creado');               //Envia un mensaje de tipo info
     }
 
     /**
@@ -97,13 +97,13 @@ class Empleado_empresaController extends Controller
      */
     public function show($id)
     {
-        $empleadoEmp = Empleado_empresa::find($id);
-        $empresa = Empresa::Search()->where('id', '=', $empleadoEmp->id_empresa)->first();
-        $ciudad = Ciudad::Search()->where('id', '=', $empleadoEmp->id_ciudad)->first();
-        $eps = Entidad::Search()->where('id', '=', $empleadoEmp->id_eps)->first();
-        $arl = Entidad::Search()->where('id', '=', $empleadoEmp->id_arl)->first();
-        $afp = Entidad::Search()->where('id', '=', $empleadoEmp->id_afp)->first();
-        $cajacomp = Entidad::Search()->where('id', '=', $empleadoEmp->id_cjc)->first();
+        $empleadoEmp = Empleado_empresa::find($id);                                         //Busca en la base de datos un Empleado_empresa con el id especificado
+        $empresa = Empresa::Search()->where('id', '=', $empleadoEmp->id_empresa)->first();  //Realiza la busqueda de empresas que tengan id = al id de la empresa que se retorna al buscar
+        $ciudad = Ciudad::Search()->where('id', '=', $empleadoEmp->id_ciudad)->first();     //Realiza la busqueda de empresas que tengan id = al id de la ciudad que se retorna al buscar
+        $eps = Entidad::Search()->where('id', '=', $empleadoEmp->id_eps)->first();          //Realiza la busqueda de empresas que tengan id = al id de la eps que se retorna al buscar
+        $arl = Entidad::Search()->where('id', '=', $empleadoEmp->id_arl)->first();          //Realiza la busqueda de empresas que tengan id = al id de la arl que se retorna al buscar
+        $afp = Entidad::Search()->where('id', '=', $empleadoEmp->id_afp)->first();          //Realiza la busqueda de empresas que tengan id = al id de la afp que se retorna al buscar
+        $cajacomp = Entidad::Search()->where('id', '=', $empleadoEmp->id_cjc)->first();     //Realiza la busqueda de empresas que tengan id = al id de la cjc que se retorna al buscar
         return view('empleado_empresa.show', compact('empleadoEmp','empresa', 'ciudad', 'eps', 'arl', 'afp', 'cajacomp'));
     }
 
@@ -131,6 +131,7 @@ class Empleado_empresaController extends Controller
         $porcentaje = 10;
 
         return view('empleado_empresa.edit', compact('empleadoEmp', 'ciudad', 'eps', 'arl', 'afp', 'cajacomp', 'ciudades', 'empresas', 'empresa', 'epss', 'arls', 'afps', 'cajacomps', 'porcentaje'));
+        //Retorna a la vista edit de empleado_empresa con los datos de empleadoEmp, ciudad, eps, arl, afp, cajacomp, ciudades,empresas, empresa, epss, arls, afps, cajacomps y porcentaje
     }
 
     /**
@@ -142,7 +143,7 @@ class Empleado_empresaController extends Controller
      */
     public function update(Empleado_empresaRequest $request, $id)
     {
-        $empleadoEmpS = Empleado_empresa::find($id);
+        $empleadoEmpS = Empleado_empresa::find($id);                //Busca en la base de datos un Empleado_empresa con el id especificado
 
         $empleadoEmpS->id_empresa       = $request->id_empresa;
         $empleadoEmpS->identificacion   = $request->identificacion;
@@ -165,10 +166,10 @@ class Empleado_empresaController extends Controller
         $empleadoEmpS->id_arl           = $request->id_cjc;
         $empleadoEmpS->id_arl           = $request->estado;
 
-        $empleadoEmpS->save();
+        $empleadoEmpS->save();                                      //Almacena los nuevos datos del objeto empleadoEmpS
 
-        return redirect()->route('empleado_empresa.index')
-            ->with('info', 'El empleado fue actualizado');
+        return redirect()->route('empleado_empresa.index')          //Redirecciona a la vista index de empleado_empresa
+            ->with('info', 'El empleado fue actualizado');          //Envia un mensaje de tipo info
     }
 
     /**

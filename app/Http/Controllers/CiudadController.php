@@ -14,9 +14,9 @@ class CiudadController extends Controller
      */
     public function index(Request $request)
     {
-        $ciudades = Ciudad::search1($request->nombre)->orderby('nombre')->paginate('8'); //Busca las ciudades por nombre
+        $ciudades = Ciudad::search1($request->nombre)->orderby('nombre')->paginate('8');    //Realiza la busqueda por nombre
 
-        return view('ciudades.index', compact('ciudades')); //Retorna la vista ciudad.index con las ciudades encontradas
+        return view('ciudades.index', compact('ciudades')); //retorna a la vista index de ciudades junto con la variable ciudades
     }
 
     /**
@@ -26,7 +26,7 @@ class CiudadController extends Controller
      */
     public function create()
     {
-        return view('ciudades.create');
+        return view('ciudades.create');         //Retorna a la vista create de ciudades
     }
 
     /**
@@ -37,16 +37,16 @@ class CiudadController extends Controller
      */
     public function store(Request $request)
     {
-        $ciudad = new Ciudad;
+        $ciudad = new Ciudad;           //Crea un objeto de tipo ciudad
 
         $ciudad->nombre         = $request->nombre;
         $ciudad->codigo           = $request->codigo;
 
 
-        $ciudad->save();
+        $ciudad->save();                //Almacena los datos del objeto ciudad
 
-        return redirect()->route('ciudad.index')
-            ->with('info', 'La ciudad fue creada');
+        return redirect()->route('ciudad.index')        //Redirecciona a la vista index de ciudades
+            ->with('info', 'La ciudad fue creada');     //Envia un mensaje de tipo info
     }
 
     /**
@@ -57,8 +57,8 @@ class CiudadController extends Controller
      */
     public function show($id)
     {
-        $ciudades = Ciudad::find($id);
-        return view('ciudades.show', compact('ciudades'));
+        $ciudades = Ciudad::find($id);              //Busca en la base de datos una ciudad con el id especificado
+        return view('ciudades.show', compact('ciudades'));  //Retorna a la vista show de ciudades con el junto con la variable ciudades
     }
 
     /**
@@ -69,9 +69,9 @@ class CiudadController extends Controller
      */
     public function edit($id)
     {
-        $ciudades = Ciudad::find($id);
+        $ciudades = Ciudad::find($id);              //Busca en la base de datos una ciudad con el id especificado
 
-        return view('ciudades.edit', compact('ciudades'));
+        return view('ciudades.edit', compact('ciudades'));//Retorna a la vista edit de ciudades con el junto con la variable ciudades
     }
 
     /**
@@ -83,14 +83,15 @@ class CiudadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ciudad = Ciudad::find($id);
+        $ciudad = Ciudad::find($id);                //Busca en la base de datos una ciudad con el id especificado
 
         $ciudad->nombre         = $request->nombre;
         $ciudad->codigo           = $request->codigo;
 
-        $ciudad->save();
+        $ciudad->save();                            //Almacena los nuevos datos del objeto ciudad
 
-        return redirect()->route('ciudad.index')->with('info', 'La ciudad fue actualizado');
+        return redirect()->route('ciudad.index')    //Redirecciona a la vista index de ciudades
+        ->with('info', 'La ciudad fue actualizado');//Envia un mensaje de tipo info
     }
 
     /**

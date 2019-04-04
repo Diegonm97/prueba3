@@ -33,7 +33,7 @@
             height: 100vh;
             margin: 0;
         }
-        
+
         .navbar {
             background-color: transparent;
             height: 70px
@@ -125,10 +125,10 @@
         }
 
         .card-body {
-        -webkit-box-flex: 1;
-        flex: 1 1 auto;
-        padding: 1.2rem;
-}
+            -webkit-box-flex: 1;
+            flex: 1 1 auto;
+            padding: 1.2rem;
+        }
 
         .navbar .btn-group .dropdown-menu a:hover {
             color: #000 !important;
@@ -187,9 +187,14 @@
             height: 300px;
             width: 300px;
         }
+
         button {
             color: #1B63BD;
-}
+        }
+
+        .table>thead>tr>th.active {
+            background-color: #f5f5f5;
+        }
     </style>
 </head>
 
@@ -396,9 +401,7 @@
                             </div>
                             
                         </div>
-                    </div>
-                    </div>
-                </center>
+                    </center>
                 </div>
                 <!-- /.Caption -->
 
@@ -499,70 +502,68 @@
 
 
     <div class="nosotros fondo-mapa" style="background-image: url('/assets/img/GoogleMapB.jpeg'); background-repeat: no-repeat; background-size: cover; height: 70vh">
+
         <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2 class="tagline-sucursal">Encuentranos</h2><br />
-                <div class="col-lg-11 col-lg-offset-1">
-                    <div class="col-lg-4">
-                        <div class="map"><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.261271576248!2d-76.30124683218324!3d3.527002402787925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a04e5b700c619%3A0xf54b19e78adff1c8!2sCra.+31+%2329-42%2C+Palmira%2C+Valle+del+Cauca!5e0!3m2!1ses!2sco!4v1441999181460" 
-                        frameborder="0"></iframe>
-                        <iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe
-                        ><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0">
-                        </iframe><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="tagline-sucursal">Encuentranos</h2><br />
+                    <div class="col-lg-11 col-lg-offset-1">
+                        <div class="col-lg-4">
+                            <div class="map"><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.261271576248!2d-76.30124683218324!3d3.527002402787925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3a04e5b700c619%3A0xf54b19e78adff1c8!2sCra.+31+%2329-42%2C+Palmira%2C+Valle+del+Cauca!5e0!3m2!1ses!2sco!4v1441999181460" frameborder="0"></iframe>
+                                <iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0">
+                                </iframe><iframe id="mapa" scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+                            </div>
                         </div>
                     </div>
-                </div> 
+                </div>
+
+                <div class="col-md-6">
+                    <div class="row">
+                        <table class="table table-bordered table-hover table-striped" style="color: black">
+                            <thead style="cursor: pointer">
+                                <tr>
+                                    <th onclick="cambiar('palmira-centro')" class="active" id="palmira-centro" style="font-size: 20px"><strong> Palmira - Centro</strong></th>
+                                </tr>
+                                <tr>
+                                    <th onclick="cambiar('palmira-cc-llanogrande')" class="" id="palmira-cc-llanogrande" style="font-size: 20px"><strong> Palmira - Cc. Llanogrande</strong></th>
+                                </tr>
+                                <tr>
+                                    <th onclick="cambiar('cali')" class="" id="cali" style="font-size: 20px"><strong> Cali</strong></th>
+                                </tr>
+                                <tr>
+                                    <th onclick="cambiar('rozo')" class="" id="rozo" style="font-size: 20px"><strong> Rozo</strong></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 " style="font-size: 20px; color:black">
+                            <ul class="table-bordered" id="1">
+                                <li><strong>Dirección:</strong> Carrera 31 no 29 – 42</li>
+                                <li><strong>Teléfono:</strong> 287 25 47</li>
+                                <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                            </ul>
+                            <ul class="table-bordered" id="2" style="display: none">
+                                <li><strong>Dirección:</strong> Locales 206 – 207</li>
+                                <li><strong>Teléfono:</strong> 2864016</li>
+                                <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                            </ul>
+                            <ul class="table-bordered" id="3" style="display: none">
+                                <li><strong>Dirección:</strong> Av. 2da. norte no 24N – 83</li>
+                                <li><strong>Teléfono:</strong> 3734470</li>
+                                <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                            </ul>
+                            <ul class="table-bordered" id="4" style="display: none">
+                                <li><strong>Dirección:</strong> Calle 10 no 9a-23</li>
+                                <li><strong>Teléfono:</strong> 317 387 2024</li>
+                                <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-
-            <div class="col-md-6">
-            <div class="row">
-                <table class="table table-bordered table-hover table-striped ">
-                                            <thead style="cursor: pointer">
-                                                <tr>
-                                                    <th onclick="cambiar('palmira-centro')" class="active" id="palmira-centro"> Palmira - Centro</th>
-                                                </tr>
-                                                <tr>
-                                                    <th onclick="cambiar('palmira-cc-llanogrande')" class="" id="palmira-cc-llanogrande"> Palmira - Cc. Llanogrande</th>
-                                                </tr>
-                                                <tr>
-                                                    <th onclick="cambiar('cali')" class="" id="cali"> Cali</th>
-                                                </tr>
-                                                <tr>
-                                                    <th onclick="cambiar('rozo')" class="" id="rozo"> Rozo</th>
-                                                </tr>
-                                            </thead>
-                                        </table>
-                                        </div>
-
-                                <div class="row">
-                                    <div class="col-lg-12 ">
-                                        <ul class="table-bordered" id="1">
-                                            <li><strong>Dirección:</strong> Carrera 31 no 29 – 42</li>
-                                            <li><strong>Teléfono:</strong> 287 25 47</li>
-                                            <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
-                                        </ul>
-                                        <ul class="table-bordered" id="2" style="display: none">
-                                            <li><strong>Dirección:</strong> Locales 206 – 207</li>
-                                            <li><strong>Teléfono:</strong> 2864016</li>
-                                            <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
-                                        </ul>
-                                        <ul class="table-bordered" id="3" style="display: none">
-                                            <li><strong>Dirección:</strong> Av. 2da. norte no 24N – 83</li>
-                                            <li><strong>Teléfono:</strong> 3734470</li>
-                                            <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
-                                        </ul>
-                                        <ul class="table-bordered" id="4" style="display: none">
-                                            <li><strong>Dirección:</strong> Calle 10 no 9a-23</li>
-                                            <li><strong>Teléfono:</strong> 317 387 2024</li>
-                                            <li><strong>Email:</strong> intersaludpalmira@intersaluddelvalle.com.co</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-            </div>
-        </div>
         </div>
 
 
@@ -637,7 +638,7 @@
                 document.getElementById('3').setAttribute('style', 'display: block');
                 document.getElementById('mapa').setAttribute('src', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.6332162313021!2d-76.52354381110703!3d3.4630242308794146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x78a09208593f684e!2sPROALNET!5e0!3m2!1ses!2sco!4v1442000732197');
                 if ('cali' != 'palmira-centro') {
-                    document.getElementById('palmira-centro').setAttribute('class', 'active');
+                    document.getElementById('palmira-centro').setAttribute('class', '');
                     document.getElementById('1').setAttribute('style', 'display: none');
                 }
                 if ('cali' != 'palmira-cc-llanogrande') {

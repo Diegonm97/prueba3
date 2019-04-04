@@ -15,7 +15,7 @@
 
 
 </div>
-
+<!-- Incluye el form de ciudades -->
 <p>
     {!! Form::model($ciudades, ['route' => ['ciudad.update', $ciudades->id], 'method' => 'PUT']) !!}
 
