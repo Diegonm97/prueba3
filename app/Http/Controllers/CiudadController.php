@@ -14,9 +14,9 @@ class CiudadController extends Controller
      */
     public function index(Request $request)
     {
-        $ciudades = Ciudad::search1($request->nombre)->orderby('nombre')->paginate('8');
+        $ciudades = Ciudad::search1($request->nombre)->orderby('nombre')->paginate('8'); //Busca las ciudades por nombre
 
-        return view('ciudades.index', compact('ciudades'));
+        return view('ciudades.index', compact('ciudades')); //Retorna la vista ciudad.index con las ciudades encontradas
     }
 
     /**

@@ -29,9 +29,20 @@ Route::resource('sede','SedeController');
 Route::get('/productos', function () {
     return view('productos');
 });
+Route::get('/nosotros', function () {
+    return view('nosotros');
+});
+Route::get('/seguridad', function () {
+    return view('seguridad');
+});
+Route::get('/servicios', function () {
+    return view('servicios');
+});
+Route::get('/contacto', function () {
+    return view('contacto');
+});
 
-
-Route::get("/createEmp/{id}","clientesController@createEmp")->name('createEmp');
+Route::get("/contacto","contactoController@index")->name('contacto');
 
 Route::post("/createEmp/{id}","clientesController@storeEmp")->name('storeEmp');
 

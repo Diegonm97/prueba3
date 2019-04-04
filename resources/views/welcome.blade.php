@@ -229,6 +229,7 @@
             <li data-target="#carousel-example-3" data-slide-to="1"></li>
             <li data-target="#carousel-example-3" data-slide-to="2"></li>
             <li data-target="#carousel-example-3" data-slide-to="3"></li>
+            <li data-target="#carousel-example-3" data-slide-to="4"></li>
         </ol>
         <!--/.Indicators-->
 
@@ -255,6 +256,9 @@
                                     materiales y financieros. por ello en nuestra prioridad informarlos.</p>
                             </div>
                         </li>
+                        <li>
+                            <a href="/nosotros" class="btn btn-info btn-lg flex-item" rel="nofollow">Ver más</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.Caption -->
@@ -277,11 +281,13 @@
                         </li>
                         <li>
                             <p class="my-4 h3-responsive flex-item" align="center" class="">
-                                La seguridad social, es un servicio publico de carácter obligatorio a la ciudadanía y esta conformado por los regímenes generales establecidos por la salud, pensiones, riesgos laborales, subsidio familiar y los servicios sociales complementarios que se definen en la ley.
+                                La seguridad social, es un servicio publico de carácter obligatorio a la ciudadanía y
+                                 esta conformado por los regímenes generales establecidos por la salud, pensiones, riesgos
+                                  laborales, subsidio familiar y los servicios sociales complementarios que se definen en la ley.
                             </p>
                         </li>
                         <li>
-
+                            <a href="/seguridad" class="btn btn-info btn-lg flex-item" rel="nofollow">Ver más</a>
                         </li>
                     </ul>
                 </div>
@@ -299,7 +305,7 @@
                     <div class="container">
                     <ul class="animated fadeInUp col-md-12">
                         <li>
-                        <h3 class="h2-responsive flex-item font-bold">Nuestros servicios</h3>
+                        <h3 class="h2-responsive flex-item font-bold">Nuestros productos</h3>
                         </li>
                         <li>
                             <p class="my-4 h4-responsive flex-item" align="center" class="">
@@ -322,11 +328,11 @@
                                             align="middle" alt="Card image cap">
                                         </center>
                                     <!-- Title -->
-                                        <h4 class="card-title"><a>Servicios</a></h4>
-                                        <!-- Text -->
-                                        <p class="card-text">Prestadoras de salud abscritas.</p>
+                                    <br>
+                                        <h4 class="card-title"><a style="color: grey">Prestadoras de salud abscritas.</a></h4>
                                         <!-- Button -->
-                                        <a href="/productos" class="btn btn-primary">Ver más</a>
+                                        <br>
+                                        <a href="/productos#2" class="btn btn-info">Ver más</a>
                                     </div>
                                 </div>
                             </div>
@@ -341,11 +347,29 @@
                                             align="middle" alt="Card image cap">
                                         </center>
                                         <!-- Title -->
-                                        <h4 class="card-title"><a>Servicioas</a></h4>
-                                        <!-- Text -->
-                                        <p class="card-text">Aseguradoras de riesgos abscritas</p>
+                                        <br>
+                                        <h4 class="card-title"><a style="color: grey">Aseguradoras de riesgos abscritas</a></h4>
                                         <!-- Button -->
-                                        <a href="#" class="btn btn-primary">Button</a>
+                                        <a href="/productos#3" class="btn btn-info">Ver más</a>
+                                    </div>
+                                </div>
+                                <!-- Card -->
+                            </div>
+                            <div class="col">
+                                 <!-- Card -->
+                                 <div class="card">
+                                    <!-- Card content -->
+                                    <div class="card-body">
+                                        <!-- Card image -->
+                                        <center>
+                                            <img src="/assets/img/Cruz.png" width="100" height="100" 
+                                            align="middle" alt="Card image cap">
+                                        </center>
+                                        <!-- Title -->
+                                        <br>
+                                        <h4 class="card-title"><a style="color: grey">Fondos privados de pensiones</a></h4>
+                                        <!-- Button -->
+                                        <a href="/productos#4" class="btn btn-info">Ver más</a>
                                     </div>
                                 </div>
                                 <!-- Card -->
@@ -362,36 +386,15 @@
                                             align="middle" alt="Card image cap">
                                        </center>
                                     <!-- Title -->
-                                        <h4 class="card-title"><a>Servicioas</a></h4>
-                                        <!-- Text -->
-                                        <p class="card-text">Caja de compensación abscritas</p>
-                                        <!-- Button -->
-                                        <a href="#" class="btn btn-primary">Button</a>
+                                    <br>
+                                        <h4 class="card-title"><a style="color: grey">Caja de compensación abscritas</a></h4>
+                                         <!-- Button -->
+                                        <a href="/productos#5" class="btn btn-info">Ver más</a>
                                     </div>
                                 </div>
                                 <!-- Card -->
                             </div>
-                            <div class="col">
-                                 <!-- Card -->
-                                 <div class="card">
-                                    <!-- Card content -->
-                                    <div class="card-body">
-                                        <!-- Card image -->
-                                        <center>
-                                            <img src="/assets/img/Cruz.png" width="100" height="100" 
-                                            align="middle" alt="Card image cap">
-                                        </center>
-                                        <!-- Title -->
-                                        <h4 class="card-title"><a>Servicioas</a></h4>
-                                        <!-- Text -->
-                                        <p class="card-text">Fondos privados de pensiones</p>
-                                        <!-- Button -->
-                                        <a href="#" class="btn btn-primary">Button</a>
-                                    </div>
-                                </div>
-                                <!-- Card -->
-
-                            </div>
+                            
                         </div>
                     </div>
                     </div>
@@ -400,7 +403,34 @@
                 <!-- /.Caption -->
 
             </div>
+            <!-- /.Third slide -->
+            <div class="carousel-item hm-grey-strong" style="background-image: url('https://www.inalco.es/archivos/productos/136/storm-gris-natural-150x300-sk-rect-1-100A.jpg'); background-repeat: no-repeat; background-size: cover;">
 
+                <!-- Caption -->
+                <div class="full-bg-img flex-center white-text">
+                    <ul class="animated fadeInUp col-md-12">
+                        <li>
+                            <center>
+                                <img src="/assets/img/Cruz.png">
+                            </center>
+                            <br>
+                            <h1 class="h1-responsive flex-item font-bold">Nuestros servicios</h1>
+                        </li>
+                        <li>
+                            <p class="my-4 h3-responsive flex-item" align="center" class="">Aqui podra pedir asesoramiento o algun producto<br>
+                            que deseé.</p>
+                        </li>
+                        <li>
+                            <a href="/servicios" class="btn btn-info btn-lg flex-item" rel="nofollow">Ver más</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.Caption -->
+
+            </div>
+            <!-- /.Third slide -->
+
+            <!-- /.quarter slide -->
             <div class="carousel-item hm-grey-strong" style="background-image: url('https://www.inalco.es/archivos/productos/136/storm-gris-natural-150x300-sk-rect-1-100A.jpg'); background-repeat: no-repeat; background-size: cover;">
 
                 <!-- Caption -->
@@ -414,18 +444,45 @@
                             <h1 class="h1-responsive flex-item font-bold">Contáctenos</h1>
                         </li>
                         <li>
-                            <p class="my-4 h3-responsive flex-item" align="center" class=""">Aqui podra pedir asesoramiento o algun producto<br>
+                            <p class="my-4 h3-responsive flex-item" align="center" class="">Aqui podra pedir asesoramiento o algun producto<br>
                             que deseé.</p>
                         </li>
                         <li>
-                            <a href=" contacto" class="btn btn-indigo btn-lg flex-item" rel="nofollow">Ver más</a>
+                            <a href="/contacto" class="btn btn-info btn-lg flex-item" rel="nofollow">Ver más</a>
                         </li>
                     </ul>
                 </div>
                 <!-- /.Caption -->
 
             </div>
-            <!-- /.Third slide -->
+            <!-- /.quarter slide -->
+            <!-- /.fifth slide -->
+            <div class="carousel-item hm-grey-strong" style="background-image: url('https://www.inalco.es/archivos/productos/136/storm-gris-natural-150x300-sk-rect-1-100A.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+                <!-- Caption -->
+                <div class="full-bg-img flex-center white-text">
+                    <ul class="animated fadeInUp col-md-12">
+                        <li>
+                            <center>
+                                <img src="/assets/img/Cruz.png">
+                            </center>
+                            <br>
+                            <h1 class="h1-responsive flex-item font-bold">Pagos en linea</h1>
+                        </li>
+                        <li>
+                            <p class="my-4 h3-responsive flex-item" align="center" class="">Aqui podra pedir asesoramiento o algun producto<br>
+                            que deseé.</p>
+                        </li>
+                        <li>
+                            <a href="{{route('contacto')}}" class="btn btn-info btn-lg flex-item" rel="nofollow">Ver más</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.Caption -->
+
+            </div>
+            <!-- /.fifth slide -->
+
 
         </div>
 
@@ -643,10 +700,5 @@
         })
     </script>
 
-</body>
-
-
-
-
-
+    </body>
 </html> 

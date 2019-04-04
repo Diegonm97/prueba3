@@ -15,4 +15,9 @@ class Sede extends Model
     {
         return $query->where('nombre', 'LIKE', "%$nombre%");
     }
+
+    public function scopeSearch($query)
+    {
+        return $query->select('*');
+    }
 }
