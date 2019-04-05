@@ -114,7 +114,7 @@ class CreatePrueba3Table extends Migration
             $table->integer('id_usuario')->unsigned();
             $table->integer('sercofun');
             $table->integer('emi');
-            $table->integer('pago')
+            $table->integer('pago')->nullable();
             $table->timestamps();
 
 

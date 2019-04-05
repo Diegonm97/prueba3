@@ -49,7 +49,7 @@
                     <br>
                     <div class="text-center py-4 mt-3">
 
-                        <button type="submit" class="btn btn-cyan">
+                        <button type="submit" class="btn btn-info">
                             {{ __('Ingresar') }}
                         </button>
 

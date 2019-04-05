@@ -108,6 +108,7 @@ class ClientesController extends Controller
         }
         $clientes->sercofun         = $request->sercofun;
         $clientes->emi              = $request->emi;
+        $clientes->pago              = null;
         $clientes->observacion      = $request->observacion;
         $clientes->id_usuario       = $user->id;
 

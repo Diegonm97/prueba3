@@ -9,6 +9,11 @@
         <div class="form-group row has-success">
             {!! Form::label('identificacion','Numero de cedula(*).')!!}
             {!!Form::number('identificacion',null,['class'=>'form-control','title'=>'Ingresa un numero de identificacion, no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'identificacion','required'=>'required'])!!}
+            @if ($errors->has('identificacion'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('identificacion') }}</strong>
+                                </span>
+                                @endif
         </div>
     </div>
     <div class="col-sm-3">

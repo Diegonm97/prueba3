@@ -9,6 +9,8 @@ use App\Ciudad;
 use App\Configuracion;
 use App\Empleado_empresa;
 use App\Pago;
+use App\user;
+use App\Role_user;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresasRequest;
 use Illuminate\Support\Facades\DB;
