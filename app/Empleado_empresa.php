@@ -19,13 +19,7 @@ class Empleado_empresa extends Model
     {
         return $query->where('identificacion', 'LIKE', "%$identificacion%");
     }
-<<<<<<< HEAD
-
-    public function scopeSearch($query)
-=======
     public function scopeSearch($query)         //Buscador de toda una tabla
-
->>>>>>> 2f572026d8fd668f6bed13492743d1e8b1f38643
     {
         return $query->select('*');
     }
