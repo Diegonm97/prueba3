@@ -21,12 +21,14 @@
 
 
 </div>
+<!-- Se recorren todas las sedes haciendo un nuevo div por cada nueva sede -->
 <div class="col-sm-12">
     @foreach ($sedes as $sede)
     <div class="col-md-4">
         <div class="card">
             <div class="header">
                 <h4 class="title">
+                <!-- Se llenan los datos con cada ciudad encontrada -->
                     @foreach($ciudades as $ciudad)
                     @if($ciudad->id == $sede->id_ciudad)
 

@@ -29,7 +29,7 @@ class Empresa extends Model
 
 
     }
-    public function scopeSearch($query)
+    public function scopeSearch($query) //Busqueda de toda una tabla
     {
         return $query->select('*');
     }

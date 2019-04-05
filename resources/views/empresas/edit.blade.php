@@ -15,7 +15,7 @@
 
 
 </div>
-
+<!-- Incluye al form de empresas -->
 <p>
     {!! Form::model($empresa, ['route' => ['empresa.update', $empresa->id], 'method' => 'PUT']) !!}
 

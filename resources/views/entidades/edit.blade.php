@@ -15,7 +15,7 @@
 
 
 </div>
-
+<!-- Incluye al form de entidades -->
 <p>
     {!! Form::model($entidades, ['route' => ['entidad.update', $entidades->id], 'method' => 'PUT']) !!}
 

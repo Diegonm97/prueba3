@@ -11,8 +11,13 @@ class Sede extends Model
     protected $fillable = ['nombres', 'id_ciudad', 'telefono', 'direccion'];
 
     // Realiza la busqueda en base de datos de acuerdo a la id
-    public function scopeSearch1($query, $nombre)
+    public function scopeSearch1($query, $nombre)              //Buscador por medio del nombre
     {
         return $query->where('nombre', 'LIKE', "%$nombre%");
+    }
+
+    public function scopeSearch($query)
+    {
+        return $query->select('*');
     }
 }

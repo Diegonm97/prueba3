@@ -16,11 +16,13 @@
     <div class="card">
         <div class="header">
             <h4 class="title">Entidades
+                <!-- Ruta al create de entidad -->
                 @can('Entidades.create')
                 <a href="{{route('entidad.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
             @endcan
 
             <p class="category">Aqui se muestran datos de las entidades registradas</p>
+            <!-- Buscador -->
             {!!Form::open(['route'=>'entidad.index', 'method'=>'GET','class'=>'navbar-form'])!!}
             <div class="form group">
                 {!!Form::text('nombre',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
@@ -64,21 +66,17 @@
                                 </th>
 
                                 <th>
+                                    <!-- Ruta al show de entidades -->
                                     @can('Entidades.show')
                                     <a href="{{route('entidad.show', $entidad->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
+                                    <!-- Ruta al edit de entidades -->
                                     @can('Entidades.edit')
                                     <a href="{{route('entidad.edit', $entidad->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
-
-
-
                                 </th>
-
                             </tr>
                             @endforeach
-
-
                         </tbody>
                     </div>
                 </div>

@@ -15,7 +15,7 @@
 
 
 </div>
-
+<!-- Incluye el formulario de empleado_empresa -->
 <p>
     {!! Form::model($empleadoEmp, ['route' => ['empleado_empresa.update', $empleadoEmp->id], 'method' => 'PUT']) !!}
 

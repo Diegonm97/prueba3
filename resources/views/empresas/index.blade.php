@@ -16,6 +16,7 @@
     <div class="card">
         <div class="header">
             <h4 class="title">Empresas
+                <!-- Ruta al create de empresa -->
                 @can('Empresas.create')
                 <a href="{{route('empresa.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
             @endcan
@@ -43,6 +44,7 @@
                             <th>Acción</th>
                         </thead>
                         <tbody>
+                            <!-- Cada empresa se toma una por una y se muestra su informacion -->
                             @foreach ($empresas as $empresa)
                             <tr>
                                 <th>{{$empresa->nit}}</th>
@@ -57,25 +59,20 @@
                                     @endif
 
                                 </th>
-
                                 <th>{{$empresa->telefono_contacto}}</th>
                                 <th>{{$empresa->nombre_contacto}}</th>
                                 <th>
+                                    <!-- Ruta al show de empresa -->
                                     @can('Empresas.show')
                                     <a href="{{route('empresa.show', $empresa->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
+                                    <!-- Ruta al edit de empresa -->
                                     @can('Empresas.edit')
                                     <a href="{{route('empresa.edit', $empresa->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
-
-
-
                                 </th>
-
                             </tr>
                             @endforeach
-
-
                         </tbody>
                     </div>
                 </div>

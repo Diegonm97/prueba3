@@ -15,7 +15,7 @@
 
 
 </div>
-
+<!-- Incluye el form de clientes -->
 <p>
     {!! Form::model($cliente, ['route' => ['clientes.update', $cliente->id], 'method' => 'PUT']) !!}
 
