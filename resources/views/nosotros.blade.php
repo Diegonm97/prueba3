@@ -7,7 +7,7 @@
 
 
 <div class="container">
-    <div class="row" style="min-height:300px;">
+    <div class="row" style="min-height:300px;height:1100px;">
         <div class="col-sm-12">
             <br>
             <div class="col-xs-2">
