@@ -14,8 +14,8 @@
 
     <div class="col-sm-4">
         <div class="form-group row has-success">
-            {!! Form::label('valor','Valor(*).')!!}
-            {!!Form::text('valor',null,['class'=>'form-control','title'=>'Valor' , 'placeholder'=>'Ej: 4.0%','id'=>'valor','required'=>'required' ])!!}
+            {!! Form::label('valor','Valor (*).')!!}
+            {!!Form::text('valor',null,['class'=>'form-control','title'=>'Valor' , 'placeholder'=>'Ej: 4.0','id'=>'valor','required'=>'required' ])!!}
         </div>
     </div>
 </div>

@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Pago;
+use App\Configuracion;
+use App\Clientes;
+use App\Empresa;
 use Illuminate\Http\Request;
 use App\Http\Requests\PagosRequest;
+use Illuminate\Support\Facades\DB;
 
 
 class PagoController extends Controller
@@ -16,9 +20,75 @@ class PagoController extends Controller
      */
     public function index(Request $request)
     {
-        $pagos = Pago::search1($request->nuipPago)->orderbydesc('nuipPago')->paginate('8');
+        $mes = date('m');
+        $user = auth()->user()->email;
+        $logueocli = DB::select('SELECT * FROM cliente WHERE email = ?', [$user]);
+        $logueoemp = DB::select('SELECT * FROM empresa WHERE email_contacto = ?', [$user]);
+        $usuario = null; $pago = null;
 
-        return view('pagos.index', compact('pagos'));
+        if (count($logueocli) > 0) {
+            $usuario = $logueocli;
+        } elseif (count($logueoemp) > 0) {
+            $usuario = $logueoemp;
+        }
+
+        if (isset($usuario)) {
+            $pago = DB::select('SELECT * FROM pago WHERE id_usuario = ? and mes = ?', [$usuario[0]->id, $mes]);
+        }
+
+        $pagoscli = DB::select('SELECT * FROM pago WHERE mes = ?', [$mes]);
+        $activo = array();
+        $clie = array();
+        $empr = array();
+        $totalmes = array();
+
+        foreach ($pagoscli as $cliente) {
+            if ($cliente->tipo == 1) {
+                $activo['cliente'] = $cliente->id_usuario;
+                $clie[] = $cliente->id_usuario;
+                foreach ($clie as $clien) {
+                    $pagocli = DB::select('SELECT * FROM cliente WHERE id = ?', [$clien]);
+                    $totalmes[] = $pagocli[0]->pago;
+                }
+            } else {
+                $activo['empresa'] = $cliente->id_usuario;
+                $emp[] = $cliente->id_usuario;
+                foreach ($emp as $empre) {
+
+                    $pagoemp = DB::select('SELECT * FROM empresa WHERE id = ?', [$empre]);
+                    $totalmes[] = $pagoemp[0]->total_pago;
+                }
+            }
+        }
+
+        $total = array_sum($totalmes);
+
+        $cliente = Clientes::Search()->get();
+        $empresa = Empresa::Search()->get();
+        $clientes = array();
+        $empresas = array();
+
+        foreach ($cliente as $cliente) {
+            $clientes[]= $cliente->id;
+        }
+
+        foreach ($empresa as $empresa) {
+            $empresas[]= $empresa->id;
+        }
+
+        $cli_dif = array_diff($clientes, $clie);
+        $emp_dif = array_diff($empresas, $empr);
+        $inactivo = array();
+
+        foreach ($cli_dif as $dif) {
+            $inactivo['cliente'] = $dif; 
+        }
+
+        foreach ($emp_dif as $dif) {
+            $inactivo['empresa'] = $dif; 
+        }
+
+        return view('pagos.index', compact('activo', 'mes', 'inactivo', 'usuario', 'pago', 'total'));
     }
 
     /**

@@ -22,7 +22,7 @@
                 <a href="{{route('configuracion.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
             @endcan
 
-            <p class="category">Aquí se muestran datos de configuración</p>
+            <p class="category">Aquí se muestran datos de configuración. Si el valor es entero, omita los puntos Ej: 4000 (cuatro mil). Si el valor es en porcentaje, omita el simbolo (%).</p>
             {!!Form::open(['route'=>'configuracion.index', 'method'=>'GET','class'=>'navbar-form'])!!}
             <div class="form group">
                 {!!Form::text('nombre',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}

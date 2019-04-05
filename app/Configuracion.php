@@ -19,6 +19,11 @@ class Configuracion extends Model
     //
     //        return $valor;
     //    }
+
+    public function scopeSearch($query)
+    {
+        return $query->select('*');
+    }
 }
 
 
@@ -29,6 +34,8 @@ class Configuracion extends Model
 //$config = Configuracion::pluck('value', 'option');
 
 //$config['EPS']
+
+
 
 
 

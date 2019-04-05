@@ -53,7 +53,16 @@
                 </div>
 
                 <ul class="nav">
+                    @role('cliente')
+                    <li>
+                        <a href="{{route('pago.index')}}">
+                            <i class="pe-7s-news-paper"></i>
+                            <p>Pagos</p>
+                        </a>
+                    </li>
+                    @endrole
 
+                    @role('administrador')
                     <li>
                         <a href="{{route('pago.index')}}">
                             <i class="pe-7s-news-paper"></i>
@@ -61,31 +70,26 @@
                         </a>
                     </li>
 
-                    @can('Clientes.index')
                     <li>
                         <a href="{{route('clientes.index')}}">
                             <i class="pe-7s-user"></i>
                             <p>Clientes</p>
                         </a>
                     </li>
-                    @endcan
 
-                    @can('Empresas.index')
                     <li>
                         <a href="{{route('empresa.index')}}">
                             <i class="pe-7s-portfolio"></i>
                             <p>Empresas</p>
                         </a>
                     </li>
-                    @endcan
-                    @can('empleado_empresa.index')
+
                     <li>
                         <a href="{{route('empleado_empresa.index')}}">
                             <i class="pe-7s-users"></i>
                             <p>Empleado empresa</p>
                         </a>
                     </li>
-                    @endcan
 
                     <li>
                         <a href="{{route('sede.index')}}">
@@ -93,7 +97,7 @@
                             <p>Sedes</p>
                         </a>
                     </li>
-                    @can('Entidades.index')
+
                     <li>
                         <a href="{{route('entidad.index')}}">
                             <i class="pe-7s-culture"></i>
@@ -106,18 +110,14 @@
                             <p>Ciudades</p>
                         </a>
                     </li>
-                    @endcan
-                    @can('Configuaracion.index')
+                    
                     <li>
                         <a href="{{route('configuracion.index')}}">
                             <i class="pe-7s-note2"></i>
                             <p>Configuracion</p>
                         </a>
                     </li>
-                    @endcan
-
-
-
+                    @endrole
 
 
                 </ul>
@@ -138,21 +138,19 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
+                            @role('administrador')
                             <li>
-                                @can('Users.index')
                                 <a href="{{ route('users.index') }}">
                                     Cuentas
                                 </a>
-                                @endcan
 
                             </li>
                             <li>
-                                @can('roles.index')
                                 <a href="{{ route('roles.index') }}">
                                     Roles
                                 </a>
-                                @endcan
                             </li>
+                            @endrole
                             @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

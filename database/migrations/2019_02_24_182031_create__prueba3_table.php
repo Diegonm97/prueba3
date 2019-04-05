@@ -73,9 +73,10 @@ class CreatePrueba3Table extends Migration
             $table->integer('beneficio');
             $table->integer('inscripcion');
             $table->integer('administracion');
-            $table->integer('id_usuario')->unsigned()->nullable();
+            $table->integer('id_usuario')->unsigned();
             $table->date('fecha_ingreso');
             $table->string('observacion');
+            $table->integer('total_pago');
 
             $table->timestamps();
 
@@ -109,8 +110,11 @@ class CreatePrueba3Table extends Migration
             $table->integer('upc');
             $table->integer('inscripcion');
             $table->integer('administracion');
-            $table->string('observacion');
-            $table->integer('id_usuario')->unsigned()->nullable();
+            $table->string('observacion')->nullable();
+            $table->integer('id_usuario')->unsigned();
+            $table->integer('sercofun');
+            $table->integer('emi');
+            $table->integer('pago')
             $table->timestamps();
 
 
@@ -145,6 +149,9 @@ class CreatePrueba3Table extends Migration
             $table->integer('id_afp')->unsigned();
             $table->integer('id_cjc')->unsigned();
             $table->integer('estado');
+            $table->integer('sercofun');
+            $table->integer('emi');
+            $table->integer('pago');
             $table->timestamps();
 
 
@@ -210,19 +217,23 @@ class CreatePrueba3Table extends Migration
         //================================ facturacion =============================================
         // Schema::create('facturacion', function (Blueprint $table) {
         //     $table->increments('id')->unsigned();
-        //     $table->integer('id_cliente')->unsigned();
-        //     $table->integer('id_arl')->unsigned();
-        //     $table->integer('id_eps')->unsigned();
-        //     $table->integer('id_afp')->unsigned();
-        //     $table->double('total_beneficiarios')->nullable();
-        //     $table->double('total_pago')->nullable();
+        //     $table->integer('id_usuario')->unsigned();
+        //     $table->double('total_pago');
+        //     $table->integer('tipo');
         //     $table->timestamps();
 
-        //     $table->foreign('id_cliente')->references('id')->on('cli_cliente');
-        //     $table->foreign('id_arl')->references('id')->on('entidad');
-        //     $table->foreign('id_eps')->references('id')->on('entidad');            
-        //     $table->foreign('id_afp')->references('id')->on('entidad');            
+        //     $table->foreign('id_cliente')->references('id')->on('cliente');         
         // });
+        // =============================== Pagos =================================================
+        Schema::create('pago', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('id_usuario');
+            $table->integer('estado');
+            $table->integer('mes');
+            $table->integer('tipo');
+            $table->timestamps();
+        });
+
     }
 
     /**

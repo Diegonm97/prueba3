@@ -33,8 +33,6 @@ class EmpresasRequest extends FormRequest
             'direccion'  => 'required',
             'estado'  => 'required',
             'beneficio' => 'required',
-            'inscripcion'  => 'required',
-            'administracion' => 'required',
             'fecha_ingreso' => 'required',
         ];
     }

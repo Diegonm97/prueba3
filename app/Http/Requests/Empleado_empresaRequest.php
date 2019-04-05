@@ -8,7 +8,7 @@ class Empleado_empresaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
-     *
+     * #2c7ce1 // #87CB16
      * @return bool
      */
     public function authorize()
@@ -41,8 +41,9 @@ class Empleado_empresaRequest extends FormRequest
             'id_ciudad' => 'required',
             'id_eps' => 'required',
             'id_afp' => 'required',
-            'id_cjc' => 'required',
             'estado' => 'required',
+            'emi' => 'required',
+            'sercofun' => 'required',
         ];
     }
 }

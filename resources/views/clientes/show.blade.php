@@ -121,7 +121,11 @@
 
                         <tr>
                             <td><strong>ARL: </strong></td>
-                            <td> {{$arl->nombre}} </td>
+                            <?php if (isset($arl)) { ?>
+                                <td> {{$arl->nombre}} </td>
+                            <?php } else { ?>
+                                <td> NO </td>
+                            <?php } ?>
                         </tr>
 
                         <tr>
@@ -131,7 +135,11 @@
 
                         <tr>
                             <td><strong>Caja de Compensacion: </strong></td>
-                            <td> {{$cajacomp->nombre}} </td>
+                            <?php if (isset($cajacomp)) { ?>
+                                <td> {{$cajacomp->nombre}} </td>
+                            <?php } else { ?>
+                                <td> NO </td>
+                            <?php } ?>
                         </tr>
 
                         <tr>
@@ -173,16 +181,19 @@
                             <td> {{$cliente->observacion}} </td>
                         </tr>
 
-
-
-
-
-
-
+                        <?php if(isset($cliente->pago)){ ?>
+                        <tr>
+                            <td><strong>Total a pagar:</strong></td>
+                            <td>{{$cliente->pago}}</td>
+                        </tr>
+                        <?php } ?>
                     </tbody>
+
                 </div>
             </div>
         </table>
+
+        <a class="btn btn-primary" style="float: right; width: 100%" href="{{route('clientes.facturacion', $cliente->id)}}">Facturar</a>
     </div>
 </div>
 

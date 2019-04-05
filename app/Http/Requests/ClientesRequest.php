@@ -37,14 +37,12 @@ class ClientesRequest extends FormRequest
             'salario'  => 'required',
             'id_ciudad'  => 'required',
             'id_eps'  => 'required',
-            'id_arl'  => 'required',
             'id_afp'=> 'required',
-            'id_cjc'=> 'required',
             'beneficio'=> 'required',
             'rango'  => 'required',
             'upc'  => 'required',
-            'inscripcion'  => 'required',
-            'administracion'  => 'required',
+            'emi' => 'required',
+            'sercofun' => 'required',
         ];
     }
 }

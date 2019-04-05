@@ -6,6 +6,7 @@ use App\Empleado_empresa;
 use App\Entidad;
 use App\Ciudad;
 use App\Empresa;
+use App\Configuracion;
 use Illuminate\Http\Request;
 use App\Http\Requests\Empleado_empresaRequest;
 
@@ -82,11 +83,91 @@ class Empleado_empresaController extends Controller
         $empleadoEmpS->id_afp           = $request->id_afp;
         $empleadoEmpS->id_cjc           = $request->id_cjc;
         $empleadoEmpS->estado           = $request->estado;
+        $empleadoEmpS->sercofun         = $request->sercofun;
+        $empleadoEmpS->emi              = $request->emi;
 
         $empleadoEmpS->save();
 
-        return redirect()->route('empleado_empresa.index')
+        $empleado = $empleadoEmpS->id;
+
+        return redirect()->route('empleado_empresa.show', compact('empleado'))
             ->with('info', 'El empleado fue creado');
+    }
+
+
+    public function facturacion($id){
+        $cliente = Empleado_empresa::find($id);
+        $empresa = Empresa::search()->where('id', '=', $cliente->id_empresa)->first();
+
+        $eps = Configuracion::Search()->where('codigo', '=', "EPS")->first();
+
+        if(isset($cliente->id_arl)){
+            switch ($cliente->rango) {
+                case '1':
+                    $arl = Configuracion::Search()->where('codigo', '=', "ARLR1")->first();
+                    break;
+                case '2':
+                    $arl = Configuracion::Search()->where('codigo', '=', "ARLR2")->first();
+                    break;
+                case '3':
+                    $arl = Configuracion::Search()->where('codigo', '=', "ARLR3")->first();
+                    break;
+                case '4':
+                    $arl = Configuracion::Search()->where('codigo', '=', "ARLR4")->first();
+                    break;
+                case '5':
+                    $arl = Configuracion::Search()->where('codigo', '=', "ARLR5")->first();
+                    break;
+                
+                default:
+                    $arl = 1;
+                    break;
+            }
+
+            $arlt = $cliente->salario * $arl->valor / 100;
+        } else {
+            $arlt = 0;
+        }
+
+        $afp = Configuracion::Search()->where('codigo', '=', "AFP")->first();
+
+        if($empresa->beneficio == 2){
+            if(isset($cliente->id_cjc)){
+                $cjct = $cliente->salario * 4 / 100;
+            }else{
+                $cjct = 0;
+            }
+            $epst = $cliente->salario * 4 / 100;
+        }else{
+            $cjct = 0;
+            $epst = $cliente->salario * $eps->valor / 100;
+        }
+        
+        $upc = Configuracion::Search()->where('codigo', '=', "UPC")->first();
+        if($cliente->sercofun == 1){
+            $sercofun = Configuracion::Search()->where('codigo', '=', "SERCOFUN")->first();
+            $serc = $sercofun->valor;
+        } else {
+            $serc = 0;
+        }
+
+        if($cliente->emi == 1){
+            $emi = Configuracion::Search()->where('codigo', '=', "EMI")->first();
+            $emit = $emi->valor;
+        } else {
+            $emit = 0;
+        }
+
+        
+        $afpt = $cliente->salario * $afp->valor / 100;
+        $upct = $cliente->upc * $upc->valor;
+
+        $total = $serc + $emit + $arlt + $cjct + $epst + $afpt + $upct ;
+
+        $cliente->pago = $total;
+        $cliente->save();
+
+        return view('empleado_empresa.facturacion', compact('cliente', 'total', 'epst', 'serc', 'emit', 'arlt', 'cjct', 'afpt', 'upct'));
     }
 
     /**
@@ -166,7 +247,9 @@ class Empleado_empresaController extends Controller
 
         $empleadoEmpS->save();
 
-        return redirect()->route('empleado_empresa.index')
+        $empleado = $empleadoEmpS->id;
+
+        return redirect()->route('empleado_empresa.show', compact('empleado'))
             ->with('info', 'El empleado fue actualizado');
     }
 
@@ -176,8 +259,9 @@ class Empleado_empresaController extends Controller
      * @param  \App\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Empleado_empresa $empleado)
+    public function destroy($id)
     {
-        //
+        Empleado_empresa::destroy($id);
+        return redirect()->route('empleado_empresa.index')->with('danger', 'El empleado fue eliminado');
     }
 }

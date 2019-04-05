@@ -76,8 +76,9 @@
                                     <a href="{{route('empleado_empresa.show', $empleadoEmp->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
                                     @can('empleado_empresa.edit')
-                                    <a href="{{route('empleado_empresa.edit', $empleadoEmp->id)}}"><i class="fas fa-pen"></i></a>
+                                    <a href="{{route('empleado_empresa.edit', $empleadoEmp->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
+                                    <a href="{{route('empleado_empresa.destroy', $empleadoEmp->id)}}"><i class="fas fa-trash-alt"></i></a>
                                 </th>
 
                             </tr>

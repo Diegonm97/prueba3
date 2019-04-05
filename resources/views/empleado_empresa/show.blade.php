@@ -151,11 +151,19 @@
                             </td>
                         </tr>
 
+                         <?php if(isset($empleadoEmp->pago)){ ?>
+                        <tr>
+                            <td><strong>Total a pagar:</strong></td>
+                            <td>{{$empleadoEmp->pago}}</td>
+                        </tr>
+                        <?php } ?>
+
 
                     </tbody>
                 </div>
             </div>
         </table>
+        <a class="btn btn-primary" style="float: right; width: 100%" href="{{route('empleado_empresa.facturacion', $empleadoEmp->id)}}">Facturar</a>
     </div>
 </div>
 
