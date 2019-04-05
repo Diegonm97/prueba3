@@ -114,7 +114,7 @@ class CreatePrueba3Table extends Migration
             $table->integer('id_usuario')->unsigned();
             $table->integer('sercofun');
             $table->integer('emi');
-            $table->integer('pago');
+            $table->integer('pago')->nullable()->default(null);
             $table->timestamps();
 
 
@@ -126,7 +126,7 @@ class CreatePrueba3Table extends Migration
             $table->foreign('id_cjc')->references('id')->on('entidad');
         });
 
-        //================================ Empleado - empresa ===================================
+        //================================ Empleado_empresa ===================================
         Schema::create('empleado_empresa', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_empresa')->unsigned();
@@ -151,7 +151,7 @@ class CreatePrueba3Table extends Migration
             $table->integer('estado');
             $table->integer('sercofun');
             $table->integer('emi');
-            $table->integer('pago');
+            $table->integer('pago')->nullable()->default(null);
             $table->timestamps();
 
 

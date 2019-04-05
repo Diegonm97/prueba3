@@ -109,8 +109,9 @@ class SedeController extends Controller
      * @param  \App\Sede  $sede
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sede $sede)
+    public function destroy($id)
     {
-        //
+        Sede::destroy($id);
+        return redirect()->route('sedes.index')->with('danger', 'La sede fue eliminado');
     }
 }
