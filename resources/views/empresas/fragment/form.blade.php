@@ -76,13 +76,13 @@
     <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('administracion','Administracion cliente.')!!}
-            {!!Form::text('administracion',null,['class'=>'form-control','title'=>'Ingrese el costo por administracion.' , 'placeholder'=>'Ej: 20000','id'=>'administracion','required'=>'required' ])!!}
+            {!!Form::text('administracion',null,['class'=>'form-control','title'=>'Ingrese el costo por administracion.' , 'placeholder'=>'Ej: 20000','id'=>'administracion' ])!!}
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('inscripcion','Inscripcion.')!!}
-            {!!Form::text('inscripcion',null,['class'=>'form-control','title'=>'Ingrese el costo por inscripcion.' , 'placeholder'=>'Ej: 20000','id'=>'inscripcion','required'=>'required' ])!!}
+            {!!Form::text('inscripcion',null,['class'=>'form-control','title'=>'Ingrese el costo por inscripcion.' , 'placeholder'=>'Ej: 20000','id'=>'inscripcion' ])!!}
         </div>
     </div>
     <div class="col-sm-4">

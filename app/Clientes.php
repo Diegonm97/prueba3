@@ -14,12 +14,17 @@ class Clientes extends Model
         'fecha_ingreso', 'fecha_nacimiento', 'salario', 'id_ciudad',
         'id_eps', 'id_arl', 'id_afp', 'id_cjc', 'estado', 'beneficio',
         'rango', 'upc', 'inscripcion', 'administracion', 'observacion',
-        'id_usuario'
+        'id_usuario', 'emi', 'sercofun', 'pago'
     ];
 
     // Realiza la busqueda en base de datos de acuerdo a la identificación
     public function scopeSearch1($query, $identificacion)              //Buscador por medio de cliente
     {
         return $query->where('identificacion', 'LIKE', "%$identificacion%");
+    }
+
+    public function scopeSearch($query)
+    {
+        return $query->select('*');
     }
 }

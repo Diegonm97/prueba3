@@ -6,7 +6,7 @@
                 @if ($empresa != null)
                 <option value="{{$empresa->id}}">{{$empresa->nombre}}</option>
                 @endif
-                <option value=""></option>
+                <option value="">-- Seleccione --</option>
                 @foreach ($empresas as $emp)
 
                 <option value="{{$emp->id}}">{{$emp->nombre}}</option>
@@ -18,14 +18,14 @@
 
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('identificacion','Numero de cedula(*).')!!}
-            {!!Form::number('identificacion',null,['class'=>'form-control','title'=>'Ingresa un numero de identificacion, no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'identificacion','required'=>'required'])!!}
+            {!! Form::label('tipo_id','Tipo ID(*).')!!}
+            {!!Form::select('tipo_id', [0=> '-- Seleccione -- ', 1 =>'Cc', 2 =>'Pasaporte', 3 =>'Permiso de Trabajo'],null,['class'=>'form-control','title'=>'Ingresa el tipo de id del cliente.','id'=>'tipo_id','required'=>'required' ])!!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('tipo_id','Tipo ID(*).')!!}
-            {!!Form::select('tipo_id', [1 =>'Cc', 2 =>'Pasaporte', 3 =>'Permiso de Trabajo'],null,['class'=>'form-control','title'=>'Ingresa el tipo de id del cliente.','id'=>'tipo_id','required'=>'required' ])!!}
+            {!! Form::label('identificacion','Número de documento(*).')!!}
+            {!!Form::number('identificacion',null,['class'=>'form-control','title'=>'Ingresa un numero de identificacion, no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'identificacion','required'=>'required'])!!}
         </div>
     </div>
     <div class="col-sm-3">
@@ -63,11 +63,11 @@
     <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('id_ciudad','Nombre Ciudad(*).')!!}
-            <select class="form-control" id="id_ciudad" required="required" name="id_ciudad">
+            <select class="form-control" id="id_ciudad" required="required" name="id_ciudad" placeholder="-- Seleccione --">
                 @if ($ciudad != null)
                 <option value="{{$ciudad->id}}">{{$ciudad->nombre}}</option>
                 @endif
-                <option value=""></option>
+                <option value="">-- Seleccione --</option>
                 @foreach ($ciudades as $ciudad)
 
                 <option value="{{$ciudad->id}}">{{$ciudad->nombre}}</option>
@@ -82,7 +82,7 @@
             {!!Form::number('telefono',null,['class'=>'form-control','title'=>'Ingresa el telefono del cliente.' , 'placeholder'=>'Ej: 3209523123','id'=>'telefono','required'=>'required' ])!!}
         </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-5">
         <div class="form-group row has-success">
             {!! Form::label('email','Correo Electronico.')!!}
             {!!Form::text('email',null,['class'=>'form-control','title'=>'Ingresa el correo electronico del cliente.' , 'placeholder'=>'Ej: ejemplo@ejemplo.com ','id'=>'email','required'=>'required' ])!!}
@@ -106,7 +106,7 @@
     <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('rango','Seleccione rango(*).')!!}
-            {!!Form::select('rango', [1=>'1', 2=>'2', 3=>'3', 4=>'4'],null,['class'=>'form-control','title'=>'Ingresa rango del cliente.' ,'id'=>'rango','required'=>'required' ])!!}
+            {!!Form::select('rango', [0=> '-- Seleccione -- ', 1=>'1', 2=>'2', 3=>'3', 4=>'4'],null,['class'=>'form-control','title'=>'Ingresa rango del cliente.' ,'id'=>'rango','required'=>'required' ])!!}
         </div>
     </div>
 </div>
@@ -119,7 +119,7 @@
                 @if ($eps != null)
                 <option value="{{$eps->id}}">{{$eps->nombre}}</option>
                 @endif
-                <option value=""></option>
+                <option value="">-- Seleccione --</option>
                 @foreach ($epss as $eps)
 
                 <option value="{{$eps->id}}">{{$eps->nombre}}</option>
@@ -136,7 +136,7 @@
                 @if ($arl != null)
                 <option value="{{$arl->id}}">{{$arl->nombre}}</option>
                 @endif
-                <option value=""></option>
+                <option value="">-- Seleccione --</option>
                 @foreach ($arls as $arl)
 
                 <option value="{{$arl->id}}">{{$arl->nombre}}</option>
@@ -153,7 +153,7 @@
                 @if ($afp != null)
                 <option value="{{$afp->id}}">{{$afp->nombre}}</option>
                 @endif
-                <option value=""></option>
+                <option value="">-- Seleccione --</option>
                 @foreach ($afps as $afp)
 
                 <option value="{{$afp->id}}">{{$afp->nombre}}</option>
@@ -166,12 +166,12 @@
 
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('id_cjc','Nombre Caja de Compensacion(*).')!!}
+            {!! Form::label('id_cjc','Nombre Caja Compensacion(*).')!!}
             <select class="form-control" id="id_cjc" name="id_cjc">
                 @if ($cajacomp != null)
                 <option value="{{$cajacomp->id}}">{{$cajacomp->nombre}}</option>
                 @endif
-                <option value=""></option>
+                <option value="">-- Seleccione --</option>
                 @foreach ($cajacomps as $cajacomp)
 
                 <option value="{{$cajacomp->id}}">{{$cajacomp->nombre}}</option>
@@ -185,14 +185,26 @@
 </div>
 <div class="col-sm-12">
 
-    <div class="col-sm-4">
+    <div class="col-sm-2">
         <div class="form-group row has-success">
             {!! Form::label('estado','Estado del cliente(*).')!!}
-            {!!Form::select('estado', [1=>'ACTIVO', 2=>'RETIRADO'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.','title'=>'A,R','id'=>'estado','required'=>'required' ])!!}
+            {!!Form::select('estado', [0=> '-- Seleccione -- ', 1=>'ACTIVO', 2=>'RETIRADO'],null,['class'=>'form-control','title'=>'Ingresa un estado del cliente.','title'=>'A,R','id'=>'estado','required'=>'required' ])!!}
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <div class="form-group row has-success">
+            {!! Form::label('emi','Emi(*).')!!}
+            {!!Form::select('emi', [0=> '-- Seleccione -- ', 1=>'NO', 2=>'SI'],null,['class'=>'form-control','title'=>'Selecciona SI o NO.','title'=>'Servicio EMI? ','id'=>'emi','required'=>'required' ])!!}
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <div class="form-group row has-success">
+            {!! Form::label('sercofun','Sercofun(*).')!!}
+            {!!Form::select('sercofun', [0=> '-- Seleccione -- ', 1=>'NO', 2=>'SI'],null,['class'=>'form-control','title'=>'Selecciona SI o NO.','title'=>'Servicio sercofun Los Olivos?','id'=>'sercofun','required'=>'required' ])!!}
         </div>
     </div>
 
-    <div class="col-sm-4">
+    <div class="col-sm-2">
         <div class="form-group row has-success">
             {!! Form::label('upc','UPC del cliente.')!!}
             {!!Form::text('upc',null,['class'=>'form-control','title'=>'Ingresa el UPC del cliente.' , 'placeholder'=>'Ej: 1','id'=>'upc' ])!!}

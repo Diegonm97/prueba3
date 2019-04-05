@@ -11,7 +11,7 @@ class Empleado_empresa extends Model
     protected $fillable = [
         'id_empresa', 'identificacion', 'tipo_id', 'nombres', 'apellidos',
         'telefono', 'direccion', 'email', 'tipo_cliente', 'fecha_ingreso', 'fecha_nacimiento',
-        'salario', 'rango', 'upc', 'id_ciudad', 'id_eps', 'id_arl', 'id_afp', 'id_cjc', 'estado'
+        'salario', 'rango', 'upc', 'id_ciudad', 'id_eps', 'id_arl', 'id_afp', 'id_cjc', 'estado', 'emi', 'sercofun', 'pago'
     ];
 
     // Realiza la busqueda en base de datos de acuerdo a la identificación
@@ -19,8 +19,13 @@ class Empleado_empresa extends Model
     {
         return $query->where('identificacion', 'LIKE', "%$identificacion%");
     }
+<<<<<<< HEAD
+
+    public function scopeSearch($query)
+=======
     public function scopeSearch($query)         //Buscador de toda una tabla
 
+>>>>>>> 2f572026d8fd668f6bed13492743d1e8b1f38643
     {
         return $query->select('*');
     }

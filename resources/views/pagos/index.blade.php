@@ -1,3 +1,20 @@
+    
+<?php
+/*En esta página se reciben las variables enviadas desde ePayco hacia el servidor.
+Antes de realizar cualquier movimiento en base de datos se deben comprobar algunos valores
+Es muy importante comprobar la firma enviada desde ePayco
+Ingresar  el valor de p_cust_id_cliente lo encuentras en la configuración de tu cuenta ePayco
+Ingresar  el valor de p_key lo encuentras en la configuración de tu cuenta ePayco
+*/
+$p_cust_id_cliente = '25900';
+$p_key             = 'bea40ca452d00045845fed33d24809b9274f196b';
+
+use App\Clientes;
+use App\Empresa;
+
+
+?>
+
 @extends('layouts.apphome')
 @section('content')
 
@@ -14,73 +31,129 @@
 
 <div class="col-md-12">
     <div class="card">
-        <div class="header">
-            <h4 class="title">Pagos
-                @can('pagos.create')
-                <a href="{{route('pago.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
-            @endcan
 
-            <p class="category">Aqui se muestran datos de los pagos registradas</p>
-            {!!Form::open(['route'=>'pago.index', 'method'=>'GET','class'=>'navbar-form'])!!}
-            <div class="form group">
-                {!!Form::text('nuipPago',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+    @role('cliente')
 
+    <div style="text-align: center; padding: 4rem">
+        <h3>PAGO MES {{ $mes }}</h3>
 
-            </div>
-            {!!Form::close()!!}
-        </div>
+        @if($pago != null)
+            <h4 style="padding: 2rem;">El pago del mes vigente ya ha sido realizado</h4>
+        @endif
+        @if($pago == null)
+            <form>
+                <script
 
-        <div class="content table-responsive table-full-width">
-            <table class="table table-hover table-striped">
-                <div class="container">
-                    <div class="row">
-                        <thead>
-                            <th>Nuip</th>
-                            <th>Nombre</th>
-                            <th>Oficina</th>
-                            <th>Proximo Pago</th>
-                            <th>Observaciones</th>
-                            <th>Suma Total</th>
-                            <th>Acción</th>
-                        </thead>
-                        <tbody>
-                            @foreach ($pagos as $pago)
+                    src="https://checkout.epayco.co/checkout.js"
+                    class="epayco-button"
+                    x_cust_id_cliente="3"
+                    data-epayco-key="6c9a18d57c132303c128ddf22f7e8e82"
+                    data-epayco-amount={!! json_encode($usuario[0]->pago) !!}
+                    data-epayco-name="Intersalud"
+                    data-epayco-description="Pago servicios Intersalud"
+                    data-epayco-currency="cop"
+                    data-epayco-country="co"
+                    data-epayco-test="false"
+                    data-epayco-external="false"
+                    data-epayco-response="http://localhost:8000/pago"
+                    data-epayco-confirmation="http://localhost:8000/pago"
+
+                >
+                </script>
+            </form>
+        
+
+        @endif
+        
+    </div>
+    
+    @endrole
+
+    @role('administrador')
+
+    <div>
+        <h4 style="padding: 2rem">Total ventas mes {{$mes}} :  ${{number_format($total,0,',','.')}}</h4>
+    </div>
+    <div class="col-md-12" style="background-color: #fff; padding: 4rem; width: 45%; margin: 2rem"   >
+        <h3>Clientes activos (mes {{$mes}})</h3>
+        <br>
+
+        <div  class="table-responsive table-full-width">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($activo as $key => $id) { 
+                        if ($key == "cliente") {
+                            $cliente = Clientes::find($id); ?>
                             <tr>
-                                <th>{{$pago->nuipPago}}</th>
-                                <th>{{$pago->nombrePago}}</th>
-                                <th>{{$pago->oficinaPago}}</th>
-                                <th>{{$pago->proximoPago}}</th>
-                                <th>{{$pago->observacionPago}}</th>
-                                <th>{{$pago->sumTotalPago}}</th>
-                                <th>
-                                    @can('pagos.show')
-                                    <a href="{{route('pago.show', $pago->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    @endcan
-                                    @can('pagos.edit')
-                                    <a href="{{route('pago.edit', $pago->id)}}"><i class="fas fa-pen"></i></a>
-                                    @endcan
-
-
-                                </th>
-
+                                <td>{{$cliente->nombres}} {{$cliente->apellidos}}</td>
+                                <td>
+                                    <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('clientes.edit', $cliente->id)}}">ver</a>
+                                </td>
                             </tr>
-                            @endforeach
-
-
-                        </tbody>
-                    </div>
-                </div>
+                                
+                        <?php } elseif ($key == "empresa") {
+                            $empresa = Empresa::find($id); ?>
+                            <tr>
+                                <td>{{$empresa->nombre}}</td>
+                                <td>
+                                    <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('empresa.edit', $empresa->id)}}">ver</a>
+                                </td>
+                            </tr>
+                            
+                        <?php  }
+                        } ?>
+                </tbody>
+                    
             </table>
-            <div align="center">
-                {!!$pagos->render() !!}
-            </div>
         </div>
     </div>
+
+    <div class="col-md-12" style="background-color: #fff; padding: 4rem; width: 45%; margin: 2rem"   >
+        <h3>Clientes inactivos (mes {{$mes}})</h3>
+        <br>
+        <div  class="table-responsive table-full-width">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($inactivo as $key => $id) { 
+                        if ($key == "cliente") {
+                            $cliente = Clientes::find($id); ?>
+                            <tr>
+                                <td>{{$cliente->nombres}} {{$cliente->apellidos}}</td>
+                                <td>
+                                    <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('clientes.update', $cliente->id)}}">ver</a>
+                                </td>
+                            </tr>
+                                
+                        <?php } elseif ($key == "empresa") {
+                            $empresa = Empresa::find($id); ?>
+                            <tr>
+                                <td>{{$empresa->nombre}}</td>
+                                <td>
+                                    <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('empresa.update', $cliente->id)}}">ver</a>
+                                </td>
+                            </tr>
+                            
+                        <?php  }
+                        } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @endrole
+    
+    </div>
 </div>
-
-
-
-
-
 
 @endsection 

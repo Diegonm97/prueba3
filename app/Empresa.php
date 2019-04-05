@@ -11,7 +11,7 @@ class Empresa extends Model
     protected $fillable = [
         'nit', 'nombre', 'nombre_contacto', 'telefono_contacto',
         'email_contacto', 'id_ciudad', 'direccion', 'estado', 'beneficio',
-        'inscripcion', 'administracion', 'id_usuario', 'fecha_ingreso', 'observacion'
+        'inscripcion', 'administracion', 'id_usuario', 'fecha_ingreso', 'observacion', 'total_pago'
     ];
 
 

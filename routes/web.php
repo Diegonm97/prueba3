@@ -100,6 +100,28 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:Clientes.show');
 	Route::get('clientes/{id}/edit', 'clientesController@edit')->name('clientes.edit')
 		->middleware('permission:Clientes.edit');
+	Route::get('clientes/facturacion/{id}', 'clientesController@facturacion')->name('clientes.facturacion')
+		->middleware('permission:Clientes.facturacion');
+	Route::get('clientes/pagocaja/{id}', 'clientesController@pagocaja')->name('clientes.pagocaja')
+		->middleware('permission:Clientes.pagocaja');
+
+	//empleado_empresa
+		Route::post('empleado_empresa/store', 'empleado_empresaController@store')->name('empleado_empresa.store')
+		->middleware('permission:Empleado_empresa.create');
+	Route::get('empleado_empresa', 'empleado_empresaController@index')->name('empleado_empresa.index')
+		->middleware('permission:Empleado_empresa.index');
+	Route::get('empleado_empresa/create', 'empleado_empresaController@create')->name('empleado_empresa.create')
+		->middleware('permission:Empleado_empresa.create');
+	Route::put('empleado_empresa/{id}', 'empleado_empresaController@update')->name('empleado_empresa.update')
+		->middleware('permission:Empleado_empresa.edit');
+	Route::get('empleado_empresa/{id}', 'empleado_empresaController@show')->name('empleado_empresa.show')
+		->middleware('permission:Empleado_empresa.show');
+	Route::get('empleado_empresa/{id}/edit', 'empleado_empresaController@edit')->name('empleado_empresa.edit')
+		->middleware('permission:Empleado_empresa.edit');
+	Route::get('empleado_empresa/destroy/{id}', 'empleado_empresaController@destroy')->name('empleado_empresa.destroy')
+		->middleware('permission:Empleado_empresa.destroy');
+	Route::get('empleado_empresa/facturacion/{id}', 'empleado_empresaController@facturacion')->name('empleado_empresa.facturacion')
+		->middleware('permission:Empleado_empresa.facturacion');
 	
 	//empresas
 	Route::post('empresa/store', 'empresaController@store')->name('empresa.store')
@@ -114,6 +136,8 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:Empresas.show');
 	Route::get('empresa/{id}/edit', 'empresaController@edit')->name('empresa.edit')
 		->middleware('permission:Empresas.edit');
+	Route::get('empresa/pagocaja/{id}', 'empresaController@pagocaja')->name('empresa.pagocaja')
+		->middleware('permission:Empresas.pagocaja');
 
 
 
@@ -143,5 +167,9 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:Configuracion.edit');
 	Route::get('configuracion/{id}/edit', 'configuracionController@edit')->name('configuracion.edit')
 		->middleware('permission:Configuracion.edit');
+
+	//pagos
+	Route::get('pago', 'pagoController@index')->name('pago.index')
+		->middleware('permission:Pago.index'); 
 	
 });
