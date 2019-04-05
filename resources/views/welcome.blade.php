@@ -288,8 +288,8 @@
                         <li>
                             <p class="my-4 h3-responsive flex-item" align="center" class="">
                                 La seguridad social, es un servicio publico de carácter obligatorio a la ciudadanía y
-                                 esta conformado por los regímenes generales establecidos por la salud, pensiones, riesgos
-                                  laborales, subsidio familiar y los servicios sociales complementarios que se definen en la ley.
+                                esta conformado por los regímenes generales establecidos por la salud, pensiones, riesgos
+                                laborales, subsidio familiar y los servicios sociales complementarios que se definen en la ley.
                             </p>
                         </li>
                         <li>
@@ -307,101 +307,97 @@
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
-                <center>
-                    <div class="container">
-                    <ul class="animated fadeInUp col-md-12">
-                        <li>
-                        <h3 class="h2-responsive flex-item font-bold">Nuestros productos</h3>
-                        </li>
-                        <li>
-                            <p class="my-4 h4-responsive flex-item" align="center" class="">
-                                Aqui podra visualizar los distintos productos que ofrecemos.<br>
-                            </p>
-                        </li>
-                    </ul>
-                    <div class="col-md-10">
-                        <div class="row">
-                            <div class="col">
-                            <div class="card">
-                                    <!-- Card image -->
-                                    
-                                    <!-- Card content -->
-                                    <div class="card-body">
-                                    <!-- Title -->
-                                    <!-- Card image -->
-                                        <center>
-                                            <img src="/assets/img/Hospital.png" width="100" height="100" 
-                                            align="middle" alt="Card image cap">
-                                        </center>
-                                    <!-- Title -->
-                                    <br>
-                                        <h4 class="card-title"><a style="color: grey">Prestadoras de salud abscritas.</a></h4>
-                                        <!-- Button -->
-                                        <br>
-                                        <a href="/productos#2" class="btn btn-info">Ver más</a>
+                    <center>
+                        <div class="container">
+                            <ul class="animated fadeInUp col-md-12">
+                                <li>
+                                    <h3 class="h2-responsive flex-item font-bold">Nuestros productos</h3>
+                                </li>
+                                <li>
+                                    <p class="my-4 h4-responsive flex-item" align="center" class="">
+                                        Aqui podra visualizar los distintos productos que ofrecemos.<br>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div class="col-md-10">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card">
+                                            <!-- Card image -->
+
+                                            <!-- Card content -->
+                                            <div class="card-body">
+                                                <!-- Title -->
+                                                <!-- Card image -->
+                                                <center>
+                                                    <img src="/assets/img/Hospital.png" width="100" height="100" align="middle" alt="Card image cap">
+                                                </center>
+                                                <!-- Title -->
+                                                <br>
+                                                <h4 class="card-title"><a style="color: grey">Prestadoras de salud abscritas.</a></h4>
+                                                <!-- Button -->
+                                                <br>
+                                                <a href="/productos#2" class="btn btn-info">Ver más</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <!-- Card -->
-                                <div class="card">
-                                    <!-- Card content -->
-                                    <div class="card-body">
-                                         <!-- Card image -->
-                                        <center>
-                                            <img src="/assets/img/Botiquin.png" width="100" height="100"
-                                            align="middle" alt="Card image cap">
-                                        </center>
-                                        <!-- Title -->
-                                        <br>
-                                        <h4 class="card-title"><a style="color: grey">Aseguradoras de riesgos abscritas</a></h4>
-                                        <!-- Button -->
-                                        <a href="/productos#3" class="btn btn-info">Ver más</a>
+                                    <div class="col">
+                                        <!-- Card -->
+                                        <div class="card">
+                                            <!-- Card content -->
+                                            <div class="card-body">
+                                                <!-- Card image -->
+                                                <center>
+                                                    <img src="/assets/img/Botiquin.png" width="100" height="100" align="middle" alt="Card image cap">
+                                                </center>
+                                                <!-- Title -->
+                                                <br>
+                                                <h4 class="card-title"><a style="color: grey">Aseguradoras de riesgos abscritas</a></h4>
+                                                <!-- Button -->
+                                                <a href="/productos#3" class="btn btn-info">Ver más</a>
+                                            </div>
+                                        </div>
+                                        <!-- Card -->
                                     </div>
-                                </div>
-                                <!-- Card -->
-                            </div>
-                            <div class="col">
-                                 <!-- Card -->
-                                 <div class="card">
-                                    <!-- Card content -->
-                                    <div class="card-body">
-                                        <!-- Card image -->
-                                        <center>
-                                            <img src="/assets/img/Cruz.png" width="100" height="100" 
-                                            align="middle" alt="Card image cap">
-                                        </center>
-                                        <!-- Title -->
-                                        <br>
-                                        <h4 class="card-title"><a style="color: grey">Fondos privados de pensiones</a></h4>
-                                        <!-- Button -->
-                                        <a href="/productos#4" class="btn btn-info">Ver más</a>
+                                    <div class="col">
+                                        <!-- Card -->
+                                        <div class="card">
+                                            <!-- Card content -->
+                                            <div class="card-body">
+                                                <!-- Card image -->
+                                                <center>
+                                                    <img src="/assets/img/Cruz.png" width="100" height="100" align="middle" alt="Card image cap">
+                                                </center>
+                                                <!-- Title -->
+                                                <br>
+                                                <h4 class="card-title"><a style="color: grey">Fondos privados de pensiones</a></h4>
+                                                <!-- Button -->
+                                                <a href="/productos#4" class="btn btn-info">Ver más</a>
+                                            </div>
+                                        </div>
+                                        <!-- Card -->
                                     </div>
-                                </div>
-                                <!-- Card -->
-                            </div>
-                            <div class="col">
-                                <!-- Card -->
-                                <div class="card">
-                                  
-                                    <!-- Card content -->
-                                    <div class="card-body">
-                                      <!-- Card image -->
-                                        <center>
-                                            <img src="/assets/img/Corazon.png" width="100" height="100" 
-                                            align="middle" alt="Card image cap">
-                                       </center>
-                                    <!-- Title -->
-                                    <br>
-                                        <h4 class="card-title"><a style="color: grey">Caja de compensación abscritas</a></h4>
-                                         <!-- Button -->
-                                        <a href="/productos#5" class="btn btn-info">Ver más</a>
+                                    <div class="col">
+                                        <!-- Card -->
+                                        <div class="card">
+
+                                            <!-- Card content -->
+                                            <div class="card-body">
+                                                <!-- Card image -->
+                                                <center>
+                                                    <img src="/assets/img/Corazon.png" width="100" height="100" align="middle" alt="Card image cap">
+                                                </center>
+                                                <!-- Title -->
+                                                <br>
+                                                <h4 class="card-title"><a style="color: grey">Caja de compensación abscritas</a></h4>
+                                                <!-- Button -->
+                                                <a href="/productos#5" class="btn btn-info">Ver más</a>
+                                            </div>
+                                        </div>
+                                        <!-- Card -->
                                     </div>
+
                                 </div>
-                                <!-- Card -->
-                            </div>
-                            
-                        </div>
                     </center>
                 </div>
                 <!-- /.Caption -->
@@ -449,7 +445,7 @@
                         </li>
                         <li>
                             <p class="my-4 h3-responsive flex-item" align="center" class="">Aqui podra pedir asesoramiento o algun producto<br>
-                            que deseé.</p>
+                                que deseé.</p>
                         </li>
                         <li>
                             <a href="/contacto" class="btn btn-info btn-lg flex-item" rel="nofollow">Ver más</a>
@@ -572,19 +568,19 @@
 
 
 
-
-    <footer>
-        <br>
-        <div class="container text-center">
-            <h2><strong>Intersalud Colombia</strong></h2>
-            <p><strong>Sede principal:</strong> Palmira, Valle del Cauca, carrera 31 no 29 - 42 <br /><strong>Email</strong> - <a id="mail" href="mailto:intersaludpalmira@intersaluddelvalle.com.co" style="color: white">intersaludpalmira@intersaluddelvalle.com.co</a><br />
-                Teléfonos: 287 25 47<br />
-                2019 Intersalud Colombia SAS. - Todos los derechos reservados.
-            </p>
-        </div>
-        <br>
-    </footer>
-
+    <div>
+        <footer>
+            <br>
+            <div class="container text-center">
+                <h2><strong>Intersalud Colombia</strong></h2>
+                <p><strong>Sede principal:</strong> Palmira, Valle del Cauca, carrera 31 no 29 - 42 <br /><strong>Email</strong> - <a id="mail" href="mailto:intersaludpalmira@intersaluddelvalle.com.co" style="color: white">intersaludpalmira@intersaluddelvalle.com.co</a><br />
+                    Teléfonos: 287 25 47<br />
+                    2019 Intersalud Colombia SAS. - Todos los derechos reservados.
+                </p>
+            </div>
+            <br>
+        </footer>
+    </div>
 
 
     <script type="text/javascript">
@@ -702,5 +698,6 @@
         })
     </script>
 
-    </body>
-</html> 
+</body>
+
+</html>

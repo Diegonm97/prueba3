@@ -52,8 +52,8 @@ class PagoController extends Controller
                 }
             } else {
                 $activo['empresa'] = $cliente->id_usuario;
-                $emp[] = $cliente->id_usuario;
-                foreach ($emp as $empre) {
+                $empr[] = $cliente->id_usuario;
+                foreach ($empr as $empre) {
 
                     $pagoemp = DB::select('SELECT * FROM empresa WHERE id = ?', [$empre]);
                     $totalmes[] = $pagoemp[0]->total_pago;

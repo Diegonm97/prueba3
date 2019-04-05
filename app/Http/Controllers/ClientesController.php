@@ -64,6 +64,7 @@ class ClientesController extends Controller
         $rol = new Role_user;
         $administracion = Configuracion::Search()->where('codigo', '=', "ADMIN")->first();
         $inscripcion = Configuracion::Search()->where('codigo', '=', "INSCRI")->first();
+        $salario = Configuracion::Search()->where('codigo', '=', "SMMLV")->first();
 
         $user->name = $request->nombres;
         $user->email = $request->email;
@@ -86,7 +87,6 @@ class ClientesController extends Controller
         $clientes->tipo_cliente     = $request->tipo_cliente;
         $clientes->fecha_ingreso    = $request->fecha_ingreso;
         $clientes->fecha_nacimiento = $request->fecha_nacimiento;
-        $clientes->salario          = $request->salario;
         $clientes->id_ciudad        = $request->id_ciudad;
         $clientes->id_eps           = $request->id_eps;
         $clientes->id_arl           = $request->id_arl;
@@ -95,16 +95,23 @@ class ClientesController extends Controller
         $clientes->beneficio        = $request->beneficio;
         $clientes->rango            = $request->rango;
         $clientes->upc              = $request->upc;
+
+        if(isset($request->salario)){
+            $clientes->salario = $request->salario;
+        }else{
+            $clientes->salario = $salario->valor ;
+        }
+
         if(isset($request->inscripcion)){
             $clientes->inscripcion = $request->inscripcion;
         }else{
-            $clientes->inscripcion = $administracion->valor ;
+            $clientes->inscripcion = $inscripcion->valor ;
         }
 
         if (isset($request->administracion)) {
             $clientes->administracion = $request->administracion;
         } else {
-            $clientes->administracion = $inscripcion->valor;
+            $clientes->administracion = $administracion->valor;
         }
         $clientes->sercofun         = $request->sercofun;
         $clientes->emi              = $request->emi;
@@ -201,6 +208,7 @@ class ClientesController extends Controller
         
         $cliente = Clientes::find($id);
         $mes = date('m');
+        $dia = date('d');
 
         $pagoc = DB::table('pago')->where('id_usuario','=', $cliente->id)->where('mes', '=', $mes)->count();
 
@@ -209,6 +217,7 @@ class ClientesController extends Controller
             $pago->id_usuario = $cliente->id;
             $pago->estado = 1;
             $pago->mes = $mes;
+            $pago->dia = $dia;
             $pago->tipo = 1;
             $pago->save();
         }
