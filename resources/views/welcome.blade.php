@@ -235,6 +235,7 @@
             <li data-target="#carousel-example-3" data-slide-to="2"></li>
             <li data-target="#carousel-example-3" data-slide-to="3"></li>
             <li data-target="#carousel-example-3" data-slide-to="4"></li>
+            <li data-target="#carousel-example-3" data-slide-to="5"></li>
         </ol>
         <!--/.Indicators-->
 
@@ -242,7 +243,7 @@
         <div class="carousel-inner">
 
             <!-- First slide -->
-            <div class="carousel-item active hm-grey-strong" style="background-image: url('https://i.ytimg.com/vi/1AjNoUqe06g/maxresdefault.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item active hm-grey-strong" style="background-image: url('/assets/img/carrusel/bienvenido.jpg'); background-repeat: no-repeat; background-size: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -272,7 +273,7 @@
             <!-- /.First slide -->
 
             <!-- Second slide -->
-            <div class="carousel-item hm-grey-strong" style="background-image: url('https://jusamawi.files.wordpress.com/2010/09/gris.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item hm-grey-strong" style="background-image: url('/assets/img/carrusel/seguridad-social.jpg'); background-repeat: no-repeat; background-size: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -302,7 +303,7 @@
             <!-- /.Second slide -->
 
             <!-- Third slide -->
-            <div class="carousel-item hm-grey-strong" style="background-image: url('https://www.interazulejo.com/images/products/pizarra-gris-pizarra-gris.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item hm-grey-strong" style="background-image: url('/assets/img/carrusel/producto.jpg'); background-repeat: no-repeat; background-size: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -407,7 +408,7 @@
 
             </div>
             <!-- /.Third slide -->
-            <div class="carousel-item hm-grey-strong" style="background-image: url('https://www.inalco.es/archivos/productos/136/storm-gris-natural-150x300-sk-rect-1-100A.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item hm-grey-strong" style="background-image: url('/assets/img/carrusel/servicios.jpg'); background-repeat: no-repeat; background-size: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -420,7 +421,7 @@
                             <h1 class="h1-responsive flex-item font-bold">Nuestros servicios</h1>
                         </li>
                         <li>
-                            <p class="my-4 h3-responsive flex-item" align="center" class="">Aqui podra pedir asesoramiento o algun producto<br>
+                            <p class="my-4 h3-responsive flex-item" align="center" class="">Aqui podra visualizar nuestros servicios<br>
                             que deseé.</p>
                         </li>
                         <li>
@@ -434,7 +435,7 @@
             <!-- /.Third slide -->
 
             <!-- /.quarter slide -->
-            <div class="carousel-item hm-grey-strong" style="background-image: url('https://www.inalco.es/archivos/productos/136/storm-gris-natural-150x300-sk-rect-1-100A.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item hm-grey-strong" style="background-image: url('/assets/img/carrusel/contactenos.jpg'); background-repeat: no-repeat; background-size: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -460,7 +461,7 @@
             </div>
             <!-- /.quarter slide -->
             <!-- /.fifth slide -->
-            <div class="carousel-item hm-grey-strong" style="background-image: url('https://www.inalco.es/archivos/productos/136/storm-gris-natural-150x300-sk-rect-1-100A.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item hm-grey-strong" style="background-image: url('/assets/img/carrusel/pagos.jpg'); background-repeat: no-repeat; background-size: cover;">
 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -473,7 +474,7 @@
                             <h1 class="h1-responsive flex-item font-bold">Pagos en linea</h1>
                         </li>
                         <li>
-                            <p class="my-4 h3-responsive flex-item" align="center" class="">Aqui podra pedir asesoramiento o algun producto<br>
+                            <p class="my-4 h3-responsive flex-item" align="center" class="">Aqui podra realizar el pago de sus productos<br>
                             que deseé.</p>
                         </li>
                         <li>
