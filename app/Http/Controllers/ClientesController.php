@@ -210,9 +210,9 @@ class ClientesController extends Controller
         $mes = date('m');
         $dia = date('d');
 
-        $pagoc = DB::table('pago')->where('id_usuario','=', $cliente->id)->where('mes', '=', $mes)->count();
+        $pagoc = $pagoc = DB::select('SELECT * FROM pago WHERE mes = ? and id_usuario = ? and tipo = 1 ', [$mes, $cliente->id]);;
 
-        if($pagoc == 0){
+        if(count($pagoc) == 0){
             $pago = new Pago;
             $pago->id_usuario = $cliente->id;
             $pago->estado = 1;

@@ -99,22 +99,22 @@ class CreatePrueba3Table extends Migration
             $table->integer('tipo_cliente');
             $table->date('fecha_ingreso');
             $table->date('fecha_nacimiento');
-            $table->integer('salario');
+            $table->integer('salario')->nullable()->default(null);
             $table->integer('id_ciudad')->unsigned();
             $table->integer('id_eps')->unsigned();
-            $table->integer('id_arl')->unsigned();
-            $table->integer('id_afp')->unsigned();
+            $table->integer('id_arl')->unsigned()->nullable();
+            $table->integer('id_afp')->unsigned()->nullable();
             $table->integer('id_cjc')->unsigned();
             $table->integer('beneficio');
             $table->integer('rango');
             $table->integer('upc');
-            $table->integer('inscripcion');
-            $table->integer('administracion');
+            $table->integer('inscripcion')->nullable()->default(null);
+            $table->integer('administracion')->nullable()->default(null);
             $table->string('observacion')->nullable();
             $table->integer('id_usuario')->unsigned();
             $table->integer('sercofun');
             $table->integer('emi');
-            $table->integer('pago')->nullable();
+            $table->integer('pago')->nullable()->default(null);
             $table->timestamps();
 
 
@@ -126,7 +126,7 @@ class CreatePrueba3Table extends Migration
             $table->foreign('id_cjc')->references('id')->on('entidad');
         });
 
-        //================================ Empleado - empresa ===================================
+        //================================ Empleado_empresa ===================================
         Schema::create('empleado_empresa', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_empresa')->unsigned();
@@ -145,13 +145,13 @@ class CreatePrueba3Table extends Migration
             $table->integer('upc');
             $table->integer('id_ciudad')->unsigned();
             $table->integer('id_eps')->unsigned();
-            $table->integer('id_arl')->unsigned();
+            $table->integer('id_arl')->unsigned()->nullable()->default(null);
             $table->integer('id_afp')->unsigned();
-            $table->integer('id_cjc')->unsigned();
+            $table->integer('id_cjc')->unsigned()->nullable()->default(null);
             $table->integer('estado');
             $table->integer('sercofun');
             $table->integer('emi');
-            $table->integer('pago');
+            $table->integer('pago')->nullable()->default(null);
             $table->timestamps();
 
 

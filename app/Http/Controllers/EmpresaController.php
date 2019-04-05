@@ -111,15 +111,18 @@ class EmpresaController extends Controller
     {
 
         $cliente = Empresa::find($id);
+       
         $mes = date('m');
+        $dia = date('d');
 
-        $pagoc = DB::table('pago')->where('id_usuario', '=', $cliente->id)->where('mes', '=', $mes)->count();
-
-        if ($pagoc == 0) {
+        $pagoc = DB::select('SELECT * FROM pago WHERE mes = ? and id_usuario = ? and tipo = 2 ', [$mes, $cliente->id]);
+        
+        if (count($pagoc) == 0) {
             $pago = new Pago;
             $pago->id_usuario = $cliente->id;
             $pago->estado = 1;
             $pago->mes = $mes;
+            $pago->dia = $dia;
             $pago->tipo = 2;
             $pago->save();
         }
