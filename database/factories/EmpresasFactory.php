@@ -16,8 +16,11 @@ $factory->define(App\Empresa::class, function (Faker $faker) {
 		'beneficio'=> rand(1,2), 
 		'inscripcion'=> rand(100000,150000),
 		'administracion'=> rand(100000,150000), 
+		'id_usuario' => rand(1,20), 
 		'fecha_ingreso'=> $faker->date($format = 'Y-m-d', $max = 'now'),
 		'observacion'=> $faker->text(20),
+		'total_pago' => null,
+				
 			];
 });
     

@@ -76,7 +76,7 @@ class CreatePrueba3Table extends Migration
             $table->integer('id_usuario')->unsigned();
             $table->date('fecha_ingreso');
             $table->string('observacion');
-            $table->integer('total_pago');
+            $table->integer('total_pago')->nullable();
 
             $table->timestamps();
 
@@ -114,7 +114,7 @@ class CreatePrueba3Table extends Migration
             $table->integer('id_usuario')->unsigned();
             $table->integer('sercofun');
             $table->integer('emi');
-            $table->integer('pago')
+            $table->integer('pago');
             $table->timestamps();
 
 
@@ -229,6 +229,7 @@ class CreatePrueba3Table extends Migration
             $table->increments('id');
             $table->integer('id_usuario');
             $table->integer('estado');
+            $table->integer('dia');
             $table->integer('mes');
             $table->integer('tipo');
             $table->timestamps();
