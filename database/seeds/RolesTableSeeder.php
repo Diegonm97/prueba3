@@ -24,14 +24,14 @@ class RolesTableSeeder extends Seeder
             'name'    => 'trabajador',
             'slug'    => 'trabajador',
             'description'    => 'trabajador',
-            'special'   => '',
+
         ]);
         Role::create([
 
             'name'    => 'cliente',
             'slug'    => 'cliente',
             'description'    => 'cliente',
-            'special'   => 'all-access',
+
         ]);
     }
 }

@@ -6,135 +6,148 @@ use App\Configuracion;
 class ConfiguracionTableSeeder extends Seeder
 {
         /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+         * Run the database seeds.
+         *
+         * @return void
+         */
         public function run()
         {
                 Configuracion::create([
 
                         'nombre'    => 'EPS',
-                        'codigo'    => 1,
-                        'valor'    => 0.125,
+                        'codigo'    => 'EPS',
+                        'valor'    => 12.5,
                 ]);
                 Configuracion::create([
 
-                        'nombre'    => 'rango1',
-                        'codigo'    => 2,
-                        'valor'    => 0.00522,
+                        'nombre'    => 'ARLR1',
+                        'codigo'    => 'ARLR1',
+                        'valor'    => 0.522,
                 ]);
                 Configuracion::create([
 
-                        'nombre'    => 'rango2',
-                        'codigo'    => 3,
-                        'valor'    => 0.01044,
+                        'nombre'    => 'ARLR2',
+                        'codigo'    => 'ARLR2',
+                        'valor'    => 1.044,
                 ]);
 
                 Configuracion::create([
 
-                        'nombre'    => 'rango3',
-                        'codigo'    => 4,
-                        'valor'    => 0.02436,
+                        'nombre'    => 'ARLR3',
+                        'codigo'    => 'ARLR3',
+                        'valor'    => 2.436,
                 ]);
                 Configuracion::create([
 
-                        'nombre'    => 'rango4',
-                        'codigo'    => 5,
-                        'valor'    => 0.0435,
+                        'nombre'    => 'ARLR4',
+                        'codigo'    => 'ARLR4',
+                        'valor'    => 4.35,
                 ]);
                 Configuracion::create([
 
-                        'nombre'    => 'rango5',
-                        'codigo'    => 6,
-                        'valor'    => 0.0696,
+                        'nombre'    => 'ARLR5',
+                        'codigo'    => 'ARLR5',
+                        'valor'    => 6.96,
                 ]);
                 Configuracion::create([
 
                         'nombre'    => 'AFP',
-                        'codigo'    => 7,
-                        'valor'    => 0.16,
+                        'codigo'    => 'AFP',
+                        'valor'    => 16,
                 ]);
                 Configuracion::create([
 
-                        'nombre'    => 'cajaComp',
-                        'codigo'    => 8,
-                        'valor'    => 0.09,
+                        'nombre'    => 'CAJACOMP',
+                        'codigo'    => 'CAJACOMP',
+                        'valor'    => 9,
                 ]);
-                Configuracion::create([
+                // Configuracion::create([
 
-                        'nombre'    => 'CCFautoliquidacion',
-                        'codigo'    => 9,
-                        'valor'    => 0.09,
-                ]);
+                //         'nombre'    => 'CCFautoliquidacion',
+                //         'codigo'    => 'CCF',
+                //         'valor'    => 0.09,
+                // ]);
                 Configuracion::create([
 
                         'nombre'    => 'Sena',
-                        'codigo'    => 10,
-                        'valor'    => 0.02, //no sabemos que es
+                        'codigo'    => 'SENA',
+                        'valor'    => 0.02,
                 ]);
                 Configuracion::create([
 
                         'nombre'    => 'ICBF',
-                        'codigo'    => 11,
+                        'codigo'    => 'ICBF',
                         'valor'    => 0.03,
                 ]);
+                // Configuracion::create([
+
+                //         'nombre'    => 'EPS1607',
+                //         'codigo'    => 12,
+                //         'valor'    => 0.04,
+                // ]);
+                // Configuracion::create([
+
+                //         'nombre'    => 'CAJA1607',
+                //         'codigo'    => 13,
+                //         'valor'    => 0.04,
+                // ]);
+
+                
                 Configuracion::create([
 
-                        'nombre'    => 'EPS1607',
-                        'codigo'    => 12,
-                        'valor'    => 0.04,
-                ]);
-                Configuracion::create([
-
-                        'nombre'    => 'CAJA1607',
-                        'codigo'    => 13,
-                        'valor'    => 0.04,
-                ]);
-
-                Configuracion::create([
-
-                        'nombre'    => 'CAJA1607',
-                        'codigo'    => 14,
-                        'valor'    => 0.04,
-                ]);
-                Configuracion::create([
-
-                        'nombre'    => 'salario',
-                        'codigo'    => 15,
-                        'valor'    => 0.19,
-                ]);
-                Configuracion::create([
-
-                        'nombre'    => 'IVA',
-                        'codigo'    => 16,
+                        'nombre'    => 'Salario',
+                        'codigo'    => 'SMMLV',
                         'valor'    => 828500,
                 ]);
                 Configuracion::create([
 
-                        'nombre'    => 'Administracion',
-                        'codigo'    => 17,
-                        'valor'    => 31000,
+                        'nombre'    => 'IVA',
+                        'codigo'    => 'IVA',
+                        'valor'    => 19,
                 ]);
                 Configuracion::create([
 
-                        'nombre'    => 'AdminIndepen',
-                        'codigo'    => 18,
-                        'valor'    => 17000,
+                        'nombre'    => 'Administracion',
+                        'codigo'    => 'ADMIN',
+                        'valor'    => 31000,
                 ]);
+                // Configuracion::create([
+
+                //         'nombre'    => 'AdminIndepen',
+                //         'codigo'    => 18,
+                //         'valor'    => 17000,
+                // ]);
                 Configuracion::create([
 
                         'nombre'    => 'Inscripcion',
-                        'codigo'    => 19,
-                        'valor'    => 17000,
+                        'codigo'    => 'INSCRI',
+                        'valor'    => 105000,
+                ]);
+                // Configuracion::create([
+
+                //         'nombre'    => 'Activacion',
+                //         'codigo'    => 20,
+                //         'valor'    => 78000,
+                // ]);
+                Configuracion::create([
+
+                        'nombre'    => 'UPC',
+                        'codigo'    => 'UPC',
+                        'valor'    => 20000,
+                ]);
+                
+                Configuracion::create([
+
+                        'nombre'    => 'EMI',
+                        'codigo'    => 'EMI',
+                        'valor'    => 40750,
                 ]);
                 Configuracion::create([
 
-                        'nombre'    => 'Activacion',
-                        'codigo'    => 20,
-                        'valor'    => 78000,
+                        'nombre'    => 'Sercofun',
+                        'codigo'    => 'SERCOFUN',
+                        'valor'    => 19150,
                 ]);
-
                 // 'DiasHabiles'   => 0.1,//no sabemos que es
                 //'IndepVencimiento'=> 0.1,//no sabemos que es
                 //'Intereses' => 0.1,//no sabemos que es
