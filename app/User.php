@@ -35,4 +35,8 @@ class User extends Authenticatable
 
         return $query->where('name', 'LIKE', "%$name%");
     }
+    public function scopeCorreos($query) //Busqueda de toda una tabla
+    {
+        return $query->select('email');
+    }
 }

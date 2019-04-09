@@ -23,7 +23,7 @@ class PagoController extends Controller
         $mes = date('m');
         $user = auth()->user()->email;
         $logueocli = DB::select('SELECT * FROM cliente WHERE email = ?', [$user]);
-        $logueoemp = DB::select('SELECT * FROM empresa WHERE email_contacto = ?', [$user]);
+        $logueoemp = DB::select('SELECT * FROM empresa WHERE email = ?', [$user]);
         $usuario = null; $pago = null;
 
         if (count($logueocli) > 0) {

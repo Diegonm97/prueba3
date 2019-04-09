@@ -9,7 +9,7 @@ $factory->define(App\Empresa::class, function (Faker $faker) {
 		'nombre'=> $faker->text(10), 
 		'nombre_contacto'=> $faker->text(10),
 		'telefono_contacto'=> rand(100000,150000),
-		'email_contacto'=> $faker->text(10), 
+		'email'=> $faker->text(10), 
 		'id_ciudad'=> rand(1,6), 
 		'direccion'=> $faker->text(10), 
 		'estado'=> rand(1,2), 

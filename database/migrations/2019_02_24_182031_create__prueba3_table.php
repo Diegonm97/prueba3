@@ -66,7 +66,7 @@ class CreatePrueba3Table extends Migration
             $table->string('nombre');
             $table->string('nombre_contacto');
             $table->string('telefono_contacto');
-            $table->string('email_contacto');
+            $table->string('email')->unique();
             $table->integer('id_ciudad')->unsigned();
             $table->string('direccion');
             $table->integer('estado');
@@ -75,7 +75,7 @@ class CreatePrueba3Table extends Migration
             $table->integer('administracion');
             $table->integer('id_usuario')->unsigned();
             $table->date('fecha_ingreso');
-            $table->string('observacion');
+            $table->string('observacion')->nullable();
             $table->integer('total_pago')->nullable();
 
             $table->timestamps();

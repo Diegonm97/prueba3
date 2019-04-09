@@ -40,7 +40,7 @@
 
                         <tr>
                             <td><strong>Email contacto: </strong></td>
-                            <td> {{$empresa->email_contacto}} </td>
+                            <td> {{$empresa->email}} </td>
                             <td><strong>Ciudad: </strong></td>
                             <td> {{$ciudad->nombre}} </td>
                         </tr>
