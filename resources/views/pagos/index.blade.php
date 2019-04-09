@@ -71,9 +71,7 @@ use App\Empresa;
 
     @role('administrador')
 
-    <div>
-        <h4 style="padding: 2rem">Total ventas mes {{$mes}} :  ${{number_format($total,0,',','.')}}</h4>
-    </div>
+    <!--  -->
     <div class="col-md-12" style="background-color: #fff; padding: 4rem; width: 45%; margin: 2rem"   >
         <h3>Clientes activos (mes {{$mes}})</h3>
         <br>
@@ -87,8 +85,7 @@ use App\Empresa;
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($activo as $key => $id) { 
-                        if ($key == "cliente") {
+                    <?php foreach ($cli_activo as $id) {
                             $cliente = Clientes::find($id); ?>
                             <tr>
                                 <td>{{$cliente->nombres}} {{$cliente->apellidos}}</td>
@@ -97,7 +94,8 @@ use App\Empresa;
                                 </td>
                             </tr>
                                 
-                        <?php } elseif ($key == "empresa") {
+                        <?php } 
+                        foreach ($emp_activo as $id) {
                             $empresa = Empresa::find($id); ?>
                             <tr>
                                 <td>{{$empresa->nombre}}</td>
@@ -106,8 +104,7 @@ use App\Empresa;
                                 </td>
                             </tr>
                             
-                        <?php  }
-                        } ?>
+                        <?php  } ?>
                 </tbody>
                     
             </table>
@@ -126,8 +123,7 @@ use App\Empresa;
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($inactivo as $key => $id) { 
-                        if ($key == "cliente") {
+                    <?php foreach ($cli_inactivo as $id) { 
                             $cliente = Clientes::find($id); ?>
                             <tr>
                                 <td>{{$cliente->nombres}} {{$cliente->apellidos}}</td>
@@ -136,17 +132,17 @@ use App\Empresa;
                                 </td>
                             </tr>
                                 
-                        <?php } elseif ($key == "empresa") {
+                        <?php }
+                            foreach ($emp_inactivo as $id) {
                             $empresa = Empresa::find($id); ?>
                             <tr>
                                 <td>{{$empresa->nombre}}</td>
                                 <td>
-                                    <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('empresa.update', $cliente->id)}}">ver</a>
+                                    <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('empresa.update', $empresa->id)}}">ver</a>
                                 </td>
                             </tr>
                             
-                        <?php  }
-                        } ?>
+                        <?php  } ?>
                 </tbody>
             </table>
         </div>

@@ -71,8 +71,8 @@ class CreatePrueba3Table extends Migration
             $table->string('direccion');
             $table->integer('estado');
             $table->integer('beneficio');
-            $table->integer('inscripcion');
-            $table->integer('administracion');
+            $table->integer('inscripcion')->nullable();
+            $table->integer('administracion')->nullable();
             $table->integer('id_usuario')->unsigned();
             $table->date('fecha_ingreso');
             $table->string('observacion')->nullable();
@@ -104,7 +104,7 @@ class CreatePrueba3Table extends Migration
             $table->integer('id_eps')->unsigned();
             $table->integer('id_arl')->unsigned()->nullable();
             $table->integer('id_afp')->unsigned()->nullable();
-            $table->integer('id_cjc')->unsigned();
+            $table->integer('id_cjc')->unsigned()->nullable();
             $table->integer('beneficio');
             $table->integer('rango');
             $table->integer('upc');
@@ -141,12 +141,12 @@ class CreatePrueba3Table extends Migration
             $table->date('fecha_ingreso');
             $table->date('fecha_nacimiento');
             $table->integer('salario');
-            $table->integer('rango');
-            $table->integer('upc');
+            $table->integer('rango')->nullable();
+            $table->integer('upc')->nullable();
             $table->integer('id_ciudad')->unsigned();
             $table->integer('id_eps')->unsigned();
             $table->integer('id_arl')->unsigned()->nullable()->default(null);
-            $table->integer('id_afp')->unsigned();
+            $table->integer('id_afp')->unsigned()->nullable();
             $table->integer('id_cjc')->unsigned()->nullable()->default(null);
             $table->integer('estado');
             $table->integer('sercofun');
@@ -193,10 +193,11 @@ class CreatePrueba3Table extends Migration
         //================================ Empleado ============================================
         Schema::create('empleado', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombres');
-            $table->string('apellidos');
+            $table->string('nombre_completo');
+            $table->integer('estado');
             $table->integer('id_sede')->unsigned();
             $table->integer('id_usuario')->unsigned();
+            $table->string('email');
             $table->timestamps();
 
 
@@ -232,8 +233,12 @@ class CreatePrueba3Table extends Migration
             $table->integer('dia');
             $table->integer('mes');
             $table->integer('tipo');
+            $table->integer('id_sede')->unsigned();
+            $table->integer('total');
             $table->timestamps();
-        });
+
+            $table->foreign('id_sede')->references('id')->on('sede');
+        });    
 
     }
 
@@ -254,5 +259,6 @@ class CreatePrueba3Table extends Migration
         Schema::dropIfExists('sede');
         Schema::dropIfExists('sede_usuario');
         Schema::dropIfExists('ciudad');
+        Schema::dropIfExists('pago');
     }
 }

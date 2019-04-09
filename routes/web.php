@@ -25,6 +25,7 @@ Route::resource('entidad','entidadController');
 Route::resource('ciudad','ciudadController');
 Route::resource('empleado_empresa','Empleado_empresaController');
 Route::resource('sede','SedeController');
+Route::resource('empleado','EmpleadoController');
 
 Route::get('/productos', function () {
     return view('productos');
@@ -171,5 +172,18 @@ Route::middleware(['auth'])->group(function() {
 	//pagos
 	Route::get('pago', 'pagoController@index')->name('pago.index')
 		->middleware('permission:Pago.index'); 
-	
+
+	// Empleado
+
+
+	Route::post('empleado/store', 'empleadoController@store')->name('empleado.store')
+		->middleware('permission:Empleado.create');
+	Route::get('empleado/create', 'empleadoController@create')->name('empleado.create')
+		->middleware('permission:Empleado.create');
+	Route::get('empleado', 'empleadoController@index')->name('empleado.index')
+		->middleware('permission:Empleado.index');
+	Route::put('empleado/{id}', 'empleadoController@update')->name('empleado.update')
+		->middleware('permission:Empleado.edit');
+	Route::get('empleado/{id}/edit', 'empleadoController@edit')->name('empleado.edit')
+		->middleware('permission:Empleado.edit');	
 });

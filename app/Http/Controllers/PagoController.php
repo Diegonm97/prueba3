@@ -37,29 +37,22 @@ class PagoController extends Controller
         }
 
         $pagoscli = DB::select('SELECT * FROM pago WHERE mes = ?', [$mes]);
-        $activo = array();
+        $emp_activo = array();
+        $cli_activo = array();
         $clie = array();
         $empr = array();
         $totalmes = array();
 
         foreach ($pagoscli as $cliente) {
             if ($cliente->tipo == 1) {
-                $activo['cliente'] = $cliente->id_usuario;
+                $cli_activo[] = $cliente->id_usuario;
                 $clie[] = $cliente->id_usuario;
-                foreach ($clie as $clien) {
-                    $pagocli = DB::select('SELECT * FROM cliente WHERE id = ?', [$clien]);
-                    $totalmes[] = $pagocli[0]->pago;
-                }
             } else {
-                $activo['empresa'] = $cliente->id_usuario;
+                $emp_activo[] = $cliente->id_usuario;
                 $empr[] = $cliente->id_usuario;
-                foreach ($empr as $empre) {
-
-                    $pagoemp = DB::select('SELECT * FROM empresa WHERE id = ?', [$empre]);
-                    $totalmes[] = $pagoemp[0]->total_pago;
-                }
             }
         }
+
 
         $total = array_sum($totalmes);
 
@@ -76,19 +69,12 @@ class PagoController extends Controller
             $empresas[]= $empresa->id;
         }
 
-        $cli_dif = array_diff($clientes, $clie);
-        $emp_dif = array_diff($empresas, $empr);
-        $inactivo = array();
 
-        foreach ($cli_dif as $dif) {
-            $inactivo['cliente'] = $dif; 
-        }
+        $cli_inactivo = array_diff($clientes, $clie);
+        $emp_inactivo = array_diff($empresas, $empr);
 
-        foreach ($emp_dif as $dif) {
-            $inactivo['empresa'] = $dif; 
-        }
 
-        return view('pagos.index', compact('activo', 'mes', 'inactivo', 'usuario', 'pago', 'total'));
+        return view('pagos.index', compact('activo', 'mes', 'cli_inactivo', 'emp_inactivo', 'usuario', 'emp_activo', 'cli_activo' ,'pago'));
     }
 
     /**
