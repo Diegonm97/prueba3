@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Clientes;
+use App\Empresa;
+use App\Role_user;
+use App\Empleado;
+
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
@@ -27,53 +32,37 @@ class HomeController extends Controller
     {
         $mes = date('m');
         $dia = date('d');
-        $pagoscli = DB::select('SELECT * FROM pago WHERE mes = ?', [$mes]);
-        $pagosdia = DB::select('SELECT * FROM pago WHERE mes = ? and dia = ?', [$mes, $dia]);
-        $clie = array();
-        $empr = array();
-        $diac = array();
-        $diae = array();
-        $totalmes = array();
-        $totaldia = array();
 
-        foreach ($pagoscli as $cliente) {
-            if ($cliente->tipo == 1) {
-                $clie[] = $cliente->id_usuario;
-                foreach ($clie as $clien) {
-                    $pagocli = DB::select('SELECT * FROM cliente WHERE id = ?', [$clien]);
-                    $totalmes[] = $pagocli[0]->pago;
-                }
-            } else {
-                $emp[] = $cliente->id_usuario;
-                foreach ($emp as $empre) {
+        $user = auth()->id();
+        $role = Role_user::Search()->where('user_id', '=', $user)->first();
 
-                    $pagoemp = DB::select('SELECT * FROM empresa WHERE id = ?', [$empre]);
-                    $totalmes[] = $pagoemp[0]->total_pago;
-                }
-            }
+        if ($role->role_id == 1){
+            $sedes =  DB::select('SELECT p.id_sede as sede, SUM(p.total) as total_sede FROM `pago` as p, `sede` as s where p.id_sede = s.id and mes = ? GROUP BY p.id_sede', [$mes]);
+
+            $total = DB::select('SELECT SUM(total) as total FROM pago WHERE mes = ?', [$mes]);
+            $totalmes = $total[0]->total;
+            //dd($totalmes);
+            $pagosdia = DB::select('SELECT SUM(total) as total FROM pago WHERE mes = ? and dia = ?', [$mes, $dia]);
+            $totaldia = $pagosdia[0]->total;
+        }elseif ($role->role_id == 2) {
+            $empleado = Empleado::Search()->where('id_usuario', '=', $user)->first();
+            //dd($user);
+
+            $total = DB::select('SELECT SUM(total) as total FROM pago WHERE mes = ? and id_sede = ?', [$mes, $empleado->id_sede]);
+            $totalmes = $total[0]->total;
+            //dd($totalmes);
+            $pagosdia = DB::select('SELECT SUM(total) as total FROM pago WHERE mes = ? and dia = ? and id_sede = ?', [$mes, $dia, $empleado->id_sede]);
+            $totaldia = $pagosdia[0]->total;
+
+            $sedes =  DB::select('SELECT id_sede, SUM(total) as total_sede FROM pago WHERE mes = ? and id_sede = ? GROUP BY id_sede', [$mes, $empleado->id_sede]);
+            
+        }else{
+            $totalmes = null;
+            $totaldia = null;
+            $sedes = null;
         }
+        
 
-        $total = array_sum($totalmes);
-
-        foreach ($pagosdia as $pago) {
-            if ($pago->tipo == 1) {
-                $diac[] = $pago->id_usuario;
-                foreach ($diac as $dc) {
-                    $pagodc = DB::select('SELECT * FROM cliente WHERE id = ?', [$dc]);
-                    $totaldia[] = $pagodc[0]->pago;
-                }
-            } else {
-                $diae[] = $pago->id_usuario;
-                foreach ($diae as $de) {
-
-                    $pagode = DB::select('SELECT * FROM empresa WHERE id = ?', [$de]);
-                    $totaldia[] = $pagode[0]->total_pago;
-                }
-            }
-        }
-
-        $totald = array_sum($totaldia);
-
-        return view('home', compact('total', 'mes', 'totald', 'dia'));
+        return view('home', compact('totalmes', 'mes', 'totaldia', 'dia', 'sedes'));
     }
 }

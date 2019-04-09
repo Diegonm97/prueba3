@@ -9,6 +9,7 @@ use App\Ciudad;
 use App\Configuracion;
 use App\Empleado_empresa;
 use App\Pago;
+use App\Empleado;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresasRequest;
 use Illuminate\Support\Facades\DB;
@@ -109,15 +110,21 @@ class EmpresaController extends Controller
         
         $cliente = Empresa::find($id);
         $mes = date('m');
+        $dia = date('d');
+        $empleadoId = auth()->id();
 
-        $pagoc = DB::table('pago')->where('id_usuario','=', $cliente->id)->where('mes', '=', $mes)->count();
+        $pagoc = DB::select('SELECT * FROM pago WHERE id_usuario = ? and mes = ? and tipo = 2', [$cliente->id, $mes]);
+        $sede = Empleado::Search()->where('id_usuario','=', $empleadoId )->first();
 
-        if($pagoc == 0){
+        if(count($pagoc) == 0){
             $pago = new Pago;
             $pago->id_usuario = $cliente->id;
             $pago->estado = 1;
             $pago->mes = $mes;
+            $pago->dia = $dia;
             $pago->tipo = 2;
+            $pago->id_sede = $sede->id_sede;
+            $pago->total = $cliente->total_pago;
             $pago->save();
         }
 

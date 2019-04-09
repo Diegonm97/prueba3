@@ -92,6 +92,13 @@
                     </li>
 
                     <li>
+                        <a href="{{route('empleado.index')}}">
+                            <i class="pe-7s-users"></i>
+                            <p>Empleado</p>
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="{{route('sede.index')}}">
                             <i class="pe-7s-map-marker"></i>
                             <p>Sedes</p>
@@ -117,6 +124,38 @@
                             <p>Configuracion</p>
                         </a>
                     </li>
+                    @endrole
+
+                    @role('empleado')
+
+                    <li>
+                        <a href="{{route('clientes.index')}}">
+                            <i class="pe-7s-user"></i>
+                            <p>Clientes</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('empresa.index')}}">
+                            <i class="pe-7s-portfolio"></i>
+                            <p>Empresas</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('empleado_empresa.index')}}">
+                            <i class="pe-7s-users"></i>
+                            <p>Empleado empresa</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('entidad.index')}}">
+                            <i class="pe-7s-culture"></i>
+                            <p>Entidades</p>
+                        </a>
+                    </li>
+                    
                     @endrole
 
 
