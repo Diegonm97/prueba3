@@ -10,6 +10,8 @@ use App\Configuracion;
 use App\Empleado_empresa;
 use App\Pago;
 use App\Empleado;
+use App\user;
+use App\Role_user;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresasRequest;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +26,7 @@ class EmpresaController extends Controller
     public function index(Request $request)
     {
 
-        $empresas = Empresa::search1($request->idEmpresaContraEmp)->orderByDesc('id')->paginate('8');   //Realiza la busqueda por idEmpresaContraEmp
+        $empresas = Empresa::search1($request->nit)->orderByDesc('id')->paginate('8');   //Realiza la busqueda por nit
 
 
 
@@ -62,8 +64,8 @@ class EmpresaController extends Controller
         $administracion = Configuracion::Search()->where('codigo', '=', "ADMIN")->first();
         $inscripcion = Configuracion::Search()->where('codigo', '=', "INSCRI")->first();
 
-        $user->name = $request->nombres;
-        $user->email = $request->email;
+        $user->name = $request->nombre;
+        $user->email = $request->email_contacto;
         $user->password = bcrypt($request->identificacion);
         $user->save();
 
@@ -81,10 +83,10 @@ class EmpresaController extends Controller
         $empresas->direccion = $request->direccion;
         $empresas->estado = $request->estado;
         $empresas->beneficio = $request->beneficio;
-        if(isset($request->inscripcion)){
+        if (isset($request->inscripcion)) {
             $empresas->inscripcion = $request->inscripcion;
-        }else{
-            $empresas->inscripcion = $inscripcion->valor ;
+        } else {
+            $empresas->inscripcion = $inscripcion->valor;
         }
 
         if (isset($request->administracion)) {
@@ -99,16 +101,18 @@ class EmpresaController extends Controller
 
         $empresas->save();                          //Almacena los datos del objeto empresas
 
-        $empresa = $empresa->id;
+        $empresa = $empresas->id;
 
         return redirect()->route('empresa.show', compact('empresa'))
             ->with('info', 'La empresa fue creado');
     }
 
 
-    public function pagocaja($id){
-        
+    public function pagocaja($id)
+    {
+
         $cliente = Empresa::find($id);
+       
         $mes = date('m');
         $dia = date('d');
         $empleadoId = auth()->id();
@@ -197,10 +201,10 @@ class EmpresaController extends Controller
         $empresas->direccion = $request->direccion;
         $empresas->estado = $request->estado;
         $empresas->beneficio = $request->beneficio;
-        if(isset($request->inscripcion)){
+        if (isset($request->inscripcion)) {
             $empresas->inscripcion = $request->inscripcion;
-        }else{
-            $empresas->inscripcion = $inscripcion->valor ;
+        } else {
+            $empresas->inscripcion = $inscripcion->valor;
         }
 
         if (isset($request->administracion)) {
@@ -220,7 +224,7 @@ class EmpresaController extends Controller
         return redirect()->route('empresa.show', compact('empresa'))
             ->with('info', 'El empresa fue actualizado');
     }
-    
+
     public function destroy(Empresa $empresa)
     {
         //

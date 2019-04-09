@@ -19,7 +19,7 @@
 
 <div class="col-md-12">
                         
-    <div class="table-responsive table-full-width">
+    <div class="table-responsive table-full-width" style="font-size: 18px">
     <table class="table table-hover table-striped">
         <div class="container">
             <div class="row">
@@ -27,9 +27,7 @@
             <tr>
             <td><strong>Nombre: </strong></td>
             <td>{{$sede->nombre}}</td>
-            </tr>
-        
-            <tr>
+
             <td><strong>Ciudad: </strong></td>
             <td>  {{$sede->id_ciudad}}  </td>
             </tr>
@@ -37,8 +35,7 @@
             <tr>
             <td><strong>Telefono: </strong></td>
             <td>  {{$sede->telefono}}  </td>
-            </tr>
-            <tr>
+
             <td><strong>Direccion: </strong></td>
             <td>  {{$sede->direccion}}  </td>
             </tr>

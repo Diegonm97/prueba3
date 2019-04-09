@@ -8,9 +8,9 @@ class Pago extends Model
 {
     protected $table = 'pago';
 
-    protected $fillable = ['id_usuario', 'estado', 'mes', 'tipo', 'id_sede', 'total'];
+    protected $fillable = ['id_usuario', 'estado', 'mes', 'dia', 'tipo', 'id_sede', 'total'];
 
-    public function scopeSearch1($query, $nuipPago)
+    public function scopeSearch1($query, $id_usuario)
     {
         return $query->where('id_usuario', 'LIKE', "%$id_usuario%");
     }

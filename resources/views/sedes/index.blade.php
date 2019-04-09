@@ -28,7 +28,7 @@
         <div class="card">
             <div class="header">
                 <h4 class="title">
-                <!-- Se llenan los datos con cada ciudad encontrada -->
+                    <!-- Se llenan los datos con cada ciudad encontrada -->
                     @foreach($ciudades as $ciudad)
                     @if($ciudad->id == $sede->id_ciudad)
 
@@ -68,14 +68,17 @@
                                     <td><strong>Direccion: </strong></td>
                                     <td> {{$sede->direccion}} </td>
                                 </tr>
-                                <th>
-                                    @can('ciudades.edit')
+                                <tr>
+                                <td></td>
+                                <td>
+                                   
                                     <a href="{{route('sede.edit', $sede->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    @endcan
+                                    <a href="{{route('sede.show', $sede->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{{route('sede.destroy', $sede->id)}}"><i class="fas fa-trash-alt"></i></a>
+                                </td>
 
 
-
-                                </th>
+                                </tr>
 
                                 </tr>
 
@@ -102,4 +105,4 @@
 
 
 
-@endsection 
+@endsection
