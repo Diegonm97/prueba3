@@ -17,7 +17,7 @@
 
 <div class="col-md-12">
 
-    <div class="table-responsive table-full-width">
+    <div class="table-responsive table-full-width" style="font-size: 18px">
         <table class="table table-hover table-striped">
             <div class="container">
                 <div class="row">
@@ -25,9 +25,7 @@
                         <tr>
                             <td><strong>Identificacion: </strong></td>
                             <td>{{$cliente->identificacion}}</td>
-                        </tr>
 
-                        <tr>
                             <td><strong>Tipo Id: </strong></td>
                             <td>
                                 @if($cliente->tipo_id == 1)
@@ -42,13 +40,10 @@
                                 @endif
                             </td>
                         </tr>
-
-                        <tr>
+                         <tr>
                             <td><strong>Nombre(s): </strong></td>
                             <td> {{$cliente->nombres}} </td>
-                        </tr>
 
-                        <tr>
                             <td><strong>Apellido(s): </strong></td>
                             <td> {{$cliente->apellidos}} </td>
                         </tr>
@@ -64,9 +59,7 @@
                                 Retirado
                                 @endif
                             </td>
-                        </tr>
 
-                        <tr>
                             <td><strong>Telefono: </strong></td>
                             <td> {{$cliente->telefono}} </td>
                         </tr>
@@ -74,9 +67,7 @@
                         <tr>
                             <td><strong>Direccion: </strong></td>
                             <td> {{$cliente->direccion}} </td>
-                        </tr>
 
-                        <tr>
                             <td><strong>Email: </strong></td>
                             <td> {{$cliente->email}} </td>
                         </tr>
@@ -92,9 +83,7 @@
                                 @endif
 
                             </td>
-                        </tr>
 
-                        <tr>
                             <td><strong>Fecha Ingreso: </strong></td>
                             <td> {{$cliente->fecha_ingreso}} </td>
                         </tr>
@@ -102,9 +91,7 @@
                         <tr>
                             <td><strong>Fecha Nacimiento: </strong></td>
                             <td> {{$cliente->fecha_nacimiento}} </td>
-                        </tr>
 
-                        <tr>
                             <td><strong>Salario: </strong></td>
                             <td> {{$cliente->salario}} </td>
                         </tr>
@@ -112,9 +99,7 @@
                         <tr>
                             <td><strong>Ciudad: </strong></td>
                             <td> {{$ciudad->nombre}} </td>
-                        </tr>
 
-                        <tr>
                             <td><strong>EPS: </strong></td>
                             <td> {{$eps->nombre}} </td>
                         </tr>
@@ -126,11 +111,10 @@
                             <?php } else { ?>
                                 <td> NO </td>
                             <?php } ?>
-                        </tr>
 
-                        <tr>
                             <td><strong>AFP: </strong></td>
                             <td> {{$afp->nombre}} </td>
+
                         </tr>
 
                         <tr>
@@ -140,9 +124,7 @@
                             <?php } else { ?>
                                 <td> NO </td>
                             <?php } ?>
-                        </tr>
 
-                        <tr>
                             <td><strong>Beneficio: </strong></td>
                             <td>
                                 @if($cliente->beneficio == 1)
@@ -159,9 +141,7 @@
                         <tr>
                             <td><strong>Rango: </strong></td>
                             <td> {{$cliente->rango}} </td>
-                        </tr>
 
-                        <tr>
                             <td><strong>UPC Adic.: </strong></td>
                             <td> {{$cliente->upc}} </td>
                         </tr>
@@ -169,9 +149,7 @@
                         <tr>
                             <td><strong>Inscripcion: </strong></td>
                             <td> {{$cliente->inscripcion}} </td>
-                        </tr>
 
-                        <tr>
                             <td><strong>Administracion: </strong></td>
                             <td> {{$cliente->administracion}} </td>
                         </tr>
@@ -179,22 +157,22 @@
                         <tr>
                             <td><strong>Observacion: </strong></td>
                             <td> {{$cliente->observacion}} </td>
-                        </tr>
 
-                        <?php if(isset($cliente->pago)){ ?>
-                        <tr>
+                            <?php if(isset($cliente->pago)){ ?>
+                        
                             <td><strong>Total a pagar:</strong></td>
                             <td>{{$cliente->pago}}</td>
-                        </tr>
+                        
                         <?php } ?>
-                    </tbody>
-
+                        </tr>
+                    </tbody> 
                 </div>
             </div>
         </table>
 
         <a class="btn btn-primary" style="float: right; width: 100%" href="{{route('clientes.facturacion', $cliente->id)}}">Facturar</a>
     </div>
+    </div>  
 </div>
 
 

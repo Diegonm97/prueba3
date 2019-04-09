@@ -5,7 +5,7 @@
 </div>
 <div class="col-sm-8">
 
-    <h1 align="center">Informacion Empresas</h1>
+    <h1 align="center">Información Empresas</h1>
 </div>
 
 <div class="col-sm-3">
@@ -19,7 +19,7 @@
 
 <div class="col-md-12">
 
-    <div class="table-responsive table-full-width">
+    <div class="table-responsive table-full-width" style="font-size: 18px">
         <table class="table table-hover table-striped">
             <div class="container">
                 <div class="row">
@@ -71,19 +71,19 @@
                                 Si
                                 @endif
                             </td>
-                            <td><strong>Inscripcion: </strong></td>
+                            <td><strong>Inscripción: </strong></td>
                             <td> {{$empresa->inscripcion}} </td>
                         </tr>
 
                         <tr>
-                            <td><strong>Administracion: </strong></td>
+                            <td><strong>Administración: </strong></td>
                             <td> {{$empresa->administracion}} </td>
                             <td><strong>Fecha de ingreso: </strong></td>
                             <td> {{$empresa->fecha_ingreso}}</td>
                         </tr>
 
                         <tr>
-                            <td><strong>Observacion: </strong></td>
+                            <td><strong>Observación: </strong></td>
                             <td colspan="3"> {{$empresa->observacion}} </td>
                         </tr>
 
@@ -101,7 +101,7 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>Identificacion</th>
+                    <th>Identificación</th>
                     <th>Nombres</th>
                     <th>Salario</th>
                     <th>Pago</th>
@@ -110,7 +110,7 @@
             <tbody>
                 @foreach ($empleados as $empleado)
                     <tr>
-                        <td>{{$empleado->identificacion}}</td>
+                        <td>{{$empleado->identificación}}</td>
                         <td>{{$empleado->nombres}} {{$empleado->apellidos}}</td>
                         <td>{{$empleado->salario}}</td>
                         <td>{{$empleado->pago}}</td>

@@ -107,19 +107,11 @@ return [
         'string'  => 'El campo :attribute debe contener :size caracteres.',
         'array'   => 'El campo :attribute debe contener :size elementos.',
     ],
-<<<<<<< HEAD
-    'string'               => 'The :attribute must be a string.',
-    'timezone'             => 'The :attribute must be a valid zone.',
-    'unique'               => 'El :attribute ya esta en uso.',
-    'uploaded'             => 'The :attribute failed to upload.',
-    'url'                  => 'The :attribute format is invalid.',
-=======
     'string'               => 'El campo :attribute debe contener sólo caracteres.',
     'timezone'             => 'El campo :attribute debe contener una zona válida.',
     'unique'               => 'El :attribute ya está en uso.',
     'uploaded'             => 'El :attribute falló al subir.',
     'url'                  => 'El formato de :attribute no corresponde con el de una URL válida.',
->>>>>>> 6d1afa4a1e37a0659314520d6ba3279a0e70675b
 
     /*
     |--------------------------------------------------------------------------

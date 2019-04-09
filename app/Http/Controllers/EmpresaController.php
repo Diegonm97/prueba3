@@ -25,7 +25,7 @@ class EmpresaController extends Controller
     public function index(Request $request)
     {
 
-        $empresas = Empresa::search1($request->idEmpresaContraEmp)->orderByDesc('id')->paginate('8');   //Realiza la busqueda por idEmpresaContraEmp
+        $empresas = Empresa::search1($request->nit)->orderByDesc('id')->paginate('8');   //Realiza la busqueda por nit
 
 
 

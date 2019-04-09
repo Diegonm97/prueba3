@@ -19,7 +19,7 @@
 
 <div class="col-md-12">
 
-    <div class="table-responsive table-full-width">
+    <div class="table-responsive table-full-width" style="font-size: 18px">
         <table class="table table-hover table-striped">
             <div class="container">
                 <div class="row">
@@ -27,9 +27,7 @@
                         <tr>
                             <td><strong>Nombre: </strong></td>
                             <td>{{$entidades->nombre}}</td>
-                        </tr>
 
-                        <tr>
                             <td><strong>Tipo: </strong></td>
                             <td> @if($entidades->tipo == 1)
                                 EPS

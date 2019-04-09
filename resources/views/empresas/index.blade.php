@@ -4,7 +4,7 @@
 
 <div class="col-m-9">
 
-    <h1 align="center">Informacion Empresas</h1>
+    <h1 align="center">Información Empresas</h1>
 </div>
 <div class="col-m-3">
 
@@ -21,10 +21,10 @@
                 <a href="{{route('empresa.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
             @endcan
 
-            <p class="category">Aqui se muestran datos de los empresas registradas</p>
+            <p class="category">Aquí se muestran datos de las empresas registradas</p>
             {!!Form::open(['route'=>'empresa.index', 'method'=>'GET','class'=>'navbar-form'])!!}
             <div class="form group">
-                {!!Form::text('idEmpresaContraEmp',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+                {!!Form::text('nit',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
 
 
             </div>
