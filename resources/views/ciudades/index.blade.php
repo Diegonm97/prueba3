@@ -48,9 +48,9 @@
 
                                 <th>
                                     <!-- Ruta al show de  ciudad -->
-                                    @can('ciudades.show')
+                                    <!-- @can('ciudades.show')
                                     <a href="{{route('ciudad.show', $ciudad->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    @endcan
+                                    @endcan -->
                                     <!-- Ruta al edit de ciudad -->
                                     @can('ciudades.edit')
                                     <a href="{{route('ciudad.edit', $ciudad->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

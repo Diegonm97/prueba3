@@ -84,8 +84,10 @@
 
                                     <!-- Ruta al edit de clientes -->
                                     @can('Clientes.edit')
-                                    <a href="{{route('clientes.edit', $cliente->id)}}"><i class="fas fa-pen"></i></a>
+                                    <a href="{{route('clientes.edit', $cliente->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
+
+                                    <a target="_blank" href="{{route('imprimir', $cliente->id)}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
                                 </th>
 
                             </tr>

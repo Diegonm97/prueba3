@@ -77,8 +77,9 @@
             </div>
         </table>
 
-        <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('clientes.index')}}">Finalizar</a>
-        <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('clientes.pagocaja', $cliente->id)}}">Pagar</a>
+        <a class="btn btn-primary" type="submit" style="float: right; width: 33%" href="{{route('clientes.index')}}">Finalizar</a>
+        <a class="btn btn-primary" type="submit" style="float: right; width: 33%" href="{{route('clientes.pagocaja', $cliente->id)}}">Pagar</a>
+        <a class="btn btn-primary" type="submit" style="float: right; width: 33%" target="_blank" href="{{route('imprimir', $cliente->id)}}">pdf</a>
     </div>
 </div>
 
