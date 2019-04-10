@@ -20,7 +20,7 @@ use App\Sede;
 <div class="col-md-12">
     <div class="card">
         <div class="header">
-            <h4 class="title">Empleado
+            <h4 class="title">Empleados
                 @can('empleado.create')
                 <a href="{{route('empleado.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
             @endcan

@@ -60,12 +60,12 @@
 
 
                                 <tr>
-                                    <td><strong>Telefono: </strong></td>
+                                    <td><strong>Teléfono: </strong></td>
                                     <td> {{$sede->telefono}} </td>
                                 </tr>
 
                                 <tr>
-                                    <td><strong>Direccion: </strong></td>
+                                    <td><strong>Dirección: </strong></td>
                                     <td> {{$sede->direccion}} </td>
                                 </tr>
                                 <tr>

@@ -162,7 +162,7 @@ input:checked + label {
 
                         <p>Debe tener en cuenta:</p>
 
-                        <p><strong>"Intersalud del Valle SAS."</strong> suministra la asistencia pertinente que su empresa requiere frente a la compensación de los aportes
+                        <p><strong>"Intersalud Colombia SAS."</strong> suministra la asistencia pertinente que su empresa requiere frente a la compensación de los aportes
                             realizados al SGSSS a través de las diferentes EPS, AFP y ARL de la siguiente manera:</p>
                         <ul>
 
@@ -176,7 +176,7 @@ input:checked + label {
                                 personal, o ha través de una entidad financiera donde podrá consignar sus aportes en nuestras cuentas bancarias (los primeros 3 dias hábiles
                                 de cada mes para el pago de incapacidades Decreto 1804 de 1999).</li>
                             <li type="circle">Los reportes de novedades presentadas en la autoliquidación del asociado se efectuarán en las fechas y formas a convenir.
-                                Con nuestra firma (Intersalud del Valle S.A.S.) usted puede pertenecer al régimen contributivo en salud de forma Dependiente, Independiente o como Contratista.
+                                Con nuestra firma (Intersalud Colombia S.A.S.) usted puede pertenecer al régimen contributivo en salud de forma Dependiente, Independiente o como Contratista.
                             </li>
                         </ul>
                     </div>

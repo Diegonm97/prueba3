@@ -48,7 +48,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="{{route('home')}}" class="simple-text">
-                        Intersalud del Valle
+                        Intersalud Colombia
                     </a>
                 </div>
 
@@ -256,7 +256,7 @@
                     <p class="copyright pull-right">
                         &copy; <script>
                             document.write(new Date().getFullYear())
-                        </script> <a href="">Intersalud del Valle</a>
+                        </script> <a href="">Intersalud Colombia</a>
                     </p>
                 </div>
             </footer>

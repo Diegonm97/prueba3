@@ -16,7 +16,7 @@ use App\Sede;
                     </div>
                     @endif
 
-                    <h4 > Bienvenido a <b style="color: #3472F7">Intersalud del Valle</b></h4> </div>
+                    <h4 > Bienvenido a <b style="color: #3472F7">Intersalud Colombia</b></h4> </div>
 
                     
             </div>

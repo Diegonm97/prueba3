@@ -25,7 +25,7 @@
                 <div class="row">
                     <tbody>
                         <tr>
-                            <td><strong>nit: </strong></td>
+                            <td><strong>NIT: </strong></td>
                             <td>{{$empresa->nit}}</td>
                             <td><strong>Nombre: </strong></td>
                             <td> {{$empresa->nombre}} </td>
@@ -46,7 +46,7 @@
                         </tr>
 
                         <tr>
-                            <td><strong>Direccion: </strong></td>
+                            <td><strong>Dirección: </strong></td>
                             <td> {{$empresa->direccion}} </td>
                             <td><strong>Estado </strong></td>
                             <td>
@@ -94,10 +94,10 @@
     </div>
 </div>
 <br>
-<div class="col-md-12" style="background-color: #fff; padding: 4rem"   >
+<div class="col-md-12" style="background-color: #fff; padding: 4rem">
     <h3>Empleados Inscritos</h3>
-        <br>
-    <div  class="table-responsive table-full-width">
+    <br>
+    <div class="table-responsive table-full-width">
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -109,12 +109,12 @@
             </thead>
             <tbody>
                 @foreach ($empleados as $empleado)
-                    <tr>
-                        <td>{{$empleado->identificación}}</td>
-                        <td>{{$empleado->nombres}} {{$empleado->apellidos}}</td>
-                        <td>{{$empleado->salario}}</td>
-                        <td>{{$empleado->pago}}</td>
-                    </tr>
+                <tr>
+                    <td>{{$empleado->identificación}}</td>
+                    <td>{{$empleado->nombres}} {{$empleado->apellidos}}</td>
+                    <td>{{$empleado->salario}}</td>
+                    <td>{{$empleado->pago}}</td>
+                </tr>
                 @endforeach
                 <tr>
                     <td colspan="2"></td>
@@ -128,8 +128,12 @@
                 </tr>
                 <tr>
                     <td colspan="2"></td>
-                    <td><h4 style="font-weight: bold;">Total a pagar</h4></td>
-                    <td><h4>{{$total}}</h4></td>
+                    <td>
+                        <h4 style="font-weight: bold;">Total a pagar</h4>
+                    </td>
+                    <td>
+                        <h4>{{$total}}</h4>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -141,4 +145,4 @@
 
 
 <!--  -->
-@endsection 
+@endsection

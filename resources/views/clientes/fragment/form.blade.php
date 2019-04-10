@@ -7,7 +7,7 @@
     </div>
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('identificacion','Numero de cedula(*).')!!}
+            {!! Form::label('identificacion','Número de cedula(*).')!!}
             {!!Form::number('identificacion',null,['class'=>'form-control','title'=>'Ingresa un numero de identificacion, no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'identificacion','required'=>'required'])!!}
             @if ($errors->has('identificacion'))
                                 <span class="invalid-feedback" role="alert">
@@ -45,7 +45,7 @@
     </div>
     <div class="col-sm-4">
         <div class="form-group row has-success">
-            {!! Form::label('direccion','Direccion(*).')!!}
+            {!! Form::label('direccion','Dirección(*).')!!}
             {!!Form::text('direccion',null,['class'=>'form-control','title'=>'Ingresa la direccion del cliente.', 'placeholder'=>'Ej: Cra 10a #34-14', 'onKeyUp'=>'this.value = this.value.toUpperCase()','id'=>'direccion','required'=>'required' ])!!}
         </div>
     </div>
@@ -71,13 +71,13 @@
     </div>
     <div class="col-sm-4">
         <div class="form-group row has-success">
-            {!! Form::label('telefono','Telefono(*).')!!}
+            {!! Form::label('telefono','Teléfono(*).')!!}
             {!!Form::number('telefono',null,['class'=>'form-control','title'=>'Ingresa el telefono del cliente.' , 'placeholder'=>'Ej: 3209523123','id'=>'telefono','required'=>'required' ])!!}
         </div>
     </div>
     <div class="col-sm-5">
         <div class="form-group row has-success">
-            {!! Form::label('email','Correo Electronico.')!!}
+            {!! Form::label('email','Correo Electrónico(*).')!!}
             {!!Form::text('email',null,['class'=>'form-control','title'=>'Ingresa el correo electronico del cliente.' , 'placeholder'=>'Ej: ejemplo@ejemplo.com ','id'=>'email','required'=>'required' ])!!}
         </div>
     </div>
@@ -123,9 +123,6 @@
         </div>
     </div>
 
-
-
-
     <div class="col-sm-3">
         <div class="form-group row has-success">
             {!! Form::label('id_arl','Nombre ARL(*).')!!}
@@ -146,7 +143,7 @@
 
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('id_afp','Nombre AFP(*).')!!}
+            {!! Form::label('id_afp','Nombre AFP.')!!}
             <select class="form-control" id="id_afp" name="id_afp">
                 @if ($afp != null)
                 <option value="{{$afp->id}}">{{$afp->nombre}}</option>
@@ -165,7 +162,7 @@
 
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('id_cjc','Nombre Caja de Compensacion(*).')!!}
+            {!! Form::label('id_cjc','Nombre Caja de Compensación.')!!}
             <select class="form-control" id="id_cjc" name="id_cjc">
                 @if ($cajacomp != null)
                 <option value="{{$cajacomp->id}}">{{$cajacomp->nombre}}</option>
@@ -194,13 +191,13 @@
     </div>
     <div class="col-sm-4">
         <div class="form-group row has-success">
-            {!! Form::label('administracion','Administracion cliente.')!!}
+            {!! Form::label('administracion','Administración cliente.')!!}
             {!!Form::text('administracion',null,['class'=>'form-control','title'=>'Ingresa el costo por administracion.' , 'placeholder'=>'Ej: 20000','id'=>'administracion' ])!!}
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group row has-success">
-            {!! Form::label('inscripcion','Inscripcion.')!!}
+            {!! Form::label('inscripcion','Inscripción.')!!}
             {!!Form::text('inscripcion',null,['class'=>'form-control','title'=>'Ingresa el costo por inscripcion.' , 'placeholder'=>'Ej: 20000','id'=>'inscripcion' ])!!}
         </div>
     </div>
@@ -216,13 +213,13 @@
     </div>
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('emi','Emi(*).')!!}
+            {!! Form::label('emi','EMI.')!!}
             {!!Form::select('emi', [0=> '-- Seleccione -- ', 1=>'NO', 2=>'SI'],null,['class'=>'form-control','title'=>'Selecciona SI o NO.','title'=>'Servicio EMI? ','id'=>'emi','required'=>'required' ])!!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('sercofun','Sercofun(*).')!!}
+            {!! Form::label('sercofun','Sercofun.')!!}
             {!!Form::select('sercofun', [0=> '-- Seleccione -- ', 1=>'NO', 2=>'SI'],null,['class'=>'form-control','title'=>'Selecciona SI o NO.','title'=>'Servicio sercofun Los Olivos?','id'=>'sercofun','required'=>'required' ])!!}
         </div>
     </div>
@@ -236,7 +233,7 @@
 <div class="col-sm-12">
     <div class="col-sm-12">
         <div class="form-group row has-success">
-            {!! Form::label('observacion','Observacion.')!!}
+            {!! Form::label('observacion','Observación.')!!}
             {!!Form::textarea('observacion',null,['class'=>'form-control', 'title'=>'Ingresa una observacion', 'placeholder'=>'Ej: Llamar el dia 5 de junio'])!!}
         </div>
     </div>

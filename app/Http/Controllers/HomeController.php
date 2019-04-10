@@ -36,7 +36,7 @@ class HomeController extends Controller
         $user = auth()->id();
         $role = Role_user::Search()->where('user_id', '=', $user)->first();
 
-        if ($role->role_id == 1){
+        if ($role->role_id == 1) {
             $sedes =  DB::select('SELECT p.id_sede as sede, SUM(p.total) as total_sede FROM `pago` as p, `sede` as s where p.id_sede = s.id and mes = ? GROUP BY p.id_sede', [$mes]);
 
             $total = DB::select('SELECT SUM(total) as total FROM pago WHERE mes = ?', [$mes]);
@@ -44,7 +44,7 @@ class HomeController extends Controller
             //dd($totalmes);
             $pagosdia = DB::select('SELECT SUM(total) as total FROM pago WHERE mes = ? and dia = ?', [$mes, $dia]);
             $totaldia = $pagosdia[0]->total;
-        }elseif ($role->role_id == 2) {
+        } elseif ($role->role_id == 2) {
             $empleado = Empleado::Search()->where('id_usuario', '=', $user)->first();
             //dd($user);
 
@@ -55,14 +55,13 @@ class HomeController extends Controller
             $totaldia = $pagosdia[0]->total;
 
             $sedes =  DB::select('SELECT id_sede, SUM(total) as total_sede FROM pago WHERE mes = ? and id_sede = ? GROUP BY id_sede', [$mes, $empleado->id_sede]);
-            
-        }else{
+        } else {
             $totalmes = null;
             $totaldia = null;
             $sedes = null;
         }
-        
 
-        return view('home', compact('totalmes', 'mes', 'totaldia', 'dia', 'sedes'));
+
+        return view('home', compact('totalmes','total', 'mes', 'totaldia', 'dia', 'sedes'));
     }
 }

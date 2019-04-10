@@ -39,7 +39,7 @@
                             <th>NIT</th>
                             <th>Nombre de la Empresa</th>
                             <th>Estado</th>
-                            <th>Telefono</th>
+                            <th>Teléfono</th>
                             <th>Nombre Contacto</th>
                             <th>Acción</th>
                         </thead>

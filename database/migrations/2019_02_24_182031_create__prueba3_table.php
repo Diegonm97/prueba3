@@ -107,7 +107,7 @@ class CreatePrueba3Table extends Migration
             $table->integer('id_cjc')->unsigned()->nullable();
             $table->integer('beneficio');
             $table->integer('rango');
-            $table->integer('upc');
+            $table->integer('upc')->default(0);
             $table->integer('inscripcion')->nullable()->default(null);
             $table->integer('administracion')->nullable()->default(null);
             $table->string('observacion')->nullable();
@@ -142,10 +142,10 @@ class CreatePrueba3Table extends Migration
             $table->date('fecha_nacimiento');
             $table->integer('salario');
             $table->integer('rango')->nullable();
-            $table->integer('upc')->nullable();
+            $table->integer('upc')->default(0);
             $table->integer('id_ciudad')->unsigned();
             $table->integer('id_eps')->unsigned();
-            $table->integer('id_arl')->unsigned()->nullable()->default(null);
+            $table->integer('id_arl')->unsigned();
             $table->integer('id_afp')->unsigned()->nullable();
             $table->integer('id_cjc')->unsigned()->nullable()->default(null);
             $table->integer('estado');

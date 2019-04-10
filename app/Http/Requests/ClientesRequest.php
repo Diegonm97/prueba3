@@ -41,7 +41,6 @@ class ClientesRequest extends FormRequest
             'id_afp'=> 'required',
             'beneficio'=> 'required',
             'rango'  => 'required',
-            'upc'  => 'required',
             'emi' => 'required',
             'sercofun' => 'required',
         ];

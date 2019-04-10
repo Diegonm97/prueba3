@@ -23,7 +23,7 @@
                 <div class="row">
                     <tbody>
                         <tr>
-                            <td><strong>Identificacion: </strong></td>
+                            <td><strong>Identificación: </strong></td>
                             <td>{{$cliente->identificacion}}</td>
 
                             <td><strong>Tipo Id: </strong></td>
@@ -60,12 +60,12 @@
                                 @endif
                             </td>
 
-                            <td><strong>Telefono: </strong></td>
+                            <td><strong>Teléfono: </strong></td>
                             <td> {{$cliente->telefono}} </td>
                         </tr>
 
                         <tr>
-                            <td><strong>Direccion: </strong></td>
+                            <td><strong>Dirección: </strong></td>
                             <td> {{$cliente->direccion}} </td>
 
                             <td><strong>Email: </strong></td>
@@ -118,7 +118,7 @@
                         </tr>
 
                         <tr>
-                            <td><strong>Caja de Compensacion: </strong></td>
+                            <td><strong>Caja de Compensación: </strong></td>
                             <?php if (isset($cajacomp)) { ?>
                                 <td> {{$cajacomp->nombre}} </td>
                             <?php } else { ?>
@@ -147,15 +147,15 @@
                         </tr>
 
                         <tr>
-                            <td><strong>Inscripcion: </strong></td>
+                            <td><strong>Inscripción: </strong></td>
                             <td> {{$cliente->inscripcion}} </td>
 
-                            <td><strong>Administracion: </strong></td>
+                            <td><strong>Administración: </strong></td>
                             <td> {{$cliente->administracion}} </td>
                         </tr>
 
                         <tr>
-                            <td><strong>Observacion: </strong></td>
+                            <td><strong>Observación: </strong></td>
                             <td> {{$cliente->observacion}} </td>
 
                             <?php if(isset($cliente->pago)){ ?>

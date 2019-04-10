@@ -5,14 +5,14 @@
 <html>
 
 <head>
-<style>
-    .container .jumbotron,
-    .container-fluid .jumbotron {
-        padding-right: 120px;
-        padding-left: 100px;
-        x: ;
-    }
-</style>
+    <style>
+        .container .jumbotron,
+        .container-fluid .jumbotron {
+            padding-right: 120px;
+            padding-left: 100px;
+            x: ;
+        }
+    </style>
 </head>
 
 <section id="entidades">
@@ -20,7 +20,7 @@
         <section id="2" class="col-lg-12 entidades">
             <div class="row">
                 <div class="jumbotron">
-                    <h2 class="display-4">Entidades prestadoras de salud</h2>
+                    <h2 class="display-4">Entidades prestadoras de salud.</h2>
                     <hr class="my-4">
                     <!-- imagenes entidades prestadoras de servivio -->
                     <!-- confenalco -->
@@ -88,7 +88,7 @@
         <section id="3" class="col-lg-12 entidades">
             <div class="row">
                 <div class="jumbotron">
-                    <h2 class="display-4">Aseguradoras de riesgos profesionales</h2>
+                    <h2 class="display-4">Aseguradoras de riesgos profesionales.</h2>
                     <hr class="my-4">
                     <div class="col-lg-12">
                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
@@ -116,7 +116,7 @@
         <section id="4" class="col-lg-12 entidades">
             <div class="row">
                 <div class="jumbotron">
-                    <h2 class="display-4">Fondos privados de pensiones</h2>
+                    <h2 class="display-4">Fondos privados de pensiones.</h2>
                     <hr class="my-4">
                     <div class="col-lg-12">
                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
@@ -149,7 +149,7 @@
         <section id="5" class="col-lg-12 entidades">
             <div class="row">
                 <div class="jumbotron">
-                    <h2 class="display-4">Caja de compensación</h2>
+                    <h2 class="display-4">Caja de compensación.</h2>
                     <hr class="my-4">
                     <div class="col-lg-12">
                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
@@ -170,7 +170,7 @@
         <section id="6" class="col-lg-12 entidades">
             <div class="row">
                 <div class="jumbotron">
-                    <h2 class="display-4">Servicios complementarios</h2>
+                    <h2 class="display-4">Servicios complementarios.</h2>
                     <hr class="my-4">
                     <div class="col-lg-12">
                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
@@ -191,7 +191,7 @@
         <section id="7" class="col-lg-12 entidades">
             <div class="row">
                 <div class="jumbotron">
-                    <h2 class="display-4">Servicios adicionales</h2>
+                    <h2 class="display-4">Servicios adicionales.</h2>
                     <hr class="my-4">
                     <div class="col-lg-12">
                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
@@ -277,7 +277,8 @@
 </footer>
 </div>
 </section>
+
 </html>
 
 
-@endsection 
+@endsection
