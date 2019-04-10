@@ -222,7 +222,11 @@ class ClientesController extends Controller
             $pago->mes = $mes;
             $pago->dia = $dia;
             $pago->tipo = 1;
-            $pago->id_sede = $sede->id_sede;
+            if(isset($sede)){
+                $pago->id_sede = $sede->id_sede;
+            }else{
+                $pago->id_sede = 1;
+            }
             $pago->total = $cliente->pago;
             $pago->save();
         }

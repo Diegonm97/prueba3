@@ -121,7 +121,7 @@
                     <li>
                         <a href="{{route('configuracion.index')}}">
                             <i class="pe-7s-note2"></i>
-                            <p>Configuracion</p>
+                            <p>Configuración</p>
                         </a>
                     </li>
                     @endrole

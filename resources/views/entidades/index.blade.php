@@ -4,7 +4,7 @@
 
 <div class="col-m-9">
 
-    <h1 align="center">Informacion de entidades</h1>
+    <h1 align="center">Información de entidades</h1>
 </div>
 <div class="col-m-3">
 

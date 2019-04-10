@@ -35,7 +35,7 @@ use App\Sede;
         <div class="thumbnail">
           <div class="caption" style="text-align: center">
             <h3>Ingresos mes {{$mes}}</h3>
-            <h3> ${{number_format($total,0,',','.')}}</h3>
+            <h3> ${{number_format($totalmes,0,',','.')}}</h3>
             <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a></p> -->
           </div>
         </div>
@@ -45,7 +45,7 @@ use App\Sede;
         <div class="thumbnail">
           <div class="caption" style="text-align: center">
             <h3>Ingresos del día ({{$dia}}/{{$mes}})</h3>
-            <h3> ${{number_format($totald,0,',','.')}}</h3>
+            <h3> ${{number_format($totaldia,0,',','.')}}</h3>
             <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a></p> -->
           </div>
         </div>

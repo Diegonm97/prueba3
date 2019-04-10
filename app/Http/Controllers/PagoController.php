@@ -6,6 +6,7 @@ use App\Pago;
 use App\Configuracion;
 use App\Clientes;
 use App\Empresa;
+use App\Role_user;
 use Illuminate\Http\Request;
 use App\Http\Requests\PagosRequest;
 use Illuminate\Support\Facades\DB;
@@ -21,19 +22,24 @@ class PagoController extends Controller
     public function index(Request $request)
     {
         $mes = date('m');
-        $user = auth()->user()->email;
-        $logueocli = DB::select('SELECT * FROM cliente WHERE email = ?', [$user]);
-        $logueoemp = DB::select('SELECT * FROM empresa WHERE email = ?', [$user]);
+
+        $user = auth()->id();
+        $role = Role_user::Search()->where('user_id', '=', $user)->first();
         $usuario = null; $pago = null;
 
-        if (count($logueocli) > 0) {
-            $usuario = $logueocli;
-        } elseif (count($logueoemp) > 0) {
-            $usuario = $logueoemp;
-        }
+        if ($role->role_id == 3) {
+            $logueocli = DB::select('SELECT * FROM cliente WHERE id_usuario = ?', [$user]);
+            $logueoemp = DB::select('SELECT * FROM empresa WHERE id_usuario = ?', [$user]);
 
-        if (isset($usuario)) {
-            $pago = DB::select('SELECT * FROM pago WHERE id_usuario = ? and mes = ?', [$usuario[0]->id, $mes]);
+            if (count($logueocli) > 0) {
+                $usuario = $logueocli;
+            } elseif (count($logueoemp) > 0) {
+                $usuario = $logueoemp;
+            }
+
+            if (isset($usuario)) {
+                $pago = DB::select('SELECT * FROM pago WHERE id_usuario = ? and mes = ?', [$usuario[0]->id, $mes]);
+            }
         }
 
         $pagoscli = DB::select('SELECT * FROM pago WHERE mes = ?', [$mes]);

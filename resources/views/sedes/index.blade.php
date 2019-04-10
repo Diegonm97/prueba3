@@ -8,7 +8,7 @@
         @endcan</div>
     <div class="col-m-7">
 
-        <h1 align="center">Informacion de Sedes</h1>
+        <h1 align="center">Información de Sedes</h1>
     </div>
     <div class="col-m-2">
 

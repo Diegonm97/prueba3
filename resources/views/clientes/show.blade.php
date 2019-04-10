@@ -6,7 +6,7 @@
 </div>
 <div class="col-sm-8">
 
-    <h1 align="center">Informacion Cliente</h1>
+    <h1 align="center">Información Cliente</h1>
 </div>
 <div class="col-sm-3">
 

@@ -35,7 +35,7 @@
                     <!-- required for floating -->
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs tabs-left">
-                        <li class="active"><a href="#seguridad" data-toggle="tab">¿Que es la seguridad social?</a></li>
+                        <li class="active"><a href="#seguridad" data-toggle="tab">¿Qué es la seguridad social?</a></li>
                         <li><a href="#Trabajadores" data-toggle="tab">Beneficios - Trabajadores</a></li>
                         <li><a href="#Empleadores" data-toggle="tab">Beneficios - Empleadores</a></li>
                         <li><a href="#dependientes" data-toggle="tab">Trabajadores dependientes</a></li>

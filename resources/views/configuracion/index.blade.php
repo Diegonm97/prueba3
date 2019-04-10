@@ -7,7 +7,7 @@
 
 <div class="col-sm-6">
 
-    <h1 align="center">Configuracion</h1>
+    <h1 align="center">Configuración</h1>
 </div>
 <div class="col-sm-2">
 
