@@ -18,7 +18,7 @@
 
 <div class="col-md-12">
 
-    <div class="table-responsive table-full-width">
+    <div class="table-responsive table-full-width" style="font-size: 18px"p>
         <table class="table table-hover table-striped">
             <div class="container">
                 <div class="row">

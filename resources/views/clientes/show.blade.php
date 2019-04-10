@@ -172,6 +172,7 @@
         </table>
 
         <a class="btn btn-primary" style="float: right; width: 100%" href="{{route('clientes.facturacion', $cliente->id)}}">Facturar</a>
+        
     </div>
     </div>  
 </div>
