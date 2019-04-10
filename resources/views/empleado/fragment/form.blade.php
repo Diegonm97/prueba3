@@ -2,7 +2,7 @@
     <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('nombre_completo','Nombre Completo(*).')!!}
-            {!!Form::text('nombre_completo',null,['class'=>'form-control','title'=>'Nombre' , 'placeholder'=>'Ej: Camilo Arce','id'=>'nombre_completo','required'=>'required' ])!!}
+            {!!Form::text('nombre_completo',null,['class'=>'form-control','title'=>'Nombre', 'onKeyUp'=>'this.value = this.value.toUpperCase()' , 'placeholder'=>'Ej: Camilo Arce','id'=>'nombre_completo','required'=>'required' ])!!}
         </div>
     </div>
     <div class="col-sm-4">

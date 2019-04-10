@@ -82,7 +82,7 @@
             {!!Form::number('telefono',null,['class'=>'form-control','title'=>'Ingresa el telefono del cliente.' , 'placeholder'=>'Ej: 3209523123','id'=>'telefono','required'=>'required' ])!!}
         </div>
     </div>
-    <div class="col-sm-5">
+    <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('email','Correo Electronico(*).')!!}
             {!!Form::text('email',null,['class'=>'form-control','title'=>'Ingresa el correo electronico del cliente.' , 'placeholder'=>'Ej: ejemplo@ejemplo.com ','id'=>'email','required'=>'required' ])!!}

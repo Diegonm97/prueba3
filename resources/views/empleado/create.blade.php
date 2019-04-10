@@ -5,7 +5,7 @@
     <a href="javascript:history.back()"><i class="fas fa-arrow-alt-circle-left fa-3x" style="color: #2C7CE1"></i></a>
 </div>
 <div class="col-sm-8">
-    <h1 align="center">Nuevo</h1>
+    <h1 align="center">Nuevo Empleado</h1>
 </div>
 <div class="col-sm-3">
 

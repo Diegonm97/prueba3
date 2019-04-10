@@ -88,7 +88,7 @@
                             <td> {{$empleadoEmp->fecha_nacimiento}} </td>
 
                             <td><strong>Salario: </strong></td>
-                            <td> {{$empleadoEmp->salario}} </td>
+                            <td> ${{ number_format($empleadoEmp->salario,0,',','.')}} </td>
                         </tr>
 
                         <tr>
@@ -134,7 +134,7 @@
                          <?php if(isset($empleadoEmp->pago)){ ?>
                         <tr>
                             <td><strong>Total a pagar:</strong></td>
-                            <td>{{$empleadoEmp->pago}}</td>
+                            <td>${{ number_format($empleadoEmp->pago,0,',','.')}}</td>
                         </tr>
                         <?php } ?>
 

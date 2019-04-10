@@ -72,12 +72,12 @@
                                 @endif
                             </td>
                             <td><strong>Inscripción: </strong></td>
-                            <td> {{$empresa->inscripcion}} </td>
+                            <td> ${{ number_format($empresa->inscripcion,0,',','.')}} </td>
                         </tr>
 
                         <tr>
                             <td><strong>Administración: </strong></td>
-                            <td> {{$empresa->administracion}} </td>
+                            <td> ${{ number_format($empresa->administracion,0,',','.')}} </td>
                             <td><strong>Fecha de ingreso: </strong></td>
                             <td> {{$empresa->fecha_ingreso}}</td>
                         </tr>
@@ -119,12 +119,12 @@
                 <tr>
                     <td colspan="2"></td>
                     <td><strong>Inscripción + IVA </strong></td>
-                    <td>{{$ivaadmi}}</td>
+                    <td>${{ number_format($ivaadmi,0,',','.')}}</td>
                 </tr>
                 <tr>
                     <td colspan="2"></td>
                     <td><strong>Administración + IVA</strong></td>
-                    <td>{{$ivainsc}}</td>
+                    <td>${{ number_format($ivainsc,0,',','.')}}</td>
                 </tr>
                 <tr>
                     <td colspan="2"></td>
@@ -132,7 +132,7 @@
                         <h4 style="font-weight: bold;">Total a pagar</h4>
                     </td>
                     <td>
-                        <h4>{{$total}}</h4>
+                        <h4>${{ number_format($total,0,',','.')}}</h4>
                     </td>
                 </tr>
             </tbody>

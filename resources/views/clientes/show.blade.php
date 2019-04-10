@@ -93,7 +93,8 @@
                             <td> {{$cliente->fecha_nacimiento}} </td>
 
                             <td><strong>Salario: </strong></td>
-                            <td> {{$cliente->salario}} </td>
+                            
+                            <td> {{number_format($cliente->salario,0,',','.')}} </td>
                         </tr>
 
                         <tr>
@@ -143,15 +144,15 @@
                             <td> {{$cliente->rango}} </td>
 
                             <td><strong>UPC Adic.: </strong></td>
-                            <td> {{$cliente->upc}} </td>
+                            <td> $ {{ number_format($cliente->upc)}} </td>
                         </tr>
 
                         <tr>
                             <td><strong>Inscripción: </strong></td>
-                            <td> {{$cliente->inscripcion}} </td>
+                            <td> ${{ number_format($cliente->inscripcion,0,',','.')}} </td>
 
                             <td><strong>Administración: </strong></td>
-                            <td> {{$cliente->administracion}} </td>
+                            <td> ${{ number_format($cliente->administracion,0,',','.')}} </td>
                         </tr>
 
                         <tr>
@@ -161,7 +162,7 @@
                             <?php if(isset($cliente->pago)){ ?>
                         
                             <td><strong>Total a pagar:</strong></td>
-                            <td>{{$cliente->pago}}</td>
+                            <td> ${{ number_format($cliente->pago,0,',','.')}}</td>
                         
                         <?php } ?>
                         </tr>
