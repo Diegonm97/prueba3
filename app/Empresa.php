@@ -10,7 +10,7 @@ class Empresa extends Model
 
     protected $fillable = [
         'nit', 'nombre', 'nombre_contacto', 'telefono_contacto',
-        'email_contacto', 'id_ciudad', 'direccion', 'estado', 'beneficio',
+        'email', 'id_ciudad', 'direccion', 'estado', 'beneficio',
         'inscripcion', 'administracion', 'id_usuario', 'fecha_ingreso', 'observacion', 'total_pago'
     ];
 
@@ -32,5 +32,9 @@ class Empresa extends Model
     public function scopeSearch($query) //Busqueda de toda una tabla
     {
         return $query->select('*');
+    }
+    public function scopeCorreos($query) //Busqueda de toda una tabla
+    {
+        return $query->select('email');
     }
 }

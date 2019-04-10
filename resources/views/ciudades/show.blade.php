@@ -28,7 +28,7 @@
                             <td><strong>Nombre: </strong></td>
                             <td>{{$ciudades->nombre}}</td>
 
-                            <td><strong>Tipo: </strong></td>
+                            <td><strong>Código: </strong></td>
                             <td> {{$ciudades->codigo}} </td>
                         </tr>
 

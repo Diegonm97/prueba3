@@ -9,4 +9,10 @@ class Role_user extends Model
     protected $table = 'role_user';
 
     protected $fillable = ['role_id', 'user_id'];
+
+
+    public function scopeSearch($query)
+    {
+        return $query->select('*');
+    }
 }

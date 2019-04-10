@@ -35,12 +35,12 @@
                 <div class="container">
                     <div class="row">
                         <thead>
-                            <th>Identificacion</th>
+                            <th>Identificación</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Estado</th>
                             <th>Empresa</th>
-                            <th>Telefono</th>
+                            <th>Teléfono</th>
                             <th>Rango</th>
                             <th>Acción</th>
                         </thead>

@@ -21,9 +21,9 @@ class RolesTableSeeder extends Seeder
         ]);
         Role::create([
 
-            'name'    => 'trabajador',
-            'slug'    => 'trabajador',
-            'description'    => 'trabajador',
+            'name'    => 'empleado',
+            'slug'    => 'empleado',
+            'description'    => 'empleado',
 
         ]);
         Role::create([

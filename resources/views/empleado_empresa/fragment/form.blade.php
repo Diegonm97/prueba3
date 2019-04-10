@@ -82,9 +82,9 @@
             {!!Form::number('telefono',null,['class'=>'form-control','title'=>'Ingresa el telefono del cliente.' , 'placeholder'=>'Ej: 3209523123','id'=>'telefono','required'=>'required' ])!!}
         </div>
     </div>
-    <div class="col-sm-5">
+    <div class="col-sm-4">
         <div class="form-group row has-success">
-            {!! Form::label('email','Correo Electronico.')!!}
+            {!! Form::label('email','Correo Electronico(*).')!!}
             {!!Form::text('email',null,['class'=>'form-control','title'=>'Ingresa el correo electronico del cliente.' , 'placeholder'=>'Ej: ejemplo@ejemplo.com ','id'=>'email','required'=>'required' ])!!}
         </div>
     </div>
@@ -148,7 +148,7 @@
 
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('id_afp','Nombre AFP(*).')!!}
+            {!! Form::label('id_afp','Nombre AFP.')!!}
             <select class="form-control" id="id_afp" name="id_afp">
                 @if ($afp != null)
                 <option value="{{$afp->id}}">{{$afp->nombre}}</option>
@@ -166,7 +166,7 @@
 
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('id_cjc','Nombre Caja Compensacion(*).')!!}
+            {!! Form::label('id_cjc','Nombre Caja Compensación.')!!}
             <select class="form-control" id="id_cjc" name="id_cjc">
                 @if ($cajacomp != null)
                 <option value="{{$cajacomp->id}}">{{$cajacomp->nombre}}</option>
@@ -193,13 +193,13 @@
     </div>
     <div class="col-sm-2">
         <div class="form-group row has-success">
-            {!! Form::label('emi','Emi(*).')!!}
+            {!! Form::label('emi','Emi.')!!}
             {!!Form::select('emi', [0=> '-- Seleccione -- ', 1=>'NO', 2=>'SI'],null,['class'=>'form-control','title'=>'Selecciona SI o NO.','title'=>'Servicio EMI? ','id'=>'emi','required'=>'required' ])!!}
         </div>
     </div>
     <div class="col-sm-2">
         <div class="form-group row has-success">
-            {!! Form::label('sercofun','Sercofun(*).')!!}
+            {!! Form::label('sercofun','Sercofun.')!!}
             {!!Form::select('sercofun', [0=> '-- Seleccione -- ', 1=>'NO', 2=>'SI'],null,['class'=>'form-control','title'=>'Selecciona SI o NO.','title'=>'Servicio sercofun Los Olivos?','id'=>'sercofun','required'=>'required' ])!!}
         </div>
     </div>

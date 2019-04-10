@@ -70,7 +70,7 @@
                         <div class="tab-pane active" id="Planes">
                             <h4 class="display-4">Seguridad social</h4>
                             <hr class="my-4">
-                            <p>De acuerdo al régimen de previsión y seguridad social de "Intersalud del Valle SAS.",
+                            <p>De acuerdo al régimen de previsión y seguridad social de "Intersalud Colombia SAS.",
                                 cubre los siguientes conceptos:</P>
 
                             <h4 class="display-4 text-center">Planes y servicios</h4>
@@ -916,7 +916,7 @@
                             <hr class="my-4">
 
                             <br />
-                            <p>Por ser asociado a nuestra empresa <strong>"Intersalud del Valle SAS."</strong> usted contará con el beneficio de servicios adicionales a nuestra organización los cuales podrán tener hasta un 20% de descuento en el momento de usted usarlos, dichos servicios son:</p><br />
+                            <p>Por ser asociado a nuestra empresa <strong>"Intersalud Colombia SAS."</strong> usted contará con el beneficio de servicios adicionales a nuestra organización los cuales podrán tener hasta un 20% de descuento en el momento de usted usarlos, dichos servicios son:</p><br />
                             <p><i class="fa fa-check"></i> 20% de descuento en servicio de odontología en Mundonet servicios odontológicos, odontología Proteger descuentos con especialistas y facilidades de pago.</p>
                             <p><i class="fa fa-check"></i> Descuentos en mamografías, radiografías, escanografías (TAC), densitometría, en el SVP San Vicente de Paúl S.A.S.</p>
                             <p><i class="fa fa-check"></i> 40% de descuento en servicio de laboratorio clínico en el Edificio Liliana.</p>
@@ -945,14 +945,14 @@
                             <h3 class="display-4">Contrato de prestaciones de servicios</h3>
                             <hr class="my-4">
                             </h2><br />
-                            <p>Es la legalización del contrato de prestación de servicios entre "Intersalud del Valle SAS." y la empresa.</p><br />
+                            <p>Es la legalización del contrato de prestación de servicios entre "Intersalud Colombia SAS." y la empresa.</p><br />
                             <p>Una vez se formalice el contrato de prestación de servicios, los nuevos asociados a
                                 nuestra empresa, deberán cumplir con los siguientes requisitos, de acuerdo a los
                                 estatutos de la misma:</p>
                             <br />
                             <b>Cotizante:</b>
                             <ul>
-                                <li>Diligenciamiento del formulario de vinculación a "Intersalud del Valle SAS.", anexando la siguiente documentación básica:
+                                <li>Diligenciamiento del formulario de vinculación a "Intersalud Colombia SAS.", anexando la siguiente documentación básica:
                                 </li>
                                 <li>Fotocopia de la cédula ampliada al 150% del asociado.</li>
                                 <li>Indicarnos las entidades a las que esta inscrito (EPS y Pensión).</li>
@@ -999,7 +999,7 @@
                                                 <td>Bogota</td>
                                                 <td>Corriente</td>
                                                 <td>821004447</td>
-                                                <td>Intersalud del Valle</td>
+                                                <td>Intersalud Colombia</td>
                                             </tr>
                                             <tr>
                                                 <td>Davivienda</td>
@@ -1011,13 +1011,13 @@
                                                 <td>Colpatria</td>
                                                 <td>Corriente</td>
                                                 <td>5971007453</td>
-                                                <td>Intersalud del Valle</td>
+                                                <td>Intersalud Colombia</td>
                                             </tr>
                                             <tr>
                                                 <td>Colpatria</td>
                                                 <td>Ahorros</td>
                                                 <td>5972123775</td>
-                                                <td>Intersalud del Valle</td>
+                                                <td>Intersalud Colombia</td>
                                             </tr>
                                         </tbody>
                                     </table>

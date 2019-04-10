@@ -24,12 +24,12 @@
                 <div class="row">
                     <tbody>
                         <tr>
-                            <td><strong>Administracion + IVA: </strong></td>
+                            <td><strong>Administración + IVA: </strong></td>
                             <td>{{$ivaadmi}}</td>
                         </tr>
 
                         <tr>
-                            <td><strong>Inscripcion + IVA: </strong></td>
+                            <td><strong>Inscripción + IVA: </strong></td>
                             <td> {{$ivainsc}} </td>
                         </tr>
 

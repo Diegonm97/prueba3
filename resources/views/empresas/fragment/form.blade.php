@@ -1,20 +1,20 @@
 <div class="col-sm-12">
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('nit','Numero de Nit(*).')!!}
-            {!!Form::text('nit',null,['class'=>'form-control','title'=>'Ingresa un numero de nit no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'nuip','required'=>'required'])!!}
+            {!! Form::label('nit','Número de Nit(*).')!!}
+            {!!Form::number('nit',null,['class'=>'form-control','title'=>'Ingresa un numero de nit no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'nuip','required'=>'required'])!!}
         </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group row has-success">
             {!! Form::label('nombre','Nombre de la empresa(*).')!!}
-            {!!Form::text('nombre',null,['class'=>'form-control','title'=>'Ingresa el nombre de la Empresa.' , 'placeholder'=>'Ej: Intersalud del valle', 'onKeyUp'=>'this.value = this.value.toUpperCase()','id'=>'nombre','required'=>'required' ])!!}
+            {!!Form::text('nombre',null,['class'=>'form-control','title'=>'Ingresa el nombre de la Empresa.' , 'placeholder'=>'Ej: Intersalud Colombia', 'onKeyUp'=>'this.value = this.value.toUpperCase()','id'=>'nombre','required'=>'required' ])!!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group row has-success">
             {!! Form::label('estado','Estado del Empresa(*).')!!}
-            {!!Form::select('estado', [ 1=>'ACTIVO', 2=>'ACTIVO'],null,['class'=>'form-control','title'=>'Ingresa un estado del Empente.','title'=>'A,R','id'=>'estado','required'=>'required' ])!!}
+            {!!Form::select('estado', [ 1=>'ACTIVO', 2=>'RETIRADO'],null,['class'=>'form-control','title'=>'Ingresa un estado del Empente.','title'=>'A,R','id'=>'estado','required'=>'required' ])!!}
         </div>
     </div>
 </div>
@@ -53,8 +53,9 @@
 <div class="col-sm-12">
     <div class="col-sm-4">
         <div class="form-group row has-success">
-            {!! Form::label('email_contacto','Email contacto(*).')!!}
-            {!!Form::text('email_contacto',null,['class'=>'form-control','title'=>'Ingresar email del contacto de la Empresa.' , 'placeholder'=>'Ej: ejemplo@ejemplo.com ','id'=>'email_contacto','required'=>'required' ])!!}
+            <label for="email">Email contacto(*).</label>
+            <input class="form-control" title="Ingresar email del contacto de la Empresa." placeholder="Ej: ejemplo@ejemplo.com " id="email" required="required" name="email" type="text">
+
         </div>
     </div>
     <div class="col-sm-4">
@@ -75,13 +76,13 @@
 
     <div class="col-sm-4">
         <div class="form-group row has-success">
-            {!! Form::label('administracion','Administracion cliente.')!!}
+            {!! Form::label('administracion','Administración cliente.')!!}
             {!!Form::text('administracion',null,['class'=>'form-control','title'=>'Ingrese el costo por administracion.' , 'placeholder'=>'Ej: 20000','id'=>'administracion' ])!!}
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group row has-success">
-            {!! Form::label('inscripcion','Inscripcion.')!!}
+            {!! Form::label('inscripcion','Inscripción.')!!}
             {!!Form::text('inscripcion',null,['class'=>'form-control','title'=>'Ingrese el costo por inscripcion.' , 'placeholder'=>'Ej: 20000','id'=>'inscripcion' ])!!}
         </div>
     </div>
@@ -108,4 +109,4 @@
 
 <script>
 
-</script> 
+</script>

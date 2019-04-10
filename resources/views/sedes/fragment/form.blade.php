@@ -24,13 +24,13 @@
 
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('telefono','Telefono(*).')!!}
+            {!! Form::label('telefono','Teléfono(*).')!!}
             {!!Form::number('telefono',null,['class'=>'form-control','title'=>'Ingresa el telefono del cliente.' , 'placeholder'=>'Ej: 3209523123','id'=>'telefono','required'=>'required' ])!!}
         </div>
     </div>
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('direccion','Direccion(*).')!!}
+            {!! Form::label('direccion','Dirección(*).')!!}
             {!!Form::text('direccion',null,['class'=>'form-control','title'=>'Ingresa la direccion del cliente.', 'placeholder'=>'Ej: Cra 10a #34-14', 'onKeyUp'=>'this.value = this.value.toUpperCase()','id'=>'direccion','required'=>'required' ])!!}
         </div>
     </div>

@@ -9,11 +9,13 @@ use App\Ciudad;
 use App\Configuracion;
 use App\Empleado_empresa;
 use App\Pago;
+use App\Empleado;
 use App\user;
 use App\Role_user;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresasRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class EmpresaController extends Controller
 {
@@ -55,6 +57,18 @@ class EmpresaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+
+            'email' => 'required|string|email|max:255|unique:empresa',
+
+        ]);
+    }
+
+
     public function store(empresasRequest $request)
     {
         $empresas = new Empresa;
@@ -63,8 +77,10 @@ class EmpresaController extends Controller
         $administracion = Configuracion::Search()->where('codigo', '=', "ADMIN")->first();
         $inscripcion = Configuracion::Search()->where('codigo', '=', "INSCRI")->first();
 
+
+
         $user->name = $request->nombre;
-        $user->email = $request->email_contacto;
+        $user->email = $request->email;
         $user->password = bcrypt($request->identificacion);
         $user->save();
 
@@ -77,7 +93,7 @@ class EmpresaController extends Controller
         $empresas->nombre = $request->nombre;
         $empresas->nombre_contacto = $request->nombre_contacto;
         $empresas->telefono_contacto = $request->telefono_contacto;
-        $empresas->email_contacto = $request->email_contacto;
+        $empresas->email = $request->email;
         $empresas->id_ciudad = $request->id_ciudad;
         $empresas->direccion = $request->direccion;
         $empresas->estado = $request->estado;
@@ -111,19 +127,23 @@ class EmpresaController extends Controller
     {
 
         $cliente = Empresa::find($id);
-       
+
         $mes = date('m');
         $dia = date('d');
+        $empleadoId = auth()->id();
 
-        $pagoc = DB::select('SELECT * FROM pago WHERE mes = ? and id_usuario = ? and tipo = 2 ', [$mes, $cliente->id]);
-        
-        if (count($pagoc) == 0) {
+        $pagoc = DB::select('SELECT * FROM pago WHERE id_usuario = ? and mes = ? and tipo = 2', [$cliente->id, $mes]);
+        $sede = Empleado::Search()->where('id_usuario','=', $empleadoId )->first();
+
+        if(count($pagoc) == 0){
             $pago = new Pago;
             $pago->id_usuario = $cliente->id;
             $pago->estado = 1;
             $pago->mes = $mes;
             $pago->dia = $dia;
             $pago->tipo = 2;
+            $pago->id_sede = $sede->id_sede;
+            $pago->total = $cliente->total_pago;
             $pago->save();
         }
 
@@ -191,7 +211,7 @@ class EmpresaController extends Controller
         $empresas->nombre = $request->nombre;
         $empresas->nombre_contacto = $request->nombre_contacto;
         $empresas->telefono_contacto = $request->telefono_contacto;
-        $empresas->email_contacto = $request->email_contacto;
+        $empresas->email = $request->email;
         $empresas->id_ciudad = $request->id_ciudad;
         $empresas->direccion = $request->direccion;
         $empresas->estado = $request->estado;

@@ -26,7 +26,7 @@
                             <td><strong>Empresa: </strong></td>
                             <td>{{$empresa->nombre}}</td>
 
-                            <td><strong>identificacion: </strong></td>
+                            <td><strong>identificación: </strong></td>
                             <td> {{$empleadoEmp->identificacion}} </td>
                         </tr>
 
@@ -53,12 +53,12 @@
                             <td><strong>Apellidos: </strong></td>
                             <td> {{$empleadoEmp->apellidos}} </td>
 
-                            <td><strong>Telefono: </strong></td>
+                            <td><strong>Teléfono: </strong></td>
                             <td> {{$empleadoEmp->telefono}} </td>
                         </tr>
 
                         <tr>
-                            <td><strong>Direccion: </strong></td>
+                            <td><strong>Dirección: </strong></td>
                             <td> {{$empleadoEmp->direccion}} </td>
 
                             <td><strong>Email: </strong></td>
@@ -88,7 +88,7 @@
                             <td> {{$empleadoEmp->fecha_nacimiento}} </td>
 
                             <td><strong>Salario: </strong></td>
-                            <td> {{$empleadoEmp->salario}} </td>
+                            <td> ${{ number_format($empleadoEmp->salario,0,',','.')}} </td>
                         </tr>
 
                         <tr>
@@ -100,7 +100,7 @@
                         </tr>
 
                         <tr>
-                            <td><strong>ciudad: </strong></td>
+                            <td><strong>Ciudad: </strong></td>
                             <td> {{$ciudad->nombre}} </td>
 
                             <td><strong>EPS: </strong></td>
@@ -116,7 +116,7 @@
                         </tr>
 
                         <tr>
-                            <td><strong>Caja de Compensacion: </strong></td>
+                            <td><strong>Caja de Compensación: </strong></td>
                             <td> {{$cajacomp->nombre}} </td>
 
                             <td><strong>Estado: </strong></td>
@@ -134,7 +134,7 @@
                          <?php if(isset($empleadoEmp->pago)){ ?>
                         <tr>
                             <td><strong>Total a pagar:</strong></td>
-                            <td>{{$empleadoEmp->pago}}</td>
+                            <td>${{ number_format($empleadoEmp->pago,0,',','.')}}</td>
                         </tr>
                         <?php } ?>
 

@@ -24,11 +24,11 @@ class EmpresasRequest extends FormRequest
     public function rules()
     {
         return [
-            'nit'  => 'required',
+            'nit'  => 'required|unique:empresa',
             'nombre' => 'required',
             'nombre_contacto' => 'required',
             'telefono_contacto'  => 'required',
-            'email_contacto'  => 'required',
+            'email'  => 'required|unique:empresa|unique:users',
             'id_ciudad'  => 'required',
             'direccion'  => 'required',
             'estado'  => 'required',

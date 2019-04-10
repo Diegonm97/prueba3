@@ -24,13 +24,14 @@ class ClientesRequest extends FormRequest
     public function rules()
     {
         return [
-            'identificacion'  => 'required',
+            'identificacion'  => 'required|unique:cliente',
             'tipo_id'  => 'required',
             'nombres'  => 'required',
             'apellidos'  => 'required',
             'estado'  => 'required',
             'telefono'  => 'required',
             'direccion'  => 'required',
+            'email'  => 'required|unique:cliente|unique:users',
             'tipo_cliente'  => 'required',
             'fecha_ingreso'  => 'required',
             'fecha_nacimiento' => 'required',
@@ -40,7 +41,6 @@ class ClientesRequest extends FormRequest
             'id_afp'=> 'required',
             'beneficio'=> 'required',
             'rango'  => 'required',
-            'upc'  => 'required',
             'emi' => 'required',
             'sercofun' => 'required',
         ];

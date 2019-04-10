@@ -9,8 +9,8 @@
 
     <div class="col-sm-3">
         <div class="form-group row has-success">
-            {!! Form::label('codigo','Codigo de la ciudad(*).')!!}
-            {!!Form::number('codigo',null,['class'=>'form-control','title'=>'Ingresa el nombre de la ciudad.' , 'placeholder'=>'Ej: 123','id'=>'codigo','required'=>'required' ])!!}
+            {!! Form::label('codigo','Código de la ciudad(*).')!!}
+            {!!Form::number('codigo',null,['class'=>'form-control','title'=>'Ingresa el código de la ciudad.' , 'placeholder'=>'Ej: 123','id'=>'codigo','required'=>'required' ])!!}
         </div>
     </div>
 

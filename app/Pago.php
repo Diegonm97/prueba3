@@ -8,7 +8,7 @@ class Pago extends Model
 {
     protected $table = 'pago';
 
-    protected $fillable = ['id_usuario', 'estado', 'dia', 'mes', 'tipo'];
+    protected $fillable = ['id_usuario', 'estado', 'mes', 'dia', 'tipo', 'id_sede', 'total'];
 
     public function scopeSearch1($query, $id_usuario)
     {

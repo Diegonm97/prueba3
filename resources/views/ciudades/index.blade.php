@@ -4,7 +4,7 @@
 
 <div class="col-m-9">
 
-    <h1 align="center">Informacion de ciudades</h1>
+    <h1 align="center">Información de ciudades</h1>
 </div>
 <div class="col-m-3">
 
@@ -21,7 +21,7 @@
                 <a href="{{route('ciudad.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
             @endcan
 
-            <p class="category">Aqui se muestran datos de las ciudades registradas</p>
+            <p class="category">Aqui se muestran datos de las ciudades registradas.</p>
             <!-- Buscador -->
             {!!Form::open(['route'=>'ciudad.index', 'method'=>'GET','class'=>'navbar-form'])!!}
             <div class="form group">
@@ -36,7 +36,7 @@
                     <div class="row">
                         <thead>
                             <th>Nombre</th>
-                            <th>Codigo</th>
+                            <th>Código</th>
                             <th></th>
                         </thead>
                         <tbody>
