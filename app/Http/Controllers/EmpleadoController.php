@@ -121,8 +121,9 @@ class EmpleadoController extends Controller
      * @param  \App\Configuracion  $configuracion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Configuracion $configuracion)
+    public function destroy($id)
     {
-        //
+        Empleado::destroy($id);
+        return redirect()->route('entidad.index')->with('info', 'La entidad fue eliminada');
     }
 }

@@ -94,7 +94,7 @@
 
                             <td><strong>Salario: </strong></td>
                             
-                            <td> {{number_format($cliente->salario,0,',','.')}} </td>
+                            <td> ${{number_format($cliente->salario,0,',','.')}} </td>
                         </tr>
 
                         <tr>
@@ -144,7 +144,7 @@
                             <td> {{$cliente->rango}} </td>
 
                             <td><strong>UPC Adic.: </strong></td>
-                            <td> $ {{ number_format($cliente->upc)}} </td>
+                            <td> {{$cliente->upc}} </td>
                         </tr>
 
                         <tr>

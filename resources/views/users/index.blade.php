@@ -34,6 +34,7 @@
                             <th>Id</th>
                             <th>Nombre</th>
                             <th>Email</th>
+                            <th>Acción</th>
 
                         </thead>
                         <tbody>
@@ -48,8 +49,21 @@
                                     <a href="{{route('users.show', $user->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
                                     @can('users.edit')
-                                    <a href="{{route('users.edit', $user->id)}}"><i class="fas fa-pen"></i></a>
+                                    <a href="{{route('users.edit', $user->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
+
+                                    @foreach ($roles as $rol)
+                                    @if ($rol->user_id == $user->id)
+                                    @if ($rol->role_id == 2)
+                                
+                                    <a href="{{route('users.destroy', $user->id)}}"><i class="fas fa-trash-alt"></i></a>
+                                
+
+
+                                @endif
+                                @endif
+                                @endforeach
+
                                 </th>
 
                             </tr>
@@ -72,4 +86,4 @@
 
 
 
-@endsection 
+@endsection

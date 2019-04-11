@@ -12,38 +12,38 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 
-Route::resource('configuracion','configuracionController');
-Route::resource('empresa','empresaController');
-Route::resource('clientes','clientesController');
-Route::resource('users','userController');
-Route::resource('pago','PagoController');
-Route::resource('entidad','entidadController');
-Route::resource('ciudad','ciudadController');
-Route::resource('empleado_empresa','Empleado_empresaController');
-Route::resource('sede','SedeController');
-Route::resource('empleado','EmpleadoController');
+Route::resource('configuracion', 'configuracionController');
+Route::resource('empresa', 'empresaController');
+Route::resource('clientes', 'clientesController');
+Route::resource('users', 'userController');
+Route::resource('pago', 'PagoController');
+Route::resource('entidad', 'entidadController');
+Route::resource('ciudad', 'ciudadController');
+Route::resource('empleado_empresa', 'Empleado_empresaController');
+Route::resource('sede', 'SedeController');
+Route::resource('empleado', 'EmpleadoController');
 
 Route::get('/productos', function () {
-    return view('productos');
+	return view('productos');
 });
 Route::get('/nosotros', function () {
-    return view('nosotros');
+	return view('nosotros');
 });
 Route::get('/seguridad', function () {
-    return view('seguridad');
+	return view('seguridad');
 });
 Route::get('/servicios', function () {
-    return view('servicios');
+	return view('servicios');
 });
 Route::get('/contacto', function () {
-    return view('contacto');
+	return view('contacto');
 });
 
-Route::get("/contacto","contactoController@index")->name('contacto');
+Route::get("/contacto", "contactoController@index")->name('contacto');
 
 Route::post("/createEmp/{id}","clientesController@storeEmp")->name('storeEmp');
 // Informes PDF
@@ -62,8 +62,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Routes
 
-Route::middleware(['auth'])->group(function() {
-	
+Route::middleware(['auth'])->group(function () {
+
 	//Roles
 	Route::post('roles/store', 'RoleController@store')->name('roles.store')
 		->middleware('permission:roles.create');
@@ -91,8 +91,10 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:users.show');
 	Route::get('users/{id}/edit', 'userController@edit')->name('users.edit')
 		->middleware('permission:users.edit');
+		Route::get('users/destroy/{id}', 'userController@destroy')->name('users.destroy')
+		->middleware('permission:Users.destroy');
 
-//clientes
+	//clientes
 	Route::post('clientes/store', 'clientesController@store')->name('clientes.store')
 		->middleware('permission:Clientes.create');
 	Route::get('clientes', 'clientesController@index')->name('clientes.index')
@@ -111,7 +113,7 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:Clientes.pagocaja');
 
 	//empleado_empresa
-		Route::post('empleado_empresa/store', 'empleado_empresaController@store')->name('empleado_empresa.store')
+	Route::post('empleado_empresa/store', 'empleado_empresaController@store')->name('empleado_empresa.store')
 		->middleware('permission:Empleado_empresa.create');
 	Route::get('empleado_empresa', 'empleado_empresaController@index')->name('empleado_empresa.index')
 		->middleware('permission:Empleado_empresa.index');
@@ -127,7 +129,7 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:Empleado_empresa.destroy');
 	Route::get('empleado_empresa/facturacion/{id}', 'empleado_empresaController@facturacion')->name('empleado_empresa.facturacion')
 		->middleware('permission:Empleado_empresa.facturacion');
-	
+
 	//empresas
 	Route::post('empresa/store', 'empresaController@store')->name('empresa.store')
 		->middleware('permission:Empresas.create');
@@ -159,9 +161,11 @@ Route::middleware(['auth'])->group(function() {
 		->middleware('permission:Entidades.show');
 	Route::get('entidad/{id}/edit', 'entidadController@edit')->name('entidad.edit')
 		->middleware('permission:Entidades.edit');
+	Route::get('entidad/destroy/{id}', 'entidadController@destroy')->name('entidad.destroy')
+		->middleware('permission:entidad.destroy');
 
 	//configuracion
-	
+
 	Route::post('configuracion/store', 'configuracionController@store')->name('configuracion.store')
 		->middleware('permission:Configuracion.create');
 	Route::get('configuracion/create', 'configuracionController@create')->name('configuracion.create')
@@ -175,7 +179,7 @@ Route::middleware(['auth'])->group(function() {
 
 	//pagos
 	Route::get('pago', 'pagoController@index')->name('pago.index')
-		->middleware('permission:Pago.index'); 
+		->middleware('permission:Pago.index');
 
 	// Empleado
 
@@ -189,5 +193,9 @@ Route::middleware(['auth'])->group(function() {
 	Route::put('empleado/{id}', 'empleadoController@update')->name('empleado.update')
 		->middleware('permission:Empleado.edit');
 	Route::get('empleado/{id}/edit', 'empleadoController@edit')->name('empleado.edit')
-		->middleware('permission:Empleado.edit');	
+		->middleware('permission:Empleado.edit');
+
+	//Ciudad
+	Route::get('ciudad/destroy/{id}', 'ciudadController@destroy')->name('ciudad.destroy')
+		->middleware('permission:Ciudad.destroy');
 });

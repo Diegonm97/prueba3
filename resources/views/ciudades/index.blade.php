@@ -55,6 +55,7 @@
                                     @can('ciudades.edit')
                                     <a href="{{route('ciudad.edit', $ciudad->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
+                                    <a href="{{route('ciudad.destroy', $ciudad->id)}}"><i class="fas fa-trash-alt"></i></a>
 
 
 

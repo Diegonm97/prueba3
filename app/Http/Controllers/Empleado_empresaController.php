@@ -222,7 +222,7 @@ class Empleado_empresaController extends Controller
      * @param  \App\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function update(Empleado_empresaRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $empleadoEmpS = Empleado_empresa::find($id);                //Busca en la base de datos un Empleado_empresa con el id especificado
 
@@ -264,6 +264,6 @@ class Empleado_empresaController extends Controller
     public function destroy($id)
     {
         Empleado_empresa::destroy($id);
-        return redirect()->route('empleado_empresa.index')->with('danger', 'El empleado fue eliminado');
+        return redirect()->route('empleado_empresa.index')->with('info', 'El empleado fue eliminado');
     }
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Http\Request;
+use App\Http\Requests\UsersRequest;
+use App\Role_user;
 
 class UserController extends Controller
 {
@@ -17,8 +19,9 @@ class UserController extends Controller
     {
 
         $users = User::Nombre($request->name)->orderBy('name')->paginate();
+        $roles = Role_user::search()->get();
 
-        return view('users.index', compact('users'));
+        return view('users.index', compact('users', 'roles'));
     }
 
 
@@ -73,9 +76,10 @@ class UserController extends Controller
      * @param  \App\users  $users
      * @return \Illuminate\Http\Response
      */
-    public function destroy(users $users)
+    public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect()->route('users.index')->with('danger', 'El usuario fue eliminado');
     }
 }
 

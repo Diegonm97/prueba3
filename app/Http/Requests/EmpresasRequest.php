@@ -28,7 +28,7 @@ class EmpresasRequest extends FormRequest
             'nombre' => 'required',
             'nombre_contacto' => 'required',
             'telefono_contacto'  => 'required',
-            'email'  => 'required|unique:empresa|unique:users',
+            'email'  => 'required|unique:empresa,email|unique:users,email',
             'id_ciudad'  => 'required',
             'direccion'  => 'required',
             'estado'  => 'required',

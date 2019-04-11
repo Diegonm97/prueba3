@@ -85,7 +85,7 @@ class EntidadController extends Controller
      * @param  \App\entidad  $entidad
      * @return \Illuminate\Http\Response
      */
-    public function update(entidadRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $entidad = Entidad::find($id);                  //Busca en la base de datos una entidad con el id especificado
 
@@ -104,8 +104,9 @@ class EntidadController extends Controller
      * @param  \App\entidad  $entidad
      * @return \Illuminate\Http\Response
      */
-    public function destroy(entidad $entidad)
+    public function destroy($id)
     {
-        //
+        Entidad::destroy($id);
+        return redirect()->route('entidad.index')->with('info', 'La entidad fue eliminada');
     }
 }

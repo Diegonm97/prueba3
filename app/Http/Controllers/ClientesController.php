@@ -284,7 +284,7 @@ class ClientesController extends Controller
      * @param  \App\Clientes  $clientes
      * @return \Illuminate\Http\Response
      */
-    public function update(ClientesRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $clientes = Clientes::find($id);
         $user = $clientes->id_usuario;

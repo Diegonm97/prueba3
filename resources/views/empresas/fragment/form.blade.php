@@ -53,8 +53,8 @@
 <div class="col-sm-12">
     <div class="col-sm-4">
         <div class="form-group row has-success">
-            <label for="email">Email contacto(*).</label>
-            <input class="form-control" title="Ingresar email del contacto de la Empresa." placeholder="Ej: ejemplo@ejemplo.com " id="email" required="required" name="email" type="text">
+        {!! Form::label('email','Email contacto(*).')!!}
+            {!!Form::text('email',null,['class'=>'form-control','title'=>'Ingresar email del contacto de la Empresa.' , 'placeholder'=>'Ej: ejemplo@ejemplo.com ','id'=>'email','required'=>'required' ])!!}
 
         </div>
     </div>
