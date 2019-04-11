@@ -1,4 +1,4 @@
-<?php 
+<?php
 use App\Sede;
 ?>
 @extends('layouts.apphome')
@@ -26,11 +26,12 @@ use App\Sede;
             @endcan
 
             <p class="category">Aquí se muestran datos de los empleados de Intersalud Colombia.</p>
-            {!!Form::open(['route'=>'empleado.index', 'method'=>'GET','class'=>'navbar-form'])!!}
-            <div class="form group">
-                {!!Form::text('nombre',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+            {!!Form::open(['route'=>'empleado.index', 'method'=>'GET'])!!}
+            <div class="col-md-3">
+                <div class="form group">
+                    {!!Form::text('nombre',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
 
-
+                </div>
             </div>
             {!!Form::close()!!}
         </div>
@@ -63,4 +64,4 @@ use App\Sede;
         </div>
     </div>
 
-    @endsection 
+    @endsection

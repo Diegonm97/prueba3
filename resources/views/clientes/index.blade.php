@@ -24,11 +24,12 @@
 
             <p class="category">Aqui se muestran datos de los clientes registrados</p>
             <!-- Buscador -->
-            {!!Form::open(['route'=>'clientes.index', 'method'=>'GET','class'=>'navbar-form'])!!}
+            {!!Form::open(['route'=>'clientes.index', 'method'=>'GET'])!!}
+            <div class="col-md-3">
             <div class="form group">
                 {!!Form::number('identificacion',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
 
-
+                </div>
             </div>
             {!!Form::close()!!}
         </div>
@@ -110,4 +111,4 @@
 
 
 
-@endsection 
+@endsection

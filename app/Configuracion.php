@@ -20,6 +20,11 @@ class Configuracion extends Model
     //        return $valor;
     //    }
 
+    public function scopeSearch1($query, $nombre)       //Buscador por medio de nombre
+    {
+        return $query->where('nombre', 'LIKE', "%$nombre%");
+    }
+
     public function scopeSearch($query)
     {
         return $query->select('*');
@@ -34,8 +39,3 @@ class Configuracion extends Model
 //$config = Configuracion::pluck('value', 'option');
 
 //$config['EPS']
-
-
-
-
-

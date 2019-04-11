@@ -13,10 +13,10 @@ class ConfiguracionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
-        $configuracion = Configuracion::paginate(20);
+        $configuracion = Configuracion::search1($request->nombre)->orderby('nombre')->paginate(20);
 
 
         return view('configuracion.index', compact('configuracion'));

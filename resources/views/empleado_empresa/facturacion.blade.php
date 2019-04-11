@@ -69,7 +69,7 @@
         </table>
 
         <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('empleado_empresa.index')}}">Finalizar</a>
-        <a class="btn btn-primary" type="submit" style="float: right; width: 20%" href="{{route('imprimir2', $cliente->id)}}">Factura</a>
+        <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('imprimir2', $cliente->id)}}">Factura</a>
     </div>
 </div>
 

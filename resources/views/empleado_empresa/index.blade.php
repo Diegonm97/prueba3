@@ -23,9 +23,11 @@
 
             <p class="category">Aqui se muestran datos de los empleados de la empresa registrados</p>
             <!-- Buscador -->
-            {!!Form::open(['route'=>'empleado_empresa.index', 'method'=>'GET','class'=>'navbar-form'])!!}
-            <div class="form group">
-                {!!Form::number('identificacion',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+            {!!Form::open(['route'=>'empleado_empresa.index', 'method'=>'GET'])!!}
+            <div class="col-md-3">
+                <div class="form group">
+                    {!!Form::number('identificacion',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+                </div>
             </div>
             {!!Form::close()!!}
         </div>
@@ -81,6 +83,7 @@
                                     @can('empleado_empresa.edit')
                                     <a href="{{route('empleado_empresa.edit', $empleadoEmp->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
+                                    <a target="_blank" href="{{route('imprimir3', $empresa->id)}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <a href="{{route('empleado_empresa.destroy', $empleadoEmp->id)}}"><i class="fas fa-trash-alt"></i></a>
                                 </th>
 
@@ -104,4 +107,4 @@
 
 
 
-@endsection 
+@endsection

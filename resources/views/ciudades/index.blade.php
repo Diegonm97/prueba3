@@ -23,9 +23,11 @@
 
             <p class="category">Aqui se muestran datos de las ciudades registradas.</p>
             <!-- Buscador -->
-            {!!Form::open(['route'=>'ciudad.index', 'method'=>'GET','class'=>'navbar-form'])!!}
-            <div class="form group">
-                {!!Form::text('nombre',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+            {!!Form::open(['route'=>'ciudad.index', 'method'=>'GET'])!!}
+            <div class="col-md-3">
+                <div class="form group">
+                    {!!Form::text('nombre',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+                </div>
             </div>
             {!!Form::close()!!}
         </div>
@@ -81,4 +83,4 @@
 
 
 
-@endsection 
+@endsection

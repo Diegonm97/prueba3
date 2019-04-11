@@ -23,11 +23,12 @@
             @endcan
 
             <p class="category">Aquí se muestran datos de configuración. Si el valor es entero, omita los puntos Ej: 4000 (cuatro mil). Si el valor es en porcentaje, omita el simbolo (%).</p>
-            {!!Form::open(['route'=>'configuracion.index', 'method'=>'GET','class'=>'navbar-form'])!!}
-            <div class="form group">
-                {!!Form::text('nombre',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+            {!!Form::open(['route'=>'configuracion.index', 'method'=>'GET'])!!}
+            <div class="col-md-3">
+                <div class="form group">
+                    {!!Form::text('nombre',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
 
-
+                </div>
             </div>
             {!!Form::close()!!}
         </div>
@@ -55,4 +56,4 @@
         </div>
     </div>
 
-    @endsection 
+    @endsection

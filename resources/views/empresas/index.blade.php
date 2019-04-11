@@ -22,11 +22,13 @@
             @endcan
 
             <p class="category">Aquí se muestran datos de las empresas registradas</p>
-            {!!Form::open(['route'=>'empresa.index', 'method'=>'GET','class'=>'navbar-form'])!!}
-            <div class="form group">
-                {!!Form::text('nit',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+            {!!Form::open(['route'=>'empresa.index', 'method'=>'GET'])!!}
+            <div class="col-md-3">
+                <div class="form group">
+                    {!!Form::text('nit',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
 
 
+                </div>
             </div>
             {!!Form::close()!!}
         </div>
@@ -71,7 +73,7 @@
                                     <a href="{{route('empresa.edit', $empresa->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
 
-                                    <a target="_blank" href=""><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                                    <a target="_blank" href="{{route('imprimir3', $empresa->id)}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
                                 </th>
                             </tr>
                             @endforeach
@@ -91,4 +93,4 @@
 
 
 
-@endsection 
+@endsection
