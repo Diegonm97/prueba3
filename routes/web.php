@@ -46,8 +46,10 @@ Route::get('/contacto', function () {
 Route::get("/contacto","contactoController@index")->name('contacto');
 
 Route::post("/createEmp/{id}","clientesController@storeEmp")->name('storeEmp');
-
+// Informes PDF
 Route::get("/imprimir/{id}", "pdfController@imprimir")->name('imprimir');
+Route::get("/imprimir2/{id}", "pdfController@imprimir2")->name('imprimir2');
+Route::get("/imprimir3/{id}", "pdfController@imprimir3")->name('imprimir3');
 
 
 

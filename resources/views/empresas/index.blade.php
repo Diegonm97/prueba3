@@ -70,6 +70,8 @@
                                     @can('Empresas.edit')
                                     <a href="{{route('empresa.edit', $empresa->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
+
+                                    <a target="_blank" href=""><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
                                 </th>
                             </tr>
                             @endforeach

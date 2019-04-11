@@ -2,7 +2,7 @@
     <div class="col-sm-3">
         <div class="form-group row has-success">
             {!! Form::label('nit','Número de Nit(*).')!!}
-            {!!Form::number('nit',null,['class'=>'form-control','title'=>'Ingresa un numero de nit no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'nuip','required'=>'required'])!!}
+            {!!Form::text('nit',null,['class'=>'form-control','title'=>'Ingresa un numero de nit no registrado.','min'=>'5','placeholder'=>'Ej: 66.345.234','id'=>'nuip','required'=>'required'])!!}
         </div>
     </div>
     <div class="col-sm-6">

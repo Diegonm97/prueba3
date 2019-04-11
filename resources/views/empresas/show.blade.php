@@ -110,7 +110,7 @@
             <tbody>
                 @foreach ($empleados as $empleado)
                 <tr>
-                    <td>{{$empleado->identificación}}</td>
+                    <td>{{$empleado->identificacion}}</td>
                     <td>{{$empleado->nombres}} {{$empleado->apellidos}}</td>
                     <td>{{$empleado->salario}}</td>
                     <td>{{$empleado->pago}}</td>
@@ -138,8 +138,9 @@
             </tbody>
         </table>
 
-        <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('empresa.index')}}">Finalizar</a>
-        <a class="btn btn-primary" type="submit" style="float: right; width: 50%" href="{{route('empresa.pagocaja', $empresa->id)}}">Pagar</a>
+        <a class="btn btn-primary" type="submit" style="float: right; width: 33%" href="{{route('empresa.index')}}">Finalizar</a>
+        <a class="btn btn-primary" type="submit" style="float: right; width: 33%" href="{{route('empresa.pagocaja', $empresa->id)}}">Pagar</a>
+        <a class="btn btn-primary" type="submit" style="float: right; width: 33%" href="{{route('imprimir3', $empresa->id)}}"target="_blank" href="">factura</a>
     </div>
 </div>
 

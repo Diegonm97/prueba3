@@ -25,52 +25,52 @@
                     <tbody>
                         <tr>
                             <td><strong>Administración + IVA: </strong></td>
-                            <td>{{$ivaadmi}}</td>
+                            <td>$ {{number_format($ivaadmi,0,',','.')}}</td>
                         </tr>
 
                         <tr>
                             <td><strong>Inscripción + IVA: </strong></td>
-                            <td> {{$ivainsc}} </td>
+                            <td>$ {{number_format($ivainsc,0,',','.')}} </td>
                         </tr>
 
                         <tr>
                             <td><strong>EPS: </strong></td>
-                            <td> {{$epst}} </td>
+                            <td>$ {{number_format($epst,0,',','.')}} </td>
                         </tr>
 
                         <tr>
                             <td><strong>ARL: </strong></td>
-                            <td> {{$arlt}} </td>
+                            <td>$ {{number_format($arlt,0,',','.')}} </td>
                         </tr>
 
                         <tr>
                             <td><strong>AFP: </strong></td>
-                            <td> {{$afpt}} </td>
+                            <td>$ {{number_format($afpt,0,',','.')}} </td>
                         </tr>
 
                         <tr>
                             <td><strong>Caja de compensación: </strong></td>
-                            <td> {{$cjct}} </td>
+                            <td>$ {{number_format($cjct,0,',','.')}} </td>
                         </tr>
 
                         <tr>
                             <td><strong>UPC: </strong></td>
-                            <td> {{$upct}} </td>
+                            <td>$ {{number_format($upct,0,',','.')}} </td>
                         </tr>
 
                         <tr>
                             <td><strong>SERCOFUN: </strong></td>
-                            <td> {{$serc}} </td>
+                            <td>$ {{number_format($serc,0,',','.')}} </td>
                         </tr>
 
                         <tr>
                             <td><strong>EMI: </strong></td>
-                            <td> {{$emit}} </td>
+                            <td>$ {{number_format($emit,0,',','.')}} </td>
                         </tr>
 
                         <tr>
                             <td><h4><strong>TOTAL: </strong></h4></td>
-                            <td><h4><strong>{{$total}}</strong></h4> </td>
+                            <td><h4><strong>$ {{number_format($total,0,',','.')}}</strong></h4> </td>
                         </tr>
                     </tbody>
                 </div>

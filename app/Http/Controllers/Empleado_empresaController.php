@@ -95,7 +95,7 @@ class Empleado_empresaController extends Controller
     }
 
 
-    public function facturacion($id){
+    public function facturacion($id){//id cliente
         $cliente = Empleado_empresa::find($id);
         $empresa = Empresa::search()->where('id', '=', $cliente->id_empresa)->first();
 
@@ -144,14 +144,14 @@ class Empleado_empresaController extends Controller
         }
         
         $upc = Configuracion::Search()->where('codigo', '=', "UPC")->first();
-        if($cliente->sercofun == 1){
+        if($cliente->sercofun == 2){
             $sercofun = Configuracion::Search()->where('codigo', '=', "SERCOFUN")->first();
             $serc = $sercofun->valor;
         } else {
             $serc = 0;
         }
 
-        if($cliente->emi == 1){
+        if($cliente->emi == 2 ){
             $emi = Configuracion::Search()->where('codigo', '=', "EMI")->first();
             $emit = $emi->valor;
         } else {
