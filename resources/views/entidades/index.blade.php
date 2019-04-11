@@ -74,6 +74,9 @@
                                     @can('Entidades.edit')
                                     <a href="{{route('entidad.edit', $entidad->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
+                                    @role('administrador')
+                                    <a href="{{route('entidad.destroy', $entidad->id)}}"><i class="fas fa-trash-alt"></i></a>
+                                    @endrole
                                 </th>
                             </tr>
                             @endforeach

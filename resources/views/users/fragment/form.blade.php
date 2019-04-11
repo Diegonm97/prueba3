@@ -8,7 +8,7 @@
     <div class="col-sm-4">
         <div class="form-group row has-success">
             {!! Form::label('name','Nombre.')!!}
-            {!!Form::text('name',null,['class'=>'form-control','title'=>'Nombre de la cuenta.' , 'placeholder'=>'Ej: Juan Perez','id'=>'name','required'=>'required' ])!!}
+            {!!Form::text('name',null,['class'=>'form-control', 'onKeyUp'=>'this.value = this.value.toUpperCase()','title'=>'Nombre de la cuenta.' , 'placeholder'=>'Ej: Juan Perez','id'=>'name','required'=>'required' ])!!}
         </div>
     </div>
     <div class="col-sm-4">

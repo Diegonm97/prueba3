@@ -110,7 +110,7 @@
             <tbody>
                 @foreach ($empleados as $empleado)
                 <tr>
-                    <td>{{$empleado->identificación}}</td>
+                    <td>{{$empleado->identificacion}}</td>
                     <td>{{$empleado->nombres}} {{$empleado->apellidos}}</td>
                     <td>{{$empleado->salario}}</td>
                     <td>{{$empleado->pago}}</td>

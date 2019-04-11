@@ -204,7 +204,7 @@ class EmpresaController extends Controller
      * @param  \App\empresas  $empresas
      * @return \Illuminate\Http\Response
      */
-    public function update(empresasRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $empresas = Empresa::find($id);
         $administracion = Configuracion::Search()->where('codigo', '=', "ADMIN")->first();
@@ -246,6 +246,6 @@ class EmpresaController extends Controller
 
     public function destroy(Empresa $empresa)
     {
-        //
+        
     }
 }

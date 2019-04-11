@@ -100,8 +100,9 @@ class CiudadController extends Controller
      * @param  \App\Ciudad  $ciudad
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ciudad $ciudad)
+    public function destroy($id)
     {
-        //
+        Ciudad::destroy($id);
+        return redirect()->route('ciudad.index')->with('info', 'La ciudad fue eliminada');
     }
 }
