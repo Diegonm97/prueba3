@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="col-sm-1">
+    <a href="javascript:history.back()"><i class="fas fa-arrow-alt-circle-left fa-3x" style="color: #2C7CE1"></i></a>
 </div>
 <div class="col-sm-8">
 
@@ -112,8 +113,8 @@
                 <tr>
                     <td>{{$empleado->identificacion}}</td>
                     <td>{{$empleado->nombres}} {{$empleado->apellidos}}</td>
-                    <td>{{$empleado->salario}}</td>
-                    <td>{{$empleado->pago}}</td>
+                    <td>${{ number_format($empleado->salario,0,',','.')}}</td>
+                    <td>${{ number_format($empleado->pago,0,',','.')}}</td>
                 </tr>
                 @endforeach
                 <tr>

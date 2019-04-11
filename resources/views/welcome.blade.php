@@ -474,7 +474,7 @@
                             que deseé.</p>
                         </li>
                         <li>
-                            <a href="{{route('contacto')}}" class="btn btn-info btn-lg flex-item" rel="nofollow">Ver más</a>
+                            <a href="{{route('login')}}" class="btn btn-info btn-lg flex-item" rel="nofollow">Pagar</a>
                         </li>
                     </ul>
                 </div>
@@ -581,6 +581,7 @@
             <br>
         </footer>
     </div>
+    
 
 
     <script type="text/javascript">

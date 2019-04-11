@@ -2,32 +2,36 @@
 @section('content')
 
 
-<div class="col-m-9">
+<div class="col-md-10">
 
     <h1 align="center">Información Clientes</h1>
 </div>
-<div class="col-m-3">
+
+<div class="col-md-2">
 
     @include('clientes.fragment.info')
-
+    
 </div>
 
+
 <div class="col-md-12">
+
     <div class="card">
         <div class="header">
-            <h4 class="title">Clientes
+            <h4 class="title">Clientes</h4>
 
-                <!-- Ruta al create de clientes -->
-                @can('Clientes.create')
-                <a href="{{route('clientes.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
+            <!-- Ruta al create de clientes -->
+            @can('Clientes.create')
+            <a href="{{route('clientes.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
             @endcan
+
 
             <p class="category">Aqui se muestran datos de los clientes registrados</p>
             <!-- Buscador -->
             {!!Form::open(['route'=>'clientes.index', 'method'=>'GET'])!!}
             <div class="col-md-3">
-            <div class="form group">
-                {!!Form::number('identificacion',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
+                <div class="form group">
+                    {!!Form::number('identificacion',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
 
                 </div>
             </div>
@@ -105,7 +109,6 @@
         </div>
     </div>
 </div>
-
 
 
 

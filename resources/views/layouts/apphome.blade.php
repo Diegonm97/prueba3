@@ -31,6 +31,18 @@
     <link href="{{asset('assets/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
+
+
+    <style>
+        .modal-backdrop.in {
+            position: inherit;
+        }
+
+        .modal-backdrop {
+            background-color: #f5f5f5;
+        }
+    </style>
 </head>
 
 <body>
@@ -117,7 +129,7 @@
                             <p>Ciudades</p>
                         </a>
                     </li>
-                    
+
                     <li>
                         <a href="{{route('configuracion.index')}}">
                             <i class="pe-7s-note2"></i>
@@ -155,7 +167,7 @@
                             <p>Entidades</p>
                         </a>
                     </li>
-                    
+
                     @endrole
 
 
@@ -177,7 +189,11 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            @role('administrador')
+
+                            <li>
+                                <a href="\assets\Manual de Usuario.pdf" target="_blank"><i class="fas fa-question-circle fa-3x"></i></a>
+                                @role('administrador')
+                            </li>
                             <li>
                                 <a href="{{ route('users.index') }}">
                                     Cuentas
@@ -287,5 +303,4 @@
 <script src="{{asset('assets/js/demo.js')}}"></script>
 
 
-
-</html> 
+</html>
