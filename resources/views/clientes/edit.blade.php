@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="col-sm-1">
-    <a href="{{ route('clientes.index') }}"><i class="fas fa-arrow-alt-circle-left fa-3x" style="color: #2C7CE1"></i></a>
+    <a href="{{ route('clientes.index') }}"><i class="fas fa-arrow-alt-circle-left fa-3x" title="Volver a informacion Clientes" style="color: #2C7CE1"></i></a>
 </div>
 <div class="col-sm-8">
 

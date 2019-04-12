@@ -22,7 +22,7 @@
 
             <!-- Ruta al create de clientes -->
             @can('Clientes.create')
-            <a href="{{route('clientes.create')}}" class="btn btn-default pull-right" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
+            <a href="{{route('clientes.create')}}" class="btn btn-default pull-right" title="Crear Clientes" aria-hidden="true"><i class="fas fa-plus"></i></a></h4>
             @endcan
 
 
@@ -30,7 +30,7 @@
             <!-- Buscador -->
             {!!Form::open(['route'=>'clientes.index', 'method'=>'GET'])!!}
             <div class="col-md-3">
-                <div class="form group">
+                <div class="form group" title="Buscar Clientes">
                     {!!Form::number('identificacion',null,['class'=>'form-control' , 'placeholder'=>'Buscar..', 'aria-describedby'=>'search'])!!}
 
                 </div>
@@ -84,15 +84,15 @@
                                 <th>
                                     <!-- Ruta al show de clientes -->
                                     @can('Clientes.show')
-                                    <a href="{{route('clientes.show', $cliente->id)}}"><i class="far fa-eye"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{{route('clientes.show', $cliente->id)}}"><i class="far fa-eye" title="Ver Clientes"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
 
                                     <!-- Ruta al edit de clientes -->
                                     @can('Clientes.edit')
-                                    <a href="{{route('clientes.edit', $cliente->id)}}"><i class="fas fa-pen"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{{route('clientes.edit', $cliente->id)}}"><i class="fas fa-pen" title="Editar Clientes"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endcan
 
-                                    <a target="_blank" href="{{route('imprimir', $cliente->id)}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                                    <a target="_blank" href="{{route('imprimir', $cliente->id)}}"><i class="fa fa-file-pdf-o" aria-hidden="true" title="Factura Clientes"></i></a>
                                 </th>
 
                             </tr>
